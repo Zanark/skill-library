@@ -8,10 +8,8 @@ flowchart LR
 
     subgraph Planning
         ADO[ado-workplan]
-        DRI[dri-workplan]
         DAY[dayplan]
         DAY --> ADO
-        DAY --> DRI
     end
 
     subgraph Continuity
@@ -28,6 +26,7 @@ flowchart LR
 
     subgraph Production
         CLIP[clipfarm-leetcode]
+        SPEAK[speak]
     end
 
     subgraph Research
@@ -39,6 +38,7 @@ flowchart LR
     User --> DAY
     User --> CAREER
     User --> CLIP
+    User --> SPEAK
     User --> DOCS
     User --> NSE
 
@@ -53,13 +53,12 @@ flowchart LR
 
 ### Planning family
 
-The three planning skills share a visual schedule contract but have deliberately different data scopes:
+The documented planning skills have deliberately different scopes:
 
 - `ado-workplan` owns sprint work and excludes IcM/DRI scheduling.
-- `dri-workplan` owns IcM/DRI work and excludes ADO sprint scheduling.
 - `dayplan` is the explicit composition layer and gives active incidents priority over sprint work.
 
-Changing a shared layout, date rule, URL pattern, or status legend should trigger a three-skill consistency review.
+The separately installed DRI-only skill is intentionally not archived in this library.
 
 ### Context family
 
@@ -82,6 +81,10 @@ Changing a shared layout, date rule, URL pattern, or status legend should trigge
 
 They share evidence-first graph principles, but they have different source models, output locations, and write boundaries.
 
+### Copilot Speak
+
+`speak` is a thin routing skill over the Copilot Speak plugin. The skill decides when and how text should be spoken; the plugin's MCP server owns tool discovery, Windows SAPI invocation, voice enumeration, and error responses.
+
 ### Independent domain skills
 
 `career-forensics` and `nse-advisor` do not route into the planning or media families. Their common requirement is evidence freshness:
@@ -93,9 +96,9 @@ They share evidence-first graph principles, but they have different source model
 
 | Change | Review these skills |
 |---|---|
-| Workday hours, IST rules, weekend behavior | `ado-workplan`, `dri-workplan`, `dayplan` |
-| Shared schedule box layout or link formatting | `ado-workplan`, `dri-workplan`, `dayplan` |
-| IcM state/severity classification | `dri-workplan`, `dayplan` |
+| Workday hours, IST rules, weekend behavior | `ado-workplan`, `dayplan` |
+| Shared schedule box layout or link formatting | `ado-workplan`, `dayplan` |
+| IcM state/severity classification | `dayplan` |
 | ADO status or note reconciliation | `ado-workplan`, `dayplan` |
 | `.agent-context` schema or persona rules | `context-offload`, `context-mesh`, `clipfarm-leetcode` |
 | Context freshness threshold | `context-offload`, `context-mesh` |
@@ -103,3 +106,4 @@ They share evidence-first graph principles, but they have different source model
 | ClipFarm publishing/gallery schema | `clipfarm-leetcode` |
 | Career report schema or score movement | `career-forensics` |
 | Market-data or allocation rules | `nse-advisor` |
+| Spoken-text routing or TTS defaults | `speak` and the Copilot Speak MCP implementation |

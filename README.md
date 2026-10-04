@@ -24,8 +24,8 @@ They are not copied, summarized, or documented here.
 | [context-offload](skills/context-offload/README.md) | Cross-session memory | Persists per-base state, durable memory, journal, and persona continuity |
 | [dayplan](skills/dayplan/README.md) | Work management | Combines DRI/IcM and ADO work into one prioritized day schedule |
 | [documentation-mesh](skills/documentation-mesh/README.md) | Documentation intelligence | Builds an offline evidence-backed graph and health report for Markdown collections |
-| [dri-workplan](skills/dri-workplan/README.md) | Livesite operations | Builds a DRI-only IcM incident workplan |
 | [nse-advisor](skills/nse-advisor/README.md) | Market research | Produces paper-trading NSE research and allocation scenarios |
+| [speak](skills/speak/README.md) | Accessibility and voice | Makes Copilot CLI speak concise plain-text responses through a local Windows TTS MCP server |
 
 ## Documentation depth
 
@@ -33,7 +33,7 @@ The current archive contains:
 
 - **9** authored skills;
 - **63** per-skill files;
-- **12,538** lines of skill source and explanatory Markdown;
+- **13,519** lines of skill source and explanatory Markdown;
 - an exact source snapshot plus **six** dedicated documentation files for every skill;
 - repository-level provenance, relationships, glossary, catalogue, maintenance, and validation material.
 
@@ -88,7 +88,15 @@ The inventory deliberately excludes:
 - dependency-provided and `node_modules` skills;
 - the two explicitly omitted skills listed above.
 
+Context Mesh provenance also identified historical or repository-owned candidates that were not imported:
+
+- `deep-explanation` was a misattributed inspection record around creation of the now-removed `dri-workplan`;
+- `my-new-skill` was only a placeholder path in setup guidance;
+- `ev2-limits-validation` and `asc-sds-phase2` were authored by other engineers according to Git history;
+- `speak` had direct high-confidence creation evidence and a current source, so it is included.
+
 See [PROVENANCE.md](PROVENANCE.md) for the detailed inclusion method and [DOCUMENTATION-STANDARD.md](DOCUMENTATION-STANDARD.md) for maintenance rules.
+The follow-up Context Mesh provenance sweep is recorded in [CONTEXT-MESH-DISCOVERY.md](CONTEXT-MESH-DISCOVERY.md).
 
 ## Validation
 

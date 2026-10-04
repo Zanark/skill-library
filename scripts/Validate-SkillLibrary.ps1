@@ -13,7 +13,13 @@ $expectedDocs = @(
     'docs\EXAMPLES.md',
     'docs\OPERATIONS-AND-TESTING.md'
 )
-$excludedNames = @('daily-sev2-report', 'DailySev2Report', 'outage-comms-formatted', 'OutageCommsFormatted')
+$excludedNames = @(
+    'daily-sev2-report',
+    'DailySev2Report',
+    'outage-comms-formatted',
+    'OutageCommsFormatted',
+    'dri-workplan'
+)
 $errors = [System.Collections.Generic.List[string]]::new()
 
 if (-not (Test-Path -LiteralPath $inventoryPath)) {
@@ -76,8 +82,13 @@ foreach ($file in $markdownFiles) {
     }
 
     $contentWithoutFences = $visibleLines -join "`n"
-    $links = [regex]::Matches(
+    $contentWithoutCode = [regex]::Replace(
         $contentWithoutFences,
+        '`+[^`\r\n]*`+',
+        ''
+    )
+    $links = [regex]::Matches(
+        $contentWithoutCode,
         '\[[^\]]+\]\((?!https?://|mailto:|#)([^)]+)\)'
     )
 

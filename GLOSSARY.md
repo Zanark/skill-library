@@ -23,6 +23,8 @@
 | Persona | The domain scope and continuity contract adopted when resuming a registered base |
 | Recall evidence | User-provided memory recovered through questioning and explicitly marked as self-reported |
 | Source snapshot | The archived `SKILL.md` whose hash is recorded in the inventory |
+| SAPI | Windows Speech API used by the Copilot Speak MCP implementation |
+| Speak MCP | The local stdio MCP server that exposes `speak` and `list_voices` tools |
 | Supersession | A newer rule explicitly replacing an older rule while historical records remain preserved |
 | Workplan | A time-blocked operational schedule generated from live or persisted work data |
 | zmem | A separate durable-memory dependency used by the context system |

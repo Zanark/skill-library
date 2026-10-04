@@ -42,15 +42,15 @@
     "sha256": "cc1d1c6a8a8d3ebe8e735498faf888a1c8ade7e65af297ee26440f2e3c4bfdb5"
   },
   {
-    "name": "dri-workplan",
-    "source": "C:\\devdesk\\tools\\copilot\\skills\\dri-workplan\\SKILL.md",
-    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\dri-workplan\\SKILL.md",
-    "sha256": "e118bfa5edc3b0060f91f664adb06d51a3a9eb92815439e644135616da354a05"
-  },
-  {
     "name": "nse-advisor",
     "source": "C:\\Users\\mishrad\\.copilot\\skills\\nse-advisor\\SKILL.md",
     "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\nse-advisor\\SKILL.md",
     "sha256": "8920d28aa1e2ebae2a93f3f9f354ded2b68e448b8db029fe8835ef1783a8af95"
+  },
+  {
+    "name": "speak",
+    "source": "C:\\devdesk\\tools\\copilot-speak\\skills\\speak\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\speak\\SKILL.md",
+    "sha256": "add3bfafac4cb75a89e47bdcdb5e8d7c5cd919dec20dbef188c015c9ac586c02"
   }
 ]

@@ -6,10 +6,6 @@
 
 ADO-only scheduler for active sprint work. It reconciles prior-day note completion with live work-item state, renders remaining IST work blocks, and updates the Zettelkasten daily checklist.
 
-### dri-workplan
-
-Livesite-only scheduler for assigned IcM incidents. It classifies incidents by severity/state, groups related incidents, and produces an investigation/mitigation/handoff day.
-
 ### dayplan
 
 Combined scheduler that merges ADO and DRI inputs under an incident-first priority model and adjusts capacity when DRI duty is active.
@@ -37,6 +33,10 @@ The operational contract for ClipFarm coding/system-design editing: source prepa
 ### documentation-mesh
 
 The Agency-facing skill for a local documentation-analysis runtime that discovers Markdown, builds evidence-backed relationships, evaluates health, records Git provenance, validates a deterministic JSON index, and publishes an offline dashboard.
+
+### speak
+
+The Copilot Speak plugin skill that routes requests for spoken output to a local MCP server backed by Windows text-to-speech.
 
 ## Research
 
