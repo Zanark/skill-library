@@ -1,0 +1,86 @@
+{
+  "items": [
+    {
+      "title": "work-planning",
+      "name": "Work Planning Skills",
+      "prompt": "Document the authored planning system and its routing boundaries using skills/ado-workplan/SKILL.md:7, skills/dri-workplan/SKILL.md:7, and skills/dayplan/SKILL.md:7.",
+      "children": [
+        {
+          "title": "ado-workplan",
+          "name": "ADO Workplan",
+          "prompt": "Explain ADO-only scheduling, completion reconciliation, output formatting, and Zettelkasten writes from skills/ado-workplan/SKILL.md:9.",
+          "children": []
+        },
+        {
+          "title": "dri-workplan",
+          "name": "DRI Workplan",
+          "prompt": "Explain IcM-only scheduling, severity prioritization, grouping, and handoff behavior from skills/dri-workplan/SKILL.md:9.",
+          "children": []
+        },
+        {
+          "title": "dayplan",
+          "name": "Combined Day Plan",
+          "prompt": "Explain combined ADO/IcM routing and incident-first capacity allocation from skills/dayplan/SKILL.md:9.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "continuity-and-knowledge",
+      "name": "Continuity and Knowledge Skills",
+      "prompt": "Document durable context, portfolio indexing, and evidence-backed career knowledge using skills/context-offload/SKILL.md:7, skills/context-mesh/SKILL.md:7, and skills/career-forensics/SKILL.md:7.",
+      "children": [
+        {
+          "title": "context-offload",
+          "name": "Context Offload",
+          "prompt": "Explain the four-file store, persona contract, hydration, continuous offload, and freshness requirements from skills/context-offload/SKILL.md:23.",
+          "children": []
+        },
+        {
+          "title": "context-mesh",
+          "name": "Context Mesh",
+          "prompt": "Explain cross-base discovery, graph generation, evidence-ranked provenance, and dashboard behavior from skills/context-mesh/SKILL.md:9.",
+          "children": []
+        },
+        {
+          "title": "career-forensics",
+          "name": "Engineering Career Operating System",
+          "prompt": "Explain the persistent knowledge base, forensic pipeline, 38 reports, recall evidence, and delta tracking from skills/career-forensics/SKILL.md:57.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "content-systems",
+      "name": "Content and Documentation Systems",
+      "prompt": "Document the reviewed media workflow and evidence-backed documentation graph using skills/clipfarm-leetcode/SKILL.md:19 and skills/documentation-mesh/SKILL.md:8.",
+      "children": [
+        {
+          "title": "clipfarm-leetcode",
+          "name": "ClipFarm Coding Editorial Workflow",
+          "prompt": "Explain mode routing, source review, plans, drafts, review gates, publishing, and superseding policies from skills/clipfarm-leetcode/SKILL.md:237.",
+          "children": []
+        },
+        {
+          "title": "documentation-mesh",
+          "name": "Documentation Mesh",
+          "prompt": "Explain runtime resolution, read-only safety, build/validate flow, outputs, and reporting from skills/documentation-mesh/SKILL.md:10.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "market-research",
+      "name": "Market Research Skill",
+      "prompt": "Document the NSE paper-trading research workflow using skills/nse-advisor/SKILL.md:17.",
+      "children": [
+        {
+          "title": "nse-advisor",
+          "name": "NSE Advisor",
+          "prompt": "Explain input collection, sector screening, stock analysis, allocation math, timing, risk controls, and output contracts from skills/nse-advisor/SKILL.md:27.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

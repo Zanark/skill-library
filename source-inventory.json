@@ -1,0 +1,56 @@
+[
+  {
+    "name": "ado-workplan",
+    "source": "C:\\devdesk\\tools\\copilot\\skills\\ado-workplan\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\ado-workplan\\SKILL.md",
+    "sha256": "7882e9ee0062217c018f86864caff4d1d3258454271a3df2db56477c97c9dcca"
+  },
+  {
+    "name": "career-forensics",
+    "source": "C:\\Users\\mishrad\\.copilot\\skills\\career-forensics\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\career-forensics\\SKILL.md",
+    "sha256": "2146f1ee3b8cc704d456fbd16a08f97817352cd5da444781e8a47bcb267eede7"
+  },
+  {
+    "name": "clipfarm-leetcode",
+    "source": "C:\\Users\\mishrad\\.copilot\\skills\\clipfarm-leetcode\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\clipfarm-leetcode\\SKILL.md",
+    "sha256": "971d1ed03749a6511aea9551fb3ea5aa08bc12bde3573fe020a78a782df14bda"
+  },
+  {
+    "name": "context-mesh",
+    "source": "C:\\Users\\mishrad\\.copilot\\skills\\context-mesh\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\context-mesh\\SKILL.md",
+    "sha256": "92fd04ea354bc048a416b6732461e8c0df384f0e7acfb137a77b9f630eccb46c"
+  },
+  {
+    "name": "context-offload",
+    "source": "C:\\Users\\mishrad\\.copilot\\skills\\context-offload\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\context-offload\\SKILL.md",
+    "sha256": "8556d18186183217aebcbff222a354a3af213ed1d79628265eda6c272dd414ee"
+  },
+  {
+    "name": "dayplan",
+    "source": "C:\\devdesk\\tools\\copilot\\skills\\dayplan\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\dayplan\\SKILL.md",
+    "sha256": "5f80ae2c6bf95f795388d41dc4197dd4823ceb0122c43ace5e0f550d48b477da"
+  },
+  {
+    "name": "documentation-mesh",
+    "source": "C:\\devdesk\\Copilot\\CopilotSessions\\documentation-mesh-plugin\\skills\\documentation-mesh\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\documentation-mesh\\SKILL.md",
+    "sha256": "cc1d1c6a8a8d3ebe8e735498faf888a1c8ade7e65af297ee26440f2e3c4bfdb5"
+  },
+  {
+    "name": "dri-workplan",
+    "source": "C:\\devdesk\\tools\\copilot\\skills\\dri-workplan\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\dri-workplan\\SKILL.md",
+    "sha256": "e118bfa5edc3b0060f91f664adb06d51a3a9eb92815439e644135616da354a05"
+  },
+  {
+    "name": "nse-advisor",
+    "source": "C:\\Users\\mishrad\\.copilot\\skills\\nse-advisor\\SKILL.md",
+    "destination": "C:\\devdesk\\homedesk\\skill-library\\skills\\nse-advisor\\SKILL.md",
+    "sha256": "8920d28aa1e2ebae2a93f3f9f354ded2b68e448b8db029fe8835ef1783a8af95"
+  }
+]
