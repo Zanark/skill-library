@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="docs/assets/skill-library-hero.svg" alt="Skill Library - nine authored Copilot workflows connected as a knowledge graph" width="100%">
+  <img src="docs/assets/skill-library-hero.svg" alt="A warm illustrated library filled with books" width="100%">
 </p>
 
 # Skill Library
 
-Nine authored Copilot skills, preserved with their source and detailed operating docs.
+A living library of authored Copilot skills, source snapshots, and operating docs.
 
 | Skill | Focus |
 |---|---|
