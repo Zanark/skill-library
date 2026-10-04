@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/skill-library-hero.svg" alt="A warm illustrated library filled with books" width="100%">
+  <img src="docs/assets/skill-library-hero.svg" alt="Skill Library — an organized collection of reusable capabilities" width="100%">
 </p>
 
 # Skill Library

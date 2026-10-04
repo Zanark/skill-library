@@ -1,143 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
-  <title id="title">The Skill Library</title>
-  <desc id="desc">A warm illustrated library with wooden shelves, a rolling ladder, a reading desk, and rows of books.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Skill Library</title>
+  <desc id="desc">A minimal banner with an organized collection of modular skill cards.</desc>
   <defs>
-    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#172238"/>
-      <stop offset="1" stop-color="#28324a"/>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
     </linearGradient>
-    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8b5a32"/>
-      <stop offset=".5" stop-color="#5f3822"/>
-      <stop offset="1" stop-color="#3d2419"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c6cff"/>
+      <stop offset="1" stop-color="#4dd8ff"/>
     </linearGradient>
-    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#523424"/>
-      <stop offset="1" stop-color="#241914"/>
-    </linearGradient>
-    <radialGradient id="lampGlow">
-      <stop offset="0" stop-color="#ffd98a" stop-opacity=".54"/>
-      <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#6d5dfc" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#6d5dfc" stop-opacity="0"/>
     </radialGradient>
-    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#130c08" flood-opacity=".6"/>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity=".28"/>
     </filter>
   </defs>
 
-  <rect width="1200" height="420" rx="26" fill="url(#wall)"/>
-  <rect y="350" width="1200" height="70" fill="url(#floor)"/>
-  <path d="M0 372H1200M70 350v70M235 350v70M420 350v70M635 350v70M870 350v70M1080 350v70" stroke="#9b6741" stroke-opacity=".25" stroke-width="2"/>
+  <rect width="1200" height="360" rx="24" fill="url(#background)"/>
+  <circle cx="940" cy="178" r="280" fill="url(#glow)"/>
+  <path d="M0 70H1200M0 140H1200M0 210H1200M0 280H1200M100 0V360M200 0V360M300 0V360M400 0V360M500 0V360M600 0V360M700 0V360M800 0V360M900 0V360M1000 0V360M1100 0V360"
+        stroke="#30363d" stroke-width="1" opacity=".22"/>
 
-  <!-- arched reading window -->
-  <path d="M495 54a105 105 0 0 1 210 0v172H495z" fill="#111b2b" stroke="#b48355" stroke-width="9"/>
-  <path d="M512 65a88 88 0 0 1 176 0v144H512z" fill="#294766"/>
-  <circle cx="637" cy="94" r="34" fill="#f5d8a0" opacity=".92"/>
-  <path d="M512 162c44-32 76-12 105-35 28-22 46-9 71-35v117H512z" fill="#14283e"/>
-  <path d="M600 20v189M512 126h176" stroke="#b48355" stroke-width="6"/>
-
-  <!-- left bookcase -->
-  <g transform="translate(36 28)" filter="url(#shadow)">
-    <rect width="400" height="326" rx="7" fill="url(#wood)" stroke="#b57b4d" stroke-width="4"/>
-    <rect x="18" y="18" width="364" height="280" fill="#211712"/>
-    <path d="M18 108h364M18 198h364M18 288h364" stroke="#a66c40" stroke-width="10"/>
-
-    <g transform="translate(30 35)">
-      <rect width="35" height="66" rx="3" fill="#517d86"/>
-      <rect x="39" y="8" width="30" height="58" rx="3" fill="#8d4760"/>
-      <rect x="73" y="-3" width="42" height="69" rx="3" fill="#bd7a42"/>
-      <rect x="119" y="12" width="31" height="54" rx="3" fill="#6676a8"/>
-      <rect x="154" y="2" width="37" height="64" rx="3" fill="#4f8a6f"/>
-      <rect x="195" y="17" width="28" height="49" rx="3" fill="#b5534f"/>
-      <rect x="227" y="5" width="41" height="61" rx="3" fill="#78649c"/>
-      <rect x="272" y="11" width="34" height="55" rx="3" fill="#c19a4d"/>
-      <rect x="310" y="-1" width="32" height="67" rx="3" fill="#47718d"/>
-    </g>
-
-    <g transform="translate(30 126)">
-      <rect x="0" y="14" width="44" height="55" rx="3" fill="#86546f"/>
-      <rect x="48" y="0" width="37" height="69" rx="3" fill="#3e7681"/>
-      <rect x="89" y="8" width="31" height="61" rx="3" fill="#9c613c"/>
-      <rect x="124" y="21" width="47" height="48" rx="3" fill="#5f6c9b"/>
-      <rect x="175" y="5" width="35" height="64" rx="3" fill="#9d4e4d"/>
-      <rect x="214" y="-2" width="46" height="71" rx="3" fill="#4d8065"/>
-      <rect x="264" y="17" width="28" height="52" rx="3" fill="#b88c45"/>
-      <rect x="296" y="4" width="46" height="65" rx="3" fill="#68568e"/>
-    </g>
-
-    <g transform="translate(30 221)">
-      <rect x="0" y="12" width="38" height="60" rx="3" fill="#47718d"/>
-      <rect x="42" y="23" width="45" height="49" rx="3" fill="#a05f46"/>
-      <rect x="91" y="4" width="34" height="68" rx="3" fill="#587c67"/>
-      <rect x="129" y="16" width="40" height="56" rx="3" fill="#75639c"/>
-      <rect x="173" y="8" width="37" height="64" rx="3" fill="#ad8849"/>
-      <rect x="214" y="26" width="43" height="46" rx="3" fill="#8d4760"/>
-      <rect x="261" y="0" width="32" height="72" rx="3" fill="#527e88"/>
-      <rect x="297" y="18" width="45" height="54" rx="3" fill="#a55a42"/>
+  <g transform="translate(84 92)">
+    <rect width="44" height="5" rx="2.5" fill="url(#accent)"/>
+    <text x="0" y="72" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="54" font-weight="700" letter-spacing="-1.5">Skill Library</text>
+    <text x="2" y="111" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="19">Authored capabilities. Documented and reusable.</text>
+    <g transform="translate(2 150)">
+      <rect width="156" height="38" rx="19" fill="#21262d" stroke="#30363d"/>
+      <circle cx="22" cy="19" r="5" fill="#56d364"/>
+      <text x="37" y="25" fill="#c9d1d9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Living collection</text>
     </g>
   </g>
 
-  <!-- right bookcase -->
-  <g transform="translate(764 28)" filter="url(#shadow)">
-    <rect width="400" height="326" rx="7" fill="url(#wood)" stroke="#b57b4d" stroke-width="4"/>
-    <rect x="18" y="18" width="364" height="280" fill="#211712"/>
-    <path d="M18 108h364M18 198h364M18 288h364" stroke="#a66c40" stroke-width="10"/>
-    <g transform="translate(30 35)">
-      <rect width="33" height="66" rx="3" fill="#a55a42"/>
-      <rect x="37" y="12" width="44" height="54" rx="3" fill="#4f8068"/>
-      <rect x="85" y="2" width="31" height="64" rx="3" fill="#6f63a1"/>
-      <rect x="120" y="18" width="39" height="48" rx="3" fill="#bf9149"/>
-      <rect x="163" y="-2" width="37" height="68" rx="3" fill="#527d87"/>
-      <rect x="204" y="9" width="43" height="57" rx="3" fill="#92506b"/>
-      <rect x="251" y="4" width="30" height="62" rx="3" fill="#9f633d"/>
-      <rect x="285" y="16" width="57" height="50" rx="3" fill="#596c9c"/>
+  <g transform="translate(705 58)" filter="url(#shadow)">
+    <g transform="translate(0 28) rotate(-5 104 118)">
+      <rect width="208" height="236" rx="18" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+      <rect x="24" y="27" width="46" height="46" rx="12" fill="#21262d"/>
+      <path d="M38 50h18M47 41v18" stroke="#8b949e" stroke-width="3" stroke-linecap="round"/>
+      <rect x="24" y="98" width="118" height="9" rx="4.5" fill="#30363d"/>
+      <rect x="24" y="119" width="154" height="7" rx="3.5" fill="#21262d"/>
+      <rect x="24" y="136" width="133" height="7" rx="3.5" fill="#21262d"/>
+      <rect x="24" y="185" width="70" height="25" rx="12.5" fill="#21262d"/>
     </g>
-    <g transform="translate(30 126)">
-      <rect width="43" height="69" rx="3" fill="#78649c"/>
-      <rect x="47" y="15" width="31" height="54" rx="3" fill="#b5534f"/>
-      <rect x="82" y="5" width="38" height="64" rx="3" fill="#527d87"/>
-      <rect x="124" y="22" width="47" height="47" rx="3" fill="#b88c45"/>
-      <rect x="175" y="-3" width="30" height="72" rx="3" fill="#4e8168"/>
-      <rect x="209" y="11" width="43" height="58" rx="3" fill="#8d4760"/>
-      <rect x="256" y="4" width="35" height="65" rx="3" fill="#9d613d"/>
-      <rect x="295" y="17" width="47" height="52" rx="3" fill="#596b9b"/>
+
+    <g transform="translate(158 4) rotate(4 104 118)">
+      <rect width="208" height="236" rx="18" fill="#1b2028" stroke="#3d444d" stroke-width="2"/>
+      <rect x="24" y="27" width="46" height="46" rx="12" fill="#262c36"/>
+      <path d="M38 49l7 7 15-17" fill="none" stroke="#7c6cff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="24" y="98" width="139" height="9" rx="4.5" fill="#3d444d"/>
+      <rect x="24" y="119" width="160" height="7" rx="3.5" fill="#262c36"/>
+      <rect x="24" y="136" width="122" height="7" rx="3.5" fill="#262c36"/>
+      <rect x="24" y="185" width="86" height="25" rx="12.5" fill="#262c36"/>
     </g>
-    <g transform="translate(30 221)">
-      <rect x="0" y="17" width="45" height="55" rx="3" fill="#4f8068"/>
-      <rect x="49" y="1" width="33" height="71" rx="3" fill="#9f633d"/>
-      <rect x="86" y="12" width="40" height="60" rx="3" fill="#68568e"/>
-      <rect x="130" y="25" width="31" height="47" rx="3" fill="#527d87"/>
-      <rect x="165" y="6" width="44" height="66" rx="3" fill="#9a4f58"/>
-      <rect x="213" y="15" width="38" height="57" rx="3" fill="#b68b46"/>
-      <rect x="255" y="-1" width="34" height="73" rx="3" fill="#4f8068"/>
-      <rect x="293" y="21" width="49" height="51" rx="3" fill="#616e9e"/>
+
+    <g transform="translate(76 38)">
+      <rect width="208" height="236" rx="18" fill="#21262d" stroke="url(#accent)" stroke-width="2"/>
+      <rect x="24" y="27" width="46" height="46" rx="12" fill="#2d333b"/>
+      <path d="M38 42h18v18H38zM42 38v4M52 38v4M42 60v4M52 60v4M34 46h4M34 56h4M56 46h4M56 56h4"
+            fill="none" stroke="#4dd8ff" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="24" y="98" width="128" height="9" rx="4.5" fill="#484f58"/>
+      <rect x="24" y="119" width="160" height="7" rx="3.5" fill="#30363d"/>
+      <rect x="24" y="136" width="141" height="7" rx="3.5" fill="#30363d"/>
+      <rect x="24" y="185" width="78" height="25" rx="12.5" fill="#2d333b"/>
+      <circle cx="43" cy="197.5" r="4" fill="#56d364"/>
+      <rect x="54" y="194" width="30" height="7" rx="3.5" fill="#484f58"/>
     </g>
   </g>
 
-  <!-- rolling ladder -->
-  <g transform="translate(430 68) rotate(8 70 140)" stroke="#c99a63" stroke-width="8" stroke-linecap="round" filter="url(#shadow)">
-    <path d="M18 0v286M104 0v286"/>
-    <path d="M24 38h74M24 82h74M24 126h74M24 170h74M24 214h74M24 258h74" stroke-width="6"/>
-    <circle cx="18" cy="292" r="10" fill="#34231a" stroke-width="4"/>
-    <circle cx="104" cy="292" r="10" fill="#34231a" stroke-width="4"/>
-  </g>
-
-  <!-- reading desk -->
-  <g transform="translate(493 270)" filter="url(#shadow)">
-    <ellipse cx="110" cy="99" rx="145" ry="22" fill="#15100d" opacity=".55"/>
-    <rect x="0" y="49" width="220" height="24" rx="5" fill="#70452c" stroke="#b57b4d" stroke-width="3"/>
-    <path d="M19 70l-8 73M201 70l8 73" stroke="#5c3825" stroke-width="12"/>
-    <path d="M62 48c23-14 48-14 70 0 21-14 43-14 65 0v6H62z" fill="#ead9b5" stroke="#806344" stroke-width="3"/>
-    <path d="M130 26v22" stroke="#87613b" stroke-width="4"/>
-    <path d="M130 27c0-29 28-39 48-21" fill="none" stroke="#b8874f" stroke-width="5"/>
-    <path d="M166 3h40l-9 25h-48z" fill="#d7a84f" stroke="#f2cf7a" stroke-width="3"/>
-    <circle cx="177" cy="19" r="80" fill="url(#lampGlow)"/>
-    <rect x="44" y="34" width="43" height="8" rx="4" fill="#92536a"/>
-    <rect x="49" y="26" width="38" height="8" rx="4" fill="#537c87"/>
-  </g>
-
-  <!-- brass plaque -->
-  <g transform="translate(510 224)" filter="url(#shadow)">
-    <rect width="180" height="38" rx="6" fill="#b88b48" stroke="#f0cd7d" stroke-width="2"/>
-    <text x="90" y="25" fill="#2e2116" font-family="Georgia, serif" font-size="18" font-weight="700" text-anchor="middle" letter-spacing="2">SKILL LIBRARY</text>
-  </g>
+  <rect x=".75" y=".75" width="1198.5" height="358.5" rx="23.25" fill="none" stroke="#30363d" stroke-width="1.5"/>
 </svg>
