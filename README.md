@@ -95,8 +95,16 @@ Context Mesh provenance also identified historical or repository-owned candidate
 - `ev2-limits-validation` and `asc-sds-phase2` were authored by other engineers according to Git history;
 - `speak` had direct high-confidence creation evidence and a current source, so it is included.
 
-See [PROVENANCE.md](PROVENANCE.md) for the detailed inclusion method and [DOCUMENTATION-STANDARD.md](DOCUMENTATION-STANDARD.md) for maintenance rules.
-The follow-up Context Mesh provenance sweep is recorded in [CONTEXT-MESH-DISCOVERY.md](CONTEXT-MESH-DISCOVERY.md).
+Repository-level documentation is consolidated under [`docs\`](docs/README.md):
+
+- [Catalogue](docs/CATALOGUE.md)
+- [Provenance and scope](docs/PROVENANCE.md)
+- [Context Mesh discovery](docs/CONTEXT-MESH-DISCOVERY.md)
+- [Documentation standard](docs/DOCUMENTATION-STANDARD.md)
+- [Skill relationships](docs/SKILL-RELATIONSHIPS.md)
+- [Maintenance playbook](docs/MAINTENANCE-PLAYBOOK.md)
+- [Glossary](docs/GLOSSARY.md)
+- [Machine-readable catalogue](docs/catalogue.json)
 
 ## Validation
 

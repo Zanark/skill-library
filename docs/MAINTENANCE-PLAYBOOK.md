@@ -68,7 +68,7 @@ When an MCP tool, CLI command, or runtime changes:
 5. Copy the exact `SKILL.md`.
 6. Record source path and SHA-256 in `source-inventory.json`.
 7. Produce all required documentation files.
-8. Add it to `README.md`, `CATALOGUE.md`, `catalogue.json`, `SKILL-RELATIONSHIPS.md`, and `GLOSSARY.md` as applicable.
+8. Add it to `..\README.md`, `CATALOGUE.md`, `catalogue.json`, `SKILL-RELATIONSHIPS.md`, and `GLOSSARY.md` as applicable.
 9. Run validation.
 
 ## Removing a skill
