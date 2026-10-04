@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Skill Library</title>
+  <desc id="desc">Nine authored Copilot workflows shown as connected nodes in a dark blue knowledge graph.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.5" stop-color="#101b35"/>
+      <stop offset="1" stop-color="#17234a"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#68e1fd" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#68e1fd" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#65d6ff"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000814" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="875" cy="205" r="260" fill="url(#glow)"/>
+
+  <g opacity=".12" stroke="#9ccaff">
+    <path d="M0 70H1200M0 140H1200M0 210H1200M0 280H1200M0 350H1200"/>
+    <path d="M100 0V420M200 0V420M300 0V420M400 0V420M500 0V420M600 0V420M700 0V420M800 0V420M900 0V420M1000 0V420M1100 0V420"/>
+  </g>
+
+  <g transform="translate(72 92)">
+    <rect x="0" y="0" width="74" height="74" rx="18" fill="url(#accent)" filter="url(#shadow)"/>
+    <path d="M22 23h30v8H30v12h22v8H30v12h-8z" fill="#07111f"/>
+    <circle cx="52" cy="59" r="6" fill="#07111f"/>
+    <text x="0" y="128" fill="#f5f8ff" font-family="Segoe UI, Arial, sans-serif" font-size="51" font-weight="700" letter-spacing="2">SKILL LIBRARY</text>
+    <text x="2" y="168" fill="#aab9d6" font-family="Segoe UI, Arial, sans-serif" font-size="21">Nine authored Copilot workflows. One evidence-backed archive.</text>
+    <rect x="0" y="202" width="306" height="38" rx="19" fill="#ffffff" fill-opacity=".07" stroke="#8ab4ff" stroke-opacity=".35"/>
+    <text x="22" y="227" fill="#bfe9ff" font-family="Consolas, monospace" font-size="15">SOURCE  |  WORKFLOW  |  OPERATIONS</text>
+  </g>
+
+  <g transform="translate(760 52)" stroke="#76cfff" stroke-opacity=".42" stroke-width="2">
+    <path d="M138 158L45 76M138 158L238 55M138 158L292 143M138 158L260 248M138 158L130 307M138 158L28 260M138 158L6 160M138 158L122 16"/>
+  </g>
+
+  <g transform="translate(760 52)" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" filter="url(#shadow)">
+    <g transform="translate(138 158)">
+      <circle r="53" fill="#102c4d" stroke="#69dcff" stroke-width="3"/>
+      <circle r="39" fill="#173b63"/>
+      <text y="-4" fill="#f3fbff" font-size="17" font-weight="700">CONTEXT</text>
+      <text y="18" fill="#8fddff" font-size="13">MESH</text>
+    </g>
+    <g transform="translate(45 76)">
+      <circle r="34" fill="#252550" stroke="#a78bfa" stroke-width="2"/>
+      <text y="5" fill="#eee9ff" font-size="12" font-weight="600">CAREER</text>
+    </g>
+    <g transform="translate(238 55)">
+      <circle r="31" fill="#17354b" stroke="#67e8c1" stroke-width="2"/>
+      <text y="4" fill="#dffff7" font-size="11" font-weight="600">DOCS</text>
+    </g>
+    <g transform="translate(292 143)">
+      <circle r="37" fill="#40243e" stroke="#f39ad4" stroke-width="2"/>
+      <text y="4" fill="#ffe7f7" font-size="11" font-weight="600">CLIPS</text>
+    </g>
+    <g transform="translate(260 248)">
+      <circle r="33" fill="#423322" stroke="#ffc86b" stroke-width="2"/>
+      <text y="4" fill="#fff0cf" font-size="11" font-weight="600">NSE</text>
+    </g>
+    <g transform="translate(130 307)">
+      <circle r="35" fill="#183b38" stroke="#6fe1c8" stroke-width="2"/>
+      <text y="4" fill="#e0fff8" font-size="11" font-weight="600">SPEAK</text>
+    </g>
+    <g transform="translate(28 260)">
+      <circle r="32" fill="#283252" stroke="#91acff" stroke-width="2"/>
+      <text y="4" fill="#e8edff" font-size="10" font-weight="600">DAYPLAN</text>
+    </g>
+    <g transform="translate(6 160)">
+      <circle r="30" fill="#293653" stroke="#76baff" stroke-width="2"/>
+      <text y="4" fill="#e5f2ff" font-size="10" font-weight="600">ADO</text>
+    </g>
+    <g transform="translate(122 16)">
+      <circle r="31" fill="#302655" stroke="#b79aff" stroke-width="2"/>
+      <text y="4" fill="#f0eaff" font-size="10" font-weight="600">OFFLOAD</text>
+    </g>
+  </g>
+
+  <text x="1124" y="390" fill="#7990b8" font-family="Consolas, monospace" font-size="13" text-anchor="end">ZANARK / SKILL-LIBRARY</text>
+</svg>
