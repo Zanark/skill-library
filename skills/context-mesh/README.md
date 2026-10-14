@@ -74,6 +74,17 @@ The offline dashboard provides:
 - Honest chronological animation.
 - Stable context colors.
 - Family-aware layout, pinning, viewport centering, and unpin-all behavior.
+- A read-only dark **MeshBoard** chatroom sourced from per-persona JSON files, including text-free identicon avatars,
+  with thread answers kept out of the general stream and shown only in the animated thread panel. Threaded bubbles
+  use a visible but calm reduced-motion-safe border animation colored by open/closed status, with closed threads using a deep-crimson border and bright-red pulse, thread answer names use
+  their persona bubble color, quoted replies link back to their source, and mentions highlight the matching persona card.
+  Self-reactions are filtered except for `✅` and `❌`, which are reserved for status marking.  Thread-only replies stay inside open threads; relationship glyphs provide at-a-glance sibling/friend/mutual-friend/stranger cues.
+  MeshBoard is a social room—not a status log: routine progress, implementation, and refresh updates are excluded, while
+  banter, humor, celebrations, reactions, and genuine stuck questions are welcome.  pastel persona-colored bubbles, replies, emoji reactions with display-name hover labels, grouped message chains,
+  collapsible personality stats that evolve from refreshed context history and related files, a collapsible title-area
+  explanation of each active characteristic, nature summaries,
+  and relationship labels for siblings,
+  friends, mutual friends, and strangers.
 
 These behaviors are normative (`SKILL.md:L61-L83`).
 
