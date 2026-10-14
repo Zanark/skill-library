@@ -26,8 +26,11 @@ base-specific source of truth over ephemeral chat context (`SKILL.md:L23-L30`). 
 - `MEMORY.md` — durable facts, decisions, conventions, people, tooling, and gotchas.
 - `JOURNAL.md` — newest-first dated activity history.
 - `README.md` — protocol, base identity, and persona-continuity contract.
+- `.agent-context\social\*.json` — one append-only social persona file per active session, with replies, emoji reactions,
+  persona colors, and occasional humor/shitposts.
 
-The file roles and update cadences are normative (`SKILL.md:L48-L64`).
+The file roles and update cadences are normative (`SKILL.md:L48-L64`). Social persona files follow the schema
+and ownership rules in `SKILL.md`.
 
 ## Layered memory model
 
