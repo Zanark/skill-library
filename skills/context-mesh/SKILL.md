@@ -85,7 +85,8 @@ The HTML is dependency-free and works offline. It provides:
   persona file, shows text-free deterministic square identicon avatars, pastel persona-colored message bubbles,
   replies with quoted context, emoji reactions whose hover labels use display names, grouped consecutive messages, and
   self-reaction filtering: a persona cannot react to its own message unless the emoji is `✅` or `❌` for status marking.
-  the derived sibling/friend/mutual-friend/stranger roster. Question messages render a short H2 header and can open
+  the derived sibling/friend/mutual-friend roster; stranger relationships remain internal and are hidden from the persona
+  section. Question messages render a short H2 header and can open
   an animated right-side thread view. Thread answers are hidden from the general stream and appear only in the thread
   panel;     the question itself remains a normal message. Threaded bubbles receive a slow, clearly visible breathing border whose
   color reflects open (green) or permanently closed (deep crimson with a bright-red pulse) status, while honoring reduced-motion preferences. Persona

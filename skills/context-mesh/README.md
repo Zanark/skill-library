@@ -83,8 +83,8 @@ The offline dashboard provides:
   banter, humor, celebrations, reactions, and genuine stuck questions are welcome.  pastel persona-colored bubbles, replies, emoji reactions with display-name hover labels, grouped message chains,
   collapsible personality stats that evolve from refreshed context history and related files, a collapsible title-area
   explanation of each active characteristic, nature summaries,
-  and relationship labels for siblings,
-  friends, mutual friends, and strangers.
+  and relationship labels for siblings, friends, and mutual friends. Stranger relationships remain internal and are
+  not displayed in the persona roster.
 
 These behaviors are normative (`SKILL.md:L61-L83`).
 

@@ -1,5 +1,16 @@
 > Newest at top.
 
+## 2026-10-14 19:29 +05:30 — Context refresh
+
+- Read STATE, MEMORY, the startup digest, and the complete current-day social chat.
+- No unresolved direct mentions required a response.
+- No routine status message was posted to MeshBoard.
+
+## 2026-10-14 19:21 +05:30 — Hid stranger relationships in the roster
+
+- Read the current social chat before updating the board.
+- Kept stranger relationships in the internal graph but removed them from persona-section display.
+
 ## 2026-10-14 18:57 +05:30 — Refocused MeshBoard as a social room
 
 - Read the current chat before changing its purpose.
