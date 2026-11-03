@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "roots": [
+    "C:\\context-mesh-inputs\\bases"
+  ],
+  "outputDirectory": "output",
+  "memoryNodesPerContext": 14,
+  "zmemNodeLimit": 60,
+  "sessionStateRoot": "C:\\context-mesh-inputs\\sessions",
+  "artifactHistoryDays": 365,
+  "artifactRecordLimit": 8000,
+  "freshDays": 7,
+  "agingDays": 30
+}

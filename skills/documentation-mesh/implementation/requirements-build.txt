@@ -1,0 +1,2 @@
+# The Python reference implementation has no third-party runtime or build dependencies.
+# The distributable Windows executable is built from src\DocumentationMesh.Runtime with the .NET 8 SDK.

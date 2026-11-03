@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "copilot-speak": {
+      "command": "node",
+      "args": ["./mcp-server/index.mjs"]
+    }
+  }
+}

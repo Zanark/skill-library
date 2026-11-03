@@ -1,0 +1,14 @@
+Reviewed vertical System Design workflow template
+
+Status: TEMPLATE
+Milestone: Explicit new design-clip request
+Dependencies: 01_LEETCODE.todo; ..\..\docs\LEETCODE-WORKFLOW.md
+Purpose: Preserve design explanations and meaningful diagrams without claiming a LeetCode solve.
+Tasks:
+- Select the system-design workflow explicitly and understand the full source.
+- Author a question_title containing the actual design question.
+- Verify diagram/slide crops, caption clearance, original meaning and source-time mappings.
+- Review and publish through the ordinary immutable workflow gates.
+Acceptance criteria: Relevant diagrams, truthful titles and explicit review; no horizontal design support implied.
+Completion evidence: None until actual new media is inspected.
+Completion log: This is a public template; historical production records remain private.

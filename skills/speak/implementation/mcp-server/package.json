@@ -1,0 +1,10 @@
+{
+  "name": "copilot-speak-mcp",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "MCP server for Windows text-to-speech",
+  "main": "index.mjs",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0"
+  }
+}

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <AssemblyName>documentation-mesh</AssemblyName>
+    <RootNamespace>DocumentationMesh</RootNamespace>
+    <Version>0.1.0</Version>
+    <InformationalVersion>0.1.0</InformationalVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\templates\config.default.json" Link="Resources\config.default.json" LogicalName="DocumentationMesh.config.default.json" />
+    <EmbeddedResource Include="..\..\templates\workspace-readme.md" Link="Resources\workspace-readme.md" LogicalName="DocumentationMesh.workspace-readme.md" />
+    <EmbeddedResource Include="..\..\templates\dashboard\dashboard.css" Link="Resources\dashboard.css" LogicalName="DocumentationMesh.dashboard.css" />
+    <EmbeddedResource Include="..\..\templates\dashboard\dashboard.js" Link="Resources\dashboard.js" LogicalName="DocumentationMesh.dashboard.js" />
+    <EmbeddedResource Include="..\..\templates\dashboard\vendor.min.js" Link="Resources\vendor.min.js" LogicalName="DocumentationMesh.vendor.min.js" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+Public workflow templates, not restored production history
+
+Status: TEMPLATE
+Milestone: Fresh-machine workflow reference
+Dependencies: README.md; AGENTS.md; docs
+Purpose: Keep required workflow entry points available without publishing private ledgers.
+Tasks:
+- WORKFLOWS\01_LEETCODE.todo: reviewed vertical coding clips.
+- WORKFLOWS\02_SYSTEM_DESIGN.todo: reviewed vertical design clips.
+- WORKFLOWS\03_HORIZONTAL_SOLVES.todo: native-layout complete solves.
+- WORKFLOWS\04_TRENDING_MUSIC_EDITS.todo: explicit opt-in music/style workflow.
+- 08_DEVELOPMENT_LEDGER.todo: record actual new work, not invented history.
+Acceptance criteria: Follow the applicable workflow and preserve original media/provenance.
+Completion evidence: None; this is a template, not an approved production.
+Completion log: Original production catalogue is preserved only in the private migration archive.

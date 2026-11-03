@@ -1,0 +1,14 @@
+Explicit music/stylized workflow template
+
+Status: TEMPLATE
+Milestone: Explicit request-local opt-in
+Dependencies: 01_LEETCODE.todo; ..\..\docs\MUSIC-EDITS.md
+Purpose: Preserve speech and rights evidence while adding only authorized music/style treatment.
+Tasks:
+- Confirm the requested route: recommendation, rights-cleared local mix or native-platform handoff.
+- Verify exact recording/version, rights, attribution and any claimed current trend evidence.
+- Preserve narration/source maps; review transitions, ducking and complete output timing.
+- Keep recommendations, credits and authored captions distinct; never upload automatically.
+Acceptance criteria: No fabricated rights/trends/account availability or default changes to unrelated exports.
+Completion evidence: None; collect actual request-specific rights and review receipts.
+Completion log: Private production exceptions/history are not implied by this template.

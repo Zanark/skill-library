@@ -1,0 +1,14 @@
+Native-layout horizontal complete-solve workflow template
+
+Status: TEMPLATE
+Milestone: Explicit horizontal request
+Dependencies: ..\00_INDEX.todo; ..\..\docs\HORIZONTAL-SOLVES.md
+Purpose: Preserve one chronological complete solve per problem in its original full-frame layout.
+Tasks:
+- Opt into horizontal preparation; retain meaningful silent work and actual solve completion.
+- Verify bottom caption rectangles, native camera/layout and every source join.
+- Ground problem/technique/complexity artwork and required image attribution in evidence.
+- Review the intro, dissolve, complete output and immutable publication receipts.
+Acceptance criteria: No vertical cap/stacked feeds; no scoped excerpt misrepresented as a complete solve.
+Completion evidence: None; record actual source coverage and reviewed output for the new request.
+Completion log: Historical requests/approval are not reconstructed by this template.

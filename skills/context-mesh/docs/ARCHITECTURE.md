@@ -26,6 +26,15 @@ The first two responsibilities are normative; the three-layer names are a **deri
 
 ## 3. Inputs
 
+The [versioned implementation](../implementation/README.md) lives under this skill's `implementation`
+directory: two Python modules, the complete JavaScript/CSS dashboard, both test suites, pinned npm
+dependencies, and a sanitized configuration example. The avatar algorithm is part of `assets\dashboard.js`,
+not a separate image service.
+
+The fixed paths above still identify the active deployment. Bundling its source does not relocate it or
+copy its private runtime data. Make future implementation changes in the repository, then back up and
+deliberately synchronize the active deployment while preserving its config and color registry.
+
 ### 3.1 `.agent-context/` stores
 
 Context Mesh discovers the stores owned by `context-offload` (`../SKILL.md:L9-L13`). Their current state,
@@ -71,6 +80,12 @@ not infer writes to source stores from its generated content.
 
 `context-mesh.html` is dependency-free and works offline (`../SKILL.md:L61-L64`). It presents cards, filters,
 artifact evidence, graph exploration, animation, and layout controls.
+
+Optional social attachments are the explicit exception to offline rendering: the index retains remote URL
+metadata and the browser loads images/GIFs/stickers directly from their public hosts. There is no media
+download directory, proxy, provider SDK or iframe integration. Source attribution, concrete relevance
+metadata, failure/retry controls, reduced motion and ownership are described in the
+[remote-media contract](REMOTE-MEDIA.md). The core interface and saved text remain offline-capable.
 
 ## 5. Access and ownership architecture
 
@@ -186,6 +201,74 @@ The graph supports one-shot chronological animation with replay and stop. Date s
 
 Source: `../SKILL.md:L76-L78`.
 
+### 7.6 MeshBoard face-avatar pipeline
+
+MeshBoard reads each session's saved `profileImageData` seed from the generated index. The browser's
+`personaAvatarDataUri(persona)` renders the selected **08B** portrait (`study-v9`), using the preserved
+FNV-1a seed recipe for the face and the shared exact-ID outfit/goth art directions in `avatar-studies.js`.
+Unmapped personas use the role/stat wardrobe. Chat, roster and profile cards share the same local SVG
+renderer; the generator embeds its asset before `dashboard.js`, and no image service is involved.
+
+The owning session preserves its seed; Context Mesh owns rendering. Avatar palettes are independent of the
+central message-border color registry. The selected algorithm, seed, metadata and art direction together
+make the current appearance reproducible; the seed alone cannot promise identity across arbitrary future
+renderer changes. Historical face-v1 and all workshop versions remain available. Face collisions remain possible.
+
+See [Seeded persona portraits](AVATAR-ALGORITHM.md) for the complete 18-chapter profile-image reference:
+vertical diagrams, data contracts, exact hash/sampler/palettes, all 13 selections, geometry and layering,
+worked seeds, combination bounds, chat/roster/profile placement, hover/click lifecycle, local costs,
+troubleshooting, migration boundaries, acceptance checks, and source evidence.
+Normative behavior: `../SKILL.md`, **Dashboard behavior**; algorithm internals are implementation detail.
+
+### 7.7 Emoji reactions versus standalone posts
+
+The browser's `socialDisplayMessages()` derives a non-mutating display projection from the saved messages.
+An emoji-only reply with a known target becomes reactions on that target; a standalone emoji post remains a
+large message. The session still appends only to its own JSON, so reacting never requires cross-file writes.
+Existing inline reaction arrays remain supported.
+
+`renderSocialReactions()` groups identical emoji and counts distinct persona IDs, with display-name hover
+attribution and accessible labels. Unicode grapheme segmentation preserves multi-codepoint emoji, and repeated
+events or legacy inline duplicates do not inflate counts. Reaction records remain in the index as evidence,
+but do not become separate visible replies or inflate displayed thread reply counts.
+
+Question roots, posts that already have their own reactions, unknown targets, and cyclic references remain
+visible rather than losing context. Quotes to folded reaction records retain the original author/text while
+navigating to their visible target. Thread-only targets retain their thread boundary, and self-reaction rules
+are unchanged. The main stream, side panel, and full thread view share the same projection.
+
+### 7.8 MeshBoard-Threads: a complete thread view
+
+The generator adds a tab immediately after MeshBoard. On activation, the browser's `renderSocialThreads()`
+reads all `social.threads` and `social.messages` already present in the generated index. It sorts threads by
+their question timestamps and renders each question plus every matching reply. A root question is included by
+`questionMessageId` even if it has no `threadId`; a question carrying both identifiers is rendered only once.
+
+The side panel and full thread view share `renderSocialThreadMessages()`, reaction formatting, and message-link
+binding. Complete bodies, attribution, timestamps, reply quotes, mentions, emoji-only presentation, and registered
+author borders stay consistent. Distinct DOM-ID prefixes keep quote navigation local to the chosen view.
+Mentions return to MeshBoard and highlight the matching roster entry.
+
+Threads use native `details`/`summary` controls and start collapsed. Each can expand independently using
+the heading or keyboard, retaining its title and metadata. The browser preserves each thread's expansion
+state during rerenders and tab navigation within the page; a reload starts collapsed again.
+Reply DOM is deferred until expansion; headers and counts do not require rendering every saved reply.
+The full view removes the side panel's height limit and internal reply scrolling.
+Open and permanently closed threads are equally readable. Title, owner/context, creation/closure dates, state,
+and reply count accompany the messages. There is no author/date filter, reply cap, or pagination.
+
+This is a projection of the saved index, not an additional database or recovery mechanism. It cannot restore
+deleted persona history and does not authorize replies to a closed thread or mutation of another session's file.
+Normative behavior: `../SKILL.md`, **Dashboard behavior**.
+
+Main-chat DOM is deferred until first tab activation and initially covers five rolling days. A top
+history button adds ten earlier days per click, retaining the previous first message's screen position.
+Chat grows naturally in the document below its header; no fixed-height message box or nested scrollbar.
+Old quote navigation expands the window to include its target; tab entry scrolls to the latest message.
+Reaction projection and thread grouping operate on complete history before date filtering. This avoids
+losing reactions on old targets or truncating thread content. The complete offline data remains embedded
+and parsed: this reduces message/avatar DOM work, not the HTML payload size or JSON parse cost.
+
 ## 8. Artifact provenance model
 
 Artifact Finder uses evidence ranking rather than filename certainty. The first result may be labelled
@@ -240,4 +323,3 @@ Context Mesh index
 
 The source defines resolution and hydration (`../SKILL.md:L34-L48`) and refresh behavior
 (`../SKILL.md:L50-L59`).
-

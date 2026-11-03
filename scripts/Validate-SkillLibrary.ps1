@@ -29,7 +29,8 @@ if (-not (Test-Path -LiteralPath $inventoryPath)) {
 $inventory = Get-Content -Raw -LiteralPath $inventoryPath | ConvertFrom-Json
 
 foreach ($entry in $inventory) {
-    $skillRoot = Split-Path -Parent $entry.destination
+    $destination = Join-Path $repoRoot "skills\$($entry.name)\SKILL.md"
+    $skillRoot = Split-Path -Parent $destination
 
     foreach ($relativePath in $expectedDocs) {
         $path = Join-Path $skillRoot $relativePath
@@ -38,8 +39,8 @@ foreach ($entry in $inventory) {
         }
     }
 
-    if (Test-Path -LiteralPath $entry.destination) {
-        $actualHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $entry.destination).Hash.ToLowerInvariant()
+    if (Test-Path -LiteralPath $destination) {
+        $actualHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $destination).Hash.ToLowerInvariant()
         if ($actualHash -ne $entry.sha256) {
             $errors.Add("Source hash mismatch for $($entry.name): expected $($entry.sha256), found $actualHash")
         }
@@ -53,11 +54,15 @@ foreach ($excludedName in $excludedNames) {
     }
 }
 
-$markdownFiles = Get-ChildItem -Path $repoRoot -Filter '*.md' -File -Recurse |
-    Where-Object {
-        $_.FullName -notmatch '\\.git\\' -and
-        $_.Name -ne 'SKILL.md'
-    }
+$markdownFiles = @(
+    Get-ChildItem -LiteralPath $repoRoot -Filter '*.md' -File
+    Get-ChildItem -LiteralPath (Join-Path $repoRoot 'docs') -Filter '*.md' -File -Recurse
+    Get-ChildItem -LiteralPath (Join-Path $repoRoot 'skills') -Filter '*.md' -File -Recurse |
+        Where-Object {
+            $_.FullName -notmatch '\\(?:node_modules|\.venv|__pycache__)\\' -and
+            $_.FullName -notmatch '\\tests\\fixtures\\' -and $_.Name -ne 'SKILL.md'
+        }
+)
 
 foreach ($file in $markdownFiles) {
     $content = Get-Content -Raw -LiteralPath $file.FullName

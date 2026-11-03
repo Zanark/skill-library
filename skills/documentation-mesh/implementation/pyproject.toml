@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.46.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "documentation-mesh-runtime"
+version = "0.1.0"
+description = "Offline evidence-backed documentation mesh generator."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Debashish Mishra" }]
+dependencies = []
+
+[project.scripts]
+documentation-mesh = "documentation_mesh.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

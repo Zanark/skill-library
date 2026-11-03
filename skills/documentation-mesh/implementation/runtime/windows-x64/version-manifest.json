@@ -1,0 +1,8 @@
+{
+  "name": "documentation-mesh-runtime",
+  "version": "0.1.0",
+  "platform": "windows-x64",
+  "executable": "documentation-mesh.exe",
+  "sha256": "9660f701751da52c6f7251f5d4de772a07250de86109bd7450004bb19f065e3f",
+  "builtAt": "2026-08-26T10:45:29.5688920Z"
+}

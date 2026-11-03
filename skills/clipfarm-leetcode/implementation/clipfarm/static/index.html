@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#002b36">
+  <meta name="description" content="A local-first cutting room. Turn long videos and transcripts into carefully framed, captioned vertical clips.">
+  <title>ClipFarm Studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23cd5c5c'/%3E%3Cpath d='M12 11h17v5H17v8h12v5H12z' fill='%23061418'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to cutting room</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="ClipFarm home">
+        <span class="brand-icon" aria-hidden="true">C</span>
+        <span>ClipFarm <span class="brand-studio">Studio</span></span>
+      </a>
+      <div class="breadcrumb">Workspace <span class="crumb-divider">/</span> <span id="top-project">Overview</span></div>
+      <div class="topbar-right"><span class="local-pill">Local workspace</span><button class="button button-small button-ghost import-launch header-import" type="button"><span aria-hidden="true">+</span> Import video</button></div>
+    </header>
+    <aside class="sidebar" aria-label="Project library">
+      <div class="workspace-identity"><strong>Your workspace</strong><span>ClipFarm Studio</span></div>
+      <button class="button button-lime import-launch sidebar-import" type="button"><span aria-hidden="true">+</span> Import video</button>
+      <nav id="studio-navigation" class="studio-navigation" aria-label="Editor panels" hidden>
+        <a href="#preview-deck"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4m-2-13 5 3-5 3z"/></svg>Editor</a>
+        <a href="#clips-title"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 10h18M8 5l3 5m4-5 3 5"/></svg>Clips</a>
+        <a href="#transcript-title"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 10h4m3 0h3M7 14h10"/></svg>Transcript</a>
+        <a href="#jobs-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></svg>Exports</a>
+      </nav>
+      <div class="sidebar-section-title"><span>Your content</span><span id="project-count" class="count-badge">0</span></div>
+      <div id="library-loading" class="muted small">Opening your library…</div>
+      <nav id="project-list" class="project-list" aria-label="Sources"></nav>
+      <div id="library-empty" class="library-empty" hidden>
+        <span class="outline-film" aria-hidden="true"></span>
+        <p>Your next good cut<br>starts with a source.</p>
+        <span class="small muted">Imported videos stay here.</span>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="local-status"><span class="status-dot" id="health-dot"></span><span id="health-label">Connecting locally</span></div>
+        <p>No cloud uploads.<br>Your footage stays on this machine.</p>
+        <button id="health-retry" class="text-button small" type="button" hidden>Retry connection</button>
+        <div class="sidebar-footer"><span>ON-DEVICE STUDIO</span><span id="version-label">v0.1</span></div>
+      </div>
+    </aside>
+
+    <main id="main" class="main" tabindex="-1">
+      <div id="error-banner" class="banner banner-error" role="alert" hidden><span id="error-message"></span><button id="error-dismiss" class="text-button" type="button" aria-label="Dismiss error">Dismiss</button></div>
+      <div id="health-warning" class="banner banner-warning" hidden></div>
+      <div id="stale-banner" class="banner banner-warning" role="status" hidden><span id="stale-message"></span><button id="stale-reload" class="text-button" type="button">Reload saved project</button></div>
+      <div id="busy-status" class="busy-bar" role="status" hidden><span class="spinner" aria-hidden="true"></span><span id="busy-label">Working…</span></div>
+
+      <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-main">
+          <div class="eyebrow">WORKSPACE OVERVIEW</div>
+          <h1 id="welcome-title">Your content.<br><span>Your next great clip.</span></h1>
+          <p class="welcome-copy">Manage your videos, find the moments worth keeping, and create captioned clips. Your footage stays on your machine.</p>
+          <div class="welcome-actions"><button class="button button-lime button-large import-launch" type="button">Import video <span aria-hidden="true">+</span></button><span class="small muted">Any source length.<br>Always processed locally.</span></div>
+          <div class="welcome-process">
+            <article><span class="step-number">01</span><h2>Start with the story</h2><p>Open a local video, then add a timed transcript or transcribe on-device.</p></article>
+            <article><span class="step-number">02</span><h2>Find your cut</h2><p>Get transcript-based suggestions. Refine the words, timing, and framing.</p></article>
+            <article><span class="step-number">03</span><h2>Make it vertical</h2><p>Review the real render. Export captioned 9:16 clips for Reels and Shorts.</p></article>
+          </div>
+          <div class="welcome-footnote"><span class="tiny-square" aria-hidden="true"></span> Editorial tools, not virality promises. You have the final cut.</div>
+        </div>
+        <aside class="welcome-art" aria-label="Output format and composition guide">
+          <div class="art-topline"><span>THE VERTICAL EDIT</span><span>9:16</span></div>
+          <div class="film-art" aria-hidden="true">
+            <div class="film-perforation"></div>
+            <div class="art-source"><span class="art-source-label">YOUR LONG-FORM SOURCE</span><div class="art-source-lines"><i></i><i></i><i></i></div><div class="art-crop"></div></div>
+            <div class="art-arrow">↓</div>
+            <div class="art-phone"><div class="art-subject"><div></div><i></i></div><div class="art-caption">THE GOOD PART.</div><div class="art-platform"><i></i><i></i><i></i></div><div class="art-safe-label">SPACE FOR THE INTERFACE</div></div>
+            <div class="film-perforation bottom"></div>
+          </div>
+          <div class="art-caption-note">COMPOSITION STUDY · NOT A VIDEO PREVIEW</div>
+          <div class="format-readout"><span><strong>1080</strong> × <strong>1920</strong></span><span>MP4 OUTPUT</span></div>
+          <p class="small muted">Keep faces central, captions readable, and important details clear of platform controls. Review every cut.</p>
+        </aside>
+      </section>
+
+      <section id="workspace" class="workspace" aria-label="Video editor" hidden>
+        <div class="workspace-header">
+          <div class="project-heading"><div class="eyebrow">VIDEO EDITOR</div><h1 id="project-name"></h1><p id="project-meta" class="small muted"></p></div>
+          <div class="project-actions"><span id="save-state" class="save-state">Saved locally</span><button id="refresh-project" class="button button-ghost button-small" type="button" title="Reload the saved project">Reload</button><button id="save-project" class="button button-light" type="button">Save changes</button></div>
+        </div>
+        <div class="editor-grid">
+          <div class="editor-main">
+            <section id="preview-deck" class="preview-deck" aria-label="Source and vertical preview">
+              <div class="source-pane">
+                <div class="panel-heading"><h2><span class="section-number">01</span> Source monitor</h2><span id="source-dimensions" class="micro-label"></span></div>
+                <div id="source-stage" class="source-stage">
+                  <video id="source-video" preload="metadata" playsinline aria-label="Original source video"></video>
+                  <div id="source-overlay" class="source-overlay" aria-label="Source framing controls">
+                    <div id="face-box" class="region-box face-box" hidden><span>FACE</span></div>
+                    <div id="content-box" class="region-box content-box" hidden><span>CONTENT</span></div>
+                    <div id="drawing-box" class="region-box drawing-box" hidden></div>
+                    <div id="focus-marker" class="focus-marker" hidden></div>
+                  </div>
+                  <div id="source-placeholder" class="source-placeholder"><span class="spinner"></span><span>Opening source…</span></div>
+                </div>
+                <div id="playback-error" class="inline-note warning" hidden>This source codec cannot play in this browser. Your source is still usable: create a clip and render a preview to review a browser-friendly MP4.</div>
+                <div class="source-transport">
+                  <button id="play-source" class="button button-small transport-play" type="button" aria-label="Play source">Play</button>
+                  <button id="back-source" class="icon-button" type="button" aria-label="Seek backward 5 seconds">−5</button>
+                  <button id="forward-source" class="icon-button" type="button" aria-label="Seek forward 5 seconds">+5</button>
+                  <output id="source-time" class="timecode">00:00 / 00:00</output>
+                  <button id="mute-source" class="text-button small" type="button" aria-pressed="false">Mute</button>
+                </div>
+                <div class="source-scrubber"><div id="clip-range-highlight" class="clip-range-highlight" hidden></div><input id="source-seek" type="range" min="0" max="1" step="0.01" value="0" aria-label="Source playhead"></div>
+                <div class="source-tools"><label for="draw-mode">On-source tool</label><select id="draw-mode"><option value="none">Playback only</option><option value="focus">Set focal point</option><option value="face">Draw face region</option><option value="content">Draw content region</option></select></div>
+                <p id="draw-help" class="small muted source-help">Pick a clip to frame it. Region coordinates below also work without video playback.</p>
+              </div>
+              <div class="vertical-pane">
+                <div class="panel-heading"><h2><span class="section-number">02</span> Vertical cut</h2><span class="micro-label">9:16</span></div>
+                <div id="vertical-stage" class="vertical-stage">
+                  <video id="preview-video" controls playsinline preload="metadata" aria-label="Rendered vertical preview" hidden></video>
+                  <div id="composition-guide" class="composition-guide">
+                    <div class="guide-overline">COMPOSITION GUIDE</div>
+                    <div id="layout-diagram" class="layout-diagram" data-layout="auto"><div class="diagram-primary"><span id="diagram-primary-label">SUBJECT</span><i class="diagram-head"></i><i class="diagram-shoulders"></i></div><div class="diagram-secondary"><span id="diagram-secondary-label">CONTENT</span><i></i><i></i><i></i></div></div>
+                    <div id="caption-sample" class="caption-sample">Your words, in frame.</div>
+                    <div class="guide-bottom"><span>NOT A RENDER</span><p>Render a preview<br>to see the actual cut.</p></div>
+                  </div>
+                  <div id="safe-overlay" class="safe-overlay" aria-hidden="true"><div class="safe-frame"><span>KEEP KEY DETAILS HERE</span></div><span class="safe-bottom-label">PLATFORM UI BUFFER</span></div>
+                </div>
+                <div class="preview-caption"><span id="preview-status" class="small muted">No rendered preview yet</span><a id="preview-download" class="text-button small" hidden>Download</a></div>
+                <button id="render-preview" class="button button-light full-width" type="button">Render preview <span aria-hidden="true">↗</span></button>
+              </div>
+            </section>
+
+            <section class="clips-panel panel" aria-labelledby="clips-title">
+              <div class="panel-heading"><h2 id="clips-title"><span class="section-number">03</span> Your cuts <span id="clip-count" class="count-badge">0</span></h2><div class="inline-actions"><button id="add-clip" class="text-button" type="button">+ Manual cut</button><button id="open-suggest" class="button button-small button-lime" type="button">Find moments</button></div></div>
+              <div id="clip-list" class="clip-list"></div>
+              <div id="clips-empty" class="section-empty"><span class="empty-rule" aria-hidden="true"></span><h3>There’s a good moment in there.</h3><p>Add a timed transcript for suggested cuts, or make a manual cut at the playhead.</p></div>
+              <div id="batch-toolbar" class="batch-toolbar" hidden><label class="check-label"><input id="select-all-clips" type="checkbox"> Select all cuts</label><span id="batch-count" class="small muted"></span><button id="batch-export" class="button button-small button-ghost" type="button">Export selected</button></div>
+            </section>
+
+            <section class="transcript-panel panel" aria-labelledby="transcript-title">
+              <div class="panel-heading"><h2 id="transcript-title"><span class="section-number">04</span> Transcript <span id="cue-count" class="count-badge">0</span></h2><button id="open-transcript" class="text-button" type="button">Import / transcribe <span aria-hidden="true">↗</span></button></div>
+              <div class="transcript-toolbar"><label class="search-label"><span class="sr-only">Search full transcript</span><input id="transcript-search" type="search" placeholder="Find a word, phrase, or moment…" autocomplete="off"></label><label class="sr-only" for="transcript-scope">Transcript scope</label><select id="transcript-scope"><option value="clip">This cut</option><option value="all">Full source</option></select><button id="add-cue" class="button button-small button-ghost" type="button">+ Caption</button></div>
+              <p id="transcript-note" class="small muted transcript-note"></p>
+              <div id="transcript-list" class="transcript-list"></div>
+              <div id="transcript-empty" class="section-empty"><span class="transcript-glyph" aria-hidden="true"><i></i><i></i><i></i></span><h3>Give your footage a voice.</h3><p>Bring SRT, VTT, timed JSON, or timestamped TXT. Or use optional on-device transcription. Text without timestamps has no timing to align.</p><button id="empty-transcript-import" class="button button-small button-ghost" type="button">Add a transcript</button></div>
+              <button id="transcript-more" class="text-button load-more" type="button" hidden>Show more captions</button>
+            </section>
+
+            <section class="jobs-panel panel" aria-labelledby="jobs-title">
+              <div class="panel-heading"><h2 id="jobs-title"><span class="section-number">05</span> Exports &amp; processing <span id="job-count" class="count-badge">0</span></h2><span id="jobs-summary" class="micro-label">LOCAL PROCESSING</span></div>
+              <div id="job-list" class="job-list"></div>
+              <div id="jobs-empty" class="jobs-empty small muted">Previews, exports, framing analysis, and transcription will appear here. You can leave this project while jobs run.</div>
+            </section>
+            <footer class="workspace-footer"><span>CRAFTED LOCALLY. KEPT LOCALLY.</span><span>Review framing, captions, and platform requirements before posting.</span></footer>
+          </div>
+
+          <aside class="inspector panel" aria-labelledby="inspector-title">
+            <div class="panel-heading"><h2 id="inspector-title">Clip details</h2><span class="micro-label">INSPECTOR</span></div>
+            <div id="inspector-empty" class="inspector-empty"><div class="mini-frame" aria-hidden="true"></div><h3>Every detail, yours.</h3><p>Select a cut to tune timing, framing, and captions.</p></div>
+            <fieldset id="clip-controls" class="plain-fieldset" hidden>
+              <legend class="sr-only">Selected clip settings</legend>
+              <div class="inspector-section">
+                <label class="field-label" for="clip-title">CUT TITLE</label><input id="clip-title" maxlength="120" required type="text" autocomplete="off">
+                <div class="time-fields"><label>IN <input id="clip-start" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" aria-describedby="time-help"></label><label>OUT <input id="clip-end" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" aria-describedby="time-help"></label></div>
+                <div class="time-actions"><button id="set-in" class="text-button small" type="button">Set in at playhead</button><button id="set-out" class="text-button small" type="button">Set out at playhead</button></div>
+                <p id="time-help" class="small muted">Seconds or hh:mm:ss. Clips up to 3 minutes; no source-length cap.</p><p id="clip-validation" class="small warning" role="status"></p>
+                <div id="clip-reason" class="clip-reason" hidden></div>
+              </div>
+              <div class="inspector-section">
+                <div class="field-heading"><label class="field-label" for="clip-layout">FRAMING</label><button id="analyze-clip" class="text-button small" type="button">Analyze cut ↗</button></div>
+                <select id="clip-layout"><option value="auto">Auto · recommend a composition</option><option value="follow">Follow · keep a speaker central</option><option value="fit">Fit · preserve the full frame</option><option value="split">Stack · facecam + content</option><option value="manual">Manual · fixed focal crop</option><option value="leetcode">LeetCode - avatar, code, lower captions</option></select>
+                <p id="layout-help" class="small muted"></p>
+                <label id="results-zoom-control" class="check-label" hidden><input id="results-zoom" type="checkbox"> Animate results zoom and dim the surroundings (camera and captions stay bright)</label>
+                <div id="analysis-result" class="analysis-result" hidden><span id="analysis-label" class="micro-label"></span><p id="analysis-message"></p><ul id="analysis-warnings"></ul></div>
+                <div class="focus-controls"><label for="focus-x">Horizontal focus <output id="focus-x-value">50%</output></label><input id="focus-x" type="range" min="0" max="1" step="0.005" value="0.5"><label for="focus-y">Vertical focus <output id="focus-y-value">50%</output></label><input id="focus-y" type="range" min="0" max="1" step="0.005" value="0.5"></div>
+                <p class="small muted">Focus controls apply to Manual crops, not Auto or Fit. Use the source tool to place the focal point visually.</p>
+                <details id="regions-details" class="inspector-details"><summary>Face &amp; content regions <span>EDIT</span></summary><p class="small muted">Source coordinates, from 0 to 1. Stack puts the face feed above the content feed. Automatic detection cannot reliably identify every feed.</p>
+                  <div class="region-editor" data-region="face_region"><div class="field-heading"><span class="field-label">FACE FEED</span><button class="text-button small clear-region" data-region="face_region" type="button">Clear</button></div><div class="region-inputs"><label>X<input data-axis="x" type="number" min="0" max="1" step="0.001" aria-label="Face region X"></label><label>Y<input data-axis="y" type="number" min="0" max="1" step="0.001" aria-label="Face region Y"></label><label>W<input data-axis="w" type="number" min="0.001" max="1" step="0.001" aria-label="Face region width"></label><label>H<input data-axis="h" type="number" min="0.001" max="1" step="0.001" aria-label="Face region height"></label></div></div>
+                  <div class="region-editor" data-region="content_region"><div class="field-heading"><span class="field-label">CONTENT FEED</span><button class="text-button small clear-region" data-region="content_region" type="button">Clear</button></div><div class="region-inputs"><label>X<input data-axis="x" type="number" min="0" max="1" step="0.001" aria-label="Content region X"></label><label>Y<input data-axis="y" type="number" min="0" max="1" step="0.001" aria-label="Content region Y"></label><label>W<input data-axis="w" type="number" min="0.001" max="1" step="0.001" aria-label="Content region width"></label><label>H<input data-axis="h" type="number" min="0.001" max="1" step="0.001" aria-label="Content region height"></label></div></div>
+                  <p id="region-validation" class="small warning" role="status"></p>
+                </details>
+              </div>
+              <div class="inspector-section">
+                <div class="field-heading"><span class="field-label">SUBTITLES</span><label class="switch-label"><input id="clip-captions" type="checkbox" checked><span>Burn in captions</span></label></div>
+                <label class="sr-only" for="caption-style">Caption appearance</label><select id="caption-style"><option value="clean">Clean · quiet &amp; readable</option><option value="punchy">Punchy · bold emphasis</option></select>
+                <label class="range-label" for="subtitle-y">Caption vertical position <output id="subtitle-y-value">60%</output></label><input id="subtitle-y" type="range" min="0.2" max="0.63" step="0.005" value="0.6"><p class="small muted">Large captions are clamped inward to stay inside conservative margins. Review placement in a rendered preview.</p>
+              </div>
+              <div class="inspector-section inspector-export"><div class="field-heading"><span class="field-label">DELIVERY</span><span class="format-pill">1080 × 1920</span></div><p class="small muted">Vertical MP4 for Instagram Reels &amp; YouTube Shorts. A separate SRT is available when captions exist.</p><button id="export-clip" class="button button-lime full-width" type="button">Export this cut <span aria-hidden="true">↗</span></button><button id="delete-clip" class="text-button danger small" type="button">Remove cut</button></div>
+            </fieldset>
+            <div class="inspector-section safe-settings">
+              <label class="check-label"><input id="safe-toggle" type="checkbox" checked> Show safe-area guide</label>
+              <p class="small muted">Conservative viewing guide, not an official platform guarantee. It does not appear in exports.</p>
+              <details class="inspector-details"><summary>Customize buffers <span>%</span></summary><div class="safe-inputs"><label>Top<input id="safe-top" type="number" min="0" max="45" value="14"></label><label>Bottom<input id="safe-bottom" type="number" min="0" max="60" value="35"></label><label>Left<input id="safe-left" type="number" min="0" max="40" value="6"></label><label>Right<input id="safe-right" type="number" min="0" max="40" value="14"></label></div><button id="safe-reset" class="text-button small" type="button">Reset to conservative defaults</button></details>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    </main>
+  </div>
+
+  <dialog id="import-dialog" aria-labelledby="import-title">
+    <div class="dialog-header"><div><div class="eyebrow">01 / BRING THE SOURCE</div><h2 id="import-title">Something worth cutting.</h2></div><button class="dialog-close icon-button" type="button" aria-label="Close import dialog">×</button></div>
+    <p class="dialog-intro">A short take or an hours-long recording. Everything is processed on this machine.</p>
+    <label class="field-label" for="import-name">PROJECT NAME <span class="muted">(OPTIONAL)</span></label><input id="import-name" type="text" maxlength="160" placeholder="Use the video’s filename">
+    <div class="tab-row" role="tablist" aria-label="Import method"><button id="upload-tab" class="tab active" role="tab" aria-selected="true" aria-controls="upload-panel" type="button">Choose a video</button><button id="path-tab" class="tab" role="tab" aria-selected="false" aria-controls="path-panel" type="button" tabindex="-1">Use a local path <span class="tag">NO COPY</span></button></div>
+    <div id="upload-panel" role="tabpanel" aria-labelledby="upload-tab">
+      <form id="upload-form"><label id="video-drop" class="drop-zone" for="video-file"><span class="upload-symbol" aria-hidden="true">↥</span><strong>Drop your video here</strong><span class="small muted">or choose a file on your computer</span><input id="video-file" class="file-input" type="file" accept="video/*,.mkv,.mov,.mp4,.webm,.avi,.m4v,.mts,.m2ts"></label><p id="video-file-name" class="small muted">No file selected</p><p class="inline-note">For hours-long or very large recordings, use a local path to avoid copying the file into the workspace.</p><button id="upload-submit" class="button button-lime full-width" type="submit">Import selected video ↗</button></form>
+    </div>
+    <div id="path-panel" role="tabpanel" aria-labelledby="path-tab" hidden><form id="path-form"><label class="field-label" for="import-path">ABSOLUTE PATH ON THIS MACHINE</label><input id="import-path" type="text" placeholder="C:\Videos\recording.mp4" required autocomplete="off" spellcheck="false"><p class="inline-note">Opens the original in place—no extra copy. Keep the file at this location while you work. Paste its real path; a browser file picker cannot reveal it.</p><button id="path-submit" class="button button-lime full-width" type="submit">Open local video ↗</button></form></div>
+    <div id="import-progress" class="import-progress" role="status" hidden><progress id="upload-progress" max="1"></progress><div class="field-heading"><span id="import-progress-label" class="small">Importing…</span><button id="cancel-upload" class="text-button small" type="button" hidden>Cancel upload</button></div></div>
+    <p id="import-error" class="dialog-error" role="alert" hidden></p>
+  </dialog>
+
+  <dialog id="transcript-dialog" aria-labelledby="transcript-dialog-title">
+    <div class="dialog-header"><div><div class="eyebrow">02 / FIND THE WORDS</div><h2 id="transcript-dialog-title">The story, with timestamps.</h2></div><button class="dialog-close icon-button" type="button" aria-label="Close transcript dialog">×</button></div>
+    <p class="dialog-intro">Import timed captions to unlock suggested cuts. Imported captions replace the current transcript; you can edit every line afterward.</p>
+    <form id="transcript-form"><label id="transcript-drop" class="drop-zone compact" for="transcript-file"><strong>Choose or drop a transcript</strong><span class="small muted">SRT · WebVTT · timed JSON · timestamped TXT (including Tactiq)</span><input id="transcript-file" class="file-input" type="file" accept=".srt,.vtt,.json,.txt,text/vtt,text/plain,application/json"></label><label class="field-label" for="transcript-content">OR PASTE TIMED TRANSCRIPT CONTENT</label><textarea id="transcript-content" rows="7" required spellcheck="false" placeholder="1&#10;00:00:01,000 --> 00:00:04,000&#10;The moment your story begins."></textarea><div class="transcript-import-bottom"><label class="small muted" for="transcript-filename">Filename / format<input id="transcript-filename" type="text" placeholder="Inferred from content" autocomplete="off"></label><button id="transcript-submit" class="button button-lime" type="submit">Import transcript ↗</button></div></form>
+    <p class="small muted">TXT accepts "00:00:17.199 Spoken words" or a timestamp above a paragraph. Start-only exports need inferred end times; granular lines work better than long blocks.</p>
+    <p class="small muted">Plain, untimestamped text cannot be aligned by itself. Use on-device transcription below to generate timings from the original audio.</p>
+    <section class="transcribe-section" aria-labelledby="transcribe-title"><h3 id="transcribe-title">No transcript? Keep it local.</h3><p id="transcribe-availability" class="small muted"></p><div id="transcribe-options"><label class="field-label" for="transcribe-model">TRANSCRIPTION MODEL</label><select id="transcribe-model"><option value="tiny">Tiny · fastest, less accurate</option><option value="base" selected>Base · balanced</option><option value="small">Small · slower, more accurate</option></select><p class="inline-note">First use downloads the chosen speech model and needs internet access. Audio processing then runs locally—your recording is not sent to an external AI service. Long recordings can take significant time. Existing captions will be replaced.</p><button id="transcribe-start" class="button button-ghost full-width" type="button">Download model if needed &amp; transcribe</button></div></section>
+    <p id="transcript-error" class="dialog-error" role="alert" hidden></p>
+  </dialog>
+
+  <dialog id="suggest-dialog" aria-labelledby="suggest-title">
+    <div class="dialog-header"><div><div class="eyebrow">03 / FIND THE GOOD PART</div><h2 id="suggest-title">A starting point, not a verdict.</h2></div><button class="dialog-close icon-button" type="button" aria-label="Close suggestions dialog">×</button></div>
+    <p class="dialog-intro">Find promising excerpts using transcript structure, phrasing, and your keywords. These are editorial heuristics—not predictions of reach or virality.</p>
+    <form id="suggest-form"><div class="suggest-fields"><label>Minimum seconds<input id="suggest-min" type="number" min="1" max="180" step="1" value="20" required></label><label>Maximum seconds<input id="suggest-max" type="number" min="1" max="180" step="1" value="60" required></label><label>Number of cuts<input id="suggest-count" type="number" min="1" max="30" value="6" required></label></div><label class="field-label" for="suggest-keywords">TOPICS TO LOOK FOR <span class="muted">(OPTIONAL)</span></label><input id="suggest-keywords" type="text" maxlength="1000" placeholder="A subject, phrase, or key idea" autocomplete="off"><p class="inline-note">Suggestions are added to your existing cuts. Review context, correct transcription errors, and adjust each cut before exporting. Unsaved edits are saved first.</p><button id="suggest-submit" class="button button-lime full-width" type="submit">Suggest cuts from transcript ↗</button></form>
+    <p id="suggest-error" class="dialog-error" role="alert" hidden></p>
+  </dialog>
+  <noscript><div class="noscript">ClipFarm needs JavaScript for its local editing workflow. Enable JavaScript and reload this page.</div></noscript>
+</body>
+</html>

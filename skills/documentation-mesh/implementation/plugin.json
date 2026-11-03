@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "documentation-mesh",
+  "version": "0.1.0",
+  "description": "Builds evidence-backed offline documentation catalogues, health reports, provenance indexes, and force-directed knowledge graphs for Markdown collections.",
+  "author": {
+    "name": "Debashish Mishra"
+  },
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "markdown",
+    "knowledge-graph",
+    "provenance",
+    "documentation-health"
+  ]
+}

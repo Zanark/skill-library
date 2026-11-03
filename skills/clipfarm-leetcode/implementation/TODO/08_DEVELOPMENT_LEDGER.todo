@@ -1,0 +1,13 @@
+Fresh-machine development ledger template
+
+Status: TEMPLATE
+Milestone: New work only
+Dependencies: 00_INDEX.todo
+Purpose: Record engineering evidence separately from editorial review and user approval.
+Tasks:
+- Append dated requested scope, changed files, validation evidence and unresolved limitations.
+- Link immutable output receipts and the applicable workflow record.
+- Never infer historical completion or user approval from restored files or successful encoding.
+Acceptance criteria: Each new entry is grounded in actual work and distinguishes approval.
+Completion evidence: None; no production is represented by this template.
+Completion log: Historical entries remain in the private migration archive.

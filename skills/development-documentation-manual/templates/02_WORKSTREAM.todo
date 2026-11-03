@@ -1,0 +1,26 @@
+Status: NOT_STARTED
+Milestone: <observable milestone>
+Dependencies: <actual prerequisite IDs or None>
+Purpose: <why this bounded outcome matters; include scope exclusions>
+
+Tasks:
+  [ ] <bounded implementation/authoring action>
+  [ ] <directly affected test or actual output inspection>
+  [ ] <affected documentation/index/ledger update>
+
+Acceptance criteria:
+  <observable behavior/output, including important failure or cancellation path>
+  <privacy/environment/no-mutation exclusions where applicable>
+  <required human gate only if actually part of this workstream>
+
+Completion evidence:
+  Source/revision: <actual changed files and revision if available>
+  Commands/results: <actual commands, outcome and receipt location>
+  Artifacts: <full paths, edition/hash where relevant>
+  Observed boundary: <fixture/local/target-qualified and actual observation>
+  Human acceptance: <not requested/pending/explicit revision approval>
+  Publication: <not requested/local only/actual verified remote state>
+  Limitations: <remaining uncertainty or None with justification>
+
+Completion log:
+  <date> - <actual action, effect, failure/decision and evidence>

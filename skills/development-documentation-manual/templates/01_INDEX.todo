@@ -1,0 +1,23 @@
+Status: NOT_STARTED
+Milestone: <project or release outcome>
+Dependencies: None
+Purpose: Navigate stable workstreams without duplicating their task details.
+
+Tasks:
+  [ ] Define and link actual workstreams.
+  [ ] Reconcile index status when a workstream changes.
+
+Workstreams:
+  <stable ID> | <filename.todo> | <status> | <actual dependency IDs or None>
+
+Acceptance criteria:
+  Every workstream has a stable filename and current state.
+  Dependencies refer to real prerequisites, not implied file order.
+  Completed workstreams are not renumbered to insert new work.
+  The development ledger is linked.
+
+Completion evidence:
+  <actual index/workstream consistency observations; no invented completion>
+
+Completion log:
+  <date> - <actual change and reason>

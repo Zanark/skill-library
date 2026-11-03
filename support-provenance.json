@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "boundary": "Approved implementation source only. Private state and internal zmem stay outside Git.",
+  "collections": [
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\clipfarm",
+      "files": 30
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\tests",
+      "files": 25
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\skills",
+      "files": 1
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\pyproject.toml",
+      "files": 1
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\MANIFEST.in",
+      "files": 1
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\CHANGELOG.md",
+      "files": 1
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\Start-ClipFarm.ps1",
+      "files": 1
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\Start-ClipFarm.txt",
+      "files": 1
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\Install-ClipFarmSkill.ps1",
+      "files": 1
+    },
+    {
+      "destination": "skills\\clipfarm-leetcode\\implementation\\Install-ClipFarmSkill.txt",
+      "files": 1
+    },
+    {
+      "destination": "skills\\documentation-mesh\\implementation",
+      "files": 37
+    },
+    {
+      "destination": "skills\\speak\\implementation",
+      "files": 6
+    }
+  ],
+  "maintainedInRepository": [
+    "skills\\context-mesh\\implementation",
+    "skills\\clipfarm-leetcode\\implementation\\README.md",
+    "skills\\clipfarm-leetcode\\implementation\\AGENTS.md",
+    "skills\\clipfarm-leetcode\\implementation\\constraints-windows-py313.txt",
+    "skills\\clipfarm-leetcode\\implementation\\docs",
+    "skills\\clipfarm-leetcode\\implementation\\TODO",
+    "examples\\context-mesh"
+  ]
+}

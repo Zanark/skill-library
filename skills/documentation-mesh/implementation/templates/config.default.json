@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "sourceRoots": [],
+  "includeGlobs": [
+    "**/*.md",
+    "**/*.mdx"
+  ],
+  "excludeGlobs": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/_site/**",
+    "**/obj/**",
+    "**/bin/**",
+    "**/output/**"
+  ],
+  "generatedDocumentGlobs": [
+    "**/_site/**",
+    "**/generated/**",
+    "**/obj/**"
+  ],
+  "archivedDocumentGlobs": [
+    "**/archive/**",
+    "**/archived/**",
+    "**/deprecated/**"
+  ],
+  "outputDirectory": "output",
+  "cachePath": "output/build-cache.json",
+  "gitHistoryEnabled": true,
+  "sessionProvenanceEnabled": false,
+  "sessionStateRoot": "~/.copilot/session-state",
+  "historyWindowDays": 365,
+  "freshDays": 180,
+  "agingDays": 365,
+  "staleDays": 730,
+  "maximumOptionalEntityNodes": 2500,
+  "defaultEvidenceLevel": "strong",
+  "defaultDetailLevel": "documents",
+  "browserExecutablePath": "",
+  "workspaceLocation": "",
+  "runtimeVersion": "0.1.0",
+  "pluginVersion": "0.1.0",
+  "allowWorkspaceInitialization": true
+}

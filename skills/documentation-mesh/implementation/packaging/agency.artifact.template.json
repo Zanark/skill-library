@@ -1,0 +1,11 @@
+{
+  "artifacts": [
+    {
+      "type": "universal",
+      "name": "documentation-mesh-runtime",
+      "version": "0.1.0",
+      "feed": "https://pkgs.dev.azure.com/REPLACE_ORG/REPLACE_PROJECT/_packaging/REPLACE_FEED/upack/download",
+      "addToPath": true
+    }
+  ]
+}

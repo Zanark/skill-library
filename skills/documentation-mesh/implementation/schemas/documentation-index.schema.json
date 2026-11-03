@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/documentation-mesh/documentation-index.schema.json",
+  "title": "Documentation Mesh index",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "generatorVersion",
+    "sourceRoots",
+    "statistics",
+    "documents",
+    "sections",
+    "entities",
+    "graph",
+    "timeline",
+    "healthFindings",
+    "warnings",
+    "skippedFiles"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string" },
+    "generatorVersion": { "type": "string" },
+    "sourceRoots": { "type": "array", "items": { "type": "string" } },
+    "statistics": { "type": "object" },
+    "documents": { "type": "array", "items": { "type": "object" } },
+    "sections": { "type": "array", "items": { "type": "object" } },
+    "entities": { "type": "array", "items": { "type": "object" } },
+    "graph": {
+      "type": "object",
+      "required": ["nodes", "edges"],
+      "properties": {
+        "nodes": { "type": "array", "items": { "type": "object" } },
+        "edges": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "timeline": { "type": "array", "items": { "type": "object" } },
+    "healthFindings": { "type": "array", "items": { "type": "object" } },
+    "gitProvenance": { "type": "object" },
+    "artifactProvenance": { "type": "object" },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "skippedFiles": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": true
+}

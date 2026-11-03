@@ -1,0 +1,12 @@
+{
+  "name": "copilot-speak",
+  "description": "Makes Copilot CLI speak its responses aloud using Windows text-to-speech",
+  "version": "0.1.0",
+  "author": {
+    "name": "mishrad"
+  },
+  "license": "MIT",
+  "keywords": ["tts", "speech", "voice", "speak", "accessibility"],
+  "skills": ["skills/"],
+  "mcpServers": ".mcp.json"
+}

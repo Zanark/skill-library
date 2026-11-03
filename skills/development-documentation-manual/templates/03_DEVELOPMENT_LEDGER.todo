@@ -1,0 +1,26 @@
+Status: IN_PROGRESS
+Milestone: Continuous attributable development history
+Dependencies: None
+Purpose: Preserve cross-workstream actions, effects, reasoning and evidence.
+
+Tasks:
+  [ ] Append an entry at meaningful completed or blocked milestones.
+  [ ] Keep historical failures and superseded decisions traceable.
+
+Acceptance criteria:
+  Entries distinguish actual actions from proposals.
+  Claims link to source/workstream/artifact evidence.
+  Private context, raw transcripts and secrets are not copied here.
+  An ongoing ledger is not marked DONE merely because one task finished.
+
+Completion evidence:
+  <actual entry IDs/dates and linked receipts>
+
+Completion log:
+  <date> - <workstream ID>
+    Action: <what actually changed>
+    Immediate effect: <what was observed>
+    Reason: <why this action was selected>
+    Mechanism: <how it produced the effect>
+    Evidence: <source/test/artifact>
+    Limits/next consequence: <what remains or follows>

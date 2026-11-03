@@ -1,0 +1,8 @@
+- name: Home
+  href: README.md
+- name: Guides
+  items:
+    - name: Setup
+      href: Guides/Setup.md
+    - name: Troubleshooting
+      href: Guides/Troubleshooting.md

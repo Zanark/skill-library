@@ -20,6 +20,24 @@ A living library of authored Copilot skills, source snapshots, and operating doc
 
 **[Documentation](docs/README.md)** · **[Source inventory](source-inventory.json)**
 
+## Install on another Windows machine
+
+The runtime engines, tests, templates and supporting assets are included, not
+just skill prompts. Requires Windows x64, Python 3.13 and Node.js 18+.
+
+```powershell
+python .\scripts\verify_portable_payload.py
+python .\scripts\install_skill_library.py --install-dependencies
+```
+
+See **[portability and private restoration](docs/PORTABILITY.md)** for setup,
+authentication boundaries and preserving identity/history. Private state,
+recordings and internal zmem stay in a separate Git-ignored migration archive.
+A clone alone does not restore accounts or private conversations.
+
+Try the [fictional offline Context Mesh demo](examples/context-mesh/context-mesh.html)
+for graph animation, Battleground, MeshBoard, avatars and threads.
+
 ```powershell
 .\scripts\Validate-SkillLibrary.ps1
 ```

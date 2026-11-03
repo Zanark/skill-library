@@ -1,0 +1,1236 @@
+{
+  "schemaVersion": 1,
+  "scope": "Public payload only; no private state or authentication.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 145,
+      "sha256": "df08e9e2b9b6a92702f97471e16db0fb785be15ea0c60083bcd2170b286fe956"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 319,
+      "sha256": "97b489ac64e0e8399e71b36bdef912c3824b58958d4bf043e79bb72c294eef51"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1956,
+      "sha256": "e7a626045a5ca0f7fece4ccfeaae3b038744ca7dc04270130591f3e17c7adf58"
+    },
+    {
+      "path": "docs\\CATALOGUE.md",
+      "bytes": 2081,
+      "sha256": "23e0ddf0372b1f8cec20b82d76d1c1b8ab141f04d15791790427d884dd796747"
+    },
+    {
+      "path": "docs\\CONTEXT-MESH-DISCOVERY.md",
+      "bytes": 3712,
+      "sha256": "4bf6a4645aacd81807d406c0639bb3746378ee6322f76bd6b3bf822c7bcfea80"
+    },
+    {
+      "path": "docs\\DOCUMENTATION-STANDARD.md",
+      "bytes": 2373,
+      "sha256": "45744145e6338b9f17ed467e2ce30bc3a3f0eac509601ca964cc9b97a4de9d1c"
+    },
+    {
+      "path": "docs\\GLOSSARY.md",
+      "bytes": 2424,
+      "sha256": "6512937374448ebf1c57f3b6638cabc079ee1ce9e0cb404efc908e76eea9a04c"
+    },
+    {
+      "path": "docs\\MAINTENANCE-PLAYBOOK.md",
+      "bytes": 3615,
+      "sha256": "768ee8bb6672ab55c3399a1da54987fb4750e86a7c9a43109815ecb3380d4cef"
+    },
+    {
+      "path": "docs\\PORTABILITY.md",
+      "bytes": 12519,
+      "sha256": "54c540e88026b63c87463543d55d2a35ade3e6a769ed9857b9c4d8ec829276ed"
+    },
+    {
+      "path": "docs\\PROVENANCE.md",
+      "bytes": 4797,
+      "sha256": "ea0fdfd7e6266e82237d5bf5ba41c7ce04c711a1f62d1e0703a0cd7959a6f76a"
+    },
+    {
+      "path": "docs\\README.md",
+      "bytes": 1088,
+      "sha256": "1c296870ffe750a6468ad95eae806054a03a7cee25cfae3fbc4df7c3ea717c6b"
+    },
+    {
+      "path": "docs\\SKILL-RELATIONSHIPS.md",
+      "bytes": 4122,
+      "sha256": "d1562945288a5088d793a77fc5b4814a2401d0a7faa25532df55a7f11ce4b1bd"
+    },
+    {
+      "path": "docs\\assets\\skill-library-hero.svg",
+      "bytes": 4534,
+      "sha256": "d37b71e0b5546cfacc5a4e484bcaa45e04bb36bab1828e4fc8b7bbc3a1500d8d"
+    },
+    {
+      "path": "docs\\catalogue.json",
+      "bytes": 3832,
+      "sha256": "1c4a2d01ace7fee8181f07a8402f3cbdfab546e2ff479bfaaa39b1943f6b4109"
+    },
+    {
+      "path": "examples\\context-mesh\\CONTEXT-MESH.md",
+      "bytes": 3424,
+      "sha256": "ca6cafcae3b3f3a79f9d162f92f70ea314d862db0668c48c8424a2fd66cb8c2a"
+    },
+    {
+      "path": "examples\\context-mesh\\THIRD-PARTY-NOTICES.txt",
+      "bytes": 42054,
+      "sha256": "bcc4cde2403d2d3a6e48ef871ef745d475aa12fea3d378f443c4c3d26c614dc9"
+    },
+    {
+      "path": "examples\\context-mesh\\context-index.json",
+      "bytes": 57599,
+      "sha256": "a7baf74539174d22c1a1cf0decccaa81c1f48a2e7af1369a2b42ec329231abaa"
+    },
+    {
+      "path": "examples\\context-mesh\\context-mesh.html",
+      "bytes": 489521,
+      "sha256": "a4970b58fd951075e9d5429d1d03219619c24f2f7ce6bee6de1636098c485b85"
+    },
+    {
+      "path": "examples\\context-mesh\\meshboard-archive.html",
+      "bytes": 486801,
+      "sha256": "33cc297bdc66a304a556ff1ad3830adb6f7849fe7d424dda70b1e472bad0e195"
+    },
+    {
+      "path": "examples\\context-mesh\\meshboard-archive.json",
+      "bytes": 19902,
+      "sha256": "c503ea896976ec51ff6c58424307ff6460516a7c4bfc2954dcd3286aa70a16dc"
+    },
+    {
+      "path": "scripts\\Validate-SkillLibrary.ps1",
+      "bytes": 3907,
+      "sha256": "c6173326088a3bcf0fb78ff6c139edf589950e9c58ff03f57f28ef1c78a6eb15"
+    },
+    {
+      "path": "scripts\\build_portable_demo.py",
+      "bytes": 7656,
+      "sha256": "0b42b69835259d3c3b79a4f2cff1d60412d1c96633699752d8e267b163c4665e"
+    },
+    {
+      "path": "scripts\\discover_skill_inputs.py",
+      "bytes": 2548,
+      "sha256": "659067a42b2d907d6ac8a4743367777ed6808301637a527471f6e368ab72adf0"
+    },
+    {
+      "path": "scripts\\install_skill_library.py",
+      "bytes": 8509,
+      "sha256": "ae9d8e616f12b3fdcc2c97a854dc00973aafa7b9a1e4226264744905c62d3cca"
+    },
+    {
+      "path": "scripts\\merge_skill_state.py",
+      "bytes": 3487,
+      "sha256": "1c29cd8762f306cdec4e5af67d91b86ca1c21e5be004e13b06bc88c704c4a197"
+    },
+    {
+      "path": "scripts\\package_skill_support.py",
+      "bytes": 16570,
+      "sha256": "17ce13f8981e8ca800a2b488a6ba3379be8788aafc8e6ea88e0a36b51e294b14"
+    },
+    {
+      "path": "scripts\\restore_skill_state.py",
+      "bytes": 4882,
+      "sha256": "8746dd638a3273765697154d0dc5bf3a6a84d056b048aaa1130bb80b71477c2d"
+    },
+    {
+      "path": "scripts\\verify_portable_payload.py",
+      "bytes": 2479,
+      "sha256": "230786ed6fb416bde0d2f93da4d856ece2a1eda8b929e191c642a0e6355c6c93"
+    },
+    {
+      "path": "skills\\ado-workplan\\README.md",
+      "bytes": 5016,
+      "sha256": "f032839b2e9190fb8c53017d19d061e55158182b2f3ca7187901021cbe5ce00f"
+    },
+    {
+      "path": "skills\\ado-workplan\\SKILL.md",
+      "bytes": 11024,
+      "sha256": "7882e9ee0062217c018f86864caff4d1d3258454271a3df2db56477c97c9dcca"
+    },
+    {
+      "path": "skills\\ado-workplan\\docs\\ARCHITECTURE.md",
+      "bytes": 6390,
+      "sha256": "f0ea6386df0ebd636aee3816354f58ea88ff24116bfaa26be3f86eb896bb6280"
+    },
+    {
+      "path": "skills\\ado-workplan\\docs\\EXAMPLES.md",
+      "bytes": 7476,
+      "sha256": "9a549dc3ca3de684154eef37ea65b9ddb59a250360c368198f2d7d749462abe3"
+    },
+    {
+      "path": "skills\\ado-workplan\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 7501,
+      "sha256": "99ea7622e586278b9f2eed02c1fb923b55194ca1b1f63bf0309cf89551e62bbd"
+    },
+    {
+      "path": "skills\\ado-workplan\\docs\\REFERENCE.md",
+      "bytes": 8197,
+      "sha256": "b1c576ba6715fd367228f13bdbcc5ee04e29a601852a7370029de9ae20a345b7"
+    },
+    {
+      "path": "skills\\ado-workplan\\docs\\WORKFLOW.md",
+      "bytes": 8672,
+      "sha256": "31e84f808b200f8389a81b05c8d9eef181fb70617b52e793a9e4a32e498c4c6d"
+    },
+    {
+      "path": "skills\\career-forensics\\README.md",
+      "bytes": 7345,
+      "sha256": "0fe545b14e691169dd7289ec1ab498065cc7f955e52c8a1d8f999c4337464d0f"
+    },
+    {
+      "path": "skills\\career-forensics\\SKILL.md",
+      "bytes": 22758,
+      "sha256": "2146f1ee3b8cc704d456fbd16a08f97817352cd5da444781e8a47bcb267eede7"
+    },
+    {
+      "path": "skills\\career-forensics\\docs\\ARCHITECTURE.md",
+      "bytes": 9638,
+      "sha256": "f847e4f84e2bd0c05f73332200a9fda0d89ca560b44223b48b39b57a48ad58f1"
+    },
+    {
+      "path": "skills\\career-forensics\\docs\\EXAMPLES.md",
+      "bytes": 8489,
+      "sha256": "7c0f1fb8c50f69ad9d8d67a955505d40a85f1635730ef21677647905d9b6853a"
+    },
+    {
+      "path": "skills\\career-forensics\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 9917,
+      "sha256": "c2309b0c4e3f5f2d647923c30f10056b4660435de34ce49d36cceb5d0ae03b83"
+    },
+    {
+      "path": "skills\\career-forensics\\docs\\REFERENCE.md",
+      "bytes": 10702,
+      "sha256": "79d0f679d2d3a6af29e0fce5ec711bde9ee4a030cdcfae309e6113a08c1d952e"
+    },
+    {
+      "path": "skills\\career-forensics\\docs\\WORKFLOW.md",
+      "bytes": 10144,
+      "sha256": "64295c7638930dfe612942b7de9dae66f7f024b789ee07966e6ed6cdaf3a00d9"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\README.md",
+      "bytes": 6452,
+      "sha256": "c3774bc32be20cb693ecfc320091be71f9727962f663f82f6357e73864a72899"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\SKILL.md",
+      "bytes": 38788,
+      "sha256": "971d1ed03749a6511aea9551fb3ea5aa08bc12bde3573fe020a78a782df14bda"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\docs\\ARCHITECTURE.md",
+      "bytes": 9581,
+      "sha256": "9cff2e2395a7a836da6986cbb26a95e35e0b785196ee6e1350fa44b70f88456d"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\docs\\EXAMPLES.md",
+      "bytes": 7814,
+      "sha256": "df0d3e92d71d4454d67837167cb6ccf084216a8afbf72f7a1653cebff81dce59"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 9642,
+      "sha256": "47f123593a99903ba268478ac1c4d13bd115ce74d1f2ec5d4bb2603430bcf009"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\docs\\REFERENCE.md",
+      "bytes": 10151,
+      "sha256": "894d413f4d7744e5e0b526a105f4b310bb5cb405673a0409e54c24322598fe2f"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\docs\\WORKFLOW.md",
+      "bytes": 11644,
+      "sha256": "89804cf444058d028c39c27a746e0802898fe8d51b60be2d3e22db5b37c976be"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\AGENTS.md",
+      "bytes": 1118,
+      "sha256": "d51bb2bff7b031381b991c1f4816efc3c8eb3185a3dcf10f53e67d8405775f7d"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\CHANGELOG.md",
+      "bytes": 2170,
+      "sha256": "b7b56018e9432d0499d4b2595acbc31a1090da132f3c2ea955617c2bf0f4cb02"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\Install-ClipFarmSkill.ps1",
+      "bytes": 1013,
+      "sha256": "968b47ac823a11bef82bdb0ffdc7aa51dbe35e3cc92b016e6b101c2cda3e8f87"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\Install-ClipFarmSkill.txt",
+      "bytes": 1013,
+      "sha256": "968b47ac823a11bef82bdb0ffdc7aa51dbe35e3cc92b016e6b101c2cda3e8f87"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\MANIFEST.in",
+      "bytes": 353,
+      "sha256": "ccb28ed8a62d10d40d269d2ea9b6e806694486b19c5d500e481f58c0f30e571f"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\README.md",
+      "bytes": 25100,
+      "sha256": "5481040e080adf1e10c8ab85c51e01e0f5a77d7cb9f4f1cd2141848f203d7ec2"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\Start-ClipFarm.ps1",
+      "bytes": 1853,
+      "sha256": "ff6a993d9238fc4462d4a6381dd1ca88f0c82ba5b33dcf0da3de8ff7da9af6c3"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\Start-ClipFarm.txt",
+      "bytes": 1853,
+      "sha256": "ff6a993d9238fc4462d4a6381dd1ca88f0c82ba5b33dcf0da3de8ff7da9af6c3"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\TODO\\00_INDEX.todo",
+      "bytes": 895,
+      "sha256": "4fd7bdfa4f2ec01195e0893563f509f07847466e2d79454705e9b711a0ab0353"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\TODO\\08_DEVELOPMENT_LEDGER.todo",
+      "bytes": 724,
+      "sha256": "0c3299ace6de5fe63687b192667e9546c520ec0bff9875084690ee32bd4c6624"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\TODO\\WORKFLOWS\\01_LEETCODE.todo",
+      "bytes": 946,
+      "sha256": "234e51d7f2c8947d0d8144db860c05a777f8041861ecc82b1b0f5e72babe98e5"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\TODO\\WORKFLOWS\\02_SYSTEM_DESIGN.todo",
+      "bytes": 865,
+      "sha256": "9a83b246d4da32422576610fc5262b03263da5fc3df82937348c7cd692440b32"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\TODO\\WORKFLOWS\\03_HORIZONTAL_SOLVES.todo",
+      "bytes": 933,
+      "sha256": "e6da073a33e1eaa506f1f915b4dcee0b4c9b20591f6c326b6fa7a3dfb94feb79"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\TODO\\WORKFLOWS\\04_TRENDING_MUSIC_EDITS.todo",
+      "bytes": 939,
+      "sha256": "db256741614ed6ba8b724e5097f2402ccc653c05acfa278fcd8ddb0cc335c4c9"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\__init__.py",
+      "bytes": 45,
+      "sha256": "1fc1cf3fbf449bcefa2923cb47eed95734c4b946a6e49104dc1401731ace2657"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\__main__.py",
+      "bytes": 1347,
+      "sha256": "16e9814cc0f0e7b15c95ef16908b0a5994779131a836bad2bdaefc53bdd43fa3"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\app.py",
+      "bytes": 14235,
+      "sha256": "4b97bb3c9ece649a0e9efcfc49b45e789cd8db687e6d0c6faab08ae8dde76fed"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\editorial_corrections.py",
+      "bytes": 975,
+      "sha256": "c768ca248dd61bfe7017812c9d8fd08ae10c8ddf055b7ba01b582f893d1e65a3"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\explorer.py",
+      "bytes": 12812,
+      "sha256": "d8e6af9191d53dff078e1c899599a71f5521ef82d662c10602ba23aaad19339d"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\export_paths.py",
+      "bytes": 4211,
+      "sha256": "245f45b8ab03befd66f87871fa2a24ef365cc484b35e37c2a9696bf538f0df42"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\horizontal.py",
+      "bytes": 21420,
+      "sha256": "4e06381c77b364f387fc871b10b5219c09bbfe5fe87fa6f2543174c3b6fcfb9c"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\horizontal_models.py",
+      "bytes": 1028,
+      "sha256": "ac2ba0508363068bdad6bea9ec477f50b2c430fee1cc44e7d6cc04f3caf7e7cb"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\jobs.py",
+      "bytes": 9038,
+      "sha256": "045a8d18d1812ebfaf262e08a64db9c16d5e5335321622b9b0d3fc0bcba76726"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\media.py",
+      "bytes": 45780,
+      "sha256": "6fa491cfdd324a7cca0a685e112a88588cfad3bee0f144c19c4d0a9ecc629609"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\models.py",
+      "bytes": 7320,
+      "sha256": "6133293b03f38dff9c430d27b56c9a40967bd106dd07ea94c2a58ddf60469711"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\montage.py",
+      "bytes": 22508,
+      "sha256": "2fab4cdbb61fed3e51e6c36b933b1f6ba7e4e5f6f11a3989747244e086ce2a02"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\music.py",
+      "bytes": 14456,
+      "sha256": "543ed41516ecfa13ed9619674fccd3b37ab0ccf78e9cdbd4238c1243a7b09520"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\music_models.py",
+      "bytes": 11324,
+      "sha256": "187c1bb5a33d95ed147fae57edb40a6360aa15c0481c5318ed735594e7d7e31e"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\music_recommendations.py",
+      "bytes": 3235,
+      "sha256": "5458a08d31e81e2ac115cfc35a95dab9b5e3409bc9a7b31c35176c42a9339262"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\posting.py",
+      "bytes": 13811,
+      "sha256": "057ccc7eb5c4423a4cab086d05f3d3b4706fad94da9e522b1a71288b63f2d5ea"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\question_titles.py",
+      "bytes": 976,
+      "sha256": "e05eed95d22fb2b4efff08354a3026ef31feb7fbbb080e945bd51b14836c0cd5"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\solution_artwork.py",
+      "bytes": 25087,
+      "sha256": "b7e94f0e43afd6963a8a00dfb41bec05302ea1bd9d53f50094482d3db45f3249"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\source_transcripts.py",
+      "bytes": 19036,
+      "sha256": "01af2dd3e94bf9230823709fd8ae4d3bb1131fb464e17c407b17715156294c73"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\static\\app.js",
+      "bytes": 68472,
+      "sha256": "6ea69c25df36bdc12fb3d860d65ddd01c79c27f83eeaed585586a8395b7f7f98"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\static\\index.html",
+      "bytes": 30949,
+      "sha256": "1c091f42bc706df27b9ba4dc5c2cc6b10703678d4c48be6c20ab87946d9c7fda"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\static\\styles.css",
+      "bytes": 42827,
+      "sha256": "80ab34b8e3f7ea52b567a13d25cb3d6b03541b006781722c319c3099e9d6f5ee"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\store.py",
+      "bytes": 4316,
+      "sha256": "06efef5a8ad32c043e6af87b210067f17c9c711882d2ecf2fc9e3f615fe8475a"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\stylized.py",
+      "bytes": 5197,
+      "sha256": "e3a13add59e6b9fd2d1d782ab79f5a6a5c2902fa0c957ac1b08c2a936385be19"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\thumbnails.py",
+      "bytes": 17281,
+      "sha256": "21afa08aeba02856245586f6a0affa6aa27437bbaef16ace7d5307e4fe41e176"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\transcribe.py",
+      "bytes": 3979,
+      "sha256": "2b3931a48ea54dca5ca6e9ab6df515fd7fd1b9d4e834feb2a0ecd7a54cd5b8bc"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\transcripts.py",
+      "bytes": 10763,
+      "sha256": "448c9d78db7961a7199c32eed113870901cadf7bb0cf4262eaf48a00785b2b99"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\workflow.py",
+      "bytes": 91622,
+      "sha256": "91f8cbef73a26e5a55c90b2bba59cf36491986fe5d6807fc200bcf3feb00db3a"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\workflow_models.py",
+      "bytes": 9744,
+      "sha256": "e80b7bd622589ac94239f05c6fe4f6e12e121082f5fe3ceb34983ba5d83dd1cb"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\clipfarm\\workflow_vision.py",
+      "bytes": 25450,
+      "sha256": "1d021f89d1aa9bd8d1d88f98e6f29b8f410b316237fe18ad9ef109e852b0a274"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\constraints-windows-py313.txt",
+      "bytes": 1170,
+      "sha256": "68df7f811c0b3c25320225d5a5c2df53a6b8dbb01cf8f0f4c79fa01c81b49121"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\docs\\HASHMAP-AUDIO-VIDEO-PLAN.md",
+      "bytes": 751,
+      "sha256": "dab6247cb20fb0ea40e0819e81dfd93fc4716a9d3045957e8708e6be725d4e23"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\docs\\HORIZONTAL-SOLVES.md",
+      "bytes": 16093,
+      "sha256": "f8b1d087861b1b3f4a59c2afb68f3832783713d22118e65b5f36426e5e3c2ebc"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\docs\\LEETCODE-WORKFLOW.md",
+      "bytes": 7002,
+      "sha256": "9878341b018d949172af51b39aad3e3bfde9be1e1c00d19c5a46420f58402056"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\docs\\MUSIC-EDITS.md",
+      "bytes": 3258,
+      "sha256": "ebed8978d730bdf4f30d32ccf47a776094724acdeebc7200c4974e81919f5d82"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\pyproject.toml",
+      "bytes": 978,
+      "sha256": "e1dde065e47d4b6b99b47640f99c6ee5d3c640f2ffe4e047cf3e57881a54823d"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\skills\\clipfarm-leetcode\\SKILL.md",
+      "bytes": 42374,
+      "sha256": "c8eb953dc1b4456188966a4417c0f87b4c13ad6115270f44819c388df102ebab"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_api.py",
+      "bytes": 10426,
+      "sha256": "06db6ddfc9180d09d7200cca0ccb6e5e1a2c7fe25b96cbff57fb59a9b8ea936b"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_browser.py",
+      "bytes": 11868,
+      "sha256": "e1289f1662309bb6f467d718c9606e5f6b09cc23568edfa8973b833285df365e"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_editorial_corrections.py",
+      "bytes": 4048,
+      "sha256": "907eff8e3f177ce15e1b7d85760ae63403848e4a1d0c3eafe0d07828306843ea"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_explorer.py",
+      "bytes": 18976,
+      "sha256": "78cf5bb62732372926ece625948ba8efb89357e98db700a2098bac0a37e55fb0"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_export_paths.py",
+      "bytes": 6461,
+      "sha256": "836ed4ec3db75ba1d890f22201787181fac490bfdb359205c294955d2b57cb99"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_horizontal.py",
+      "bytes": 25719,
+      "sha256": "47f3b2c128c58a1682f807feb8bddc6aaf4ce10553182a554634fe5e6a5d1afc"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_horizontal_workflow.py",
+      "bytes": 24001,
+      "sha256": "dab3cc3c7e8bf2b545ba9d3f0ebebed1fa5987dc3635a19aaeb1dc5c40fb6c85"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_media.py",
+      "bytes": 16931,
+      "sha256": "62409c7ecc5e71b68de88a017ef547a003780cbf9e0da69e708903a5e5446db7"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_media_integration.py",
+      "bytes": 30283,
+      "sha256": "1d860b6a003149b92c3d70d498e1ba92fb09fff7b081ae9387e246502087570b"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_montage.py",
+      "bytes": 17286,
+      "sha256": "87078ee874258f682a02d0e51a5a2815b5bcf91ec2845a369533cb917cb37fd9"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_music.py",
+      "bytes": 34860,
+      "sha256": "e0949513c4688bae3895197de38991feda6ecb01ff4b2337000e3ecdb1614ec3"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_music_recommendations.py",
+      "bytes": 8767,
+      "sha256": "e8fe215047ad91a9ade553705507c81dc9f2ce83936ae16112e111bbd745da09"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_pipeline.py",
+      "bytes": 4183,
+      "sha256": "73fac7c48f4e7527b762106046aec734794f696d66d5230f22ab808eccfeca0d"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_posting.py",
+      "bytes": 25052,
+      "sha256": "9d74975ccd78978d147a8203afe990184c3919cb4b2223c16b44f07b4fc07e74"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_question_titles.py",
+      "bytes": 10004,
+      "sha256": "aac39b13e53955cb2848adad247d7061e1aa8664835f00dd7787a5c02a26bbab"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_solution_artwork.py",
+      "bytes": 36951,
+      "sha256": "bac1aa32491884679383ea4115dc9499966f2f9b25f017c92b78857997a75140"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_source_transcripts.py",
+      "bytes": 23822,
+      "sha256": "f31575c2f1143ee9a45a40a65c4d82916e452047e5260cd35a63551978bd6356"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_stylized.py",
+      "bytes": 13068,
+      "sha256": "a2d0eab67d9a04a2d070dcc4887c0facb47f1796d487223536e46395d34dea39"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_stylized_workflow.py",
+      "bytes": 43233,
+      "sha256": "23050089790accea82549aa940b36371b84af40b634e33dddbf9582bd30f8579"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_thumbnails.py",
+      "bytes": 15006,
+      "sha256": "a7f8a790874bb7bf5f3a235fa9d4f9ba9ef741aeb5625ab59207cd75ac1f1765"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_transcribe.py",
+      "bytes": 2471,
+      "sha256": "0a9b42e24a18314c56cd4f52ebee39508ffab1752d7a861f43a94be87e9775e5"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_transcripts.py",
+      "bytes": 5175,
+      "sha256": "98e47644d61675737b7cbdaf08718a073581b1c8a35184c408795d873ff41bd8"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_workflow.py",
+      "bytes": 59239,
+      "sha256": "24a92a9cd756b21b2eec4ae0cf4e82fc5c232decf7a8406903a85e1997078f50"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_workflow_prepare.py",
+      "bytes": 12724,
+      "sha256": "b6598e3379bced677f28ad3029f1b9af4be3b34ae4efad4787e484c3598e3e7f"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_workflow_vision.py",
+      "bytes": 16829,
+      "sha256": "5e9244939126490e15115506898f51ab47e6a040d23366277f0a3fc9d21a661d"
+    },
+    {
+      "path": "skills\\context-mesh\\README.md",
+      "bytes": 11366,
+      "sha256": "47ed7afecebd0406f346e207a173792acba6bb07211b4f1ad437a53a51fa6425"
+    },
+    {
+      "path": "skills\\context-mesh\\SKILL.md",
+      "bytes": 33708,
+      "sha256": "4330233bd962f2e409f1a6bfe9f3896d6f9574fd390d0a141d097c0bdebd7b3f"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\ARCHITECTURE.md",
+      "bytes": 15276,
+      "sha256": "dfa657dc0d17d32a3a3e7bff2b2f01356b6a15d4ea1507f39bef94600c47ca07"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\AVATAR-ALGORITHM.md",
+      "bytes": 59473,
+      "sha256": "cf91ae65f9e76b47525a8260b6370acbc53af9a48f67ef84b56e627b99c5243a"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\AVATAR-STUDIES.md",
+      "bytes": 39641,
+      "sha256": "174b3951ae8633fe59674d3fc4f94b9635168c72e473c10f47f6b76da513e90e"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\EXAMPLES.md",
+      "bytes": 6825,
+      "sha256": "66ae0923aa9960a2fb086ac36c8bee768318d725040d14ed1a8e0232a9830b7c"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 27595,
+      "sha256": "d814c24764f5f02a6caad54a29bb8818a6e4d97e423970e2e733136fad9c6c64"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\REFERENCE.md",
+      "bytes": 7139,
+      "sha256": "758400b640a315b6582418681e1192ceb8b033244a05e43ec5c6bc14beb99a25"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\REMOTE-MEDIA.md",
+      "bytes": 11942,
+      "sha256": "c0099d3b816e31ad1a3354c8c0742aef72b0c2c0e0128393be2548168eee1d81"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\WORKFLOW.md",
+      "bytes": 8215,
+      "sha256": "2f6a7a968aa57a71c6dc4f4f627c698b05587a5e73fb303449c3bae680a613be"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\avatar-studies-earrings.png",
+      "bytes": 220204,
+      "sha256": "428f51f8c4440a602d65284c01e41f09e2f276de58294d53ee0e5ddf7d4a7c1b"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\avatar-studies-full-cast-wardrobes.png",
+      "bytes": 410316,
+      "sha256": "93be052a5abb3ff16c1730165c6e2aeeb27ff3b5141df29f4fb462cb01e94253"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\avatar-studies-goth.png",
+      "bytes": 171320,
+      "sha256": "e67bf3c5d3c197f6cef13291755c896004ae004259c4b5ac47adec3c484df51e"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\avatar-studies-individual-outfits.png",
+      "bytes": 280350,
+      "sha256": "3589441725cfbd8d9bb17013cb9c279f6199d555bcb068d66e1aa89d194382ce"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\avatar-studies-journey.png",
+      "bytes": 359129,
+      "sha256": "188f5ac3b65771c2cd49442d3a3cfa270ea618295bff430e398f927207dc5cf5"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\avatar-studies-neck-outline.png",
+      "bytes": 194662,
+      "sha256": "f213ef1352ed2eed0df98bddad481b069fc225a0342a65a361e04b9749aeb208"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\avatar-studies-tailoring.png",
+      "bytes": 119332,
+      "sha256": "23b6df289e1ebb8d05e3ac691444d5328a91b3b008e4dac86080a5f0b4dd617a"
+    },
+    {
+      "path": "skills\\context-mesh\\docs\\assets\\meshboard-faces.png",
+      "bytes": 72785,
+      "sha256": "262741ca6bfb0ce63241411b114f504aef0814d96194b824ec51ccbba9e66c26"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\.gitignore",
+      "bytes": 61,
+      "sha256": "4707ec5166bf48658d6127a20c55f9b903993c962f1c150ca7ed13fc76c9f351"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\README.md",
+      "bytes": 24150,
+      "sha256": "37c6b85f89b03a581a166a2073fbd7f6df0ab463d8b1c05e1b651a2b6567d8ba"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\assets\\avatar-studies.js",
+      "bytes": 76180,
+      "sha256": "9d4263a7f66bf97f6bd5c1e207531c9a0141a388ada5c0a58e13d4d5e507900a"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\assets\\dashboard.css",
+      "bytes": 28515,
+      "sha256": "7457c42a89dfbba00d399a9066c5b5b806939aaffcc35e59f7470d679189feb4"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\assets\\dashboard.js",
+      "bytes": 122564,
+      "sha256": "240b61c3176c4d43aeb08843e160773ba2ef242ddbd7c96084ef2eb00e893487"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\config.example.json",
+      "bytes": 336,
+      "sha256": "c903c6c84525e49beec3003e05a832ed07c505519564c7c9127189b0d96c0636"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\package-lock.json",
+      "bytes": 11539,
+      "sha256": "eea24f8a80227d0a0f9dd734ca79ab1866735ab7179f51ace8bb926a7ba4d6c2"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\package.json",
+      "bytes": 436,
+      "sha256": "5708d1d1241a870078a6ef99dad07571acfd58b3f987e0149817a20737bc899b"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\scripts\\artifact_provenance.py",
+      "bytes": 16628,
+      "sha256": "ef976fd5132b6488255f1bf28bafebb2d48cc8c0c40eef1cd753e785caa41cbd"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\scripts\\build_context_mesh.py",
+      "bytes": 74301,
+      "sha256": "08531b69cb7b393502652e1313be878bdf23abcd3b426c77a8c837e7116ae5d4"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\scripts\\social_personality.py",
+      "bytes": 16060,
+      "sha256": "de645d75c7e58f8cffe71a9c2378f7b4bde26b42623c40c02855c94944968a22"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\archive_smoke.mjs",
+      "bytes": 6888,
+      "sha256": "dc3854639c4b810c6cde9777214e491ed9988e01b6730d7a3a6ef8a3601b5ffb"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\avatar_preview.mjs",
+      "bytes": 11461,
+      "sha256": "8386ae80fab9a55716543cb38523a5b899cf4a3b5c171c9152de7f71504d3e45"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\avatar_studies.mjs",
+      "bytes": 61142,
+      "sha256": "dc2ef7a31bf718369ab7f2454bce30e7eeb1a392c0e171249a810d7945bb41d6"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\battleground_smoke.mjs",
+      "bytes": 20103,
+      "sha256": "4c1dd6f6d610b53ca7541d6b1ef5018e3f0c25ba2b9001aac9340e17628212db"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\browser_smoke.mjs",
+      "bytes": 51554,
+      "sha256": "95c867050d3c8822925169a16f358b862d5532949f4644047aceb551dcc105ef"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\media_smoke.mjs",
+      "bytes": 24167,
+      "sha256": "ca98d6b8dea7011c2df2788c5af0d0b73d0e3bd89179238433e39389abfaca07"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\personality_smoke.mjs",
+      "bytes": 17735,
+      "sha256": "ecba08632206679d62bd1c740f23fe618f6f03937a4fad6731fce4b91a3d2d25"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\test_build_context_mesh.py",
+      "bytes": 48577,
+      "sha256": "09930afd0642d17ebef3e80a9bfa7108818f6867812a4e9a97aba542a2a99167"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\test_social_personality.py",
+      "bytes": 5370,
+      "sha256": "fdfdb85676f4da3bec37da29961574e26462773040d8319c4ba209401c538694"
+    },
+    {
+      "path": "skills\\context-offload\\README.md",
+      "bytes": 9216,
+      "sha256": "12afa4d7f673b2b0a26fc2b9b9ee36db836dbea271e5fee3f52b63fa278a5033"
+    },
+    {
+      "path": "skills\\context-offload\\SKILL.md",
+      "bytes": 49334,
+      "sha256": "f61ebf3a2bb8c7057294c20a4b7554c26c48a93e635ffc75d1e73d407bf8769f"
+    },
+    {
+      "path": "skills\\context-offload\\docs\\ARCHITECTURE.md",
+      "bytes": 9751,
+      "sha256": "e81affd75b83b91dd36b4117fb254ee0274f901b633b5fa291b823945aceaa8b"
+    },
+    {
+      "path": "skills\\context-offload\\docs\\EXAMPLES.md",
+      "bytes": 8561,
+      "sha256": "d9e2482b753291ce109edc5791877be460eb4841f486e743fdc78c4a69f9bb68"
+    },
+    {
+      "path": "skills\\context-offload\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 14801,
+      "sha256": "e9808610028e7e44e7c6929e43d12c083e8bfd08818ddd44cc95438229945258"
+    },
+    {
+      "path": "skills\\context-offload\\docs\\REFERENCE.md",
+      "bytes": 8804,
+      "sha256": "10d5458059fc7085f49b9ac658ae3434e91dcb07fb45573fcced3eceaa34315a"
+    },
+    {
+      "path": "skills\\context-offload\\docs\\WORKFLOW.md",
+      "bytes": 10303,
+      "sha256": "7d6d23dc4532048b64e123f2318705e808b03482114ff64e0c23310544857dda"
+    },
+    {
+      "path": "skills\\dayplan\\README.md",
+      "bytes": 4323,
+      "sha256": "b2e47fc12d6860670d6087112efb8aa66260008442c2f983a3d35ac74e68a1b7"
+    },
+    {
+      "path": "skills\\dayplan\\SKILL.md",
+      "bytes": 7710,
+      "sha256": "5f80ae2c6bf95f795388d41dc4197dd4823ceb0122c43ace5e0f550d48b477da"
+    },
+    {
+      "path": "skills\\dayplan\\docs\\ARCHITECTURE.md",
+      "bytes": 6476,
+      "sha256": "76e3dd9a46efb050def0c14693d19200b3d9af827277e01f058ea12dc91d5a8e"
+    },
+    {
+      "path": "skills\\dayplan\\docs\\EXAMPLES.md",
+      "bytes": 7416,
+      "sha256": "ebbdaad9ca00510a619ded017a1f2f76bab809066df87e6bc9d336a11fb0671c"
+    },
+    {
+      "path": "skills\\dayplan\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 7219,
+      "sha256": "d4de0d7cec165373c1ccecd58a24c4cbf14eaa702b36bb6ccc00e47dbb5bd157"
+    },
+    {
+      "path": "skills\\dayplan\\docs\\REFERENCE.md",
+      "bytes": 7492,
+      "sha256": "2272ded2ae15f10864bd49a61c100e148c762d2e3c4cc13a991d44ef7de42f4e"
+    },
+    {
+      "path": "skills\\dayplan\\docs\\WORKFLOW.md",
+      "bytes": 8246,
+      "sha256": "bd125def0cdcfeecc9b58989065961cd5ac8fdd658304233443b46c70529a6ea"
+    },
+    {
+      "path": "skills\\documentation-mesh\\README.md",
+      "bytes": 6920,
+      "sha256": "ebd6b3a8fec206e454720abbc3fbfc775c29a3d62b4d582ffd2927cf87743ecc"
+    },
+    {
+      "path": "skills\\documentation-mesh\\SKILL.md",
+      "bytes": 3229,
+      "sha256": "cc1d1c6a8a8d3ebe8e735498faf888a1c8ade7e65af297ee26440f2e3c4bfdb5"
+    },
+    {
+      "path": "skills\\documentation-mesh\\docs\\ARCHITECTURE.md",
+      "bytes": 11808,
+      "sha256": "0deed64fb1a271cd8369db148ab302e54b6e87f09b0d71ab645f9d358186cfe3"
+    },
+    {
+      "path": "skills\\documentation-mesh\\docs\\EXAMPLES.md",
+      "bytes": 6966,
+      "sha256": "ad4403d9806b3184e9b0921f5d67b3337bedfb7405ae79cd543af4d30914a611"
+    },
+    {
+      "path": "skills\\documentation-mesh\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 8975,
+      "sha256": "47610e33cadd8d18d63f572c386cd664495fe62d61d0dc53d20392c31033d397"
+    },
+    {
+      "path": "skills\\documentation-mesh\\docs\\REFERENCE.md",
+      "bytes": 9333,
+      "sha256": "438d45f768c2cdc271794d659092b80c4f8729ff13a29f1e4c191c34c4d88b67"
+    },
+    {
+      "path": "skills\\documentation-mesh\\docs\\WORKFLOW.md",
+      "bytes": 9014,
+      "sha256": "ec6815355631f5b881d75f05535a4d6eb71b45b3de68cb2c223c20efacd62e84"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\LICENSE",
+      "bytes": 1094,
+      "sha256": "7843459dd8c885b601e393b31807d00219b4f40f3c61a75eca9530d87954a772"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\README.md",
+      "bytes": 9864,
+      "sha256": "4bb4d38e8d365e11bfa430589eb8b1b8b97c1253fa192c02bbfac7b1b299efd7"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\THIRD_PARTY_NOTICES.md",
+      "bytes": 773,
+      "sha256": "5fe2bdc2a2763219cf786b65144d8413af439b958455eb9d87e424ab8f1c84c3"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\agency.json",
+      "bytes": 293,
+      "sha256": "84bae63f20d251556a92260c510af633dc3bc3b8dfcd57e723cb395403c35822"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\package-lock.json",
+      "bytes": 13859,
+      "sha256": "beb7c8fed653506ec99ffa3da6edb764c6def2bda21bda159722081b55a977a0"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\package.json",
+      "bytes": 407,
+      "sha256": "4be025b2016f62038ce19d4d76c51017a9bd3190171717402c303c8cb4ffae14"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\packaging\\agency.artifact.template.json",
+      "bytes": 280,
+      "sha256": "a25e09433fb7c6cb514c4ebd123ed448aa37e10e41aad311049b3db38faeb794"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\packaging\\build-runtime.ps1",
+      "bytes": 1949,
+      "sha256": "a9736a1807b4e33e6fa59c86572d8d35cda30050a1aee14ac66de19c68413525"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\packaging\\create-zip.ps1",
+      "bytes": 1409,
+      "sha256": "5ea0cd32efe1dfc9ab503d5f1784dd3ca3c66fba46b9ab6b4de5328f5ab0eaeb"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\plugin.json",
+      "bytes": 520,
+      "sha256": "55cf42fa8011ab119c243f1630c98f6cc7581008e04d6357ee3fc32e42f89ced"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\pyproject.toml",
+      "bytes": 541,
+      "sha256": "a46cae83cf57c5b788d1981fe23b60fa09e0d2a2ec1e50d8472be963388e9b94"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\requirements-build.txt",
+      "bytes": 194,
+      "sha256": "1575e7639268e0cf4320323985d026c52e10168ccf6b64314281926c6327743f"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\runtime\\windows-x64\\documentation-mesh.exe",
+      "bytes": 35213957,
+      "sha256": "9660f701751da52c6f7251f5d4de772a07250de86109bd7450004bb19f065e3f"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\runtime\\windows-x64\\version-manifest.json",
+      "bytes": 269,
+      "sha256": "e72d9716b4c15106c7e4928d3680de243e58e977cc5fb2727112645234700b15"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\schemas\\config.schema.json",
+      "bytes": 2018,
+      "sha256": "41f7a82a8f2bb39617526172dddd6537ba42198e33329e3da296df0b5ce7bda2"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\schemas\\documentation-index.schema.json",
+      "bytes": 1631,
+      "sha256": "8ee98b26e6034fa006f8469a8cd6fa09773d7d07e061f8aafb5609cb5a8be7b7"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\skills\\documentation-mesh\\SKILL.md",
+      "bytes": 3229,
+      "sha256": "cc1d1c6a8a8d3ebe8e735498faf888a1c8ade7e65af297ee26440f2e3c4bfdb5"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\src\\DocumentationMesh.Runtime\\DocumentationMesh.Runtime.csproj",
+      "bytes": 1683,
+      "sha256": "1c2f3d33ccd30f74c25b8dff44e217bd33597df57e237c2c210bec75c51b060f"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\src\\DocumentationMesh.Runtime\\Program.cs",
+      "bytes": 96741,
+      "sha256": "d3d68263927583121b492d550edd48e682d61a615fd96d1398aa9b55f2347d05"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\src\\documentation_mesh\\__init__.py",
+      "bytes": 19,
+      "sha256": "75bbfee2d7e7fd79429e903b36af8986f47b79767ef3f1fc22ef37aa0c6e5669"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\src\\documentation_mesh\\__main__.py",
+      "bytes": 83,
+      "sha256": "d220d88dd9a25cd0629c5176dd6532a2db1da40eb014a8e80796b0ddeb134918"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\src\\documentation_mesh\\cli.py",
+      "bytes": 4598,
+      "sha256": "2ceb5abf355dfd1af7bcb42e0e61457592c90d6b04d253ce13f12a2a179d739a"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\src\\documentation_mesh\\core.py",
+      "bytes": 63030,
+      "sha256": "6eb2d9b21d2c07711fe72c30602502a7526c6de3307d53e28870fa4033a1f917"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\src\\documentation_mesh_entry.py",
+      "bytes": 101,
+      "sha256": "1f9ea64cbceaca1a836e4ff1c09685ccb3f36e44bc3430a0aa3b508cf7b948db"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\templates\\config.default.json",
+      "bytes": 1021,
+      "sha256": "6b9864e47522562e58fd512b75dee7cd4f13cb84f8b9385a4c7897288164a50e"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\templates\\dashboard\\dashboard.css",
+      "bytes": 4967,
+      "sha256": "ef52e453837b5ad210b2561d1722c8c273f39f28149cdd0ab07a030f9941c251"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\templates\\dashboard\\dashboard.js",
+      "bytes": 28500,
+      "sha256": "304fa1d392463fd6aaf6f1500ea2ff55eff76ac0aa38f0c634e9bd4c024cc498"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\templates\\dashboard\\vendor.min.js",
+      "bytes": 208768,
+      "sha256": "cf7b450a37730053e62c54f1de576480829055e275992a8a27dd438c4f542b32"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\templates\\workspace-readme.md",
+      "bytes": 578,
+      "sha256": "c2476da80b165d8567fe6154576bbc2ba07994e90aab9a30888e996317c6c3a6"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\browser_smoke.mjs",
+      "bytes": 5123,
+      "sha256": "e9726c4b2380968fc17313b9013e53f99f335cab2005ac1bfd353f5db89d30f1"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\consumer-contract.ps1",
+      "bytes": 2407,
+      "sha256": "734ec7c46f3d2976f0310ba0fb8bf9a5ecd00299b1d046f70ecfd55c7493a891"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\fixtures\\corpus\\Guides\\Setup.md",
+      "bytes": 103,
+      "sha256": "d45af743cfb8b38490f270124f00259dd09e1e2edc81e990450f2cfa53c722ef"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\fixtures\\corpus\\Guides\\Troubleshooting.md",
+      "bytes": 91,
+      "sha256": "aa67ed03d513ebb365b05b44ed97355012375632c2b84b615a5cdf79ed2dac66"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\fixtures\\corpus\\README.md",
+      "bytes": 246,
+      "sha256": "abce73d76e3b261b1a4e888ff503fbec0aab91e07ce308c465d5a1b442425fe7"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\fixtures\\corpus\\toc.yml",
+      "bytes": 175,
+      "sha256": "2bc9a63e66d227df766c7f131b4e36d2f2a811d8c46840cdd926e4433cf71a52"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\plugin_contract\\test_plugin_contract.py",
+      "bytes": 3365,
+      "sha256": "8193db4fd76d78de37a0936ffa073598d60dd5f2fb571c4d45a19b5d0e1129ea"
+    },
+    {
+      "path": "skills\\documentation-mesh\\implementation\\tests\\unit\\test_runtime.py",
+      "bytes": 4720,
+      "sha256": "8dfa27fa99f882acc2bc437cb8a4c5ee26258f4ecad518eb305d0beadb32d9eb"
+    },
+    {
+      "path": "skills\\nse-advisor\\README.md",
+      "bytes": 6611,
+      "sha256": "16a790da7856d8cacfb43c46085f67d33c35701f9288d6a7d6f24aa6ea8026da"
+    },
+    {
+      "path": "skills\\nse-advisor\\SKILL.md",
+      "bytes": 12714,
+      "sha256": "8920d28aa1e2ebae2a93f3f9f354ded2b68e448b8db029fe8835ef1783a8af95"
+    },
+    {
+      "path": "skills\\nse-advisor\\docs\\ARCHITECTURE.md",
+      "bytes": 8892,
+      "sha256": "44b07f2fcb9f40e50e80699df3dbbe593837ce0b34effba8451c68e197525b89"
+    },
+    {
+      "path": "skills\\nse-advisor\\docs\\EXAMPLES.md",
+      "bytes": 7483,
+      "sha256": "c9bbafd131d1f4ff62663bdd3b8a9f8e7999b156acd6259909c65bcf9dc8226c"
+    },
+    {
+      "path": "skills\\nse-advisor\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 10508,
+      "sha256": "11c689252bb30c25231bf1c2f220411107d9248c734d9663afa6b03539c994ea"
+    },
+    {
+      "path": "skills\\nse-advisor\\docs\\REFERENCE.md",
+      "bytes": 9037,
+      "sha256": "587924a42df948cb3bccd6d06192931db03a694d9a9c31836473af3704218e78"
+    },
+    {
+      "path": "skills\\nse-advisor\\docs\\WORKFLOW.md",
+      "bytes": 8064,
+      "sha256": "fff575c98e0484ca62a437c3b2597e08676816d1dd90d084bcc12599a0801c49"
+    },
+    {
+      "path": "skills\\speak\\README.md",
+      "bytes": 9478,
+      "sha256": "9e934fafc8366ed47ad59771bc11bd3bc8f22d9f6b3e227d7de9e31f5098c3cc"
+    },
+    {
+      "path": "skills\\speak\\SKILL.md",
+      "bytes": 948,
+      "sha256": "add3bfafac4cb75a89e47bdcdb5e8d7c5cd919dec20dbef188c015c9ac586c02"
+    },
+    {
+      "path": "skills\\speak\\docs\\ARCHITECTURE.md",
+      "bytes": 16413,
+      "sha256": "f21a554b4ac70b6069f39608a58223e8795fde81b3913eed5dee50151cef5111"
+    },
+    {
+      "path": "skills\\speak\\docs\\EXAMPLES.md",
+      "bytes": 14286,
+      "sha256": "fccaf7b0104a21b909bc6e35634e8132b2b78d108bfb3d55dcf38eef3bc71855"
+    },
+    {
+      "path": "skills\\speak\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 22584,
+      "sha256": "5445b86d44fa3d02963cd832f79fe1594ad30fd0962183dede50b906f6b0002d"
+    },
+    {
+      "path": "skills\\speak\\docs\\REFERENCE.md",
+      "bytes": 16630,
+      "sha256": "7376fb863053a9a20f029eefd7ddc0b7eda2bd069a048469beda8d9fffd82056"
+    },
+    {
+      "path": "skills\\speak\\docs\\WORKFLOW.md",
+      "bytes": 15184,
+      "sha256": "ba134851ee04e9be01c4de1da422b30672ad48820621900c60f7440f40468012"
+    },
+    {
+      "path": "skills\\speak\\implementation\\.mcp.json",
+      "bytes": 129,
+      "sha256": "891e66ed8e766f14c6e0b696f13e0d235b01c59a11d95e51c365d22a1a812e03"
+    },
+    {
+      "path": "skills\\speak\\implementation\\mcp-server\\index.mjs",
+      "bytes": 3929,
+      "sha256": "e1192e40692d2bf55a27c0eab3b20483d84d6df51d9860a4bba2b09e6ac8f853"
+    },
+    {
+      "path": "skills\\speak\\implementation\\mcp-server\\package-lock.json",
+      "bytes": 41316,
+      "sha256": "6c90f5a0220ae5915583656dc8a2e9db81c3ad1607f75f34be5288a55dd9fef9"
+    },
+    {
+      "path": "skills\\speak\\implementation\\mcp-server\\package.json",
+      "bytes": 235,
+      "sha256": "08f38ebb0c1091e676f5c3f096076e140feb02060b3a54dd0e868a3f1c05038f"
+    },
+    {
+      "path": "skills\\speak\\implementation\\plugin.json",
+      "bytes": 340,
+      "sha256": "365ebbb2d81156ea83288eea863d25f5bd5d051905d099c9e9a4cdb71075efd8"
+    },
+    {
+      "path": "skills\\speak\\implementation\\skills\\speak\\SKILL.md",
+      "bytes": 948,
+      "sha256": "add3bfafac4cb75a89e47bdcdb5e8d7c5cd919dec20dbef188c015c9ac586c02"
+    },
+    {
+      "path": "source-inventory.json",
+      "bytes": 2298,
+      "sha256": "aab60825511fe1d2b2fb05f40902ae897e032f652e3a7991a0a630ef30f5dfff"
+    },
+    {
+      "path": "support-provenance.json",
+      "bytes": 1939,
+      "sha256": "c71a2e2a7796ec9eaef6d0007b9613bc31acd5d3d3220e6a8ac466c0be1ba037"
+    },
+    {
+      "path": "tests\\portable_documentation_smoke.py",
+      "bytes": 1605,
+      "sha256": "322a2f88c40bac7d067765716c6290c82a3d722610813eaaba19492e151dc8ea"
+    },
+    {
+      "path": "tests\\portable_speak_smoke.mjs",
+      "bytes": 1321,
+      "sha256": "37c40d8b0cfa4ae0d29f6a87de713374b2361c041bbcdf023da4f11887f388bc"
+    },
+    {
+      "path": "tests\\test_portability.py",
+      "bytes": 12045,
+      "sha256": "f8b6ff713f96550f7ae1cba9c66f363b2b150701a83469f306674662524a9516"
+    }
+  ]
+}

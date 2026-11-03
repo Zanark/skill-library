@@ -1,0 +1,16 @@
+{
+  "name": "context-mesh",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Offline context portfolio dashboard and force-directed memory graph.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test:browser": "python scripts\\build_context_mesh.py --check && node tests\\browser_smoke.mjs"
+  },
+  "dependencies": {
+    "force-graph": "1.51.4"
+  },
+  "devDependencies": {
+    "playwright-core": "1.62.1"
+  }
+}

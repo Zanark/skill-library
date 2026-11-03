@@ -1,0 +1,14 @@
+Reviewed vertical LeetCode workflow template
+
+Status: TEMPLATE
+Milestone: Explicit new clip request
+Dependencies: ..\00_INDEX.todo; ..\..\docs\LEETCODE-WORKFLOW.md
+Purpose: Produce coherent source-grounded clips without invented explanations or approvals.
+Tasks:
+- Prepare local source transcripts; read the complete transcript before selecting coverage.
+- Author verified camera/code/results crops, source-time mappings and truthful question titles.
+- Review draft video, captions, corrections, thumbnail and source/output provenance.
+- Publish only reviewed immutable bundles into the original request's single session gallery.
+Acceptance criteria: Meaning preserved, source untouched, coverage accounted for, required review explicit.
+Completion evidence: None; collect actual output paths/hashes/review receipts for each new request.
+Completion log: Original request-specific records are private, not supplied by this template.
