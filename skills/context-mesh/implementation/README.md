@@ -169,7 +169,10 @@ Neither avatar seeds/source personas nor message-border assignments are migrated
 
 PAM's user-directed `pam` theme is an original local SVG interpretation of supplied
 character references, not an embedded photograph: dark swept waves, teal lapelled
-blazer, ivory blouse, gold jewelry/name badge, and a hand-at-chin pose with a watch.
+blazer, open ivory blouse, layered gold necklaces and a two-line executive-assistant
+name badge. The user rejected the hand-at-chin pose; no hand/forearm is drawn.
+PAM's explicitly authored `kiss-wink` expression uses one open eye, one lifted
+winking lid, puckered lips and a small heart, without changing peer expressions.
 Its exact persona and registered context are mapped explicitly, so future PAM
 sessions retain that direction without changing seeds or other characters.
 Reference image bytes remain in PAM's local store, not this implementation or the

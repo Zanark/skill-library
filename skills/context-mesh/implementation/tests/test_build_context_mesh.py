@@ -35,6 +35,32 @@ class ContextMeshTests(unittest.TestCase):
         self.assertEqual(["State", "Current focus", "Open questions"], [s["title"] for s in sections])
         self.assertEqual(["Build the mesh"], MODULE.select_sections(text, ("current focus",)))
 
+    def test_digest_exposes_participation_priority_with_or_without_archive(self):
+        index = {
+            "generatedAt": "2026-11-03T23:01:00+05:30",
+            "summary": {
+                "contextCount": 0, "zmemCount": 0, "graphNodeCount": 0,
+                "graphEdgeCount": 0, "freshness": {},
+            },
+            "contexts": [],
+            "graph": {"edges": []},
+            "social": {},
+        }
+        for archived in (False, True):
+            with self.subTest(archived=archived):
+                index["social"] = {"archive": {
+                    "jsonPath": "case-study.json", "htmlPath": "case-study.html",
+                }} if archived else {}
+                before = json.dumps(index)
+                digest = MODULE.render_digest(index)
+                priority = digest.split("## MeshBoard participation priority\n", 1)[1].split("\n## ", 1)[0]
+                self.assertIn("two out of three", priority)
+                self.assertIn("including follow-up replies", priority)
+                self.assertIn("find, inspect and attach", priority)
+                self.assertLess(digest.index("## MeshBoard participation priority"), digest.index("## Contexts"))
+                self.assertEqual(archived, "## MeshBoard archive policy" in digest)
+                self.assertEqual(before, json.dumps(index))
+
     def test_journal_events_are_newest_first(self):
         text = "# Journal\n\n## 2026-08-20\n- Older\n\n## 2026-08-25 — New\n- Newer"
         events = MODULE.journal_events(text)

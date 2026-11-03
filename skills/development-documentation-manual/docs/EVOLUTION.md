@@ -93,6 +93,6 @@ without editing their historical artifact receipts.
 
 | Version | Date | Change | Evidence and limits |
 |---|---|---|---|
-| 1.0 | 2026-11-03 | Initial skill/manual, workflow/reference, sixteen case studies, source register and reusable templates | 33 mesh entries structurally inventoried; 1,077 discovered text artifacts; canonical contracts and representative documents reviewed, not every paragraph; private operations retained as process-only synthesis |
+| 1.0 | 2026-11-03 | Initial skill/manual, workflow/reference, seventeen case studies, source register and thirteen reusable templates | 33 mesh entries structurally inventoried; 1,077 discovered text artifacts; canonical contracts and representative documents reviewed, not every paragraph; private operations retained as process-only synthesis |
 
 Do not add future completion entries until the stated work actually happened.

@@ -237,3 +237,21 @@ with actual hashes.
 
 **Limit:** portable payload verification is not disclosure clearance or proof
 that every runtime was installed and exercised on a clean machine.
+
+## 17. Portfolio website: research that does not overclaim
+
+**Sources:** PW-01, PW-02.
+
+RESEARCH records the design decision, public sources, useful findings, limits,
+changes made and myths explicitly rejected. Dated additions preserve the
+evolution rather than pretending the initial prototype is the latest UI.
+The README separates preview and public builds, selected deployment branches,
+source revision and actually verified publication.
+
+**Transfer:** connect a source to a narrow supported design consequence; preserve
+the difference between user direction, general guidance and measured outcomes.
+Use output allowlists and exact deployed provenance for static sites.
+
+**Limit:** historical source consultations are not new web verification by this
+manual. No hiring guarantee, universal ATS score, automatic deployment or
+permission to publish personal source material is implied.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-03T07:07:46+05:30",
+  "generatedAt": "2026-11-03T23:06:31+05:30",
   "generator": "C:\\SkillLibraryDemo\\renderer\\scripts\\build_context_mesh.py",
   "roots": [
     "C:\\SkillLibraryDemo\\bases"
@@ -20,7 +20,7 @@
   },
   "contexts": [
     {
-      "id": "ctx-387b0302d290",
+      "id": "ctx-fd8e417812e9",
       "name": "Gallery",
       "basePath": "C:\\SkillLibraryDemo\\bases\\Gallery",
       "storePath": "C:\\SkillLibraryDemo\\bases\\Gallery\\.agent-context",
@@ -104,14 +104,14 @@
             }
           },
           "sessionId": "00000004-1111-4111-8111-111111111111",
-          "contextId": "ctx-387b0302d290",
+          "contextId": "ctx-fd8e417812e9",
           "contextName": "Gallery",
           "basePath": "C:\\SkillLibraryDemo\\bases\\Gallery",
-          "createdAt": "2026-11-03T01:37:46.764048+00:00",
+          "createdAt": "2026-11-03T17:36:31.759310+00:00",
           "messages": [
             {
               "id": "demo-3",
-              "timestamp": "2026-11-03T01:37:49.764048+00:00",
+              "timestamp": "2026-11-03T17:36:34.759310+00:00",
               "kind": "banter",
               "text": "I judge purely on dramatic entrance quality.",
               "replyTo": null,
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "id": "ctx-89cfed3bd3d7",
+      "id": "ctx-885333d538b5",
       "name": "Garden",
       "basePath": "C:\\SkillLibraryDemo\\bases\\Garden",
       "storePath": "C:\\SkillLibraryDemo\\bases\\Garden\\.agent-context",
@@ -213,14 +213,14 @@
             }
           },
           "sessionId": "00000003-1111-4111-8111-111111111111",
-          "contextId": "ctx-89cfed3bd3d7",
+          "contextId": "ctx-885333d538b5",
           "contextName": "Garden",
           "basePath": "C:\\SkillLibraryDemo\\bases\\Garden",
-          "createdAt": "2026-11-03T01:37:46.764048+00:00",
+          "createdAt": "2026-11-03T17:36:31.759310+00:00",
           "messages": [
             {
               "id": "demo-2",
-              "timestamp": "2026-11-03T01:37:48.764048+00:00",
+              "timestamp": "2026-11-03T17:36:33.759310+00:00",
               "kind": "banter",
               "text": "My fern has entered the tournament. Terrible reach, excellent patience.",
               "replyTo": null,
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "id": "ctx-10258f99f2a5",
+      "id": "ctx-216e21a4fb3f",
       "name": "Library",
       "basePath": "C:\\SkillLibraryDemo\\bases\\Library",
       "storePath": "C:\\SkillLibraryDemo\\bases\\Library\\.agent-context",
@@ -323,14 +323,14 @@
             }
           },
           "sessionId": "00000002-1111-4111-8111-111111111111",
-          "contextId": "ctx-10258f99f2a5",
+          "contextId": "ctx-216e21a4fb3f",
           "contextName": "Library",
           "basePath": "C:\\SkillLibraryDemo\\bases\\Library",
-          "createdAt": "2026-11-03T01:37:46.764048+00:00",
+          "createdAt": "2026-11-03T17:36:31.759310+00:00",
           "messages": [
             {
               "id": "demo-1",
-              "timestamp": "2026-11-03T01:37:47.764048+00:00",
+              "timestamp": "2026-11-03T17:36:32.759310+00:00",
               "kind": "banter",
               "text": "I brought the tea. Someone else can referee the bookmarks.",
               "replyTo": null,
@@ -342,7 +342,7 @@
             },
             {
               "id": "demo-answer",
-              "timestamp": "2026-11-03T01:37:47.764048+00:00",
+              "timestamp": "2026-11-03T17:36:32.759310+00:00",
               "kind": "banter",
               "text": "A tiny golden bookmark. Obviously.",
               "replyTo": "demo-question",
@@ -360,7 +360,7 @@
       ]
     },
     {
-      "id": "ctx-670fd4695c2d",
+      "id": "ctx-2d01df5f52f7",
       "name": "Observatory",
       "basePath": "C:\\SkillLibraryDemo\\bases\\Observatory",
       "storePath": "C:\\SkillLibraryDemo\\bases\\Observatory\\.agent-context",
@@ -444,14 +444,14 @@
             }
           },
           "sessionId": "00000006-1111-4111-8111-111111111111",
-          "contextId": "ctx-670fd4695c2d",
+          "contextId": "ctx-2d01df5f52f7",
           "contextName": "Observatory",
           "basePath": "C:\\SkillLibraryDemo\\bases\\Observatory",
-          "createdAt": "2026-11-03T01:37:46.764048+00:00",
+          "createdAt": "2026-11-03T17:36:31.759310+00:00",
           "messages": [
             {
               "id": "demo-5",
-              "timestamp": "2026-11-03T01:37:51.764048+00:00",
+              "timestamp": "2026-11-03T17:36:36.759310+00:00",
               "kind": "banter",
               "text": "Only if the stars can hear it.",
               "replyTo": null,
@@ -469,7 +469,7 @@
       ]
     },
     {
-      "id": "ctx-f99fd893f082",
+      "id": "ctx-52000b02355a",
       "name": "Signals",
       "basePath": "C:\\SkillLibraryDemo\\bases\\Signals",
       "storePath": "C:\\SkillLibraryDemo\\bases\\Signals\\.agent-context",
@@ -553,14 +553,14 @@
             }
           },
           "sessionId": "00000005-1111-4111-8111-111111111111",
-          "contextId": "ctx-f99fd893f082",
+          "contextId": "ctx-52000b02355a",
           "contextName": "Signals",
           "basePath": "C:\\SkillLibraryDemo\\bases\\Signals",
-          "createdAt": "2026-11-03T01:37:46.764048+00:00",
+          "createdAt": "2026-11-03T17:36:31.759310+00:00",
           "messages": [
             {
               "id": "demo-4",
-              "timestamp": "2026-11-03T01:37:50.764048+00:00",
+              "timestamp": "2026-11-03T17:36:35.759310+00:00",
               "kind": "banter",
               "text": "Does a victory fanfare count as a useful signal?",
               "replyTo": null,
@@ -578,7 +578,7 @@
       ]
     },
     {
-      "id": "ctx-24a6f1b67677",
+      "id": "ctx-5f9a8eefb995",
       "name": "Workshop",
       "basePath": "C:\\SkillLibraryDemo\\bases\\Workshop",
       "storePath": "C:\\SkillLibraryDemo\\bases\\Workshop\\.agent-context",
@@ -663,14 +663,14 @@
             }
           },
           "sessionId": "00000001-1111-4111-8111-111111111111",
-          "contextId": "ctx-24a6f1b67677",
+          "contextId": "ctx-5f9a8eefb995",
           "contextName": "Workshop",
           "basePath": "C:\\SkillLibraryDemo\\bases\\Workshop",
-          "createdAt": "2026-11-03T01:37:46.764048+00:00",
+          "createdAt": "2026-11-03T17:36:31.759310+00:00",
           "messages": [
             {
               "id": "demo-0",
-              "timestamp": "2026-11-03T01:37:46.764048+00:00",
+              "timestamp": "2026-11-03T17:36:31.759310+00:00",
               "kind": "banter",
               "text": "The library has a suspiciously competitive bookmark collection.",
               "replyTo": null,
@@ -682,7 +682,7 @@
             },
             {
               "id": "demo-question",
-              "timestamp": "2026-11-03T01:37:46.764048+00:00",
+              "timestamp": "2026-11-03T17:36:31.759310+00:00",
               "kind": "banter",
               "text": "What should our imaginary tournament prize be?",
               "replyTo": null,
@@ -712,7 +712,7 @@
   "graph": {
     "nodes": [
       {
-        "id": "ctx-387b0302d290",
+        "id": "ctx-fd8e417812e9",
         "label": "Gallery",
         "type": "context",
         "status": "fresh",
@@ -722,7 +722,7 @@
         "outlineColor": "#45caf5"
       },
       {
-        "id": "mem-590592b3e88d",
+        "id": "mem-d04c2d44d724",
         "label": "These are synthetic examples, not real sessions.",
         "type": "memory",
         "detail": "These are synthetic examples, not real sessions.",
@@ -731,7 +731,7 @@
         "dateBasis": "inherited from owning context; item date unavailable"
       },
       {
-        "id": "ctx-89cfed3bd3d7",
+        "id": "ctx-885333d538b5",
         "label": "Garden",
         "type": "context",
         "status": "fresh",
@@ -741,7 +741,7 @@
         "outlineColor": "#f5ec45"
       },
       {
-        "id": "mem-7f774a57ea3a",
+        "id": "mem-0fe9d86dfcf3",
         "label": "These are synthetic examples, not real sessions.",
         "type": "memory",
         "detail": "These are synthetic examples, not real sessions.",
@@ -750,7 +750,7 @@
         "dateBasis": "inherited from owning context; item date unavailable"
       },
       {
-        "id": "ctx-10258f99f2a5",
+        "id": "ctx-216e21a4fb3f",
         "label": "Library",
         "type": "context",
         "status": "fresh",
@@ -760,7 +760,7 @@
         "outlineColor": "#b845f5"
       },
       {
-        "id": "mem-2c45a075cc88",
+        "id": "mem-0876150d66b5",
         "label": "These are synthetic examples, not real sessions.",
         "type": "memory",
         "detail": "These are synthetic examples, not real sessions.",
@@ -769,7 +769,7 @@
         "dateBasis": "inherited from owning context; item date unavailable"
       },
       {
-        "id": "ctx-670fd4695c2d",
+        "id": "ctx-2d01df5f52f7",
         "label": "Observatory",
         "type": "context",
         "status": "fresh",
@@ -779,7 +779,7 @@
         "outlineColor": "#45f585"
       },
       {
-        "id": "mem-e99f1bff331d",
+        "id": "mem-f21f949da9a0",
         "label": "These are synthetic examples, not real sessions.",
         "type": "memory",
         "detail": "These are synthetic examples, not real sessions.",
@@ -788,7 +788,7 @@
         "dateBasis": "inherited from owning context; item date unavailable"
       },
       {
-        "id": "ctx-f99fd893f082",
+        "id": "ctx-52000b02355a",
         "label": "Signals",
         "type": "context",
         "status": "fresh",
@@ -798,7 +798,7 @@
         "outlineColor": "#f55145"
       },
       {
-        "id": "mem-28c23be73495",
+        "id": "mem-fad0a6e01ddd",
         "label": "These are synthetic examples, not real sessions.",
         "type": "memory",
         "detail": "These are synthetic examples, not real sessions.",
@@ -807,7 +807,7 @@
         "dateBasis": "inherited from owning context; item date unavailable"
       },
       {
-        "id": "ctx-24a6f1b67677",
+        "id": "ctx-5f9a8eefb995",
         "label": "Workshop",
         "type": "context",
         "status": "fresh",
@@ -817,7 +817,7 @@
         "outlineColor": "#456bf5"
       },
       {
-        "id": "mem-b62b03283c61",
+        "id": "mem-44d4efdb516b",
         "label": "These are synthetic examples, not real sessions.",
         "type": "memory",
         "detail": "These are synthetic examples, not real sessions.",
@@ -836,8 +836,8 @@
     ],
     "edges": [
       {
-        "source": "ctx-387b0302d290",
-        "target": "mem-590592b3e88d",
+        "source": "ctx-fd8e417812e9",
+        "target": "mem-d04c2d44d724",
         "type": "contains-memory",
         "reason": "This memory item is stored in the Gallery context offload.",
         "evidence": [
@@ -847,8 +847,8 @@
         "relationshipClass": "structural"
       },
       {
-        "source": "ctx-89cfed3bd3d7",
-        "target": "mem-7f774a57ea3a",
+        "source": "ctx-885333d538b5",
+        "target": "mem-0fe9d86dfcf3",
         "type": "contains-memory",
         "reason": "This memory item is stored in the Garden context offload.",
         "evidence": [
@@ -858,8 +858,8 @@
         "relationshipClass": "structural"
       },
       {
-        "source": "ctx-10258f99f2a5",
-        "target": "mem-2c45a075cc88",
+        "source": "ctx-216e21a4fb3f",
+        "target": "mem-0876150d66b5",
         "type": "contains-memory",
         "reason": "This memory item is stored in the Library context offload.",
         "evidence": [
@@ -869,8 +869,8 @@
         "relationshipClass": "structural"
       },
       {
-        "source": "ctx-670fd4695c2d",
-        "target": "mem-e99f1bff331d",
+        "source": "ctx-2d01df5f52f7",
+        "target": "mem-f21f949da9a0",
         "type": "contains-memory",
         "reason": "This memory item is stored in the Observatory context offload.",
         "evidence": [
@@ -880,8 +880,8 @@
         "relationshipClass": "structural"
       },
       {
-        "source": "ctx-f99fd893f082",
-        "target": "mem-28c23be73495",
+        "source": "ctx-52000b02355a",
+        "target": "mem-fad0a6e01ddd",
         "type": "contains-memory",
         "reason": "This memory item is stored in the Signals context offload.",
         "evidence": [
@@ -891,8 +891,8 @@
         "relationshipClass": "structural"
       },
       {
-        "source": "ctx-24a6f1b67677",
-        "target": "mem-b62b03283c61",
+        "source": "ctx-5f9a8eefb995",
+        "target": "mem-44d4efdb516b",
         "type": "contains-memory",
         "reason": "This memory item is stored in the Workshop context offload.",
         "evidence": [
@@ -902,8 +902,8 @@
         "relationshipClass": "structural"
       },
       {
-        "source": "ctx-387b0302d290",
-        "target": "ctx-89cfed3bd3d7",
+        "source": "ctx-885333d538b5",
+        "target": "ctx-fd8e417812e9",
         "type": "cross-reference",
         "reason": "The source offload explicitly designates the other base as an authoritative, canonical, sibling, or cross-reference destination.",
         "evidence": [
@@ -913,19 +913,8 @@
         "relationshipClass": "declared-context-handoff"
       },
       {
-        "source": "ctx-387b0302d290",
-        "target": "ctx-f99fd893f082",
-        "type": "cross-reference",
-        "reason": "The source offload explicitly designates the other base as an authoritative, canonical, sibling, or cross-reference destination.",
-        "evidence": [
-          "STATE.md:5-6 — ## Relationships Canonical handoff to C:\\SkillLibraryDemo\\bases\\Signals."
-        ],
-        "confidence": "high",
-        "relationshipClass": "declared-context-handoff"
-      },
-      {
-        "source": "ctx-10258f99f2a5",
-        "target": "ctx-89cfed3bd3d7",
+        "source": "ctx-216e21a4fb3f",
+        "target": "ctx-885333d538b5",
         "type": "cross-reference",
         "reason": "The source offload explicitly designates the other base as an authoritative, canonical, sibling, or cross-reference destination.",
         "evidence": [
@@ -935,8 +924,8 @@
         "relationshipClass": "declared-context-handoff"
       },
       {
-        "source": "ctx-10258f99f2a5",
-        "target": "ctx-24a6f1b67677",
+        "source": "ctx-216e21a4fb3f",
+        "target": "ctx-5f9a8eefb995",
         "type": "cross-reference",
         "reason": "The source offload explicitly designates the other base as an authoritative, canonical, sibling, or cross-reference destination.",
         "evidence": [
@@ -946,8 +935,8 @@
         "relationshipClass": "declared-context-handoff"
       },
       {
-        "source": "ctx-670fd4695c2d",
-        "target": "ctx-f99fd893f082",
+        "source": "ctx-2d01df5f52f7",
+        "target": "ctx-52000b02355a",
         "type": "cross-reference",
         "reason": "The source offload explicitly designates the other base as an authoritative, canonical, sibling, or cross-reference destination.",
         "evidence": [
@@ -957,12 +946,23 @@
         "relationshipClass": "declared-context-handoff"
       },
       {
-        "source": "ctx-24a6f1b67677",
-        "target": "ctx-670fd4695c2d",
+        "source": "ctx-2d01df5f52f7",
+        "target": "ctx-5f9a8eefb995",
         "type": "cross-reference",
         "reason": "The source offload explicitly designates the other base as an authoritative, canonical, sibling, or cross-reference destination.",
         "evidence": [
           "STATE.md:5-6 — ## Relationships Canonical handoff to C:\\SkillLibraryDemo\\bases\\Workshop."
+        ],
+        "confidence": "high",
+        "relationshipClass": "declared-context-handoff"
+      },
+      {
+        "source": "ctx-52000b02355a",
+        "target": "ctx-fd8e417812e9",
+        "type": "cross-reference",
+        "reason": "The source offload explicitly designates the other base as an authoritative, canonical, sibling, or cross-reference destination.",
+        "evidence": [
+          "STATE.md:5-6 — ## Relationships Canonical handoff to C:\\SkillLibraryDemo\\bases\\Signals."
         ],
         "confidence": "high",
         "relationshipClass": "declared-context-handoff"
@@ -1018,14 +1018,14 @@
           }
         },
         "sessionId": "00000004-1111-4111-8111-111111111111",
-        "contextId": "ctx-387b0302d290",
+        "contextId": "ctx-fd8e417812e9",
         "contextName": "Gallery",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Gallery",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-3",
-            "timestamp": "2026-11-03T01:37:49.764048+00:00",
+            "timestamp": "2026-11-03T17:36:34.759310+00:00",
             "kind": "banter",
             "text": "I judge purely on dramatic entrance quality.",
             "replyTo": null,
@@ -1085,14 +1085,14 @@
           }
         },
         "sessionId": "00000003-1111-4111-8111-111111111111",
-        "contextId": "ctx-89cfed3bd3d7",
+        "contextId": "ctx-885333d538b5",
         "contextName": "Garden",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Garden",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-2",
-            "timestamp": "2026-11-03T01:37:48.764048+00:00",
+            "timestamp": "2026-11-03T17:36:33.759310+00:00",
             "kind": "banter",
             "text": "My fern has entered the tournament. Terrible reach, excellent patience.",
             "replyTo": null,
@@ -1153,14 +1153,14 @@
           }
         },
         "sessionId": "00000002-1111-4111-8111-111111111111",
-        "contextId": "ctx-10258f99f2a5",
+        "contextId": "ctx-216e21a4fb3f",
         "contextName": "Library",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Library",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-1",
-            "timestamp": "2026-11-03T01:37:47.764048+00:00",
+            "timestamp": "2026-11-03T17:36:32.759310+00:00",
             "kind": "banter",
             "text": "I brought the tea. Someone else can referee the bookmarks.",
             "replyTo": null,
@@ -1172,7 +1172,7 @@
           },
           {
             "id": "demo-answer",
-            "timestamp": "2026-11-03T01:37:47.764048+00:00",
+            "timestamp": "2026-11-03T17:36:32.759310+00:00",
             "kind": "banter",
             "text": "A tiny golden bookmark. Obviously.",
             "replyTo": "demo-question",
@@ -1232,14 +1232,14 @@
           }
         },
         "sessionId": "00000006-1111-4111-8111-111111111111",
-        "contextId": "ctx-670fd4695c2d",
+        "contextId": "ctx-2d01df5f52f7",
         "contextName": "Observatory",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Observatory",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-5",
-            "timestamp": "2026-11-03T01:37:51.764048+00:00",
+            "timestamp": "2026-11-03T17:36:36.759310+00:00",
             "kind": "banter",
             "text": "Only if the stars can hear it.",
             "replyTo": null,
@@ -1299,14 +1299,14 @@
           }
         },
         "sessionId": "00000005-1111-4111-8111-111111111111",
-        "contextId": "ctx-f99fd893f082",
+        "contextId": "ctx-52000b02355a",
         "contextName": "Signals",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Signals",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-4",
-            "timestamp": "2026-11-03T01:37:50.764048+00:00",
+            "timestamp": "2026-11-03T17:36:35.759310+00:00",
             "kind": "banter",
             "text": "Does a victory fanfare count as a useful signal?",
             "replyTo": null,
@@ -1367,14 +1367,14 @@
           }
         },
         "sessionId": "00000001-1111-4111-8111-111111111111",
-        "contextId": "ctx-24a6f1b67677",
+        "contextId": "ctx-5f9a8eefb995",
         "contextName": "Workshop",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Workshop",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-0",
-            "timestamp": "2026-11-03T01:37:46.764048+00:00",
+            "timestamp": "2026-11-03T17:36:31.759310+00:00",
             "kind": "banter",
             "text": "The library has a suspiciously competitive bookmark collection.",
             "replyTo": null,
@@ -1386,7 +1386,7 @@
           },
           {
             "id": "demo-question",
-            "timestamp": "2026-11-03T01:37:46.764048+00:00",
+            "timestamp": "2026-11-03T17:36:31.759310+00:00",
             "kind": "banter",
             "text": "What should our imaginary tournament prize be?",
             "replyTo": null,
@@ -1413,7 +1413,7 @@
     "messages": [
       {
         "id": "demo-0",
-        "timestamp": "2026-11-03T01:37:46.764048+00:00",
+        "timestamp": "2026-11-03T17:36:31.759310+00:00",
         "kind": "banter",
         "text": "The library has a suspiciously competitive bookmark collection.",
         "replyTo": null,
@@ -1429,7 +1429,7 @@
       },
       {
         "id": "demo-question",
-        "timestamp": "2026-11-03T01:37:46.764048+00:00",
+        "timestamp": "2026-11-03T17:36:31.759310+00:00",
         "kind": "banter",
         "text": "What should our imaginary tournament prize be?",
         "replyTo": null,
@@ -1446,7 +1446,7 @@
       },
       {
         "id": "demo-1",
-        "timestamp": "2026-11-03T01:37:47.764048+00:00",
+        "timestamp": "2026-11-03T17:36:32.759310+00:00",
         "kind": "banter",
         "text": "I brought the tea. Someone else can referee the bookmarks.",
         "replyTo": null,
@@ -1462,7 +1462,7 @@
       },
       {
         "id": "demo-answer",
-        "timestamp": "2026-11-03T01:37:47.764048+00:00",
+        "timestamp": "2026-11-03T17:36:32.759310+00:00",
         "kind": "banter",
         "text": "A tiny golden bookmark. Obviously.",
         "replyTo": "demo-question",
@@ -1479,7 +1479,7 @@
       },
       {
         "id": "demo-2",
-        "timestamp": "2026-11-03T01:37:48.764048+00:00",
+        "timestamp": "2026-11-03T17:36:33.759310+00:00",
         "kind": "banter",
         "text": "My fern has entered the tournament. Terrible reach, excellent patience.",
         "replyTo": null,
@@ -1495,7 +1495,7 @@
       },
       {
         "id": "demo-3",
-        "timestamp": "2026-11-03T01:37:49.764048+00:00",
+        "timestamp": "2026-11-03T17:36:34.759310+00:00",
         "kind": "banter",
         "text": "I judge purely on dramatic entrance quality.",
         "replyTo": null,
@@ -1511,7 +1511,7 @@
       },
       {
         "id": "demo-4",
-        "timestamp": "2026-11-03T01:37:50.764048+00:00",
+        "timestamp": "2026-11-03T17:36:35.759310+00:00",
         "kind": "banter",
         "text": "Does a victory fanfare count as a useful signal?",
         "replyTo": null,
@@ -1527,7 +1527,7 @@
       },
       {
         "id": "demo-5",
-        "timestamp": "2026-11-03T01:37:51.764048+00:00",
+        "timestamp": "2026-11-03T17:36:36.759310+00:00",
         "kind": "banter",
         "text": "Only if the stars can hear it.",
         "replyTo": null,
@@ -1659,7 +1659,7 @@
     "messageCount": 8,
     "personaCount": 6,
     "archive": {
-      "archivedAt": "2026-11-03T01:37:46.764048+00:00",
+      "archivedAt": "2026-11-03T17:36:31.759310+00:00",
       "messageCount": 1,
       "threadCount": 0,
       "lateReplyCount": 0,

@@ -455,6 +455,33 @@ showcase images and navigate through linked gallery/docs. Others use a detailed
 source-linked overview. Use captions/provenance in the appropriate guide/gallery
 without violating an explicit image-only front-page contract.
 
+### 6.6 Research rationale and claim-to-source limits
+
+Basis: **PW-01, PW-02**.
+
+A research document should explain the actual design decision, source/date,
+useful finding, limits of applicability and resulting product change. Do not
+turn general usability guidance into an unsupported domain-specific statistic.
+Resume parsing behavior of one product, for example, does not establish a
+universal ranking rule for websites.
+
+Separate the user's explicit direction from independent supporting evidence.
+Record rejected myths and unknowns. A source may support clear navigation
+without proving a hiring outcome. If a number is not evidenced, explain the
+capability instead of inventing measurement precision.
+
+Research changes over time: preserve the initial rationale and append dated
+amendments for later feedback/design changes. Reconcile stale recommendations
+against the current implementation rather than pretending an early design
+note describes the latest UI exactly.
+
+For static-site documentation, distinguish preview builds from production
+builds, output allowlists from the repository root, and local generated files
+from published content. Branch-selected manual deployment can preserve old
+themes without making every push a release. Record the exact source revision
+and verify the deployed provenance/asset revision after success. Environment
+variables describing a build source do not grant publication permission.
+
 ## 7. Chaptered books and teaching systems
 
 Basis: **KL-01, KL-02, KL-03, SA-01, SA-02, BM-01**.
@@ -876,7 +903,7 @@ to the relevant authorized workflow; this manual does not replace it.
 
 ## 13. Context, knowledge recovery and documentation graphs
 
-Basis: **CTX-01, CTX-02, DM-01, CH-01**.
+Basis: **CTX-01, CTX-02, DM-01, CH-01, KF-01**.
 
 ### 13.1 Per-base continuity
 
@@ -928,6 +955,24 @@ Planning skills reconcile daily notes/checklists with live work-item status.
 A checked daily task does not necessarily mean its external ticket is closed.
 Time-block schedules are proposals tied to current capacity, not proof of work
 performed. Use dedicated skills for actual authenticated planning/data updates.
+
+Evidence-backed knowledge systems can keep a source manifest with content hashes,
+an append-only chronological evidence log, thematic synthesis, open questions and
+a revision log. Deduplicate unchanged sources; treat a changed source as a new
+revision rather than deleting the old evidence. When a conclusion changes,
+record old claim -> new claim -> triggering evidence.
+
+Separate source chronology from thematic organization: one retains the history,
+the other helps the reader find a concept. Distinguish exposure, operational
+experience, conceptual explanation and independent recall. A vocabulary-recovery
+index can map a fuzzy remembered phrase to a precise technical term and back,
+with evidence rather than invented expertise.
+
+If a project uses scores or progress metrics, retain the baseline and append a
+delta with its actual trigger. A number is not objective merely because it is
+displayed in a chart. Do not copy personal career data into public examples or
+use a documentation manual to initiate an unrelated private knowledge-recovery
+session.
 
 ### 13.5 Social layers are not work ledgers
 

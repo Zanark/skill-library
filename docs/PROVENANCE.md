@@ -19,7 +19,8 @@ Repository history, plugin metadata, junction targets, and local source files we
 
 ## Inclusion decision
 
-The nine included skills are tied to personal or directly authored project workstreams:
+The original nine archived skills are tied to personal or directly authored
+project workstreams. A tenth, repository-authored synthesis is now included:
 
 | Skill | Canonical source at inventory time | Basis |
 |---|---|---|
@@ -29,6 +30,7 @@ The nine included skills are tied to personal or directly authored project works
 | `context-mesh` | `C:\Users\mishrad\.copilot\skills\context-mesh\SKILL.md` | Personal cross-session context system |
 | `context-offload` | `C:\Users\mishrad\.copilot\skills\context-offload\SKILL.md` | Personal context and persona continuity protocol |
 | `dayplan` | `C:\devdesk\tools\copilot\skills\dayplan\SKILL.md` | Personal combined workday planner |
+| `development-documentation-manual` | `skills\development-documentation-manual\SKILL.md` in this repository | Newly authored living manual, requested explicitly; source-scoped synthesis rather than an external skill snapshot |
 | `documentation-mesh` | `C:\devdesk\Copilot\CopilotSessions\documentation-mesh-plugin\skills\documentation-mesh\SKILL.md` | Plugin metadata identifies Debashish Mishra as author |
 | `nse-advisor` | `C:\Users\mishrad\.copilot\skills\nse-advisor\SKILL.md` | Personal paper-trading research workflow |
 | `speak` | `C:\devdesk\tools\copilot-speak\skills\speak\SKILL.md` | Context Mesh records direct creation from the user's Copilot Speak request; plugin metadata identifies `mishrad` |
@@ -75,8 +77,20 @@ The second provenance pass used `artifactProvenance.records` from Context Mesh a
 
 ## Snapshot policy
 
-- `SKILL.md` is copied byte-for-byte from the canonical source at inventory time.
+- For the original externally sourced skills, `SKILL.md` is copied byte-for-byte from the canonical source at inventory time.
 - `source-inventory.json` stores the source path and SHA-256.
 - Documentation may explain the source but must not silently repair or reinterpret it.
 - A future refresh must report hash changes before replacing a snapshot.
 - Source paths are historical provenance, not a guarantee that the original location will remain available.
+
+## Repository-authored manual
+
+`development-documentation-manual` is authored canonically in this checkout.
+Its inventory source and destination identify the same repository-owned skill,
+and its hash verifies those actual bytes. It is not described as an archived
+external source. Its supporting source register separates discovered artifacts,
+reviewed contracts, project-specific constraints and proposed reusable defaults.
+
+The public synthesis does not reproduce private context bodies, operational
+histories, personal evidence, recordings or third-party source code. Generalized
+techniques are not a grant of source access or redistribution rights.

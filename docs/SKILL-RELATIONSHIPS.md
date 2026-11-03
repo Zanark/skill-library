@@ -3,7 +3,7 @@
 ## System map
 
 ```mermaid
-flowchart LR
+flowchart TD
     User[User request]
 
     subgraph Planning
@@ -22,6 +22,7 @@ flowchart LR
     subgraph Knowledge
         CAREER[career-forensics]
         DOCS[documentation-mesh]
+        MANUAL[development-documentation-manual]
     end
 
     subgraph Production
@@ -40,6 +41,7 @@ flowchart LR
     User --> CLIP
     User --> SPEAK
     User --> DOCS
+    User --> MANUAL
     User --> NSE
 
     OFF -. continuity for registered bases .-> CLIP
@@ -47,6 +49,8 @@ flowchart LR
     OFF -. continuity for registered bases .-> CAREER
     DOCS -. documents Markdown collections .-> OFF
     DOCS -. documents Markdown collections .-> CAREER
+    MANUAL -. authored practices, not runtime ownership .-> DOCS
+    MANUAL -. development and evidence patterns .-> CLIP
 ```
 
 ## Routing relationships
@@ -85,6 +89,19 @@ They share evidence-first graph principles, but they have different source model
 
 `speak` is a thin routing skill over the Copilot Speak plugin. The skill decides when and how text should be spoken; the plugin's MCP server owns tool discovery, Windows SAPI invocation, voice enumeration, and error responses.
 
+### Living development and documentation manual
+
+`development-documentation-manual` is a repository-authored synthesis and template
+set, not another indexing or production engine. It explains how TODOs, journals,
+books, source atlases, evidence, visual/media artifacts, reports and releases fit
+together. `context-offload` still owns continuity; `context-mesh` owns portfolio
+discovery; `documentation-mesh` owns its runtime; dedicated domain skills retain
+their actual execution procedures. Local contracts override proposed defaults.
+
+New source-backed techniques can enrich the manual through its evolution
+procedure. This does not authorize rewriting sibling stores, copying private
+sources or turning a historical project constraint into a universal requirement.
+
 ### Independent domain skills
 
 `career-forensics` and `nse-advisor` do not route into the planning or media families. Their common requirement is evidence freshness:
@@ -107,3 +124,5 @@ They share evidence-first graph principles, but they have different source model
 | Career report schema or score movement | `career-forensics` |
 | Market-data or allocation rules | `nse-advisor` |
 | Spoken-text routing or TTS defaults | `speak` and the Copilot Speak MCP implementation |
+| Shared TODO/journal/evidence templates or documentation technique | `development-documentation-manual` and affected local contracts |
+| Manual source scope, new mode, counterexample or supersession | Manual, source register, case studies, templates and evolution log |

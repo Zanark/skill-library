@@ -26,6 +26,15 @@ An evidence-first Engineering Career Operating System that maintains an append-o
 
 ## Content and documentation systems
 
+### development-documentation-manual
+
+A repository-authored living manual of cross-project development and documentation
+techniques: stable TODO workstreams, evidence, causal journals, engineering books,
+source atlases, curricula, visual/media production, operational reports, editions
+and handoffs. Includes source-scoped case studies, reusable templates and an
+explicit enrichment/supersession procedure. Local project contracts remain
+authoritative; discovery is not exhaustive semantic review.
+
 ### clipfarm-leetcode
 
 The operational contract for ClipFarm coding/system-design editing: source preparation, complete transcript review, vertical/system-design/horizontal routing, editorial plans, immutable drafts, output ASR, visual review, publishing, galleries, thumbnails, captions, and rights/provenance.

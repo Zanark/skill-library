@@ -14,11 +14,16 @@ A living library of authored Copilot skills, source snapshots, and operating doc
 | [context-mesh](skills/context-mesh/README.md) | Cross-session context graph |
 | [context-offload](skills/context-offload/README.md) | Durable context and personas |
 | [dayplan](skills/dayplan/README.md) | Combined daily planning |
+| [development-documentation-manual](skills/development-documentation-manual/README.md) | Living cross-project development and documentation manual |
 | [documentation-mesh](skills/documentation-mesh/README.md) | Documentation intelligence |
 | [nse-advisor](skills/nse-advisor/README.md) | NSE paper-trading research |
 | [speak](skills/speak/README.md) | Local Windows text-to-speech |
 
 **[Documentation](docs/README.md)** · **[Source inventory](source-inventory.json)**
+
+Read the [development and documentation manual](skills/development-documentation-manual/MANUAL.md)
+for the portfolio's TODO, journal, book, visual/media, report and publishing
+techniques, with source limits, project-specific exceptions and reusable templates.
 
 ## Install on another Windows machine
 

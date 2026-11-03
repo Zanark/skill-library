@@ -4,6 +4,11 @@
 
 The preserved `SKILL.md` is normative. The surrounding documents are explanatory. If they conflict, the source wins and the documentation must be corrected.
 
+For repository-authored skills such as `development-documentation-manual`,
+`SKILL.md` is authored canonically here rather than copied from an external
+snapshot. Its routed manual/support contracts are maintained together; local
+target-project instructions still outrank that manual's proposed defaults.
+
 ## Required coverage
 
 Each skill documentation set must explain:
@@ -38,6 +43,10 @@ Each skill documentation set must explain:
 5. Add or revise examples and regression scenarios for changed behavior.
 6. Run `scripts\Validate-SkillLibrary.ps1`.
 7. Review the final diff for accidental inclusion of excluded or third-party skills.
+
+For a repository-authored skill, edit its canonical source deliberately instead
+of replacing an external snapshot, then update its exact inventory hash and
+affected support files. Do not apply that exception to archived external skills.
 
 ## Quality bar
 

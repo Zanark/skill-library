@@ -21,19 +21,25 @@
     "name": "context-mesh",
     "source": "C:\\Users\\mishrad\\.copilot\\skills\\context-mesh\\SKILL.md",
     "destination": "skills\\context-mesh\\SKILL.md",
-    "sha256": "4330233bd962f2e409f1a6bfe9f3896d6f9574fd390d0a141d097c0bdebd7b3f"
+    "sha256": "4bb1b1e3e77c04bc73f3103ac29a8f91f21805743b3188140ffd968cafb5e58d"
   },
   {
     "name": "context-offload",
     "source": "C:\\Users\\mishrad\\.copilot\\skills\\context-offload\\SKILL.md",
     "destination": "skills\\context-offload\\SKILL.md",
-    "sha256": "f61ebf3a2bb8c7057294c20a4b7554c26c48a93e635ffc75d1e73d407bf8769f"
+    "sha256": "d675b2e757678af4de60e7de54f4e61afa46b77880fad72cdaaeb0e80a6fbd84"
   },
   {
     "name": "dayplan",
     "source": "C:\\devdesk\\tools\\copilot\\skills\\dayplan\\SKILL.md",
     "destination": "skills\\dayplan\\SKILL.md",
     "sha256": "5f80ae2c6bf95f795388d41dc4197dd4823ceb0122c43ace5e0f550d48b477da"
+  },
+  {
+    "name": "development-documentation-manual",
+    "source": "C:\\devdesk\\homedesk\\skill-library\\skills\\development-documentation-manual\\SKILL.md",
+    "destination": "skills\\development-documentation-manual\\SKILL.md",
+    "sha256": "39e939a403a3fec89ef4172facda90f17526b9b893fefe58abdfaf699f26e159"
   },
   {
     "name": "documentation-mesh",

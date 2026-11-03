@@ -32,10 +32,13 @@ const svg = Buffer.from(uri.split(",")[1], "base64").toString("utf8");
 assert.match(svg, /^[\x00-\x7f]*$/);
 assert.doesNotMatch(svg, /<image\b|https?:\/\/(?!www\.w3\.org)|\b(?:NaN|undefined|Infinity)\b/);
 for (const feature of ["teal-blazer", "ivory-blouse", "gold-pendant", "pam-name-badge",
-  "chin-rest-pose", "wristwatch", "gold-ring", "lipstick"]) {
+  "open-blouse-neckline", "kiss-lips", "kiss-heart", "lipstick"]) {
   assert.ok(svg.includes(`data-feature="${feature}"`), feature);
 }
-assert.equal((svg.match(/data-eye="open"/g) || []).length, 2);
+assert.doesNotMatch(svg, /chin-rest-pose|wristwatch|gold-ring/);
+assert.ok(svg.includes(">EXECUTIVE ASSISTANT</text>"));
+assert.equal((svg.match(/data-eye="open"/g) || []).length, 1);
+assert.equal((svg.match(/data-eye="closed"/g) || []).length, 1);
 assert.equal((svg.match(/data-earring=/g) || []).length, 2);
 assert.equal(uri, after.personaAvatarDataUri({ ...pam, profileImageData: pam.profileImageData.toUpperCase() }));
 assert.notEqual(uri, before.personaAvatarDataUri(pam));

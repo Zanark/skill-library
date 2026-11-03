@@ -19,7 +19,7 @@ implementation, output or historical claim was independently revalidated.
 | TR-03 | TrickRoom | `docs\book\README.md`, full | AST citations, print pipeline and edition review |
 | CF-01 | ClipFarm | `TODO\01_PRODUCT_DECISIONS.todo`, lines 1-90 | Bounded decisions, evidence and approvals |
 | CF-02 | ClipFarm | `TODO\08_DEVELOPMENT_LEDGER.todo`, lines 1-100 | Development history and handoff distinctions |
-| CF-03 | ClipFarm | `TODO\WORKFLOWS\06_ANIMATED_EXPLAINERS.todo`, lines 1-120; authored editorial skill reviewed earlier in this session's workflow comparison | Procedure versus execution; reviewed production |
+| CF-03 | ClipFarm | `TODO\WORKFLOWS\06_ANIMATED_EXPLAINERS.todo`, lines 1-120; Skill Library `skills\clipfarm-leetcode\SKILL.md`, lines 230-390 | Procedure versus execution; reviewed production |
 | PF-01 | phantom-fudge | `docs\DEVELOPMENT-WORKFLOW.md`, full | Coupled code/TODO/documentation change loop |
 | PF-02 | phantom-fudge | `docs\DOCUMENTATION-MAINTENANCE.md`, full | Change-to-document map and maintenance order |
 | PF-03 | phantom-fudge | `docs\source-atlas\README.md`, full | Whole-source explanation and reviewed coverage |
@@ -37,9 +37,12 @@ implementation, output or historical claim was independently revalidated.
 | BB-02 | B-Bakery | `docs\image-review-workflow.md`, lines 1-150 | Bounded sheets, persisted item decisions and stop budget |
 | BB-03 | B-Bakery | `README.md`, complete six-image front-page structure inspected during portfolio comparison | Explicit visual README exception |
 | CH-01 | CareerHQ | `docs\AGENT_CONTRACT.md`, lines 1-150; `docs\OPERATION-SOURCES.md`, lines 1-135 | Attributable sources and operational boundaries; no personal records copied |
+| KF-01 | Career Forensics skill in Skill Library | `skills\career-forensics\SKILL.md`, lines 45-130; protocol only, no private KB ingested | Append-only evidence, source deduplication, corrections/deltas and demonstrated recall |
 | LA-01 | LinkedIn-EasyApply-Automaton | `docs\developer_guide.md`, lines 1-110 | Existing alternative project/tracking organization |
 | DS-01 | DeepSeaFoam | `docs\PUBLISHING.md`, lines 1-100 | Packaging/publication separation |
 | DS-02 | DeepSeaFoam | `docs\MAPPINGS.md`, lines 1-100 | Semantic roles, generated ports and compatibility limits |
+| PW-01 | portfolioWebsiteGitHub | `README.md`, lines 1-150 | Preview/public build distinction, explicit branch-selected deployment and artifact provenance |
+| PW-02 | portfolioWebsiteGitHub | `RESEARCH.md`, lines 1-130 | Research rationale, finding/applicability limits and dated amendments; historical source consultation not rerun by this audit |
 | SL-01 | SubwooferLullabies | `docs\website.md`, lines 1-155 | Canonical versus site copies, production provenance |
 | SW-01 | SongsWorkspace / Almost Us | `production\BLENDER-WORKFLOW.md`, lines 1-160 | Native 3D production, derivation, reproducibility limits |
 | KL-01 | KnowledgeLedger | `CURRICULUM.md`, full | Teaching sequence and learning evidence |
@@ -66,9 +69,9 @@ files written afterward are not part of that number.
 
 | Entry group | Entries | Treatment |
 |---|---:|---|
-| Canonical hobby/application/content/library bases | 13 | Structural inventory and workflow continuity inspected; representative governing docs reviewed, sources above |
+| Canonical hobby/application/content/library bases | 14 | Structural inventory and workflow continuity inspected; representative governing docs reviewed, sources above |
 | Dedicated pedagogy/publishing bases | 5 | Curriculum/book contracts and continuity reviewed; only public-safe process retained |
-| General assistant/runner/operational/continuity-only desks | 12 | Structural inventory and relevant workflow continuity excerpts; not a product/code audit |
+| General assistant/runner/operational/continuity-only desks | 11 | Structural inventory and relevant workflow continuity excerpts; not a product/code audit |
 | Additional application/library worktrees | 2 | Inventoried; treated as related copies, not new techniques merely because separately registered |
 | Embedded media-production provenance origin | 1 | Recognized as historical replica; not a separate canonical product |
 | Total | 33 | No claim of exhaustive semantic review |

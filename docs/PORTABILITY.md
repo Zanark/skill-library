@@ -1,6 +1,6 @@
 # Portable skills and private migration
 
-The public repository contains the nine skill definitions, their operating docs,
+The public repository contains ten skill definitions, their operating docs,
 and the implementation projects behind Context Mesh, ClipFarm, Documentation
 Mesh and Speak. It does **not** contain private conversations, recordings, career
 evidence, credentials or Microsoft's internal zmem implementation.
@@ -48,6 +48,7 @@ This copy-only template does not enable tools by itself.
 | context-mesh | Generator, graph/chat/avatar renderers, tests, npm lockfile, config example, fictional offline snapshot | Context stores, stable color registry, archives, session-history inputs and optional private zmem |
 | context-offload | Complete continuity/persona/social protocols and docs | Each base's own private context store; external zmem if used |
 | dayplan | Skill and operating docs | Authenticated ADO/IcM/WorkIQ providers |
+| development-documentation-manual | Detailed Markdown manual, workflow/reference, source-scoped cases, enrichment protocol and thirteen templates | The checkout supplies support files; no runtime or private portfolio data is bundled |
 | documentation-mesh | .NET/Python source, templates, schemas, tests, build packaging, notices and checksum-verified Windows x64 executable | Source documentation, private workspace and optional Agency host |
 | nse-advisor | Complete research/paper-trading instructions | Live research tools and user-provided data; no market-data service is bundled |
 | speak | MCP server, dependency lockfile, plugin metadata and registration template | Windows PowerShell/SAPI and available local voices |
@@ -71,6 +72,12 @@ The installer also binds the standalone Documentation Mesh skill directly to
 its verified executable rather than assuming a plugin-relative directory.
 Public editorial guides are sanitized derivatives; recording-based PDF/HTML
 case studies, personal production histories and original manuals stay private.
+
+The development/documentation manual is a new public-safe authored synthesis,
+not a copy of those private originals. Its installed `SKILL.md` is rebased to
+the current clone; the supporting manual/docs/templates remain in that clone,
+not in the installed skill directory. Keep the clone available or deliberately
+rebind through the guarded installer after moving it.
 
 ## Offline feature snapshot
 

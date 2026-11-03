@@ -12,5 +12,6 @@ This directory contains repository-level documentation for the authored skill li
 | [SKILL-RELATIONSHIPS.md](SKILL-RELATIONSHIPS.md) | Cross-skill architecture and change-impact map |
 | [MAINTENANCE-PLAYBOOK.md](MAINTENANCE-PLAYBOOK.md) | Refresh, drift review, addition, and removal procedures |
 | [GLOSSARY.md](GLOSSARY.md) | Shared terminology across the documented skills |
+| [Living development/documentation manual](../skills/development-documentation-manual/MANUAL.md) | Detailed cross-project techniques, source-scoped cases, templates and enrichment procedure |
 
 The repository root retains only the primary [`README.md`](../README.md), source inventory, validation tooling, and skill folders.

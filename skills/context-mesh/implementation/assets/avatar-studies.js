@@ -1,6 +1,6 @@
 // Shared portrait drawings: live 08B plus preserved workshop comparisons.
 const avatarPortraitArtDirections = Object.freeze({
-  "session-fed62133-8a6d-47b0-9e2c-d2eda9fbf1ad": { theme: "pam", presentation: "feminine", flair: "restrained" },
+  "session-fed62133-8a6d-47b0-9e2c-d2eda9fbf1ad": { theme: "pam", presentation: "feminine", flair: "restrained", expression: "kiss-wink" },
   "session-d5df688d-8707-4e35-815e-5f831a899459": { outfit: "embroidered-smock" },
   "session-9cbe69cd-e0d4-40c9-ac96-8c82e451fa11": { outfit: "moto-jacket", facialHair: "goatee" },
   "session-969d9987-a5bf-44a8-96c9-e698c3d7a0ad": { outfit: "satin-bomber", facialHair: "stubble" },
@@ -20,7 +20,7 @@ const avatarPortraitArtDirections = Object.freeze({
 });
 
 const avatarContextArtDirections = Object.freeze({
-  "ctx-157d4bd90c18": { theme: "pam", presentation: "feminine", flair: "restrained" },
+  "ctx-157d4bd90c18": { theme: "pam", presentation: "feminine", flair: "restrained", expression: "kiss-wink" },
   "ctx-ded91077c7ca": { theme: "butler", presentation: "masculine", flair: "restrained" },
 });
 
@@ -233,7 +233,7 @@ function avatarWardrobeProfile(seed, persona = {}, appearance = {}) {
   if (appearance.flair !== undefined && !["restrained", "bold"].includes(appearance.flair)) {
     throw new TypeError("Unknown professional wardrobe flair");
   }
-  if (appearance.expression !== undefined && !["open", "friendly-wink"].includes(appearance.expression)) {
+  if (appearance.expression !== undefined && !["open", "friendly-wink", "kiss-wink"].includes(appearance.expression)) {
     throw new TypeError("Unknown authored portrait expression");
   }
   if (appearance.facialHair !== undefined &&
@@ -557,40 +557,30 @@ function avatarPamWardrobeMarkup(style, skin, mix) {
     <path data-feature="torso" d="M14 136L18 111Q21 101 47 95L55 91H73L81 95Q105 101 109 111L114 136Z" fill="url(#shirt)" stroke="#102c34" stroke-width=".7"/>
     ${avatarNeckMarkup(skin, mix)}
     <g data-feature="ivory-blouse">
-      <path d="M47 95L55 92Q64 104 73 92L81 95L78 136H49Z" fill="#eee7d9" stroke="#b3a68e" stroke-width=".55"/>
-      <path d="M55 92Q58 105 64 111Q70 105 73 92L72 112L66 118L64 136L62 118L55 112Z" fill="url(#skin)"/>
-      <path d="M53 93L64 111L57 115L48 99ZM75 93L64 111L71 115L80 99Z" fill="#fff5e3" stroke="#c6b8a0" stroke-width=".6"/>
-      <path d="M64 117V135M52 119L55 130M76 119L73 130" fill="none" stroke="#bdb09d" stroke-width=".6"/>
-      <circle cx="65" cy="127" r=".7" fill="#b9a98c"/>
+      <path d="M44 96L55 92Q64 100 73 92L84 96L88 136H40Z" fill="#eee7d9" stroke="#b3a68e" stroke-width=".55"/>
+      <path data-feature="open-blouse-neckline" d="M55 92Q64 100 73 92L75 103Q72 113 64 122Q56 113 53 103Z" fill="url(#skin)"/>
+      <path d="M51 94L60 113L52 109L46 100ZM77 94L68 113L76 109L82 100Z" fill="#fff5e3" stroke="#c6b8a0" stroke-width=".6"/>
+      <path d="M64 122L65 136M45 115Q51 116 56 123M83 115Q77 116 72 123M49 130L57 134M79 129L71 134" fill="none" stroke="#bdb09d" stroke-width=".6"/>
+      <circle cx="65" cy="130" r=".7" fill="#b9a98c"/>
     </g>
     <g data-feature="teal-blazer" fill="#1b4853" stroke="#102c34" stroke-width=".7">
-      <path d="M46 95L55 109L51 115L59 136H29L30 108ZM82 95L73 109L77 115L69 136H100L98 108Z"/>
-      <path d="M45 96L55 110L50 115L59 136L42 118L44 111L37 103Z" fill="#2b5b63"/>
-      <path d="M83 96L73 110L78 115L69 136L86 118L84 111L91 103Z" fill="#173c46"/>
+      <path d="M43 95L51 105L47 111L51 136H22L28 107ZM85 95L77 105L81 111L77 136H106L100 107Z"/>
+      <path d="M43 95L51 105L46 111L52 136L36 117L39 108L33 103Z" fill="#244f59"/>
+      <path d="M85 95L77 105L82 111L76 136L92 117L89 108L95 103Z" fill="#173c46"/>
       <path d="M28 117L25 136M97 116L102 136" fill="none" stroke="#3b6870" stroke-width=".8"/>
     </g>
     <g data-feature="gold-pendant" fill="none" stroke="url(#gold)" stroke-width=".7">
-      <path d="M55 96Q57 106 64 108Q71 105 73 96M57 96Q58 110 64 114Q70 110 72 96"/>
-      <path d="M64 113L64 118M62.5 115H65.5" stroke-width="1.1" stroke-linecap="round"/>
+      <path d="M55 96Q57 104 64 106Q71 103 73 96M55 97Q57 110 64 114Q71 110 73 97"/>
+      <path d="M64 113L64 118M62.5 115H65.5" stroke-width=".9" stroke-linecap="round"/>
+      <circle cx="64" cy="106" r="1" fill="url(#gold)" stroke-width=".4"/>
     </g>
     <g data-feature="pam-name-badge">
-      <rect x="30" y="115" width="21" height="8" rx="1.1" fill="url(#gold)" stroke="#765321" stroke-width=".5"/>
-      <text x="40.5" y="120.5" text-anchor="middle" fill="#3c2b1c" font-family="sans-serif" font-size="4.3" font-weight="700">PAM</text>
+      <rect x="25" y="113" width="25" height="9.5" rx="1.1" fill="url(#gold)" stroke="#765321" stroke-width=".5"/>
+      <path d="M27 116Q28 114 29 116Q30 114 31 116Q31 118 29 119Q27 118 27 116Z" fill="none" stroke="#795928" stroke-width=".45"/>
+      <text x="39" y="117.7" text-anchor="middle" fill="#3c2b1c" font-family="sans-serif" font-size="3.7" font-weight="700">PAM</text>
+      <text x="37.5" y="120.5" text-anchor="middle" fill="#3c2b1c" font-family="sans-serif" font-size="1.7" font-weight="600">EXECUTIVE ASSISTANT</text>
     </g>
     ${style.flair === "bold" ? '<path d="M34 110L37 108L40 110L37 113Z" fill="url(#gold)"/>' : ""}
-  </g>`;
-}
-
-function avatarPamHandMarkup() {
-  return `<g data-feature="chin-rest-pose">
-    <path d="M102 129L98 111L91 97L88 91Q85 89 81 89L76 87Q73 85 75 83Q77 81 82 83L87 84L83 80Q81 78 83 77Q85 76 88 79L95 86Q98 90 98 94L105 110L113 125Z" fill="url(#skin)" stroke="#80523e" stroke-width=".65" stroke-linejoin="round"/>
-    <path d="M79 84L86 86M84 80L90 86M90 90L94 94" fill="none" stroke="#a16b50" stroke-width=".6" stroke-linecap="round"/>
-    <path data-feature="gold-ring" d="M83 82L81.5 85" stroke="url(#gold)" stroke-width="1.1"/>
-    <path d="M98 109L105 106L111 118L103 122Z" fill="#f3ebdc" stroke="#b9a990" stroke-width=".6"/>
-    <path data-feature="wristwatch" d="M98 105L105 102L108 110L101 113Z" fill="#69432b" stroke="#3f3028" stroke-width=".5"/>
-    <rect x="100" y="103.5" width="6" height="7" rx="1.2" transform="rotate(-23 103 107)" fill="url(#gold)" stroke="#8c642c" stroke-width=".5"/>
-    <path d="M103 105V108L105 108" fill="none" stroke="#503c27" stroke-width=".5"/>
-    <path d="M101 120L111 114L121 137H104Z" fill="#1b4853" stroke="#102c34" stroke-width=".7"/>
   </g>`;
 }
 
@@ -660,7 +650,8 @@ function avatarStudyDataUri(seed, version, persona = {}, appearance = {}) {
   const goth = wardrobe?.theme === "goth";
   const butler = wardrobe?.theme === "butler";
   const pam = wardrobe?.theme === "pam";
-  const friendlyWink = wardrobe?.expression === "friendly-wink";
+  const kissWink = wardrobe?.expression === "kiss-wink";
+  const friendlyWink = wardrobe?.expression === "friendly-wink" || kissWink;
   const { background, skin, hair, shirt, hairStyle, eyeStyle, mouthStyle, accessory,
     faceWidth, faceHeight, eyeSpacing, eyeColor, eyebrowTilt } = {
     ...avatarRecipe(seed),
@@ -845,7 +836,9 @@ function avatarStudyDataUri(seed, version, persona = {}, appearance = {}) {
   ];
   const expression = friendlyWink ? 1 : mouthStyle;
   const mouth = friendlyWink ? mouths[1] : goth ? gothLips : mouths[mouthStyle];
-  const mouthMarkup = hasLipstick
+  const mouthMarkup = kissWink
+    ? `<g data-feature="kiss-lips" data-expression="kiss"><path data-feature="lipstick" d="M62 79Q65 78 67 80L69 81Q66 82 69 84L67 85Q64 87 62 84Q65 82 62 79Z" fill="${lip}" stroke="${mix(lip, deep, .2)}" stroke-width=".5"/><path d="M65 81.7L67 82.4" stroke="${deep}" stroke-width=".65"/><path data-feature="kiss-heart" d="M79 80C75 76 78 72 81 75C84 71 88 75 85 79L81 83Z" fill="#bb485a" stroke="#77363d" stroke-width=".4"/></g>`
+    : hasLipstick
     ? `<g data-feature="lipstick" data-shade="${lip}">${goth && !friendlyWink ? mouth : `<path d="${lipContours[expression]}" fill="${lip}"/>${mouth}`}</g>`
     : mouth;
   const facialHairStyle = wardrobe?.facialHair || "none";
@@ -899,8 +892,8 @@ function avatarStudyDataUri(seed, version, persona = {}, appearance = {}) {
         ${goth ? makeup : ""}<g data-feature="eyes">${eyes}</g>${goth ? eyeliner : ""}
         <path d="M60 72.8Q61 74.4 63 74.3M65.5 74.4Q67.5 74.5 69 72.7" fill="none" stroke="${dark}" stroke-width=".75" stroke-linecap="round" opacity=".8"/>
         <path d="M61.5 77L61 78.8M66.3 77L66.9 78.6" stroke="${dark}" stroke-width=".5" opacity=".4"/>${facialHairMarkup}
-        <g data-feature="mouth"${friendlyWink ? ' data-expression="smile"' : ""}>${mouthMarkup}</g>${butler ? `<g data-feature="mature-features" fill="none" stroke="${dark}" stroke-width=".55" opacity=".65"><path d="M49 44Q64 41 79 44M51 47Q64 45 77 47M40 60L36 58M40 62L36 63M88 60L92 58M88 62L92 63M52 74Q48 78 51 84M76 74Q80 78 77 84"/></g><path data-feature="moustache" d="M64 78Q59 75.5 55 80Q60 82 64 79.5Q68 82 73 80Q69 75.5 64 78Z" fill="#969891" stroke="#686d68" stroke-width=".45"/>` : ""}<g data-feature="accessory">${accessoryMarkup}</g>
-      </g>${pam ? `<g transform="${pose}">${avatarPamHandMarkup()}</g>` : ""}${tailored ? "</g>" : ""}
+        <g data-feature="mouth"${kissWink ? ' data-expression="kiss"' : friendlyWink ? ' data-expression="smile"' : ""}>${mouthMarkup}</g>${butler ? `<g data-feature="mature-features" fill="none" stroke="${dark}" stroke-width=".55" opacity=".65"><path d="M49 44Q64 41 79 44M51 47Q64 45 77 47M40 60L36 58M40 62L36 63M88 60L92 58M88 62L92 63M52 74Q48 78 51 84M76 74Q80 78 77 84"/></g><path data-feature="moustache" d="M64 78Q59 75.5 55 80Q60 82 64 79.5Q68 82 73 80Q69 75.5 64 78Z" fill="#969891" stroke="#686d68" stroke-width=".45"/>` : ""}<g data-feature="accessory">${accessoryMarkup}</g>
+      </g>${tailored ? "</g>" : ""}
       ${graphic || refined ? "" : '<rect width="128" height="128" fill="#fff" filter="url(#grain)" opacity=".3"/>'}
     </g></svg>`;
   return `data:image/svg+xml;base64,${btoa(svg)}`;

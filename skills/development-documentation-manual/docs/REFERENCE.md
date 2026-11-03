@@ -8,6 +8,7 @@
 | Bug/feature implementation | 4-6 | Real affected path plus focused tests | Repository build/test commands |
 | Development journal | 5 | Causal narrative, dated actual events | Local ledger rules |
 | Architecture/engineering book | 6 | Source-backed ownership and behavior | Local documentation builder |
+| Research/design rationale or static-site handoff | 6, 14 | Source scope/limits, actual design consequence, preview/public/deployed identity | Project research and deployment contract |
 | Beginner curriculum | 7 | Prerequisites, distinct examples, demonstrated learning | Teaching contract |
 | Exhaustive source explanation | 8 | Explicit scope, full range coverage and reviewed meaning | Source-atlas tooling |
 | PDF/HTML edition | 9 | Native PDF and actual layout/navigation | Edition-specific pipeline |

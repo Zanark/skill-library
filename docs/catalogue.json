@@ -50,6 +50,12 @@
       "prompt": "Document the reviewed media workflow, evidence-backed documentation graph, and local voice output using skills/clipfarm-leetcode/SKILL.md:19, skills/documentation-mesh/SKILL.md:8, and skills/speak/SKILL.md:6.",
       "children": [
         {
+          "title": "development-documentation-manual",
+          "name": "Living Development and Documentation Manual",
+          "prompt": "Explain and apply the source-scoped development/documentation techniques in skills/development-documentation-manual/MANUAL.md:1, the execution procedure in docs/WORKFLOW.md under that skill, and its reusable templates. Preserve local exceptions and follow docs/EVOLUTION.md for enrichment.",
+          "children": []
+        },
+        {
           "title": "clipfarm-leetcode",
           "name": "ClipFarm Coding Editorial Workflow",
           "prompt": "Explain mode routing, source review, plans, drafts, review gates, publishing, and superseding policies from skills/clipfarm-leetcode/SKILL.md:237.",

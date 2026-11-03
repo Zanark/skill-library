@@ -2,6 +2,12 @@
 
 ## Refreshing one skill
 
+This procedure describes external snapshots. For a repository-authored skill,
+edit the canonical repository file, follow its enrichment/change-log contract,
+and reconcile documentation, catalogues and exact hashes without pretending an
+external source was refreshed. The development/documentation manual's specific
+procedure is `skills\development-documentation-manual\docs\EVOLUTION.md`.
+
 1. Resolve the canonical source path from `source-inventory.json`.
 2. Hash the canonical source and compare it with the archived snapshot.
 3. If unchanged, do not rewrite the snapshot merely to refresh timestamps.
@@ -65,7 +71,8 @@ When an MCP tool, CLI command, or runtime changes:
 2. Confirm it is not bundled, dependency-provided, or owned by a separate team repository.
 3. Confirm it is not one of the explicit omissions.
 4. Create the standard folder contract.
-5. Copy the exact `SKILL.md`.
+5. Copy the exact external `SKILL.md`, or explicitly document repository-owned
+   authorship when creating a new canonical skill here.
 6. Record source path and SHA-256 in `source-inventory.json`.
 7. Produce all required documentation files.
 8. Add it to `..\README.md`, `CATALOGUE.md`, `catalogue.json`, `SKILL-RELATIONSHIPS.md`, and `GLOSSARY.md` as applicable.

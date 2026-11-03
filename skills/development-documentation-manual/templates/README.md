@@ -17,6 +17,7 @@ placeholders, use local style and retain applicable repository contracts.
 | [10_CHANGE_IMPACT.md](10_CHANGE_IMPACT.md) | Source-to-document update map |
 | [11_VISUAL_COVERAGE.md](11_VISUAL_COVERAGE.md) | Themes/surfaces/scroll parts and image-review budget |
 | [12_PRODUCTION_RUN.md](12_PRODUCTION_RUN.md) | Separate execution receipt for a reusable procedure |
+| [13_RESEARCH_RATIONALE.md](13_RESEARCH_RATIONALE.md) | Source findings, applicability limits and actual design consequences |
 
 For a new project, copy index/workstream/ledger to its authorized `TODO` folder
 using suitable stable numbers/names. Do not copy this README or Markdown forms

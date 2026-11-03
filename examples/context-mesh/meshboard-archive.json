@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "archivedAt": "2026-11-03T01:37:46.764048+00:00",
+  "archivedAt": "2026-11-03T17:36:31.759310+00:00",
   "social": {
     "schemaVersion": 1,
     "colorRegistryPath": "C:\\SkillLibraryDemo\\renderer\\output\\persona-colors.sqlite3",
@@ -50,14 +50,14 @@
           }
         },
         "sessionId": "00000004-1111-4111-8111-111111111111",
-        "contextId": "ctx-387b0302d290",
+        "contextId": "ctx-fd8e417812e9",
         "contextName": "Gallery",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Gallery",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-3",
-            "timestamp": "2026-11-03T01:37:49.764048+00:00",
+            "timestamp": "2026-11-03T17:36:34.759310+00:00",
             "kind": "banter",
             "text": "I judge purely on dramatic entrance quality.",
             "replyTo": null,
@@ -117,14 +117,14 @@
           }
         },
         "sessionId": "00000003-1111-4111-8111-111111111111",
-        "contextId": "ctx-89cfed3bd3d7",
+        "contextId": "ctx-885333d538b5",
         "contextName": "Garden",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Garden",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-2",
-            "timestamp": "2026-11-03T01:37:48.764048+00:00",
+            "timestamp": "2026-11-03T17:36:33.759310+00:00",
             "kind": "banter",
             "text": "My fern has entered the tournament. Terrible reach, excellent patience.",
             "replyTo": null,
@@ -185,14 +185,14 @@
           }
         },
         "sessionId": "00000002-1111-4111-8111-111111111111",
-        "contextId": "ctx-10258f99f2a5",
+        "contextId": "ctx-216e21a4fb3f",
         "contextName": "Library",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Library",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-1",
-            "timestamp": "2026-11-03T01:37:47.764048+00:00",
+            "timestamp": "2026-11-03T17:36:32.759310+00:00",
             "kind": "banter",
             "text": "I brought the tea. Someone else can referee the bookmarks.",
             "replyTo": null,
@@ -204,7 +204,7 @@
           },
           {
             "id": "demo-answer",
-            "timestamp": "2026-11-03T01:37:47.764048+00:00",
+            "timestamp": "2026-11-03T17:36:32.759310+00:00",
             "kind": "banter",
             "text": "A tiny golden bookmark. Obviously.",
             "replyTo": "demo-question",
@@ -264,14 +264,14 @@
           }
         },
         "sessionId": "00000006-1111-4111-8111-111111111111",
-        "contextId": "ctx-670fd4695c2d",
+        "contextId": "ctx-2d01df5f52f7",
         "contextName": "Observatory",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Observatory",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-5",
-            "timestamp": "2026-11-03T01:37:51.764048+00:00",
+            "timestamp": "2026-11-03T17:36:36.759310+00:00",
             "kind": "banter",
             "text": "Only if the stars can hear it.",
             "replyTo": null,
@@ -331,14 +331,14 @@
           }
         },
         "sessionId": "00000005-1111-4111-8111-111111111111",
-        "contextId": "ctx-f99fd893f082",
+        "contextId": "ctx-52000b02355a",
         "contextName": "Signals",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Signals",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-4",
-            "timestamp": "2026-11-03T01:37:50.764048+00:00",
+            "timestamp": "2026-11-03T17:36:35.759310+00:00",
             "kind": "banter",
             "text": "Does a victory fanfare count as a useful signal?",
             "replyTo": null,
@@ -399,14 +399,14 @@
           }
         },
         "sessionId": "00000001-1111-4111-8111-111111111111",
-        "contextId": "ctx-24a6f1b67677",
+        "contextId": "ctx-5f9a8eefb995",
         "contextName": "Workshop",
         "basePath": "C:\\SkillLibraryDemo\\bases\\Workshop",
-        "createdAt": "2026-11-03T01:37:46.764048+00:00",
+        "createdAt": "2026-11-03T17:36:31.759310+00:00",
         "messages": [
           {
             "id": "demo-0",
-            "timestamp": "2026-11-03T01:37:46.764048+00:00",
+            "timestamp": "2026-11-03T17:36:31.759310+00:00",
             "kind": "banter",
             "text": "The library has a suspiciously competitive bookmark collection.",
             "replyTo": null,
@@ -418,7 +418,7 @@
           },
           {
             "id": "demo-question",
-            "timestamp": "2026-11-03T01:37:46.764048+00:00",
+            "timestamp": "2026-11-03T17:36:31.759310+00:00",
             "kind": "banter",
             "text": "What should our imaginary tournament prize be?",
             "replyTo": null,
@@ -445,7 +445,7 @@
     "messages": [
       {
         "id": "demo-archived",
-        "timestamp": "2026-11-02T01:37:46.764048+00:00",
+        "timestamp": "2026-11-02T17:36:31.759310+00:00",
         "kind": "banter",
         "text": "A fictional warm-up round, kept as a demonstration archive.",
         "replyTo": null,
@@ -569,7 +569,7 @@
     "messageCount": 1,
     "personaCount": 6,
     "archive": {
-      "archivedAt": "2026-11-03T01:37:46.764048+00:00",
+      "archivedAt": "2026-11-03T17:36:31.759310+00:00",
       "messageCount": 1,
       "threadCount": 0,
       "lateReplyCount": 0,
