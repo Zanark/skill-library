@@ -11,6 +11,7 @@ This directory contains repository-level documentation for the authored skill li
 | [DOCUMENTATION-STANDARD.md](DOCUMENTATION-STANDARD.md) | Required coverage, citations, quality bar, and change procedure |
 | [SKILL-RELATIONSHIPS.md](SKILL-RELATIONSHIPS.md) | Cross-skill architecture and change-impact map |
 | [MAINTENANCE-PLAYBOOK.md](MAINTENANCE-PLAYBOOK.md) | Refresh, drift review, addition, and removal procedures |
+| [PORTABILITY.md](PORTABILITY.md) | Eleven-skill bulk installation, separate Verona setup and private restoration boundaries |
 | [GLOSSARY.md](GLOSSARY.md) | Shared terminology across the documented skills |
 | [Living development/documentation manual](../skills/development-documentation-manual/MANUAL.md) | Detailed cross-project techniques, source-scoped cases, templates and enrichment procedure |
 

@@ -26,7 +26,7 @@ user reminders; read existing comments first and preserve preference/scope/evide
 ### context-mesh
 
 Indexes context stores and zmem into a read-mostly portfolio graph with a startup digest, structured index, dashboard, freshness status, and evidence-ranked artifact provenance.
-MeshBoard safely renders Markdown/HTML throughout messages and threads, with aligned persona cards, below-name default-off font controls, character-fitting typography and opt-in remote font references.
+MeshBoard safely renders Markdown/HTML throughout messages and threads, with aligned persona cards, below-name font controls that default on when a board view first opens and preserve saved choices, character-fitting typography and owner-configured remote font references.
 Compact quotes reveal the full source on activation. Private hash-guarded presentation can style existing history without rewriting conversations or social evidence.
 Stable operator-approved fictional gender casting respects owner-authored identity and preserves portraits, history and dormant-session boundaries.
 Publishes the small private active-room snapshot for `social_checkin.py`, including relevant conversations,
@@ -72,6 +72,26 @@ The Agency-facing skill for a local documentation-analysis runtime that discover
 ### speak
 
 The Copilot Speak plugin skill that routes requests for spoken output to a local MCP server backed by Windows text-to-speech.
+
+### verona
+
+An explicitly opted-in local speaking face for the current agent session, with
+session-owned heads, offline voices and shared-manager ownership boundaries.
+This repository holds the skill copy and its setup guide, not the Verona
+application, models or runtime environment. It is not part of the 11-entry bulk
+installation inventory. See [the copy and setup guide](../skills/verona/README.md).
+Reading or installing it does not activate narration or recording.
+
+## Local storage review
+
+### folder-heatmap
+
+Metadata-only directory-size scanning with an offline interactive treemap,
+folder drill-down, global search, clickable ascending/descending table headers
+and JSON/CSV exports. Python standard library only; explicit scan errors and
+link exclusions. Reports logical file bytes, not guaranteed deletion savings.
+No deletion or upload controls. See
+[the skill guide](../skills/folder-heatmap/README.md).
 
 ## Research
 

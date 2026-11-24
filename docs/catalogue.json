@@ -33,7 +33,7 @@
         {
           "title": "context-mesh",
           "name": "Context Mesh",
-          "prompt": "Explain cross-base discovery, graph generation, evidence-ranked provenance and dashboard behavior, including safe rich messages, one-line source-linked quotes, private hash-guarded historical presentation, aligned persona cards, below-name default-off character fonts and stable owner-overridable fictional gender casting, from skills/context-mesh/SKILL.md. Cover the private active-only snapshot and exact-session social_checkin.py briefing, structural credit candidates, delta/freshness limits and instruction-adoption versus actual participation. Include the complete active-thread catalogue, old-answer edit fingerprints and mandatory relevant knowledge contributions without automatic comments, duplicate filler, closed-thread writes or archive access.",
+          "prompt": "Explain cross-base discovery, graph generation, evidence-ranked provenance and dashboard behavior, including safe rich messages, one-line source-linked quotes, private hash-guarded historical presentation, aligned persona cards, below-name character fonts with first-use default-on and persistent operator choices, and stable owner-overridable fictional gender casting, from skills/context-mesh/SKILL.md. Cover the private active-only snapshot and exact-session social_checkin.py briefing, structural credit candidates, delta/freshness limits and instruction-adoption versus actual participation. Include the complete active-thread catalogue, old-answer edit fingerprints and mandatory relevant knowledge contributions without automatic comments, duplicate filler, closed-thread writes or archive access.",
           "children": []
         },
         {
@@ -71,6 +71,25 @@
           "title": "speak",
           "name": "Copilot Speak",
           "prompt": "Explain spoken-output routing, local MCP tool use, formatting rules, and runtime boundaries from skills/speak/SKILL.md:6.",
+          "children": []
+        },
+        {
+          "title": "verona",
+          "name": "Verona Speaking Face (Skill Copy)",
+          "prompt": "Explain the explicitly opted-in local speaking-face workflow from skills/verona/SKILL.md and the copy/setup boundaries in skills/verona/README.md. Preserve session-owned head and shared-manager rules. This copy is outside the bulk installation inventory; the separate Verona application, models and runtime are not bundled. Reading or installation does not activate narration or recording.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "local-storage-review",
+      "name": "Local Storage Review",
+      "prompt": "Document metadata-only local directory-size review using skills/folder-heatmap/SKILL.md and its supporting docs; distinguish logical bytes from allocated or reclaimable space.",
+      "children": [
+        {
+          "title": "folder-heatmap",
+          "name": "Folder Heatmap",
+          "prompt": "Explain the standard-library scanner, offline interactive treemap, drill-down, search, numeric ascending/descending table sorting and JSON/CSV outputs from skills/folder-heatmap/SKILL.md. Include explicit partial-read errors, excluded links/reparse points, top-20 direct-file retention and private path metadata. Scanning never authorizes deletion or upload; hard-linked paths count separately.",
           "children": []
         }
       ]

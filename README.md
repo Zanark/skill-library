@@ -16,8 +16,13 @@ A living library of authored Copilot skills, source snapshots, and operating doc
 | [dayplan](skills/dayplan/README.md) | Combined daily planning |
 | [development-documentation-manual](skills/development-documentation-manual/README.md) | Living cross-project development and documentation manual |
 | [documentation-mesh](skills/documentation-mesh/README.md) | Documentation intelligence |
+| [folder-heatmap](skills/folder-heatmap/README.md) | Offline folder-size heatmaps and sortable space-review tables |
 | [nse-advisor](skills/nse-advisor/README.md) | NSE paper-trading research |
 | [speak](skills/speak/README.md) | Local Windows text-to-speech |
+| [verona](skills/verona/README.md) | Opt-in local speaking face; skill copy only, separate Verona application required |
+
+The bulk installer covers **11 inventory-listed skills**. Verona is an additional
+skill copy with separate setup instructions; its application and models are not bundled.
 
 **[Documentation](docs/README.md)** · **[Source inventory](source-inventory.json)**
 

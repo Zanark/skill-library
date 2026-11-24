@@ -14,13 +14,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 2372,
-      "sha256": "ed7f8a983d480d6f0ac5df5550876b80f698f046c4d14c9d537da3f587310abc"
+      "bytes": 2789,
+      "sha256": "a766f9782fed13cbc108747b565c65def083b5941838e8d0fc01ec6a11dd5378"
     },
     {
       "path": "docs\\CATALOGUE.md",
-      "bytes": 5306,
-      "sha256": "8d7a44d55f72091e5b6d2db5e5c6aa939da991ffe6a91e1b29d463f40655a0e5"
+      "bytes": 6296,
+      "sha256": "112c3f640af5c671a8ca4b11ad3aa097ebade8116a122dc0e53298bf89e318d4"
     },
     {
       "path": "docs\\CONTEXT-MESH-DISCOVERY.md",
@@ -34,8 +34,8 @@
     },
     {
       "path": "docs\\GLOSSARY.md",
-      "bytes": 2424,
-      "sha256": "6512937374448ebf1c57f3b6638cabc079ee1ce9e0cb404efc908e76eea9a04c"
+      "bytes": 2822,
+      "sha256": "e7b557e358a5635d94332a39f492385173860ca3d6bd2d87216a3d674b732c8a"
     },
     {
       "path": "docs\\MAINTENANCE-PLAYBOOK.md",
@@ -44,23 +44,23 @@
     },
     {
       "path": "docs\\PORTABILITY.md",
-      "bytes": 13125,
-      "sha256": "e17aeabb2c484112872796a25944eb4e4136b1c142a0236eeb6b0f684fb8e432"
+      "bytes": 13879,
+      "sha256": "d4de2628b04274d809a2f1813f00c6329331c96976551903332445fd737f26af"
     },
     {
       "path": "docs\\PROVENANCE.md",
-      "bytes": 5802,
-      "sha256": "e2cbe49ed7692f92f29f7ca472cdabd9e9c371fd8d48c4e01315965c89bfda37"
+      "bytes": 6493,
+      "sha256": "76cdf15c6a58c28101136a350426a14a7b8af3adb074cc5462c656f6b8c7b6a0"
     },
     {
       "path": "docs\\README.md",
-      "bytes": 1282,
-      "sha256": "6685d8f513c3aa6913e72474293b68d63321a621e47e119551c081b81ba6fdcb"
+      "bytes": 1411,
+      "sha256": "0750a378dd82d81147366f5e5e7c13c754a62a175316100e3d9d458779dca63e"
     },
     {
       "path": "docs\\SKILL-RELATIONSHIPS.md",
-      "bytes": 5372,
-      "sha256": "99daab8742222f3679aac268e69124f89aeff7a159cebc172b5940e9475a7ff7"
+      "bytes": 6599,
+      "sha256": "ebbd4d32c2ea8d38cdb1dc7b75848d92036cd25a07ee986ceb1d99a9ffc14735"
     },
     {
       "path": "docs\\assets\\skill-library-hero.svg",
@@ -69,8 +69,8 @@
     },
     {
       "path": "docs\\catalogue.json",
-      "bytes": 6381,
-      "sha256": "115ffe9f1a9b480fd12b8efb8102f50d3aa40e8857cf01879b9324682e959a86"
+      "bytes": 7839,
+      "sha256": "8bc456b89c94ad9c7656f31e783dfdd3b3589eec56b7ea7131f73b0023e4af08"
     },
     {
       "path": "examples\\context-mesh\\CONTEXT-MESH.md",
@@ -1303,6 +1303,46 @@
       "sha256": "8dfa27fa99f882acc2bc437cb8a4c5ee26258f4ecad518eb305d0beadb32d9eb"
     },
     {
+      "path": "skills\\folder-heatmap\\README.md",
+      "bytes": 3218,
+      "sha256": "7446e553947f547ea7b42e90391627b7e2bfdfaf32ddb3f605b32c82a14b5530"
+    },
+    {
+      "path": "skills\\folder-heatmap\\SKILL.md",
+      "bytes": 4310,
+      "sha256": "477727c2b7e256a2095202af04759048d18cf10edbb8f9fcedcd9377c62e0ccf"
+    },
+    {
+      "path": "skills\\folder-heatmap\\docs\\ARCHITECTURE.md",
+      "bytes": 1872,
+      "sha256": "6611038fd374bd3ff3cb2e7444dbf7437c7e4069a5f989023b6c365d28e82a92"
+    },
+    {
+      "path": "skills\\folder-heatmap\\docs\\EXAMPLES.md",
+      "bytes": 1702,
+      "sha256": "d4f381bd90d6895177911f912d6e7d5fb1e0884fac93aff4880a16b7912bd651"
+    },
+    {
+      "path": "skills\\folder-heatmap\\docs\\OPERATIONS-AND-TESTING.md",
+      "bytes": 2435,
+      "sha256": "689fa1e913d9091328c5889565a3319ebf726814215675a78ff2bd7683afc69e"
+    },
+    {
+      "path": "skills\\folder-heatmap\\docs\\REFERENCE.md",
+      "bytes": 1932,
+      "sha256": "0426302307b2a4a48df1638ae21a8a15255565917212ca7d2f8f6126ebd49725"
+    },
+    {
+      "path": "skills\\folder-heatmap\\docs\\WORKFLOW.md",
+      "bytes": 1437,
+      "sha256": "ff3bc86c72d3051357fea0b686900782a773439b3e67c300ad0d557521293372"
+    },
+    {
+      "path": "skills\\folder-heatmap\\scripts\\folder_heatmap.py",
+      "bytes": 20438,
+      "sha256": "138a5349ae202808e75207ead41fd5dbe2fbdf94cfd1d1e1ce78cfac47c84ca2"
+    },
+    {
       "path": "skills\\nse-advisor\\README.md",
       "bytes": 6611,
       "sha256": "16a790da7856d8cacfb43c46085f67d33c35701f9288d6a7d6f24aa6ea8026da"
@@ -1414,8 +1454,8 @@
     },
     {
       "path": "source-inventory.json",
-      "bytes": 2615,
-      "sha256": "12e68c976421edcd6bd07cf63a307e2b8f937c2edeedb2105bb388c37ee2ad35"
+      "bytes": 2878,
+      "sha256": "66c475dc81091f2d3f06a5d93329c231d729fb1e2cc21086a937fc5ea8914974"
     },
     {
       "path": "support-provenance.json",
@@ -1431,6 +1471,16 @@
       "path": "tests\\portable_speak_smoke.mjs",
       "bytes": 1321,
       "sha256": "37c40d8b0cfa4ae0d29f6a87de713374b2361c041bbcdf023da4f11887f388bc"
+    },
+    {
+      "path": "tests\\test_folder_heatmap.py",
+      "bytes": 7463,
+      "sha256": "2b7176143b992acad274aaf713dc06c813c9b31867870eaad7b13d95e8a4e674"
+    },
+    {
+      "path": "tests\\test_folder_heatmap_browser.py",
+      "bytes": 7779,
+      "sha256": "b77967f38f97fd9bf3d356ac74e81a05cdb0b267b3793cf9a11d79b251b7dc8e"
     },
     {
       "path": "tests\\test_github_credentials.py",

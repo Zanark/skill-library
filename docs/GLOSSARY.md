@@ -13,11 +13,13 @@
 | Coverage ledger | A record proving which source topics/problems were delivered or blocked |
 | DRI | Designated Responsible Individual for livesite/on-call operations |
 | Evidence | Persisted support for a claim, decision, relationship, score, or output |
+| Folder heatmap | Offline directory-size treemap and sortable metadata tables; a review tool, not a deletion tool |
 | IcM | Incident Management system used by the livesite planning skills |
 | Immutable draft | A rendered ClipFarm candidate that is revised by creating a new draft rather than overwriting history |
 | IST | India Standard Time, UTC+05:30 |
 | Knowledge base | Career Forensics' persistent, merge-oriented collection of evidence and generated reports |
 | LTP | Last traded price used by the NSE research workflow |
+| Logical file bytes | Sum of reported file lengths; hard-linked paths count separately and totals do not establish allocated or reclaimable storage |
 | MCP | Model Context Protocol integration used to access systems such as ADO or IcM |
 | Mesh edge | A relationship supported by explicit persisted evidence between graph nodes |
 | Persona | The domain scope and continuity contract adopted when resuming a registered base |
@@ -26,5 +28,6 @@
 | SAPI | Windows Speech API used by the Copilot Speak MCP implementation |
 | Speak MCP | The local stdio MCP server that exposes `speak` and `list_voices` tools |
 | Supersession | A newer rule explicitly replacing an older rule while historical records remain preserved |
+| Verona | Separately prepared local speaking-face application; this library contains its opt-in skill copy, not its runtime |
 | Workplan | A time-blocked operational schedule generated from live or persisted work data |
 | zmem | A separate durable-memory dependency used by the context system |

@@ -48,6 +48,12 @@
     "sha256": "cc1d1c6a8a8d3ebe8e735498faf888a1c8ade7e65af297ee26440f2e3c4bfdb5"
   },
   {
+    "name": "folder-heatmap",
+    "source": "C:\\devdesk\\homedesk\\skill-library\\skills\\folder-heatmap\\SKILL.md",
+    "destination": "skills\\folder-heatmap\\SKILL.md",
+    "sha256": "477727c2b7e256a2095202af04759048d18cf10edbb8f9fcedcd9377c62e0ccf"
+  },
+  {
     "name": "nse-advisor",
     "source": "C:\\Users\\mishrad\\.copilot\\skills\\nse-advisor\\SKILL.md",
     "destination": "skills\\nse-advisor\\SKILL.md",

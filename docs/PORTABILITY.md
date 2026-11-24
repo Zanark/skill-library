@@ -1,9 +1,13 @@
 # Portable skills and private migration
 
-The public repository contains ten skill definitions, their operating docs,
+The public repository contains eleven inventory-listed skill definitions, their operating docs,
 and the implementation projects behind Context Mesh, ClipFarm, Documentation
 Mesh and Speak. It does **not** contain private conversations, recordings, career
 evidence, credentials or Microsoft's internal zmem implementation.
+
+An additional Verona skill copy is included outside the bulk installation
+inventory. Its [setup guide](../skills/verona/README.md) requires the separately
+prepared Verona application and models; those are not part of this payload.
 
 ## New Windows machine
 
@@ -50,6 +54,7 @@ This copy-only template does not enable tools by itself.
 | dayplan | Skill and operating docs | Authenticated ADO/IcM/WorkIQ providers |
 | development-documentation-manual | Detailed Markdown manual, workflow/reference, source-scoped cases, enrichment protocol and thirteen templates | The checkout supplies support files; no runtime or private portfolio data is bundled |
 | documentation-mesh | .NET/Python source, templates, schemas, tests, build packaging, notices and checksum-verified Windows x64 executable | Source documentation, private workspace and optional Agency host |
+| folder-heatmap | Python standard-library scanner, self-contained HTML renderer, docs and synthetic tests | Python 3.10+ and a browser; generated reports contain private local paths |
 | nse-advisor | Complete research/paper-trading instructions | Live research tools and user-provided data; no market-data service is bundled |
 | speak | MCP server, dependency lockfile, plugin metadata and registration template | Windows PowerShell/SAPI and available local voices |
 
@@ -78,6 +83,11 @@ not a copy of those private originals. Its installed `SKILL.md` is rebased to
 the current clone; the supporting manual/docs/templates remain in that clone,
 not in the installed skill directory. Keep the clone available or deliberately
 rebind through the guarded installer after moving it.
+
+Folder Heatmap likewise keeps its supporting script in the clone and rebases
+the installed skill's checkout path. It needs no separate runtime copy,
+dependency installation or server. Generate reports outside the scanned root
+and keep them private; logical byte totals are not guaranteed deletion savings.
 
 ## Offline feature snapshot
 

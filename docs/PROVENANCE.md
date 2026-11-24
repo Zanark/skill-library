@@ -20,7 +20,8 @@ Repository history, plugin metadata, junction targets, and local source files we
 ## Inclusion decision
 
 The original nine archived skills are tied to personal or directly authored
-project workstreams. A tenth, repository-authored synthesis is now included:
+project workstreams. Two repository-authored additions bring the bulk
+installation inventory to eleven:
 
 | Skill | Canonical source at inventory time | Basis |
 |---|---|---|
@@ -32,8 +33,19 @@ project workstreams. A tenth, repository-authored synthesis is now included:
 | `dayplan` | `C:\devdesk\tools\copilot\skills\dayplan\SKILL.md` | Personal combined workday planner |
 | `development-documentation-manual` | `skills\development-documentation-manual\SKILL.md` in this repository | Newly authored living manual, requested explicitly; source-scoped synthesis rather than an external skill snapshot |
 | `documentation-mesh` | `C:\devdesk\Copilot\CopilotSessions\documentation-mesh-plugin\skills\documentation-mesh\SKILL.md` | Plugin metadata identifies Debashish Mishra as author |
+| `folder-heatmap` | `skills\folder-heatmap\SKILL.md` in this repository | Repository-owned metadata-only scanner, offline report renderer and supporting documentation |
 | `nse-advisor` | `C:\Users\mishrad\.copilot\skills\nse-advisor\SKILL.md` | Personal paper-trading research workflow |
 | `speak` | `C:\devdesk\tools\copilot-speak\skills\speak\SKILL.md` | Context Mesh records direct creation from the user's Copilot Speak request; plugin metadata identifies `mishrad` |
+
+### Additional Verona skill copy
+
+`skills\verona` retains a complete prompt copy and setup README. Its documented
+canonical source is
+`C:\devdesk\homedesk\Verona\.github\skills\verona\SKILL.md`; Verona remains the
+source of truth. This copy is outside `source-inventory.json` and the bulk
+installer, and does not bundle the separate application, model assets or runtime.
+See [the copy's setup guide](../skills/verona/README.md). Inclusion does not
+activate narration or recording.
 
 ## Explicit omissions
 
