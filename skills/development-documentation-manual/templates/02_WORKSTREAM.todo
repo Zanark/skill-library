@@ -2,6 +2,7 @@ Status: NOT_STARTED
 Milestone: <observable milestone>
 Dependencies: <actual prerequisite IDs or None>
 Purpose: <why this bounded outcome matters; include scope exclusions>
+GitHub issue: <verified issue URL, or pending/not adopted with reason; never fabricate>
 
 Tasks:
   [ ] <bounded implementation/authoring action>
@@ -20,6 +21,7 @@ Completion evidence:
   Observed boundary: <fixture/local/target-qualified and actual observation>
   Human acceptance: <not requested/pending/explicit revision approval>
   Publication: <not requested/local only/actual verified remote state>
+  Commits: <actual coherent checkpoint hashes and verified identity, or not authorized/pending with reason; no per-file/timer quota>
   Limitations: <remaining uncertainty or None with justification>
 
 Completion log:

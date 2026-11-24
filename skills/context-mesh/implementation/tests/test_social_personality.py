@@ -1,10 +1,54 @@
 import copy
 import unittest
 
-from scripts.social_personality import STARTERS, TRAITS, derive_social_personality
+from scripts.social_personality import STARTERS, TRAITS, derive_social_personality, resolve_gender_identity
 
 
 class SocialPersonalityTests(unittest.TestCase):
+    def test_explicit_fictional_cast_does_not_follow_later_portrait_changes(self):
+        examples = (
+            ("fictional-alfred-718bb26f-ec71-4d8a-9543-f67727e20064", "man", "he/him", "masculine"),
+            ("fictional-trash-goblin-718bb26f-ec71-4d8a-9543-f67727e20064", "woman", "she/her", "feminine"),
+            ("session-d5df688d-8707-4e35-815e-5f831a899459", "nonbinary", "they/them", "neutral"),
+        )
+        for persona_id, gender, pronouns, grammar in examples:
+            for presentation in ("masculine", "feminine", "androgynous"):
+                with self.subTest(persona_id=persona_id, presentation=presentation):
+                    result = resolve_gender_identity({"personaId": persona_id, "avatarPresentation": presentation})
+                    self.assertEqual({"gender": gender, "pronouns": pronouns, "grammaticalGender": grammar},
+                                     result["genderIdentity"])
+                    self.assertEqual("operator-approved-fictional-cast", result["genderIdentitySource"])
+        newcomer = resolve_gender_identity({"personaId": "new", "displayName": "Lady Example",
+                                           "avatarPresentation": "feminine"})
+        self.assertEqual("unassigned", newcomer["genderIdentitySource"])
+        self.assertEqual({"gender": "unspecified", "pronouns": "they/them", "grammaticalGender": "neutral"},
+                         newcomer["genderIdentity"])
+
+    def test_owner_identity_overrides_cast_without_forcing_gender_pronoun_pairs_or_mutating_input(self):
+        identity = {"gender": " nonbinary ", "pronouns": " she/they ", "grammaticalGender": "neutral"}
+        persona = {"personaId": "fictional-trash-goblin-718bb26f-ec71-4d8a-9543-f67727e20064",
+                   "genderIdentity": identity}
+        original = copy.deepcopy(persona)
+        result = resolve_gender_identity(persona)
+        self.assertEqual("owner-authored", result["genderIdentitySource"])
+        self.assertEqual({"gender": "nonbinary", "pronouns": "she/they", "grammaticalGender": "neutral"},
+                         result["genderIdentity"])
+        self.assertEqual(original, persona)
+
+    def test_invalid_identity_is_not_silently_replaced_by_cast(self):
+        valid = {"gender": "woman", "pronouns": "she/her", "grammaticalGender": "feminine"}
+        invalid = [None, [], "", {}, {"gender": "woman"}, {**valid, "source": "invented"}]
+        for field in ("gender", "pronouns"):
+            invalid.extend({**valid, field: value} for value in (None, 1, [], {}, "", " ", "x" * 81,
+                                                                              "a\nb", "<script>"))
+        invalid.extend({**valid, "grammaticalGender": value} for value in (None, [], {}, "", "female"))
+        for identity in invalid:
+            with self.subTest(identity=identity), self.assertRaisesRegex(ValueError, "genderIdentity"):
+                resolve_gender_identity({
+                    "personaId": "fictional-trash-goblin-718bb26f-ec71-4d8a-9543-f67727e20064",
+                    "genderIdentity": identity,
+                })
+
     def test_authored_cast_is_distinct_without_claiming_to_be_observed(self):
         profiles = [derive_social_personality({"personaId": key}, []) for key in STARTERS]
         self.assertEqual(len(profiles), len({profile["natureSummary"] for profile in profiles}))

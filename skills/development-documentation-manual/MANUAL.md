@@ -1,6 +1,6 @@
 # The Living Development and Documentation Manual
 
-Version 1.0 - 2026-11-03
+Version 1.5 - 2026-11-10
 
 **Purpose:** make the portfolio's accumulated working techniques understandable
 and repeatable by a new agent without pretending that every project uses every
@@ -246,6 +246,37 @@ Record command/output locations and revision when available. Do not invent
 timestamps, page counts or interactive observations to make evidence look full.
 Use [the workstream template](templates/02_WORKSTREAM.todo).
 
+### 3.6 GitHub issues and Projects across repositories
+
+**User-directed cross-repository requirement, 2026-11-06:** each actual TODO
+workstream should have a repository issue with its description and updates,
+an issue URL backlink in the local file, and the same issue on a configured
+Project. Completed work closes; unfinished work stays open. Keep the existing
+numbered `.todo` schema; this is an additional tracking surface, not a rename.
+
+Read [GitHub tracking](docs/GITHUB-TRACKING.md) for identity, status mapping,
+conflict handling, credentials, adoption and verification. The companion
+[adoption template](templates/14_GITHUB_TRACKING.md) records per-repository
+decisions; it is not an executable configuration format.
+
+This manual defines the contract but does not implement automation or authorize
+a bulk migration. A shared tool with per-repository configuration is a proposed
+mechanism. A skill alone cannot synchronize while no agent is running.
+
+The owner also requests persistent default local credential discovery and opts
+into `workflow` access for authorized Actions maintenance (**GH-03**). Follow
+the tracking guide for inherited/current-user credential lookup, plaintext
+versus encrypted storage limits, and workflow authoring, trust and qualification
+gates. Extra scopes are not blanket activation or deployment permission; local
+credential availability does not install hosted automation.
+
+The later owner-selected credential source is a local ignored `.env`
+(**GH-05**). Invoke the credential runner from the canonical support root,
+never read the secret into conversation. The runner is implemented, but is
+not a synchronizer: it supplies credentials only to a trusted command.
+Git/portable-payload checks reject environment files; plaintext remains readable
+by other programs and must never be treated as absolutely disclosure-proof.
+
 ## 4. The bounded development loop
 
 Basis: **TR-01, PF-01, SC-01, ET-01**.
@@ -306,16 +337,143 @@ Use a change-impact table:
 Do not regenerate unrelated large artifacts automatically. Explain why a
 dependent rebuild is necessary, and preserve old editions where required.
 
-### 4.5 Promotion and commits are local contracts
+### 4.5 Frequent, substantial commits within local authority
 
 EntropyTag's small-first gate and KardboardCode's earlier per-TODO commit request
 are examples of scoped policies, not universal authorization. Some projects
 request planning before implementation. Some require recorded-footage testing.
 Others do not authorize any commit. Read the active task and repository rules.
 
-When commits are authorized, commit coherent reviewed work and leave unrelated
-changes alone. Do not interpret "update the docs" as permission to push, create
-a release or upload private materials.
+**User-directed cross-project requirement, 2026-11-10 (CM-01):** when commits
+are authorized, checkpoint more frequently at meaningful, verified milestones,
+always using the **Zanark** account. This supersedes treating cadence as only a
+project-specific preference; it does not supersede a project's approval gates
+or grant commit/push authority merely by loading the manual.
+
+A substantial commit is one explainable, independently reviewable outcome:
+a working vertical slice, a focused bug fix with its regression check, a
+behavior-preserving refactor, or a coherent documentation improvement. Include
+the directly dependent tests, contracts and documentation in that unit. A
+one-line fix can be substantial; line count, file count and elapsed time are
+not acceptance criteria. For a long workstream, define these checkpoints before
+implementation rather than waiting until its entire backlog is finished.
+
+At each completed unit, review its diff, run the smallest relevant existing
+checks, update its evidence and commit promptly within existing authority.
+Do not manufacture activity with empty commits, arbitrary per-file splits,
+save-by-save commits, avoidable fixup chains or formatting-only fragments of the
+same unfinished change. A standalone formatting/documentation change is valid
+when it is itself the requested coherent outcome. Keep inseparable work together;
+never split it into broken intermediate revisions to meet a frequency target.
+If there is no complete safe checkpoint, continue the unit or record the
+blocker rather than committing a false milestone.
+
+Before each commit, inspect staged and unstaged changes, stage only the intended
+paths/hunks and review the **staged** diff. Never use blanket staging in a shared
+dirty worktree or capture another session's changes. Verify the effective Git
+author **and committer** are the owner's confirmed Zanark identity, using
+repository-local or per-command settings, not shared/global changes. Use a
+verified account-associated email or owner-approved GitHub noreply address;
+do not guess an email. Preserve required trailers and verify the resulting
+commit's identity, scope and remaining worktree afterward.
+
+Git commits are local and do not authenticate with a PAT. For authorized GitHub
+operations, use the existing credential runner and verify its authenticated login
+is `Zanark` as described in [GitHub tracking](docs/GITHUB-TRACKING.md#zanark-identity-for-commits-and-github-operations).
+Never substitute another available account or assume setting `user.name` proves
+GitHub authentication. Missing/mismatched identity or credentials are blockers,
+not reasons to request the existing token in chat or bypass verification.
+
+Do not interpret "update the docs" as permission to commit existing unrelated
+work, push, create a release or upload private materials. A local commit is not
+a push or a deployment; each follows its own authority boundary.
+
+### 4.6 Concurrent use: protect the user's working instance
+
+**User-directed manual addition, 2026-11-09 (CU-01):** support the user continuing
+to use a desktop application or website while an agent develops it. The contract
+below is adopted guidance, not evidence that any project already implements
+runtime isolation. Local exceptions must be reconciled explicitly, not assumed.
+
+**Choose the lanes before touching runtime files.**
+
+| Lane | Purpose and boundary |
+|---|---|
+| Stable use (default) | User works in a known-good, identified build whose files and state are not development/test output |
+| Development/test | Agent edits, builds, automates and restarts its own isolated candidate, using disposable profiles and data |
+| Live preview (explicit opt-in) | User chooses ongoing source changes/hot reload; distinguish this from stable use and coordinate disruptive restarts even here |
+
+Use the simplest existing project mechanism: separate build directories, a
+versioned snapshot, a supported profile flag or a separate preview server may
+suffice. Do not prescribe containers, extra services or a new deployment system
+without need. A worktree isolates source, not databases, settings, browser state,
+ports or devices. A running process can still load changed modules, plugins,
+templates or assets later. Never label an instance stable merely because it
+started before the edits.
+
+**Inventory ownership and shared dependencies.** Record actual absolute paths/
+URLs, build/revision identity (including relevant dirty changes), command,
+verified process ownership, output/data directories, backend endpoints and
+exclusive resources in the [runtime ownership record](templates/15_RUNTIME_OWNERSHIP.md)
+or an equivalent existing runbook. Do not copy secrets. Treat unknown processes
+as user-owned until established otherwise; an occupied port is not permission
+to reclaim it. Before stopping anything, recheck the specific process ID and
+command because IDs can be reused. Do not kill by process name or broad pattern.
+
+**Protect active work.** Do not silently close/restart/reinstall the user's app,
+refresh/navigate their browser, steal focus, overwrite loaded files or automate
+their active profile. Keep unsaved documents, selections, progress and settings
+intact. Use synthetic data and a disposable test session, not the user's open
+documents or real working browser profile. Shared data needs an explicit
+concurrency/consistency policy; read-only fixtures or a supported consistent
+snapshot are preferable to an unverified copy of a live database. Credentials,
+private documents and production data are not test fixtures.
+
+**Desktop boundary.** Build to a separate directory and use a supported distinct
+app-data/profile location. Check installed paths, auto-updaters, app IDs,
+single-instance mutexes, IPC endpoints, locks, plugins and lazily loaded assets.
+Launching a second executable may forward to the first instance rather than
+create a test instance. Confirm the effective profile/process before automation.
+Never replace installed/running binaries or use force-close to make a build pass.
+
+**Website boundary.** Give the user and agent distinct URLs/ports, but also map
+API endpoints, database writes, browser storage, cookies and service workers.
+Different ports are distinct origins but do not isolate every resource: cookies
+can span ports, and both servers may write the same backend. A stable preview
+serves a complete retained build, not editable source or a directory a build
+cleans/rewrites. Disable HMR/watch-triggered reload there; keep HMR in the chosen
+live-preview/development lane. Check proxy/static-asset routing and versioned
+service-worker caches so one lane does not replace the other's assets or state.
+
+**Bound contention and unavoidable interruptions.** Cameras, microphones, GPUs,
+single-instance hosts and locked files may not support simultaneous use.
+Use recorded/synthetic inputs, offline tests or non-conflicting work first.
+Bound expensive build/test parallelism to avoid degrading the user's active
+workflow; pause only the conflicting agent job if needed. If a necessary check
+or migration cannot coexist, identify the exact conflict and coordinate a narrow
+pause with the user. Do not promise zero disruption or stop all unrelated work.
+Leave user-facing services needed after handoff running with documented ownership;
+clean up only agent-owned disposable helpers when their work is finished.
+
+**Verify coexistence, not merely two launches.** In an isolated representative
+setup, exercise a real workflow and save/reopen its state while rebuilding,
+testing and restarting the development lane. Confirm that development failure
+does not reload/terminate the stable instance, corrupt its saves or change the
+files it serves. Verify profile/backend separation and expected resource
+contention. Do not drive the user's active session to perform this test; their
+acceptance is separate. If only fixtures were exercised, record that qualification
+limit instead of claiming the user's actual session was proven safe.
+
+**Promote deliberately.** Build and verify a complete candidate outside the
+protected lane; report its identity, meaningful change and required restart/
+reload. Switch only with applicable authority and a coordinated save point.
+Preserve the previous version and use a supported atomic/versioned switch where
+practical, rather than copying half a build over the served directory. Plan data
+compatibility before the switch: older code may not read a newer schema.
+Prefer compatible migrations; otherwise obtain approval for a consistent backup,
+interruption and data recovery plan. Do not roll back code blindly or restore a
+backup over newer user work. Verify the selected build and retained state after
+the switch; do not claim a recovery path was exercised unless it was.
 
 ## 5. Journals, decisions and historical truth
 
@@ -1044,6 +1202,11 @@ Lead with the result, identify meaningful limitations, and show full absolute
 artifact paths. Mention the next action only if it is required. Do not claim
 checks that were not performed, hide a failed render behind a source file, or
 offer a summary that makes partial work sound complete.
+
+For concurrent-use applications, include the stable and candidate paths/URLs,
+actual build identity, process ownership, data boundary, remaining isolation
+limits and coordinated switch/recovery plan from section 4.6. A ready candidate
+is not an updated user instance; updating this manual does not migrate any app.
 
 ## 15. Growing the manual without inventing consensus
 

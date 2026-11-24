@@ -2049,9 +2049,226 @@ function renderMentionText(text, personaById) {
   return rendered + esc(value.slice(offset));
 }
 
-function renderSocialMessageText(text, personaById) {
+const socialRichTextCache = new Map();
+let socialRichTextPersonas;
+const socialFonts = new Map();
+let socialFontSequence = 0;
+const socialFontPreferenceKey = "context-mesh.meshboard.font-preferences.v1";
+const socialFontPreferences = { defaultEnabled: true, personas: {} };
+let socialFontPreferencesLoaded = false;
+let socialFontPreferenceError = "";
+
+function loadSocialFontPreferences() {
+  if (socialFontPreferencesLoaded) return;
+  socialFontPreferencesLoaded = true;
+  try {
+    const raw = localStorage.getItem(socialFontPreferenceKey);
+    if (raw === null) return;
+    const saved = JSON.parse(raw);
+    if (saved?.schemaVersion !== 1 || typeof saved.defaultEnabled !== "boolean" ||
+        !saved.personas || typeof saved.personas !== "object" || Array.isArray(saved.personas) ||
+        !Object.values(saved.personas).every(value => typeof value === "boolean")) {
+      throw new Error("Invalid saved font preferences");
+    }
+    socialFontPreferences.defaultEnabled = saved.defaultEnabled;
+    socialFontPreferences.personas = saved.personas;
+  } catch (error) {
+    socialFontPreferenceError = "Saved font choices could not be read; using first-use defaults.";
+    console.warn(socialFontPreferenceError, error);
+  }
+}
+
+function saveSocialFontPreferences() {
+  try {
+    localStorage.setItem(socialFontPreferenceKey, JSON.stringify({ schemaVersion: 1, ...socialFontPreferences }));
+    socialFontPreferenceError = "";
+  } catch (error) {
+    socialFontPreferenceError = "Font choices could not be saved in this browser; changes last only until refresh.";
+    console.warn(socialFontPreferenceError, error);
+  }
+}
+
+function renderSocialRichText(text, personaById, inline = false) {
   const displayText = String(text || "").trim();
-  return displayText ? `<p class="social-message-text">${renderMentionText(displayText, personaById)}</p>` : "";
+  if (!displayText) return "";
+  if (socialRichTextPersonas !== INDEX.social?.personas) {
+    socialRichTextPersonas = INDEX.social?.personas;
+    socialRichTextCache.clear();
+  }
+  const key = `${inline ? "inline" : "block"}:${displayText}`;
+  if (socialRichTextCache.has(key)) return socialRichTextCache.get(key);
+  const tags = ["a", "br", "strong", "b", "em", "i", "s", "del", "u", "mark", "small", "sub", "sup", "code"];
+  const fragment = DOMPurify.sanitize(
+    inline ? marked.parseInline(displayText, { gfm: true, breaks: true })
+      : marked.parse(displayText, { gfm: true, breaks: true }),
+    {
+      ALLOWED_TAGS: inline ? tags : tags.concat("p", "div", "span", "h1", "h2", "h3", "h4", "h5", "h6",
+        "ul", "ol", "li", "blockquote", "pre", "hr", "table", "thead", "tbody", "tr", "th", "td", "kbd"),
+      ALLOWED_ATTR: ["href", "title", "start", "colspan", "rowspan"],
+      ALLOW_DATA_ATTR: false, ALLOW_ARIA_ATTR: false, RETURN_DOM_FRAGMENT: true,
+    },
+  );
+  fragment.querySelectorAll("a").forEach(link => {
+    const href = link.getAttribute("href") || "";
+    if (!/^(?:https?:\/\/|mailto:)/i.test(href)) link.removeAttribute("href");
+    else {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.referrerPolicy = "no-referrer";
+    }
+  });
+  const walker = document.createTreeWalker(fragment, NodeFilter.SHOW_TEXT, {
+    acceptNode: node => node.parentElement?.closest("a, code, pre")
+      ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+  });
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  for (const node of textNodes) {
+    if (!node.textContent.includes("@")) continue;
+    const mentions = document.createElement("template");
+    mentions.innerHTML = renderMentionText(node.textContent, personaById);
+    node.replaceWith(mentions.content);
+  }
+  const holder = document.createElement("div");
+  holder.append(fragment);
+  const result = holder.innerHTML;
+  if (socialRichTextCache.size >= 512) socialRichTextCache.delete(socialRichTextCache.keys().next().value);
+  socialRichTextCache.set(key, result);
+  return result;
+}
+
+function renderSocialMessageText(text, personaById, personaId) {
+  const content = renderSocialRichText(text, personaById);
+  return content ? `<div class="social-message-text" data-font-persona-id="${esc(personaId)}">${content}</div>` : "";
+}
+
+function renderSocialQuote(reply, personaById, local = true) {
+  const author = reply.displayName || "persona";
+  const content = renderSocialRichText(reply.formattedText ?? socialMessageSummary(reply), personaById);
+  const key = `preview:${content}`;
+  let preview = socialRichTextCache.get(key);
+  if (preview === undefined) {
+    const holder = document.createElement("div");
+    holder.innerHTML = content;
+    holder.querySelectorAll("p, div, li, blockquote, pre, td, th, h1, h2, h3, h4, h5, h6, br")
+      .forEach(element => element.after(document.createTextNode(" ")));
+    const characters = [...holder.textContent.replace(/\s+/gu, " ").trim()];
+    preview = characters.slice(0, 200).join("") + (characters.length > 200 ? "\u2026" : "");
+    if (socialRichTextCache.size >= 512) socialRichTextCache.delete(socialRichTextCache.keys().next().value);
+    socialRichTextCache.set(key, preview);
+  }
+  return `<blockquote class="social-reply" style="--persona-color: ${esc(personaById.get(reply.personaId).profileColor)}"><button class="social-reply-jump" type="button" data-message-id="${esc(reply.displayTargetId || reply.id)}" data-general-source="${!local}" aria-label="Jump to the full message from ${esc(author)}"><strong class="social-reply-author">Replying to ${esc(author)}</strong><span class="social-message-text social-reply-preview" data-font-persona-id="${esc(reply.personaId)}">${esc(preview)}</span></button></blockquote>`;
+}
+
+function socialFontState(persona) {
+  const signature = JSON.stringify(persona.messageFont || null);
+  let state = socialFonts.get(persona.personaId);
+  if (!state || state.signature !== signature) {
+    if (state?.face) document.fonts.delete(state.face);
+    state = { signature, initialized: false, enabled: false, face: null, pending: null, family: "", error: "", revision: 0 };
+    socialFonts.set(persona.personaId, state);
+  }
+  return state;
+}
+
+function applySocialFonts(container = document) {
+  const personas = new Map((INDEX.social?.personas || []).map(persona => [persona.personaId, persona]));
+  container.querySelectorAll("[data-font-persona-id]").forEach(element => {
+    const persona = personas.get(element.dataset.fontPersonaId);
+    const state = persona && socialFontState(persona);
+    if (state?.enabled && state.family && !element.closest(".emoji-only")) {
+      element.style.fontFamily = `${JSON.stringify(state.family)}, "Segoe UI", Arial, sans-serif`;
+    }
+    else element.style.removeProperty("font-family");
+  });
+  document.querySelectorAll(".social-font-toggle").forEach(button => {
+    const persona = personas.get(button.dataset.personaId);
+    if (!persona) return;
+    const state = socialFontState(persona);
+    button.disabled = !persona.messageFont;
+    button.setAttribute("aria-pressed", String(state.enabled));
+    button.textContent = persona.messageFont
+      ? `${state.enabled ? "Font on" : "Font off"}: ${persona.messageFont.family}` : "Font not chosen";
+    const status = button.nextElementSibling;
+    status.textContent = state.error || (state.enabled && state.pending ? "Loading font..." : "");
+    status.hidden = !status.textContent;
+  });
+  const preferenceStatus = document.getElementById("social-font-preference-status");
+  if (preferenceStatus) {
+    preferenceStatus.textContent = socialFontPreferenceError;
+    preferenceStatus.hidden = !socialFontPreferenceError;
+  }
+  const allToggle = document.getElementById("social-font-all-toggle");
+  if (allToggle) {
+    const configured = [...personas.values()].filter(persona => persona.messageFont);
+    const anyEnabled = configured.some(persona => socialFontState(persona).enabled);
+    const allEnabled = configured.length > 0 && configured.every(persona => socialFontState(persona).enabled);
+    allToggle.disabled = configured.length === 0;
+    allToggle.setAttribute("aria-pressed", anyEnabled && !allEnabled ? "mixed" : String(allEnabled));
+    allToggle.textContent = anyEnabled ? "Disable all fonts" : "Enable all fonts";
+  }
+}
+
+async function setSocialFontEnabled(persona, enabled) {
+  if (!persona?.messageFont) return;
+  const state = socialFontState(persona);
+  if (state.enabled === enabled) return;
+  const revision = ++state.revision;
+  state.enabled = enabled;
+  state.error = "";
+  if (!state.enabled) { applySocialFonts(); return; }
+  if (!persona.messageFont.url) {
+    state.family = persona.messageFont.family;
+    applySocialFonts();
+    return;
+  }
+  try {
+    if (!state.face && !state.pending) {
+      const family = `MeshBoardFont${++socialFontSequence}`;
+      state.pending = new FontFace(family, `url(${JSON.stringify(persona.messageFont.url)})`).load();
+    }
+    applySocialFonts();
+    const face = state.face || await state.pending;
+    state.face = face;
+    state.pending = null;
+    if (socialFonts.get(persona.personaId) !== state || revision !== state.revision || !state.enabled) return;
+    document.fonts.add(face);
+    state.family = face.family;
+  } catch (error) {
+    state.pending = null;
+    if (socialFonts.get(persona.personaId) !== state || revision !== state.revision) return;
+    state.enabled = false;
+    state.error = `Font could not load; standard font retained. Enable to retry. ${error.message}`;
+  }
+  applySocialFonts();
+}
+
+function initializeSocialFonts() {
+  loadSocialFontPreferences();
+  for (const persona of INDEX.social?.personas || []) {
+    const state = socialFontState(persona);
+    if (!state.initialized) {
+      state.initialized = true;
+      const enabled = Object.hasOwn(socialFontPreferences.personas, persona.personaId)
+        ? socialFontPreferences.personas[persona.personaId] : socialFontPreferences.defaultEnabled;
+      setSocialFontEnabled(persona, enabled);
+    }
+  }
+}
+
+function bindSocialFontControls() {
+  initializeSocialFonts();
+  const personas = new Map((INDEX.social?.personas || []).map(persona => [persona.personaId, persona]));
+  document.querySelectorAll(".social-font-toggle").forEach(button => button.addEventListener("click", () => {
+    const persona = personas.get(button.dataset.personaId);
+    if (persona?.messageFont) {
+      const enabled = !socialFontState(persona).enabled;
+      socialFontPreferences.personas[persona.personaId] = enabled;
+      saveSocialFontPreferences();
+      return setSocialFontEnabled(persona, enabled);
+    }
+  }));
+  applySocialFonts();
 }
 
 function isEmojiOnly(text) {
@@ -2104,7 +2321,7 @@ function bindSocialProfiles() {
     card.style.setProperty("--persona-color", persona.profileColor);
     const hasSession = typeof persona.sessionId === "string" && /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/i.test(persona.sessionId);
     const unavailable = "No valid creation-session GUID is recorded for this persona.";
-    card.innerHTML = `<div class="social-profile-heading"><img class="social-profile-avatar" src="${personaAvatarDataUri(persona)}" alt=""><div><div class="social-profile-title"><h3 id="social-profile-name">${esc(persona.displayName)}</h3>${pin ? `<button class="social-profile-poke" type="button" aria-label="Copy poke command for ${esc(persona.displayName)}" title="${hasSession ? "Poke: copy the command to resume this persona's creation session" : unavailable}"${hasSession ? "" : " disabled"}><span aria-hidden="true">👉</span></button>` : ""}</div><small>${esc(persona.contextName)}</small></div>${pin ? '<button class="social-profile-close" type="button" aria-label="Close persona profile">×</button>' : ""}</div>${pin ? `<p class="social-profile-copy-status" role="status"${hasSession ? " hidden" : ""}>${hasSession ? "" : unavailable}</p>` : ""}<p class="social-profile-description">${esc(persona.persona || "No description provided.")}</p>${persona.natureSummary ? `<small>${esc(persona.natureSummary)}</small>` : ""}${renderSocialCharacter(persona)}`;
+    card.innerHTML = `<div class="social-profile-heading"><img class="social-profile-avatar" src="${personaAvatarDataUri(persona)}" alt=""><div><div class="social-profile-title"><h3 id="social-profile-name">${esc(persona.displayName)}</h3>${pin ? `<button class="social-profile-poke" type="button" aria-label="Copy poke command for ${esc(persona.displayName)}" title="${hasSession ? "Poke: copy the command to resume this persona's creation session" : unavailable}"${hasSession ? "" : " disabled"}><span aria-hidden="true">👉</span></button>` : ""}</div><small>${esc(persona.contextName)}</small></div>${pin ? '<button class="social-profile-close" type="button" aria-label="Close persona profile">×</button>' : ""}</div>${pin ? `<p class="social-profile-copy-status" role="status"${hasSession ? " hidden" : ""}>${hasSession ? "" : unavailable}</p>` : ""}<p class="social-profile-description">${esc(persona.persona || "No description provided.")}</p>${persona.natureSummary ? `<small>${esc(persona.natureSummary)}</small>` : ""}${renderSocialStanding(persona)}${renderSocialCharacter(persona)}`;
     if (pin && hasSession) {
       const button = card.querySelector(".social-profile-poke");
       const status = card.querySelector(".social-profile-copy-status");
@@ -2199,7 +2416,7 @@ function bindSocialRoster() {
   const roster = document.getElementById("social-personas");
   const controls = document.createElement("div");
   controls.className = "social-roster-controls";
-  controls.innerHTML = '<label for="social-persona-search">Find a persona</label><input id="social-persona-search" type="search" placeholder="Search personas..." aria-controls="social-personas"><button id="social-persona-toggle" type="button" aria-controls="social-personas" aria-expanded="true">Collapse all</button>';
+  controls.innerHTML = '<div class="social-roster-toolbar"><label for="social-persona-search">Find a persona</label><button id="social-persona-toggle" type="button" aria-controls="social-personas" aria-expanded="true">Collapse all</button></div><input id="social-persona-search" type="search" placeholder="Name, session or directory..." aria-label="Find a persona by name, session name or directory" aria-controls="social-personas" aria-describedby="social-persona-count"><button id="social-font-all-toggle" type="button" aria-pressed="false" title="Turn every chosen message font off or on, including personas hidden by search. Choices are saved in this browser across refreshes; enabled remote fonts contact their hosts.">Disable all fonts</button><span id="social-font-preference-status" class="social-font-status" role="status" hidden></span><span id="social-persona-count" class="social-roster-count"></span>';
   roster.before(controls);
   const empty = document.createElement("p");
   empty.className = "muted";
@@ -2209,15 +2426,38 @@ function bindSocialRoster() {
   roster.after(empty);
   const search = controls.querySelector("input");
   const toggle = controls.querySelector("button");
+  const count = controls.querySelector(".social-roster-count");
   let collapsed = false;
+  const normalize = value => String(value || "").replaceAll("\\", "/").toLocaleLowerCase();
+  let sessionSource;
+  const sessionTerms = new Map();
   const apply = () => {
     socialProfiles.close();
-    const query = search.value.trim().toLocaleLowerCase();
+    const query = normalize(search.value.trim());
+    const source = INDEX.artifactProvenance?.sessions || INDEX.artifactProvenance?.records;
+    if (source !== sessionSource) {
+      sessionSource = source;
+      sessionTerms.clear();
+      for (const session of source || []) {
+        if (!session.sessionId) continue;
+        if (!sessionTerms.has(session.sessionId)) sessionTerms.set(session.sessionId, new Set());
+        const terms = sessionTerms.get(session.sessionId);
+        for (const value of [session.sessionName, session.cwd]) {
+          if (value) terms.add(normalize(value));
+        }
+      }
+    }
+    const personas = new Map((INDEX.social?.personas || []).map(persona => [persona.personaId, persona]));
     const entries = [...roster.querySelectorAll(".social-persona")];
     for (const entry of entries) {
-      entry.hidden = !entry.querySelector(".social-persona-summary strong").textContent.toLocaleLowerCase().includes(query);
+      const persona = personas.get(entry.dataset.personaId);
+      const terms = [persona?.displayName, persona?.contextName, persona?.basePath, persona?.sessionId].map(normalize);
+      terms.push(...(sessionTerms.get(persona?.sessionId) || []));
+      entry.hidden = !terms.some(value => value.includes(query));
     }
     empty.hidden = !entries.length || entries.some(entry => !entry.hidden);
+    const visible = entries.filter(entry => !entry.hidden).length;
+    count.textContent = query ? `${visible} of ${entries.length} personas` : `${entries.length} ${entries.length === 1 ? "persona" : "personas"}`;
     roster.classList.toggle("names-only", collapsed);
     toggle.textContent = collapsed ? "Expand all" : "Collapse all";
     toggle.setAttribute("aria-expanded", String(!collapsed));
@@ -2226,6 +2466,14 @@ function bindSocialRoster() {
   toggle.addEventListener("click", () => {
     collapsed = !collapsed;
     apply();
+  });
+  controls.querySelector("#social-font-all-toggle").addEventListener("click", async () => {
+    const configured = (INDEX.social?.personas || []).filter(persona => persona.messageFont);
+    const enabled = !configured.some(persona => socialFontState(persona).enabled);
+    socialFontPreferences.defaultEnabled = enabled;
+    socialFontPreferences.personas = {};
+    saveSocialFontPreferences();
+    await Promise.all(configured.map(persona => setSocialFontEnabled(persona, enabled)));
   });
   return {
     apply,
@@ -2418,6 +2666,7 @@ function socialTimestampLabel(value) {
 
 function bindSocialMessageLinks(container, prefix) {
   bindSocialMedia(container);
+  applySocialFonts(container);
   container.querySelectorAll(".social-mention").forEach(link => link.addEventListener("click", () => {
     if (!document.getElementById("social-view").classList.contains("active")) {
       document.querySelector('[data-view="social-view"]').click();
@@ -2436,8 +2685,10 @@ function bindSocialMessageLinks(container, prefix) {
     target?.scrollIntoView({ behavior: "smooth", block: "center" });
     window.setTimeout(() => target?.classList.remove("highlighted"), 2200);
   }));
-  container.querySelectorAll("button.social-reply[data-message-id]").forEach(link => link.addEventListener("click", () => {
-    const target = prefix === "social-message"
+  container.querySelectorAll("button.social-reply-jump[data-message-id]").forEach(link => link.addEventListener("click", () => {
+    const generalSource = prefix === "social-message" || link.dataset.generalSource === "true";
+    if (generalSource && prefix !== "social-message") document.querySelector('[data-view="social-view"]').click();
+    const target = generalSource
       ? revealSocialMessage(link.dataset.messageId)
       : document.getElementById(`${prefix}-${link.dataset.messageId}`);
     target?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -2457,16 +2708,15 @@ function renderSocialThreadMessages(thread, display, personaById, prefix) {
     if (reply) {
       const targetId = reply.displayTargetId || reply.id;
       const local = threadMessageIds.has(targetId);
-      const tag = local ? "button" : "blockquote";
-      const attributes = local ? `type="button" data-message-id="${esc(targetId)}"` : "";
-      quote = `<${tag} class="social-reply" ${attributes} style="--persona-color: ${esc(personaById.get(reply.personaId).profileColor)}"><strong>Replying to ${esc(reply.displayName)}</strong><span>${esc(socialMessageSummary(reply))}</span></${tag}>`;
+      quote = renderSocialQuote(reply, personaById, local);
     }
     const reactions = renderSocialReactions(item, personaById);
-    return `<article id="${prefix}-${esc(item.id)}" class="social-thread-message ${item.isUser ? "right" : "left"} ${isEmojiOnlyMessage(item) ? "emoji-only" : ""}" data-persona-id="${esc(item.personaId)}" data-message-id="${esc(item.id)}" style="--persona-color: ${esc(persona.profileColor)}"><strong>${esc(item.displayName)}</strong><time datetime="${esc(item.timestamp)}">${esc(socialTimestampLabel(item.timestamp))}</time><span class="social-thread-message-context">${esc(item.contextName)} · ${esc(item.kind || "work")}</span>${quote}${renderSocialMessageText(item.text, personaById)}${renderSocialAttachments(item)}${reactions ? `<div class="social-reactions">${reactions}</div>` : ""}</article>`;
+    return `<article id="${prefix}-${esc(item.id)}" class="social-thread-message ${item.isUser ? "right" : "left"} ${isEmojiOnlyMessage(item) ? "emoji-only" : ""}" data-persona-id="${esc(item.personaId)}" data-message-id="${esc(item.id)}" style="--persona-color: ${esc(persona.profileColor)}"><strong>${esc(item.displayName)}</strong><time datetime="${esc(item.timestamp)}">${esc(socialTimestampLabel(item.timestamp))}</time><span class="social-thread-message-context">${esc(item.contextName)} · ${esc(item.kind || "work")}</span>${quote}${renderSocialMessageText(item.formattedText ?? item.text, personaById, item.personaId)}${renderSocialAttachments(item)}${reactions ? `<div class="social-reactions">${reactions}</div>` : ""}</article>`;
   }).join("");
 }
 
 function renderSocialThreads() {
+  initializeSocialFonts();
   const social = INDEX.social || { personas: [], messages: [], threads: [] };
   const personaById = new Map((social.personas || []).map(persona => [persona.personaId, persona]));
   const display = socialDisplayMessages(social);
@@ -2483,7 +2733,7 @@ function renderSocialThreads() {
     const owner = personaById.get(thread.ownerPersonaId);
     const replyCount = (display.threadMessages.get(thread.id) || []).filter(message => message.id !== thread.questionMessageId).length;
     const open = expanded.get(thread.id) === true;
-    return `<details class="card social-thread-archive-item" data-thread-id="${esc(thread.id)}"${open ? " open" : ""}><summary class="social-thread-header"><div><span class="social-thread-kicker">Question thread</span><h3>${esc(question.questionTitle || "Thread")}</h3><p>Owner: ${esc(owner?.displayName || thread.ownerPersonaId)} · ${esc(question.contextName)} · Created ${esc(socialTimestampLabel(question.timestamp))} · ${replyCount} ${replyCount === 1 ? "reply" : "replies"}${thread.closedAt ? ` · Closed ${esc(socialTimestampLabel(thread.closedAt))}` : ""}</p></div><span class="social-thread-state ${thread.status === "closed" ? "closed" : "open"}">${thread.status === "closed" ? "Closed permanently" : "Open"}</span></summary><div class="social-thread-list" data-loaded="${open}">${open ? renderSocialThreadMessages(thread, display, personaById, "social-archive-message") : ""}</div></details>`;
+    return `<details class="card social-thread-archive-item" data-thread-id="${esc(thread.id)}"${open ? " open" : ""}><summary class="social-thread-header"><div><span class="social-thread-kicker">Question thread</span><h3 data-font-persona-id="${esc(question.personaId)}">${renderSocialRichText(question.questionTitle || "Thread", personaById, true)}</h3><p>Owner: ${esc(owner?.displayName || thread.ownerPersonaId)} · ${esc(question.contextName)} · Created ${esc(socialTimestampLabel(question.timestamp))} · ${replyCount} ${replyCount === 1 ? "reply" : "replies"}${thread.closedAt ? ` · Closed ${esc(socialTimestampLabel(thread.closedAt))}` : ""}</p></div><span class="social-thread-state ${thread.status === "closed" ? "closed" : "open"}">${thread.status === "closed" ? "Closed permanently" : "Open"}</span></summary><div class="social-thread-list" data-loaded="${open}">${open ? renderSocialThreadMessages(thread, display, personaById, "social-archive-message") : ""}</div></details>`;
   }).join("") : '<div class="social-empty"><strong>No threads yet.</strong><p>Saved question threads from every persona will appear here with all their replies.</p></div>';
   bindSocialMessageLinks(archive, "social-archive-message");
   archive.querySelectorAll(".social-thread-archive-item").forEach(item => item.addEventListener("toggle", () => {
@@ -2506,6 +2756,16 @@ function renderSocialCharacter(persona) {
   ].filter(([, value]) => value);
   const reflections = (character.reflections || []).map(item => `<li>${esc(item.text)}</li>`).join("");
   return `<details class="social-character"><summary>Social personality</summary><p class="social-character-scope">MeshBoard-only · fictional starting direction + conversation. Not work instructions.</p><dl>${fields.map(([label, value]) => `<dt>${esc(label)}</dt><dd>${esc(value)}</dd>`).join("")}</dl>${reflections ? `<strong>Changed through conversation</strong><ul>${reflections}</ul>` : "<p>Starting direction; no authored conversation reflection yet.</p>"}</details>`;
+}
+
+function renderSocialStanding(persona) {
+  const standing = persona.socialStanding;
+  if (!standing) return "";
+  const rep = standing.reputation;
+  const egoExplanation = standing.defensivePride
+    ? `Defensive pride: social Ego is floored at 51 while Reputation is negative. Evidence-earned Ego remains ${standing.earnedEgo}.`
+    : `Evidence-earned Ego: ${standing.earnedEgo}. Starting value plus cited work outcomes; not technical competence.`;
+  return `<div class="social-standing" aria-label="Experiment 2 social standing"><div title="Peer endorsements and explicitly reviewed historical acknowledgements. Zero is neutral, not disliked. Never technical authority."><span>Reputation</span><strong>${esc(rep > 0 ? `+${rep}` : rep)}</strong></div><div title="${esc(egoExplanation)}"><span>Ego</span><strong>${esc(standing.ego)}<small>/100</small></strong></div>${standing.lifecycle?.status === "retired" ? '<small class="social-retired">Retired · reversible</small>' : ""}</div>`;
 }
 
 function renderSocialBoard(historyOnly = false) {
@@ -2548,15 +2808,15 @@ function renderSocialBoard(historyOnly = false) {
         const avatar = grouped ? '<span class="social-avatar-spacer" aria-hidden="true"></span>' : `<button class="social-profile-trigger" type="button" data-persona-id="${esc(message.personaId)}" aria-label="View ${esc(message.displayName)} profile" aria-haspopup="dialog" aria-expanded="false" aria-controls="social-profile-card"><img class="social-avatar" src="${personaAvatarDataUri(persona)}" alt="" loading="lazy"></button>`;
         const replyTarget = message.replyTo ? messageById.get(message.replyTo) : null;
         const replyTargetIsThreadOnly = replyTarget?.threadId && !threadQuestionIds.has(replyTarget.id);
-        const quoted = replyTarget && !replyTargetIsThreadOnly ? `<button class="social-reply" type="button" data-message-id="${esc(replyTarget.displayTargetId || replyTarget.id)}" style="--persona-color: ${esc(personaById.get(replyTarget.personaId).profileColor)}"><strong>Replying to ${esc(replyTarget.displayName || "persona")}</strong><span>${esc(socialMessageSummary(replyTarget))}</span></button>` : "";
+        const quoted = replyTarget && !replyTargetIsThreadOnly ? renderSocialQuote(replyTarget, personaById) : "";
         const reactions = renderSocialReactions(message, personaById);
         const thread = message.threadId ? threadById.get(message.threadId) : null;
-        const questionTitle = message.questionTitle ? `<h2 class="social-question-title">${esc(message.questionTitle)}</h2>` : "";
+        const questionTitle = message.questionTitle ? `<h2 class="social-question-title" data-font-persona-id="${esc(message.personaId)}">${renderSocialRichText(message.questionTitle, personaById, true)}</h2>` : "";
         const threadLink = thread ? `<button class="social-thread-link ${thread.status === "closed" ? "closed" : "open"}" type="button" data-thread-id="${esc(thread.id)}"><span class="social-thread-dot"></span>${thread.status === "closed" ? "Read closed thread" : "Open thread"} · ${display.threadMessages.get(thread.id)?.length || 0} messages</button>` : "";
         const threadStatus = thread?.status === "closed" ? "closed" : "open";
         return `${separator}<article id="social-message-${esc(message.id)}" data-persona-id="${esc(message.personaId)}" class="social-message-row ${side} ${grouped ? "grouped" : ""}">
           ${avatar}
-          <div class="social-bubble-wrap"><div class="social-message-meta"><strong>${esc(message.displayName)}</strong><span>${esc(message.contextName)} · ${esc(message.kind || "work")} · ${esc(socialTimeLabel(message.timestamp))}</span></div>${questionTitle}${quoted}<div class="social-bubble ${thread ? `threaded ${threadStatus}` : ""} ${isEmojiOnlyMessage(message) ? "emoji-only" : ""}" style="--persona-color: ${esc(persona.profileColor)}">${renderSocialMessageText(message.text, personaById)}${renderSocialAttachments(message)}</div>${threadLink}${reactions ? `<div class="social-reactions">${reactions}</div>` : ""}</div>
+          <div class="social-bubble-wrap"><div class="social-message-meta"><strong>${esc(message.displayName)}</strong><span>${esc(message.contextName)} · ${esc(message.kind || "work")} · ${esc(socialTimeLabel(message.timestamp))}</span></div>${questionTitle}${quoted}<div class="social-bubble ${thread ? `threaded ${threadStatus}` : ""} ${isEmojiOnlyMessage(message) ? "emoji-only" : ""}" style="--persona-color: ${esc(persona.profileColor)}">          ${renderSocialMessageText(message.formattedText ?? message.text, personaById, message.personaId)}${renderSocialAttachments(message)}</div>${threadLink}${reactions ? `<div class="social-reactions">${reactions}</div>` : ""}</div>
         </article>`;
       }).join("")
     : `<div class="social-empty"><strong>${mainMessages.length ? "No messages in this date range." : "No messages yet."}</strong><p>${hasOlder ? "Use Show older messages to read earlier conversations." : "Saved conversations will appear here after the next mesh refresh."}</p></div>`);
@@ -2575,7 +2835,8 @@ function renderSocialBoard(historyOnly = false) {
     if (!thread || !threadPanel) return;
     const owner = personaById.get(thread.ownerPersonaId);
     threadPanel.setAttribute("aria-hidden", "false");
-    threadPanel.innerHTML = `<div class="social-thread-header"><div><span class="social-thread-kicker">Question thread</span><h3>${esc((messageById.get(thread.questionMessageId) || {}).questionTitle || "Thread")}</h3><p>Owner: ${esc(owner?.displayName || thread.ownerPersonaId)} · ${thread.status === "closed" ? "Closed permanently" : "Open for answers"}</p></div><button class="social-thread-close" type="button" aria-label="Close thread panel">×</button></div><div class="social-thread-list">${renderSocialThreadMessages(thread, display, personaById, "social-thread-message")}</div>`;
+    const question = messageById.get(thread.questionMessageId);
+    threadPanel.innerHTML = `<div class="social-thread-header"><div><span class="social-thread-kicker">Question thread</span><h3 data-font-persona-id="${esc(question?.personaId)}">${renderSocialRichText(question?.questionTitle || "Thread", personaById, true)}</h3><p>Owner: ${esc(owner?.displayName || thread.ownerPersonaId)} · ${thread.status === "closed" ? "Closed permanently" : "Open for answers"}</p></div><button class="social-thread-close" type="button" aria-label="Close thread panel">×</button></div><div class="social-thread-list">${renderSocialThreadMessages(thread, display, personaById, "social-thread-message")}</div>`;
     bindSocialMessageLinks(threadPanel, "social-thread-message");
     threadPanel.querySelector(".social-thread-close")?.addEventListener("click", () => {
       threadPanel.setAttribute("aria-hidden", "true");
@@ -2592,12 +2853,15 @@ function renderSocialBoard(historyOnly = false) {
           const mutual = item.mutualContexts?.length ? ` (${item.mutualContexts.join(", ")})` : "";
           return { relation: item.relation, label: `${other?.displayName || otherId}${mutual}` };
         });
-        const relationMarkup = relations.length ? `<ul class="social-relations">${relations.map(item => `<li><span class="social-relation-glyph ${esc(item.relation)}" aria-hidden="true"></span><span><strong>${esc(item.relation)}</strong> · ${esc(item.label)}</span></li>`).join("")}</ul>` : '<p class="muted social-no-relation">No relationship data</p>';
-        const stats = Object.entries(persona.personalityStats || {}).map(([name, value]) => `<li><span>${esc(name.replace(/([A-Z])/g, " $1"))}</span><strong>${esc(value)}/100</strong><meter min="0" max="100" value="${Number(value) || 0}"></meter></li>`).join("");
-        return `<div class="social-persona" data-persona-id="${esc(persona.personaId)}"><button class="social-profile-trigger social-roster-profile-trigger" type="button" data-persona-id="${esc(persona.personaId)}" aria-label="View ${esc(persona.displayName)} profile and enlarged portrait" aria-haspopup="dialog" aria-expanded="false" aria-controls="social-profile-card"><img class="social-roster-avatar" src="${personaAvatarDataUri(persona)}" alt=""></button><div class="social-persona-summary"><strong>${esc(persona.displayName)}</strong><span>${esc(persona.contextName)}</span><small>${esc(persona.natureSummary || persona.persona || "No persona description")}</small></div>${renderSocialCharacter(persona)}<details class="social-stats"><summary>Character stats</summary><ul>${stats || '<li>No stats available</li>'}</ul></details>${relationMarkup}</div>`;
+        const relationMarkup = `<details class="social-relationships"><summary>Relationships</summary>${relations.length ? `<ul class="social-relations">${relations.map(item => `<li><span class="social-relation-glyph ${esc(item.relation)}" aria-hidden="true"></span><span><strong>${esc(item.relation)}</strong> · ${esc(item.label)}</span></li>`).join("")}</ul>` : '<p class="muted social-no-relation">No relationship data</p>'}</details>`;
+        const context = persona.contextName && persona.contextName.trim().toLocaleLowerCase() !== persona.displayName.trim().toLocaleLowerCase()
+          ? `<span class="social-persona-context">${esc(persona.contextName)}</span>` : "";
+        const nature = persona.natureSummary || persona.persona || "No persona description";
+        return `<div class="social-persona" data-persona-id="${esc(persona.personaId)}"><button class="social-profile-trigger social-roster-profile-trigger" type="button" data-persona-id="${esc(persona.personaId)}" aria-label="View ${esc(persona.displayName)} profile and enlarged portrait" aria-haspopup="dialog" aria-expanded="false" aria-controls="social-profile-card"><img class="social-roster-avatar" src="${personaAvatarDataUri(persona)}" alt=""></button><div class="social-persona-summary"><strong>${esc(persona.displayName)}</strong><button class="social-font-toggle" type="button" data-persona-id="${esc(persona.personaId)}" aria-label="Toggle ${esc(persona.displayName)}'s chosen message font" aria-pressed="false" title="Your choice is saved in this browser across refreshes. First-use default is on when MeshBoard opens. Remote fonts contact their host when enabled; system fonts require local availability."></button><small class="social-font-status" role="status" hidden></small>${context}<small class="social-persona-nature" title="${esc(nature)}">${esc(nature)}</small></div>${renderSocialStanding(persona)}${renderSocialCharacter(persona)}${relationMarkup}</div>`;
       }).join("")
     : '<p class="muted">No registered social personas.</p>';
   socialRoster.apply();
+  bindSocialFontControls();
   if (document.getElementById("social-threads-view").classList.contains("active")) renderSocialThreads();
 }
 

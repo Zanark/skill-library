@@ -83,6 +83,7 @@ const outfitDescriptions = {
   "moto-jacket": "Aubergine leather moto jacket / diagonal zip / mustard tee",
   "satin-bomber": "Raspberry satin bomber / cream raglan sleeves / teal ribbing",
   "breton-sling": "Cream-and-navy Breton stripes / ochre cross-body pouch",
+  ...vm.runInContext("Object.fromEntries(Object.entries(avatarNamedOutfits).map(([outfit, design]) => [outfit, design.label]))", sandbox),
 };
 let current = [];
 if (args.length) {
@@ -302,7 +303,7 @@ Every new earring-bearing candidate has a matching pair; the two historical refe
 <section><h2>Your 08 refinements</h2><p>08B keeps the shading and paired studs, with larger almond eyes and a fuller shoulder/chest crop. The wider framing and raised head expose roughly twice the chest area; the face necessarily occupies less of the square.</p>
 <p><strong>Construction correction:</strong> shared tapered necks connect jaw to shoulders; the hoodie folds sit beside an open neckline instead of filling the neck with blue fabric. High collars/choker sit lower. A restrained black silhouette edge separates the figure from its background without thickening the interior drawing.</p>
 <p><strong>Eye-size correction:</strong> the wider crop offset the initial increase. The latest 08B now has eyes about 11% wider and irises about 10% larger than original 08 at the same display size, not merely in drawing coordinates. Almond lids and tiny catchlights remain.</p>
-<p>The earlier role families still looked like one crew in matching jackets. The full seventeen-person cast now has fifteen independent garment designs, Gothita's goth dress and Alfred's dinner jacket. The newest additions are an embroidered smock, leather moto jacket, satin bomber and striped shirt with a cross-body pouch. These are different garment constructions, not just color swaps or new badges.</p>
+<p>The current ${current.length}-person cast uses individually authored garment cuts and name-related background props. The current refresh preserves PAM, Alfred and Gothita unchanged; the other portraits keep their saved faces, hair, expressions and facial hair. Earlier standalone garment studies remain in synthetic coverage, not as a claim about the current roster.</p>
 <p>Presentation is fictional styling, never inferred from hair, names or real-user demographics. Current-character outfits are explicitly mapped by persona ID in the preview, using each persona as creative inspiration, not a literal workplace uniform or psychological finding. Unmapped/synthetic characters retain the earlier role/stat rules; those seven families remain available for honest comparison. The preview does not edit persona files.</p></section>
 <section><h2>Gothita / romantic goth</h2><p>An explicit user-directed adult character design: long black hair with a pointed fringe, smoky winged eyes, oxblood-red lipstick, silver crescent earrings, a lace choker and an off-shoulder black brocade-style dress. The reference informs styling, not a copied face. Old seeds and the existing live artwork stay untouched by the display-name change.</p></section>
 ${previousRenderer ? '<p><a href="round-4/index.html">Preserved earlier 08B: before gothic art direction and screen-size eye correction.</a></p>' : ""}
@@ -377,9 +378,9 @@ try {
       earrings: sandbox.avatarRecipe(seed).accessory === 3 })));
   for (const record of records) for (const [style, uri] of Object.entries(record.wardrobeImages)) {
     checks.push({ svg: Buffer.from(uri.split(",")[1], "base64").toString("utf8"),
-      lipstick: style.startsWith("feminine:") || record.wardrobe.theme === "goth",
+      lipstick: style.startsWith("feminine:") || record.wardrobe.theme === "goth" || record.wardrobe.expression === "kiss-wink",
       expression: record.wardrobe.expression,
-      earrings: record.wardrobe.theme !== "butler" && (record.wardrobe.theme === "goth" || record.traits.accessory === 3) });
+      earrings: record.wardrobe.theme !== "butler" && (["goth", "pam"].includes(record.wardrobe.theme) || record.traits.accessory === 3) });
   }
   for (const seed of seeds) checks.push({
     svg: Buffer.from(render(seed, 9, {}, winkDirection).split(",")[1], "base64").toString("utf8"),
@@ -394,16 +395,17 @@ try {
     const lipstickShades = new Set();
     for (const { svg, earrings, lipstick = false, expression = "open" } of checks) {
       const doc = parser.parseFromString(svg, "image/svg+xml");
-      if (doc.querySelector("parsererror,script,foreignObject,text,image,animate,animateTransform,feImage")) failures.push("Invalid/non-vector/animated SVG");
+      if (doc.querySelector("parsererror,script,foreignObject,image,animate,animateTransform,feImage") ||
+          [...doc.querySelectorAll("text")].some(node => !node.closest('[data-feature="pam-name-badge"]'))) failures.push("Invalid/non-vector/animated SVG");
       if (!doc.querySelector('[data-feature="eyes"]')?.children.length) failures.push("No eyes");
       if (!doc.querySelector('[data-feature="mouth"]')?.children.length) failures.push("No mouth");
       const makeup = doc.querySelector('[data-feature="mouth"] [data-feature="lipstick"]');
       if (Boolean(makeup) !== lipstick) failures.push("Lipstick presentation mismatch");
       if (makeup) {
-        const shade = makeup.getAttribute("data-shade");
+        const shade = makeup.getAttribute("data-shade") || makeup.getAttribute("fill");
         const channels = /^#[0-9a-f]{6}$/.test(shade) ? shade.slice(1).match(/../g).map(value => parseInt(value, 16)) : [];
         if (channels.length !== 3 || channels[0] <= channels[1] || channels[0] <= channels[2] ||
-            !makeup.querySelector(`path[fill="${shade}"]`)) failures.push("Lipstick is not visibly painted red/pink");
+            !(makeup.matches(`path[fill="${shade}"]`) || makeup.querySelector(`path[fill="${shade}"]`))) failures.push("Lipstick is not visibly painted red/pink");
         lipstickShades.add(shade);
       }
       if (doc.querySelectorAll("[data-earring]").length !== (earrings ? 2 : 0)) failures.push("Earring pair mismatch");
@@ -414,9 +416,9 @@ try {
       if (doc.documentElement.getAttribute("data-avatar-version") === "study-v9") {
         const closed = doc.querySelectorAll('[data-feature="eyes"] > [data-eye="closed"]');
         const open = doc.querySelectorAll('[data-feature="eyes"] > [data-eye="open"]');
-        const expectedClosed = expression === "friendly-wink" ? 1 : 0;
+        const expectedClosed = ["friendly-wink", "kiss-wink"].includes(expression) ? 1 : 0;
         if (closed.length !== expectedClosed || open.length !== 2 - expectedClosed) failures.push("Live eye policy violated");
-        if (expectedClosed) {
+        if (expression === "friendly-wink") {
           if (!closed[0].matches('[data-expression="wink"]') ||
               !closed[0].querySelector('[data-feature="wink-cheek"]') ||
               !doc.querySelector('[data-feature="mouth"][data-expression="smile"]')) failures.push("Wink lost its friendly expression");
@@ -515,24 +517,25 @@ try {
       current: render(p.seed, 9, p.metadata, p.appearance),
       goth: p.wardrobe.theme === "goth",
       butler: p.wardrobe.theme === "butler",
+      pam: p.wardrobe.theme === "pam",
       individual: p.wardrobe.outfit !== "role",
     }));
     await page.evaluate(checks => {
       const parser = new DOMParser();
-      for (const { previous, current, goth, butler, individual } of checks) {
+      for (const { previous, current, goth, butler, pam, individual } of checks) {
         const parse = uri => parser.parseFromString(atob(uri.split(",")[1]), "image/svg+xml");
         const before = parse(previous), after = parse(current);
         if (butler) {
           if (!after.querySelector('[data-theme="butler"]') || !after.querySelector('[data-feature="moustache"]') ||
               !after.querySelector('[data-feature="mature-features"]')) throw new Error("Missing authored older-butler treatment");
-        } else if (before.querySelector('[data-feature="head"]').getAttribute("d") !== after.querySelector('[data-feature="head"]').getAttribute("d") ||
-            before.getElementById("skin").outerHTML !== after.getElementById("skin").outerHTML) throw new Error("Unrequested head or skin change");
+        } else if (!pam && (before.querySelector('[data-feature="head"]').getAttribute("d") !== after.querySelector('[data-feature="head"]').getAttribute("d") ||
+            before.getElementById("skin").outerHTML !== after.getElementById("skin").outerHTML)) throw new Error("Unrequested head or skin change");
         for (const doc of [before, after]) {
           (doc.querySelector('[data-feature="neck-anatomy"]') || doc.querySelector('[data-feature="neck"]'))?.remove();
         }
         const garment = doc => doc.querySelector('[data-feature="wardrobe"]').outerHTML.replace(/>\s+</g, "><");
         const sameClothes = garment(before) === garment(after);
-        if (!goth && !butler && sameClothes === individual) {
+        if (!goth && !butler && !pam && sameClothes === individual) {
           throw new Error(individual ? "Individual outfit still uses the old uniform" : "Generic wardrobe changed unintentionally");
         }
       }

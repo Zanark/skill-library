@@ -50,7 +50,17 @@ try {
       noSaturatedProfiles: personas.every(persona =>
         Object.values(persona.personalityStats).some(value => value < 100)),
       scopeVisible: cards.every(card => card.querySelector(".social-character-scope").textContent.includes("Not work instructions")),
-      sevenExplanations: document.querySelectorAll(".social-characteristics li").length === 7,
+      twoExplanations: document.querySelectorAll(".social-characteristics li").length === 2,
+      legacyStatsHidden: !document.querySelector(".social-stats, .social-persona meter")
+        && !document.querySelector(".social-characteristics").textContent.includes("Seriousness"),
+      standingMatches: cards.every(card => {
+        const persona = personas.find(item => item.personaId === card.dataset.personaId);
+        const values = [...card.querySelectorAll(".social-standing strong")].map(node => node.textContent);
+        return persona.socialStanding
+          ? values.length === 2 && Number(values[0]) === persona.socialStanding.reputation
+            && Number(values[1].split("/")[0]) === persona.socialStanding.ego
+          : values.length === 0;
+      }),
       noBroadcastStatus: !document.querySelector(".social-broadcast"),
     };
   });

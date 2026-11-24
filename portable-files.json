@@ -19,8 +19,8 @@
     },
     {
       "path": "docs\\CATALOGUE.md",
-      "bytes": 2589,
-      "sha256": "8cbca55f9a15fd9711d04e592c0814a964e8ba3b1bf248e88770297da4df2471"
+      "bytes": 5306,
+      "sha256": "8d7a44d55f72091e5b6d2db5e5c6aa939da991ffe6a91e1b29d463f40655a0e5"
     },
     {
       "path": "docs\\CONTEXT-MESH-DISCOVERY.md",
@@ -69,8 +69,8 @@
     },
     {
       "path": "docs\\catalogue.json",
-      "bytes": 4317,
-      "sha256": "ba2346db7a65700af26c4400157baba718edb6fa2e9f14651bb1247f3d75999b"
+      "bytes": 6381,
+      "sha256": "115ffe9f1a9b480fd12b8efb8102f50d3aa40e8857cf01879b9324682e959a86"
     },
     {
       "path": "examples\\context-mesh\\CONTEXT-MESH.md",
@@ -104,8 +104,8 @@
     },
     {
       "path": "scripts\\Validate-SkillLibrary.ps1",
-      "bytes": 3907,
-      "sha256": "c6173326088a3bcf0fb78ff6c139edf589950e9c58ff03f57f28ef1c78a6eb15"
+      "bytes": 4239,
+      "sha256": "d810a3327594acff434c04508e72b6961304377b2074c6b3b1f287d3e5d78381"
     },
     {
       "path": "scripts\\build_portable_demo.py",
@@ -139,8 +139,8 @@
     },
     {
       "path": "scripts\\verify_portable_payload.py",
-      "bytes": 2479,
-      "sha256": "230786ed6fb416bde0d2f93da4d856ece2a1eda8b929e191c642a0e6355c6c93"
+      "bytes": 2874,
+      "sha256": "a67aa2eb6d1fa41f2530bf88801b6c0efc62bf37fc0689340749a34886f3036d"
     },
     {
       "path": "skills\\ado-workplan\\README.md",
@@ -634,8 +634,8 @@
     },
     {
       "path": "skills\\context-mesh\\SKILL.md",
-      "bytes": 35889,
-      "sha256": "4bb1b1e3e77c04bc73f3103ac29a8f91f21805743b3188140ffd968cafb5e58d"
+      "bytes": 55981,
+      "sha256": "74ea39743a17443da42ecb139eccb088a0cd5007b089a4bcb551eafd6bfb2390"
     },
     {
       "path": "skills\\context-mesh\\docs\\ARCHITECTURE.md",
@@ -644,8 +644,8 @@
     },
     {
       "path": "skills\\context-mesh\\docs\\AVATAR-ALGORITHM.md",
-      "bytes": 59473,
-      "sha256": "cf91ae65f9e76b47525a8260b6370acbc53af9a48f67ef84b56e627b99c5243a"
+      "bytes": 62783,
+      "sha256": "b6634a82f855e129bfb33844cf8de6de522574836a8fb8aa9d93eaad24518322"
     },
     {
       "path": "skills\\context-mesh\\docs\\AVATAR-STUDIES.md",
@@ -659,8 +659,8 @@
     },
     {
       "path": "skills\\context-mesh\\docs\\OPERATIONS-AND-TESTING.md",
-      "bytes": 28569,
-      "sha256": "ff1812858ae3e74627bb607fe1c15263c0fdca3c8da2829fc25f4bcf07236c7e"
+      "bytes": 43141,
+      "sha256": "52f883dc51f59bf61c87f063bd5233fd0bbc059f5bf1e82ebc2a49b2dcf2753d"
     },
     {
       "path": "skills\\context-mesh\\docs\\REFERENCE.md",
@@ -724,23 +724,23 @@
     },
     {
       "path": "skills\\context-mesh\\implementation\\README.md",
-      "bytes": 25190,
-      "sha256": "6bb105494d5a1a29795da600ec8808275838e55d1220b3ea9710d92433bdb522"
+      "bytes": 42531,
+      "sha256": "88f330c07b88dd715d562ba42bfc204f250157be631200e3d34c73afc652ab6e"
     },
     {
       "path": "skills\\context-mesh\\implementation\\assets\\avatar-studies.js",
-      "bytes": 80468,
-      "sha256": "684184db4728b392410d864923f21e0f5c71c347f54a5e8631f1b63784ecf23a"
+      "bytes": 104511,
+      "sha256": "66dde88574c8f250c26bb7e23eb11ba3b5d3a3495cf21099b4dc693da9b615b6"
     },
     {
       "path": "skills\\context-mesh\\implementation\\assets\\dashboard.css",
-      "bytes": 28515,
-      "sha256": "7457c42a89dfbba00d399a9066c5b5b806939aaffcc35e59f7470d679189feb4"
+      "bytes": 33147,
+      "sha256": "f7ff284d0730fa655aed8c8c95c912f05ba9bce54ad28610c08614bf3217898e"
     },
     {
       "path": "skills\\context-mesh\\implementation\\assets\\dashboard.js",
-      "bytes": 122564,
-      "sha256": "240b61c3176c4d43aeb08843e160773ba2ef242ddbd7c96084ef2eb00e893487"
+      "bytes": 136700,
+      "sha256": "a93304de7f8db550b7af54dc4f2acde4f1e400e8cc52eb04c4c12278c1f7fe32"
     },
     {
       "path": "skills\\context-mesh\\implementation\\config.example.json",
@@ -748,29 +748,44 @@
       "sha256": "c903c6c84525e49beec3003e05a832ed07c505519564c7c9127189b0d96c0636"
     },
     {
+      "path": "skills\\context-mesh\\implementation\\experiment2.example.json",
+      "bytes": 131,
+      "sha256": "65fe919d2d3dedc05929516ea39620022db77e888137a4650f97c3600b93ccd7"
+    },
+    {
       "path": "skills\\context-mesh\\implementation\\package-lock.json",
-      "bytes": 11539,
-      "sha256": "eea24f8a80227d0a0f9dd734ca79ab1866735ab7179f51ace8bb926a7ba4d6c2"
+      "bytes": 13226,
+      "sha256": "925a5ca59309b8cb41a6cfc8ce27e4900cb7d398611be49f302d6d3cab5898c5"
     },
     {
       "path": "skills\\context-mesh\\implementation\\package.json",
-      "bytes": 436,
-      "sha256": "5708d1d1241a870078a6ef99dad07571acfd58b3f987e0149817a20737bc899b"
+      "bytes": 489,
+      "sha256": "c82d3b20dd884b1b6c134312e3d1658c450db4411d4fb2f8767fd2ad840f05ef"
     },
     {
       "path": "skills\\context-mesh\\implementation\\scripts\\artifact_provenance.py",
-      "bytes": 16628,
-      "sha256": "ef976fd5132b6488255f1bf28bafebb2d48cc8c0c40eef1cd753e785caa41cbd"
+      "bytes": 18209,
+      "sha256": "bc9a3eecbcf220093b6fd7d6ab25d35c5f2444719c25486bf843ff1e16df4d0d"
     },
     {
       "path": "skills\\context-mesh\\implementation\\scripts\\build_context_mesh.py",
-      "bytes": 75584,
-      "sha256": "1b3a5ec5ff89101947c66375991355cc76c5ff1907bdcf8dffbe8d25dd3fd928"
+      "bytes": 84956,
+      "sha256": "50d7f62ddbc54fed753d1779dc002fb5c78b3c6060ea58ebde22ec1c494833ef"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\scripts\\social_checkin.py",
+      "bytes": 14016,
+      "sha256": "bec364966f52b11ea4b7854ec27e90abd4b93b3d1fe2698a8e869c8fa631e120"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\scripts\\social_experiment.py",
+      "bytes": 20325,
+      "sha256": "6457921a31911a907a6541881721243a0d7e3b237f4d2d7fcb71ed32944ac367"
     },
     {
       "path": "skills\\context-mesh\\implementation\\scripts\\social_personality.py",
-      "bytes": 16060,
-      "sha256": "de645d75c7e58f8cffe71a9c2378f7b4bde26b42623c40c02855c94944968a22"
+      "bytes": 19763,
+      "sha256": "f6273bcb3ebe9fec1d95a07fdf8e606a4a552cc696b819380a7923a83fcacc10"
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\archive_smoke.mjs",
@@ -784,8 +799,8 @@
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\avatar_studies.mjs",
-      "bytes": 61142,
-      "sha256": "dc2ef7a31bf718369ab7f2454bce30e7eeb1a392c0e171249a810d7945bb41d6"
+      "bytes": 61587,
+      "sha256": "0eb567d60a55b99496b5b1b8a2d4c5b5e2f91a67cec22473c04f054c1cffb3da"
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\battleground_smoke.mjs",
@@ -794,13 +809,23 @@
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\browser_smoke.mjs",
-      "bytes": 51554,
-      "sha256": "95c867050d3c8822925169a16f358b862d5532949f4644047aceb551dcc105ef"
+      "bytes": 52022,
+      "sha256": "234bb83d13b5058875a3418bb7b2d6d1895e5495bd8675b502ac8c35fb97bd5d"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\cast_wardrobe_smoke.mjs",
+      "bytes": 8715,
+      "sha256": "b92a171ff0f114647922b275c9ea48a532f729afb2f07360f47a3ca00527b394"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\experiment2_smoke.mjs",
+      "bytes": 5151,
+      "sha256": "75fedb00ceb99ea55a821921a2588f4c1f79b37a215c5482b2df4c7980b552aa"
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\media_smoke.mjs",
-      "bytes": 24167,
-      "sha256": "ca98d6b8dea7011c2df2788c5af0d0b73d0e3bd89179238433e39389abfaca07"
+      "bytes": 24177,
+      "sha256": "62712dfb574d13c4c327ab974de6a785f3272e14e94711438b2a294d15d22953"
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\pam_avatar_smoke.mjs",
@@ -809,28 +834,43 @@
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\personality_smoke.mjs",
-      "bytes": 17735,
-      "sha256": "ecba08632206679d62bd1c740f23fe618f6f03937a4fad6731fce4b91a3d2d25"
+      "bytes": 18414,
+      "sha256": "fac82fb95602cbc678cdceeaa668150639c0609f5d3dd6898df400fc55bbdc10"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\rich_messages_smoke.mjs",
+      "bytes": 31434,
+      "sha256": "f0434133fe57ea0d828a7e2e9991b47e0fb455b8db975003afb059fda83f8e72"
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\test_build_context_mesh.py",
-      "bytes": 49919,
-      "sha256": "347dc7ebd31bfdd7bd35b1d89c0660d47c9448ed8d9063ec9f1a5af2a68d49ea"
+      "bytes": 65338,
+      "sha256": "e25d966918d3f03536df8d2d6e009b7b2a9157f21c0e6b372835fdf37d37d9a8"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\test_social_checkin.py",
+      "bytes": 12422,
+      "sha256": "865b78a82a82bbdb0fd48e826e1400ebaee38240932ea02a8ce0f9c3d42161af"
+    },
+    {
+      "path": "skills\\context-mesh\\implementation\\tests\\test_social_experiment.py",
+      "bytes": 15922,
+      "sha256": "26ab05cd1d549667bc11e336d8f41539bd0aa5fcc2060af02595f8797f9defcb"
     },
     {
       "path": "skills\\context-mesh\\implementation\\tests\\test_social_personality.py",
-      "bytes": 5370,
-      "sha256": "fdfdb85676f4da3bec37da29961574e26462773040d8319c4ba209401c538694"
+      "bytes": 8506,
+      "sha256": "250f684b598818991114abbf0acdcc2b30b143b16731cb71b2d6a897ceed4a2f"
     },
     {
       "path": "skills\\context-offload\\README.md",
-      "bytes": 9216,
-      "sha256": "12afa4d7f673b2b0a26fc2b9b9ee36db836dbea271e5fee3f52b63fa278a5033"
+      "bytes": 9712,
+      "sha256": "c1e71320c06314bf15034aa79dde4d14e473cd64eb9c53523f37a7ce260ce179"
     },
     {
       "path": "skills\\context-offload\\SKILL.md",
-      "bytes": 53966,
-      "sha256": "d675b2e757678af4de60e7de54f4e61afa46b77880fad72cdaaeb0e80a6fbd84"
+      "bytes": 92688,
+      "sha256": "f01faad660bef9babb028a06ec22def7c06bff9737c78067ce0a45e37a0e6d59"
     },
     {
       "path": "skills\\context-offload\\docs\\ARCHITECTURE.md",
@@ -844,8 +884,13 @@
     },
     {
       "path": "skills\\context-offload\\docs\\OPERATIONS-AND-TESTING.md",
-      "bytes": 14801,
-      "sha256": "e9808610028e7e44e7c6929e43d12c083e8bfd08818ddd44cc95438229945258"
+      "bytes": 16428,
+      "sha256": "02ee19b1743ceb2538787242c36e032f4f71f2d02829875b3ab24f65d44bb73e"
+    },
+    {
+      "path": "skills\\context-offload\\docs\\PROMPT-INBOX.md",
+      "bytes": 10837,
+      "sha256": "fcf5ca4682102104f4e926965ece6a141bd6fd0b7af6da30ebd080f6ec3ae26d"
     },
     {
       "path": "skills\\context-offload\\docs\\REFERENCE.md",
@@ -856,6 +901,11 @@
       "path": "skills\\context-offload\\docs\\WORKFLOW.md",
       "bytes": 10303,
       "sha256": "7d6d23dc4532048b64e123f2318705e808b03482114ff64e0c23310544857dda"
+    },
+    {
+      "path": "skills\\context-offload\\scripts\\prompt_inbox.py",
+      "bytes": 26358,
+      "sha256": "d9b127fe31b1de7c979932d724d8f82f20c82b76cb1b209efa699906cd9b0682"
     },
     {
       "path": "skills\\dayplan\\README.md",
@@ -894,18 +944,18 @@
     },
     {
       "path": "skills\\development-documentation-manual\\MANUAL.md",
-      "bytes": 54609,
-      "sha256": "5c3cafd163d13e721188614dc0149a42f35582e735221193bc1d82334b2035d7"
+      "bytes": 64300,
+      "sha256": "fc6454c287fb1ca0ab62818823559dbe59bc7db510d4ffcab1c81181d5113f93"
     },
     {
       "path": "skills\\development-documentation-manual\\README.md",
-      "bytes": 2537,
-      "sha256": "92f3c59ce93b6be702ff2a1798433907045ba6e38ec147f3d41420098e7ae9e1"
+      "bytes": 3585,
+      "sha256": "5853b334e2ba28d08e5161217034090f92d7f35ef1cedeb3787606ea19d05795"
     },
     {
       "path": "skills\\development-documentation-manual\\SKILL.md",
-      "bytes": 4726,
-      "sha256": "39e939a403a3fec89ef4172facda90f17526b9b893fefe58abdfaf699f26e159"
+      "bytes": 8517,
+      "sha256": "6b0ad73e936893c618af2cdfa907fc59a7d7dd0e46b9f8cb3a23e603c58f8aef"
     },
     {
       "path": "skills\\development-documentation-manual\\docs\\ARCHITECTURE.md",
@@ -914,33 +964,43 @@
     },
     {
       "path": "skills\\development-documentation-manual\\docs\\EVOLUTION.md",
-      "bytes": 4521,
-      "sha256": "adda95e603978346880bfcfddde19fca930a3200655100f4cecb7bcd74c1ae22"
+      "bytes": 6228,
+      "sha256": "4915e85bd608624988dcc4096ffeb803598b8f389c91121947b843af48252f7d"
     },
     {
       "path": "skills\\development-documentation-manual\\docs\\EXAMPLES.md",
-      "bytes": 11656,
-      "sha256": "55d96ce7cb74c087b7d98bc0e0d709e6dac5b21fdf5dc83e90f85668c35ec4ad"
+      "bytes": 15784,
+      "sha256": "d264e1291a2393db8b2bb848bb2d2f1a33be27b240ce85679f27f1930df65a79"
+    },
+    {
+      "path": "skills\\development-documentation-manual\\docs\\GITHUB-TRACKING.md",
+      "bytes": 20952,
+      "sha256": "078fd6d5be1bf6b00a09248d335ea8d57bc094abbf907fae76de17bcd6a6667f"
     },
     {
       "path": "skills\\development-documentation-manual\\docs\\OPERATIONS-AND-TESTING.md",
-      "bytes": 4310,
-      "sha256": "40208b31f73942f5272096b6a7baa9d6edb8cda277a73b89c5bd31ba4ad1af9b"
+      "bytes": 7697,
+      "sha256": "612f5f91bd8b0e94e06c31211c5292e441fbb66e675f0eba369f1dc64d4389b7"
     },
     {
       "path": "skills\\development-documentation-manual\\docs\\REFERENCE.md",
-      "bytes": 6499,
-      "sha256": "962f50e64a86b8718849af7bef15faad5bf600829d644c16578a52cce739b048"
+      "bytes": 7814,
+      "sha256": "91ddda1fede8dd6d6e6d318eee9a1ea05fe5448760d73f541425ee61e72354c1"
     },
     {
       "path": "skills\\development-documentation-manual\\docs\\SOURCES.md",
-      "bytes": 9999,
-      "sha256": "859614ef991b2dbc930f5d53cb955d12f20d9bb8a21c29b33e82485155658e33"
+      "bytes": 13477,
+      "sha256": "aad98fb16747f02438221c4ad9c7be1377051e8fbfb0e3cf62f38512b6896d06"
     },
     {
       "path": "skills\\development-documentation-manual\\docs\\WORKFLOW.md",
-      "bytes": 4801,
-      "sha256": "23229dfa9ce78cea6eb84804ace34c6d747316541bd9e574781c3c00d2a7faf0"
+      "bytes": 7954,
+      "sha256": "0195fca05f9c9d7b53d8771e7ef54cffa067b5a2f8ad40332c80e4017a5fd077"
+    },
+    {
+      "path": "skills\\development-documentation-manual\\scripts\\with_github_token.py",
+      "bytes": 3785,
+      "sha256": "b7ea0e9460bef1f17fb5d3577afac6cef5392b99fb4f31c178302a8aec028c08"
     },
     {
       "path": "skills\\development-documentation-manual\\templates\\01_INDEX.todo",
@@ -949,8 +1009,8 @@
     },
     {
       "path": "skills\\development-documentation-manual\\templates\\02_WORKSTREAM.todo",
-      "bytes": 1177,
-      "sha256": "ace5cc837688598e72caeb3916db0b99378d07a8aee685a3da75f452b434d758"
+      "bytes": 1400,
+      "sha256": "ed262df600454dbb1cc15e698b7022dfbfd622e24a214b5090fdd389b05dd017"
     },
     {
       "path": "skills\\development-documentation-manual\\templates\\03_DEVELOPMENT_LEDGER.todo",
@@ -1008,9 +1068,19 @@
       "sha256": "18be03581ac3d0bbb5da5c2335f3671ec34d4e94900edd101c0b4332b06e1807"
     },
     {
+      "path": "skills\\development-documentation-manual\\templates\\14_GITHUB_TRACKING.md",
+      "bytes": 1882,
+      "sha256": "554125f0ff2996872ac8c1c7315d2d045eeeacee4f374cbe0ade5d045eb6c819"
+    },
+    {
+      "path": "skills\\development-documentation-manual\\templates\\15_RUNTIME_OWNERSHIP.md",
+      "bytes": 4619,
+      "sha256": "60a0d3b47f32b19290325b034f7adb0e281de9f487aa8d05eee52b5cead6a989"
+    },
+    {
       "path": "skills\\development-documentation-manual\\templates\\README.md",
-      "bytes": 1775,
-      "sha256": "f0cd86b59978a4d74708aac71883d758049c55cd1dbaf544ba95ec740968dce3"
+      "bytes": 2084,
+      "sha256": "b7f9acf58eeae71498fd579eb116cbc0a772c65a287b804209fdf4cf88f7632c"
     },
     {
       "path": "skills\\documentation-mesh\\README.md",
@@ -1333,9 +1403,19 @@
       "sha256": "add3bfafac4cb75a89e47bdcdb5e8d7c5cd919dec20dbef188c015c9ac586c02"
     },
     {
+      "path": "skills\\verona\\README.md",
+      "bytes": 1787,
+      "sha256": "969d2e7ac5a1c2474923a0ff29d0ae8798721dfb3b3399f819f6a7f3e0c77393"
+    },
+    {
+      "path": "skills\\verona\\SKILL.md",
+      "bytes": 36096,
+      "sha256": "70050301ec977cc2ed685279b95e76ebd07d6d4c7cd1c4129b68dacd5f78af8c"
+    },
+    {
       "path": "source-inventory.json",
       "bytes": 2615,
-      "sha256": "c25baaa2c3aff9cd53e383d67d60c26b9b6e0fa60bfac42be2a93998274c7d08"
+      "sha256": "12e68c976421edcd6bd07cf63a307e2b8f937c2edeedb2105bb388c37ee2ad35"
     },
     {
       "path": "support-provenance.json",
@@ -1353,9 +1433,19 @@
       "sha256": "37c40d8b0cfa4ae0d29f6a87de713374b2361c041bbcdf023da4f11887f388bc"
     },
     {
+      "path": "tests\\test_github_credentials.py",
+      "bytes": 5589,
+      "sha256": "cd042349e98a744dc328705655edca4eda0ddb70715638bc03b11f56224b62ed"
+    },
+    {
       "path": "tests\\test_portability.py",
-      "bytes": 12045,
-      "sha256": "f8b6ff713f96550f7ae1cba9c66f363b2b150701a83469f306674662524a9516"
+      "bytes": 15045,
+      "sha256": "8c33bb9d449a2f9647924c6356fd47b862a46339a9de1bcb0ae3dd1f92b92ee3"
+    },
+    {
+      "path": "tests\\test_prompt_inbox.py",
+      "bytes": 14956,
+      "sha256": "4f9db94be310c07380904db6f0a023580901cf8c954ad15b73e448ffa6ec53ae"
     }
   ]
 }

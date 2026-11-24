@@ -8,7 +8,26 @@ from pathlib import Path
 from typing import Any
 
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
+INBOX_CONTEXT_PATTERN = re.compile(
+    r"(?ms)^External local prompt inbox \(not a native user-queue entry\)\.\r?\n"
+    r".*?(?:^END_REQUEST [0-9a-f-]{36}\s*(?:\n|$)|\Z)"
+)
+INBOX_COMMAND_PATTERN = re.compile(
+    r"""(?i)prompt_inbox\.py["'`\s]+(?:init|submit|status|ack|cancel|recover|enable|disable)\b"""
+)
+
+
+def private_inbox_operation(text: str) -> bool:
+    return bool(INBOX_COMMAND_PATTERN.search(text)) or "\\.agent-context\\inbox\\" in text.replace("/", "\\").lower()
+
+
+def without_inbox_context(text: str) -> str:
+    if private_inbox_operation(text):
+        return "[Private inbox operation excluded]"
+    return INBOX_CONTEXT_PATTERN.sub("[External inbox payload excluded]", text)
+
+
 ARTIFACT_EXTENSIONS = (
     "html|htm|md|pdf|ps1|py|json|csv|txt|msg|png|jpg|jpeg|svg|"
     "docx|xlsx|pptx|zip|sql|kql|cs|ts|tsx|js|mjs|yaml|yml"
@@ -86,7 +105,8 @@ def normalize_candidate(value: str) -> str | None:
     if not suffix or suffix not in ARTIFACT_EXTENSIONS.split("|"):
         return None
     lowered = value.lower()
-    if "\\node_modules\\" in lowered or "\\.copilot\\session-state\\" in lowered:
+    if ("\\node_modules\\" in lowered or "\\.copilot\\session-state\\" in lowered
+            or private_inbox_operation(value)):
         return None
     return value
 
@@ -219,6 +239,7 @@ def scan_session(session_dir: Path) -> list[dict[str, Any]]:
     records: dict[str, dict[str, Any]] = {}
     last_prompt = ""
     generator_run = False
+    private_calls: set[str] = set()
     with events_path.open(encoding="utf-8", errors="replace") as stream:
         for raw_line in stream:
             if not any(
@@ -240,16 +261,20 @@ def scan_session(session_dir: Path) -> list[dict[str, Any]]:
             data = event.get("data") or {}
             timestamp = str(event.get("timestamp") or "")
             if event_type == "hook.start" and data.get("hookType") == "userPromptSubmitted":
-                last_prompt = str((data.get("input") or {}).get("prompt") or "")
+                last_prompt = without_inbox_context(str((data.get("input") or {}).get("prompt") or ""))
                 continue
             if event_type == "user.message":
-                last_prompt = str(data.get("content") or data.get("message") or "")
+                last_prompt = without_inbox_context(str(data.get("content") or data.get("message") or ""))
                 continue
             if event_type == "tool.execution_start":
                 tool_name = str(data.get("toolName") or "")
                 arguments = data.get("arguments") or {}
                 if not isinstance(arguments, dict):
                     arguments = {"value": str(arguments)}
+                if any(private_inbox_operation(text) for text in iter_strings(arguments)):
+                    if data.get("toolCallId"):
+                        private_calls.add(str(data["toolCallId"]))
+                    continue
                 action, confidence = classify_tool(tool_name, arguments)
                 texts: list[str] = []
                 for key in ("path", "file_path", "command", "patch"):
@@ -261,6 +286,7 @@ def scan_session(session_dir: Path) -> list[dict[str, Any]]:
                 if re.search(r"(?i)python\s+.+(?:build|render|report|generate)", command):
                     generator_run = True
                 for text in texts:
+                    text = without_inbox_context(text)
                     for candidate in extract_candidates(text):
                         add_record(
                             records,
@@ -274,7 +300,7 @@ def scan_session(session_dir: Path) -> list[dict[str, Any]]:
                             last_prompt,
                         )
                 if tool_name.lower() == "create":
-                    source_text = str(arguments.get("file_text") or "")
+                    source_text = without_inbox_context(str(arguments.get("file_text") or ""))
                     for candidate in extract_candidates(source_text):
                         add_record(
                             records,
@@ -289,7 +315,11 @@ def scan_session(session_dir: Path) -> list[dict[str, Any]]:
                         )
                 continue
             if event_type == "tool.execution_complete" and data.get("success") is not False:
-                result_text = " ".join(iter_strings(data.get("result") or {}))
+                call_id = str(data.get("toolCallId") or "")
+                if call_id in private_calls:
+                    private_calls.discard(call_id)
+                    continue
+                result_text = without_inbox_context(" ".join(iter_strings(data.get("result") or {})))
                 for candidate in extract_candidates(result_text):
                     add_record(
                         records,
@@ -306,7 +336,7 @@ def scan_session(session_dir: Path) -> list[dict[str, Any]]:
                     )
                 continue
             if event_type == "assistant.message":
-                content = str(data.get("content") or "")
+                content = without_inbox_context(str(data.get("content") or ""))
                 for candidate in extract_candidates(content):
                     add_record(
                         records,
@@ -367,6 +397,7 @@ def build_artifact_index(
 
     cutoff = datetime.now(timezone.utc) - timedelta(days=history_days)
     sessions: dict[str, Any] = {}
+    session_metadata: list[dict[str, str]] = []
     records: list[dict[str, Any]] = []
     scanned = 0
     reused = 0
@@ -380,6 +411,7 @@ def build_artifact_index(
             if modified < cutoff:
                 continue
             workspace_path = session_dir / "workspace.yaml"
+            session_metadata.append(parse_workspace(workspace_path, session_dir.name))
             workspace_mtime = (
                 workspace_path.stat().st_mtime_ns if workspace_path.is_file() else 0
             )
@@ -433,6 +465,7 @@ def build_artifact_index(
             "sessionCount": len(sessions),
             "scannedSessions": scanned,
             "reusedSessions": reused,
+            "sessions": session_metadata,
             "records": records,
         },
         {"schemaVersion": SCHEMA_VERSION, "sessions": sessions},

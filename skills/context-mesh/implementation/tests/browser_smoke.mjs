@@ -45,16 +45,22 @@ async function assertThreadArchive(page) {
     .every(item => item.open && item.querySelector(".social-thread-list").dataset.loaded === "true"));
   const contents = await page.evaluate(() => {
     const messages = socialDisplayMessages(INDEX.social).messages;
+    const personaById = new Map(INDEX.social.personas.map(persona => [persona.personaId, persona]));
+    const displayedText = (text, inline = false) => {
+      const template = document.createElement("template");
+      template.innerHTML = renderSocialRichText(text, personaById, inline);
+      return template.content.textContent;
+    };
     const questions = new Map(messages.map(message => [message.id, message]));
     const threads = [...INDEX.social.threads].sort((a, b) =>
       String(questions.get(a.questionMessageId).timestamp || "").localeCompare(String(questions.get(b.questionMessageId).timestamp || "")) || a.id.localeCompare(b.id));
     return {
       expected: threads.map(thread => ({
         id: thread.id,
-        title: questions.get(thread.questionMessageId).questionTitle || "Thread",
+        title: displayedText(questions.get(thread.questionMessageId).questionTitle || "Thread", true),
         status: thread.status === "closed" ? "Closed permanently" : "Open",
         messages: messages.filter(message => message.threadId === thread.id || message.id === thread.questionMessageId)
-          .map(message => ({id: message.id, persona: message.personaId, text: message.text.trim().replaceAll("\r\n", "\n")})),
+          .map(message => ({id: message.id, persona: message.personaId, text: displayedText(message.text)})),
       })),
       actual: [...document.querySelectorAll(".social-thread-archive-item")].map(thread => ({
         id: thread.dataset.threadId,
@@ -62,7 +68,7 @@ async function assertThreadArchive(page) {
         status: thread.querySelector(".social-thread-state").textContent,
         messages: [...thread.querySelectorAll(".social-thread-message")].map(message => ({
           id: message.dataset.messageId, persona: message.dataset.personaId,
-          text: message.querySelector(".social-message-text")?.textContent || "",
+          text: message.querySelector(":scope > .social-message-text")?.textContent || "",
         })),
       })),
       expanded: [...document.querySelectorAll("#social-threads .social-thread-list")].every(list =>
@@ -463,8 +469,8 @@ try {
   }
   assert.equal(await colorPage.locator('#social-thread-message-color-answer .social-reaction[data-emoji="😂"]').count(), 1, "Thread reaction was not attached to its answer");
   assert.equal(await colorPage.locator("#social-thread-message-emoji-thread-reaction").count(), 0, "Thread reaction counted as an answer");
-  assert.equal(await colorPage.locator("#social-message-reaction-followup .social-reply span").textContent(), "😂", "Quote lost original reaction context");
-  await colorPage.locator("#social-message-reaction-followup .social-reply").click();
+  assert.equal((await colorPage.locator("#social-message-reaction-followup .social-reply .social-message-text").textContent()).trim(), "😂", "Quote lost original reaction context");
+  await colorPage.locator("#social-message-reaction-followup .social-reply-jump").click();
   assert.ok(await colorPage.locator("#social-message-color-open").evaluate(element => element.classList.contains("highlighted-message")), "Quote to a folded reaction did not navigate to its visible source");
   const projectionChecks = await colorPage.evaluate(() => {
     const snapshot = JSON.stringify(INDEX.social);
@@ -495,7 +501,7 @@ try {
     INDEX.social.messages.push(
       {...base, id: "archive-root", threadId: null, questionTitle: "Root without threadId?", text: "The complete root is still included.", timestamp: "2026-10-16T12:00:00Z"},
       {...base, id: "archive-closed-reply", threadId: "color-thread-closed", replyTo: "color-closed",
-        text: "<b>Literal text, not markup.</b> " + "Long reply. ".repeat(1000) + "FULL-REPLY-END",
+        text: "<b>Formatted HTML text.</b> " + "Long reply. ".repeat(1000) + "FULL-REPLY-END",
         reactions: [{emoji: "👍", personaId: first.personaId}]},
       ...Array.from({length: 27}, (_, index) => ({
         ...base, id: `archive-reply-${index}`, threadId: "color-thread-open", replyTo: "color-open",
@@ -509,14 +515,15 @@ try {
   await assertThreadArchive(colorPage);
   assert.equal(await colorPage.locator('#social-archive-message-color-answer .social-reaction[data-emoji="😂"]').count(), 1, "Full thread view lost reaction badges");
   assert.equal(await colorPage.locator("#social-archive-message-emoji-thread-reaction").count(), 0, "Full thread view treats a reaction as a reply");
-  assert.equal(await colorPage.locator("#social-archive-message-archive-closed-reply p b").count(), 0, "Reply text was interpreted as HTML");
+  assert.equal(await colorPage.locator("#social-archive-message-archive-closed-reply > .social-message-text p b").textContent(),
+    "Formatted HTML text.", "Safe HTML was not rendered in the thread reply");
   assert.equal(await colorPage.locator("#social-archive-message-archive-closed-reply .social-reaction").getAttribute("title"),
     await colorPage.evaluate(() => INDEX.social.personas[0].displayName), "Archive lost reaction authorship");
   assert.equal(await colorPage.locator("#social-archive-message-emoji-answer.emoji-only").count(), 1, "Archive lost standalone emoji presentation");
-  const archiveReply = colorPage.locator("#social-archive-message-archive-closed-reply .social-reply");
+  const archiveReply = colorPage.locator("#social-archive-message-archive-closed-reply .social-reply-jump");
   await archiveReply.click();
   assert.ok(await colorPage.locator("#social-archive-message-color-closed").evaluate(element => element.classList.contains("highlighted-message")), "Archive reply quote does not navigate locally");
-  await colorPage.locator("#social-archive-message-color-open > p .social-mention").click();
+  await colorPage.locator("#social-archive-message-color-open > .social-message-text .social-mention").click();
   assert.equal(await colorPage.locator("#social-view.active").count(), 1, "Archive mention did not open the persona roster");
   assert.equal(await colorPage.locator(`.social-persona[data-persona-id="${mentionedPersona}"].highlighted`).count(), 1, "Archive mention did not highlight its persona");
   await colorPage.click('[data-view="social-threads-view"]');

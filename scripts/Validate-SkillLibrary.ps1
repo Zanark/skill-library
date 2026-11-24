@@ -22,6 +22,16 @@ $excludedNames = @(
 )
 $errors = [System.Collections.Generic.List[string]]::new()
 
+$trackedPaths = & git -C $repoRoot ls-files
+if ($LASTEXITCODE -ne 0) {
+    throw 'Unable to inspect Git tracking for local environment files.'
+}
+foreach ($path in $trackedPaths) {
+    if ($path -match '(?i)(^|/)\.env(?:\.[^/]*)?(?:/|$)') {
+        $errors.Add("Local environment file must not be tracked: $path")
+    }
+}
+
 if (-not (Test-Path -LiteralPath $inventoryPath)) {
     throw "Missing source inventory: $inventoryPath"
 }

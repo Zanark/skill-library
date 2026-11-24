@@ -5,7 +5,11 @@
 | Request/artifact | Read manual section | Required evidence emphasis | Dedicated procedure |
 |---|---|---|---|
 | New workstream/planning package | 2-4 | Eight fields, stable IDs, actual dependencies | Local TODO contract |
+| TODO/issue/Project tracking | 3.6 | Stable mapping, visibility, issue/body/state, Project item/status and backlink | [GitHub tracking](GITHUB-TRACKING.md) |
+| Persistent sync access / Actions maintenance | 3.6 | Ignored local .env runner, Git/payload exclusion, fallback discovery, verified scopes, trusted refs, secret isolation, exact-run qualification | [GitHub tracking](GITHUB-TRACKING.md) |
 | Bug/feature implementation | 4-6 | Real affected path plus focused tests | Repository build/test commands |
+| Frequent substantial commits / Zanark identity | 4.5 | Coherent verified outcome, staged-diff ownership, confirmed author/committer, credential login and actual transport; separate push authority | [GitHub tracking](GITHUB-TRACKING.md#zanark-identity-for-commits-and-github-operations) |
+| Use desktop app/website while an agent develops it | 4.6, 14.5 | Protected instance, actual runtime/state/resource isolation, concurrent save/rebuild/failure evidence, coordinated switch and compatible recovery | [Runtime ownership](../templates/15_RUNTIME_OWNERSHIP.md) |
 | Development journal | 5 | Causal narrative, dated actual events | Local ledger rules |
 | Architecture/engineering book | 6 | Source-backed ownership and behavior | Local documentation builder |
 | Research/design rationale or static-site handoff | 6, 14 | Source scope/limits, actual design consequence, preview/public/deployed identity | Project research and deployment contract |
@@ -92,6 +96,12 @@ Do not copy these illustrative rows as completed work.
 - Private architecture made "public" merely by renaming entities.
 - Per-project page budgets/view limits generalized into universal mandates.
 - A master procedure's DONE state reused as proof that a new run passed.
+- Separate ports/worktrees mistaken for state isolation, or a running process
+  mistaken for a frozen build while its assets are being overwritten.
+- Tests driving the user's active profile, blanket process kills or a code
+  rollback described as recovery from an incompatible data migration.
+- Timer/file-count/empty commits replacing coherent working checkpoints, blanket
+  staging of shared dirty work, or a PAT login mistaken for local Git attribution.
 
 ## Terms
 

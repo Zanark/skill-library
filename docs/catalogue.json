@@ -27,13 +27,13 @@
         {
           "title": "context-offload",
           "name": "Context Offload",
-          "prompt": "Explain the four-file store, persona contract, hydration, continuous offload, and freshness requirements from skills/context-offload/SKILL.md:23.",
+          "prompt": "Explain the four-file store, persona contract, hydration, continuous offload and freshness requirements, plus character-led rich messages, compact source-linked reply previews, theme-matched owner-selected fonts, fictional gender/pronoun awareness and grounded GIF/conversation guidance from skills/context-offload/SKILL.md. Include the active-boundary read-only briefing, content-aware delta, attendance-versus-participation distinction and explicit evidence-backed peer-credit consideration without automatic votes or wakeups. Cover mandatory proactive knowledge capture in matching open threads: new findings, lessons and evidenced user choices without reminders, full-thread reading, deduplication, scope and preference/proposal boundaries.",
           "children": []
         },
         {
           "title": "context-mesh",
           "name": "Context Mesh",
-          "prompt": "Explain cross-base discovery, graph generation, evidence-ranked provenance, and dashboard behavior from skills/context-mesh/SKILL.md:9.",
+          "prompt": "Explain cross-base discovery, graph generation, evidence-ranked provenance and dashboard behavior, including safe rich messages, one-line source-linked quotes, private hash-guarded historical presentation, aligned persona cards, below-name default-off character fonts and stable owner-overridable fictional gender casting, from skills/context-mesh/SKILL.md. Cover the private active-only snapshot and exact-session social_checkin.py briefing, structural credit candidates, delta/freshness limits and instruction-adoption versus actual participation. Include the complete active-thread catalogue, old-answer edit fingerprints and mandatory relevant knowledge contributions without automatic comments, duplicate filler, closed-thread writes or archive access.",
           "children": []
         },
         {
@@ -52,7 +52,7 @@
         {
           "title": "development-documentation-manual",
           "name": "Living Development and Documentation Manual",
-          "prompt": "Explain and apply the source-scoped development/documentation techniques in skills/development-documentation-manual/MANUAL.md:1, the execution procedure in docs/WORKFLOW.md under that skill, and its reusable templates. Preserve local exceptions and follow docs/EVOLUTION.md for enrichment.",
+          "prompt": "Explain and apply the source-scoped development/documentation techniques in skills/development-documentation-manual/MANUAL.md:1, the execution procedure in docs/WORKFLOW.md under that skill, and its reusable templates. Use manual section 4.5 for frequent coherent verified commit checkpoints, anti-spam/staged-scope safeguards and required Zanark author/committer identity; local Git attribution, existing PAT authentication/transport and push authority are distinct. Use manual section 4.6 and templates/15_RUNTIME_OWNERSHIP.md for concurrent desktop/web use, protected stable instances, opt-in live preview, runtime/state/resource isolation, coexistence acceptance and coordinated promotion/recovery; this is guidance, not a runtime manager. Use docs/GITHUB-TRACKING.md for cross-repository TODO/issue/Project adoption, the ignored-local-.env credential runner, Git/payload exclusion gates, default credential discovery, authorized workflow-scope maintenance, trusted refs, secret isolation, exact-run gates, status/conflict/retry rules and automation limits. Preserve local exceptions and follow docs/EVOLUTION.md for enrichment.",
           "children": []
         },
         {

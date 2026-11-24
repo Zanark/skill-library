@@ -980,6 +980,42 @@ reinforce the expression. Invalid expression names fail explicitly. All 512 samp
 both the open default and explicit wink, including seeds that previously closed both eyes; browser checks
 also verify the actual live cast and shared chat/roster/profile rendering.
 
+### 15.9 Full-cast name-linked wardrobe refresh
+
+The November 10 refresh authors 31 separate garment constructions for the 34-person roster.
+PAM, Alfred and Gothita retain their exact prior SVGs. Other saved faces, hair, skin, facial hair,
+expressions, presentation choices, seeds and message-border colors are not migrated.
+These are fictional name-linked designs, not inferences about real people or biographical claims.
+
+`avatarNamedOutfits` contains explicit palettes, cut panels, seams, optional jewelry and side/background
+props. Exact persona-ID directions select these designs; legacy standalone outfits and future unknown
+personas retain their existing renderers. `avatarNamedWardrobeMarkup` shares neck/torso anatomy, not
+one recolored jacket: per-design panels construct aprons, capelets, coveralls, crossover tunics,
+vests, cardigans, collars and asymmetric or stepped silhouettes. `avatarNamedBackdropMarkup` adds
+small name-linked props outside the portrait figure, so they do not enter its silhouette mask.
+Both additions run only for live 08B; historical versions and the three exempt themes emit no added bytes.
+
+| Name group | Authored design cues |
+|---|---|
+| BookMaker, Manual Editor, Resume Weaver | Binding apron/book clasp, proofreader tabard/red pencil, woven crossover tunic/loom |
+| Cartridge Keeper, Pixel, EntropyTag | Cartridge varsity rack, stepped color-block vest, asymmetric jagged streetwear/scattered tags |
+| Original Cut, ClipFarm, Cutline, Tape Curator | Director cape/film stole, film-field vest/wheat pin, bias-cut split shirt/scissor chain, cassette-pocket jacket/tape loop |
+| CareerOS, WorkDesk, WindowPane | Stepped pinstripe suit, rolled sleeves/asymmetric sweater vest, window-check coat/four-pane clasp |
+| GenevaActions, Intercom | Relay-panel coat/switch chain, radio jacket/resting headphones |
+| Cardboard Continuity, Roomsmith | Folded carton armor/taped suspenders, drafting coat/triangular lapels/ruler |
+| Pipeline Keeper, Runner, Runner Pipelines, Runner Artifact Checks | Utility yoke/copper closures, track chevrons/stopwatch, routed cycling jersey, inspection bib/sealed parcel |
+| Inventory Evidence Keeper, Report Mechanic, Migration Cartographer | Indexed archive waistcoat, rolled workshirt/report pocket/wrench loop, chart mantle/compass |
+| Meshboard Maintainer, Meshboard Builder, Thread Scout | Node-fastened lattice knit, masonry apron/brick pockets, trail cowl/spool clasp |
+| Rig Evidence Keeper, TrickRoom Continuity, TrickRoom Camera | Cable harness/jointed rig, harlequin vest/continuity loop, safari shooting vest/rangefinder |
+
+No hosted images, fonts, network/model calls, filters, animation or new stored profile fields are
+needed. Cost is a fixed small set of SVG panels/paths per portrait, linear in the number rendered.
+The workshop includes both current cast and earlier garment studies, checking same-face construction
+uniqueness, valid definitions, native decoding, neck visibility, silhouette edges and thumbnail sizes.
+The focused `cast_wardrobe_smoke.mjs` additionally compares the saved pre-change source for exact
+exempt/historical preservation and unchanged face markup, then checks real roster/chat/profile URIs.
+Pre-existing external chat attachments are blocked during that browser check, not attributed to avatars.
+
 ## 16. Reproduction and acceptance
 
 ### 16.1 Confirm the complete chain

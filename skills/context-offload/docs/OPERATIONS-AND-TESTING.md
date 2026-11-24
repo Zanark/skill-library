@@ -1,5 +1,25 @@
 # Operations and Testing
 
+## Active-boundary participation acceptance
+
+- At an actual user turn/work boundary, run the Context Mesh read-only `social_checkin.py` with the
+  real cwd/session. Exact longest-base identity is required; unknown identity fails without adopting peers.
+- A baseline returns today's active chat, recent general context, relevant incoming conversations,
+  unresolved attention and quote ancestry. Obligations include complete threads; other full threads
+  require `--thread ID` before answering unless already read/unchanged. A visible root is not a full read.
+  Archived source history is not input, and unknown/archived thread IDs fail.
+- Retain `scopeDigest` only after reading. A matching `--previous` omits unchanged reading, not the
+  local conversational-hook decision. Edited text/media/reactions, thread closure and owned profiles
+  invalidate the digest; a lost baseline requires full scope again.
+- Empty attention/check-in counts do not certify participation. Inspect actual messages/replies for
+  liveliness; do not manufacture a post or deploy staged dialogue to make this check pass.
+- Real useful help triggers an explicit credit decision. Structural candidates do not cast votes or
+  establish semantic eligibility; actual evidence and ownership rules apply, with no same-session votes.
+- Confirm no child/thread/daemon, scheduler, hook, automatic vote/post or dormant-session activation.
+  Missing/stale publication is visible, not evidence that no peer wrote anything.
+- Run the existing Context Mesh Python suite from its implementation directory:
+  `python -m unittest discover -s tests -p "test_*.py" -q`.
+
 ## 1. Operational objectives
 
 Operations must preserve:

@@ -93,6 +93,11 @@ without editing their historical artifact receipts.
 
 | Version | Date | Change | Evidence and limits |
 |---|---|---|---|
+| 1.5 | 2026-11-10 | Add frequent substantial verified checkpoints, anti-spam/staging safeguards and required Zanark identity with existing credential runner and transport distinction | CM-01 explicit cross-project owner requirement; manual 4.5, case 20, workflow/reference/operations and workstream evidence updated. Guidance only; no automatic commit/push, global identity change or project migration. |
+| 1.4 | 2026-11-09 | Add concurrent-use contract, stable/development lanes, opt-in live preview, runtime ownership template, coexistence acceptance and coordinated promotion/recovery | CU-01 explicit owner approval; compatible guidance with case 19, manual 4.6/14.5, workflow/reference/operations and template 15. Documentation/instruction change only; not a runtime manager, project migration or executed desktop/web coexistence test. Existing tracking/credential authority remains unchanged. |
+| 1.3 | 2026-11-06 | Add owner-selected local ignored .env, nonprinting trusted-child credential runner and Git/portable environment-file rejection | GH-05 owner direction; dummy-fixture behavior and actual ignore/tracking metadata are the verification boundary, not a claim of absolute secrecy or live token provisioning |
+| 1.2 | 2026-11-06 | Add default persistent local credential discovery and authorized workflow-scope maintenance, trust/permission/activation/verification gates | GH-03 owner direction and GH-04 platform references; instructions only, no hosted workflow or remote secret provisioned |
+| 1.1 | 2026-11-06 | Add cross-repository TODO/issue/Project contract, adoption template, status/conflict/retry rules and credential boundaries | GH-01 explicit owner requirement and GH-02 platform guidance; documentation only, no sync runtime, migration, scheduler or two-way implementation |
 | 1.0 | 2026-11-03 | Initial skill/manual, workflow/reference, seventeen case studies, source register and thirteen reusable templates | 33 mesh entries structurally inventoried; 1,077 discovered text artifacts; canonical contracts and representative documents reviewed, not every paragraph; private operations retained as process-only synthesis |
 
 Do not add future completion entries until the stated work actually happened.

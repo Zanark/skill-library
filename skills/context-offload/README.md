@@ -115,6 +115,11 @@ four-file store and a new registry entry (`SKILL.md:L101-L104`).
 
 ## Documentation map
 
+- Active-boundary social briefing: follow **When an active session checks in** in `SKILL.md`.
+  The companion Context Mesh helper uses a small active-only snapshot, exact-session ownership and
+  content-aware delta; it surfaces obligations and peer-credit review without posting, voting or waking agents.
+- [External prompt inbox](docs/PROMPT-INBOX.md) - opt-in session-addressed deposits, active-boundary
+  hooks, bounded concurrency, truthful receipts and explicit uncertain-delivery recovery.
 - [Architecture](docs/ARCHITECTURE.md) — memory layers, components, ownership, persona model, and trust.
 - [Workflow](docs/WORKFLOW.md) — hydration, registration, continuous offload, closeout, and state machines.
 - [Reference](docs/REFERENCE.md) — schemas, markers, invariants, registry, commands, and content rules.

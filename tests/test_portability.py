@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import sqlite3
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -24,6 +25,7 @@ def module(name):
 package = module("package_skill_support")
 restorer = module("restore_skill_state")
 installer = module("install_skill_library")
+payload = module("verify_portable_payload")
 with patch.dict("sys.modules", {"restore_skill_state": restorer, "package_skill_support": package}):
     merger = module("merge_skill_state")
 
@@ -177,6 +179,54 @@ class PrivateArchiveTests(unittest.TestCase):
             self.assertEqual(snapshot.execute("SELECT value FROM state").fetchone()[0], "preserved")
         finally:
             snapshot.close()
+
+
+class PublicCredentialBoundaryTests(unittest.TestCase):
+    @unittest.skipUnless(shutil.which("pwsh"), "PowerShell 7 is needed to exercise the library validator.")
+    def test_library_validator_rejects_forced_tracking(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            subprocess.run(["git", "init", "--quiet", str(root)], check=True)
+            (root / "scripts").mkdir()
+            (root / "docs").mkdir()
+            (root / "skills").mkdir()
+            validator = root / "scripts" / "Validate-SkillLibrary.ps1"
+            shutil.copy2(ROOT / "scripts" / validator.name, validator)
+            (root / "source-inventory.json").write_text("[]", encoding="utf-8")
+            (root / ".env").write_text("TODO_SYNC_GITHUB_TOKEN=fixture_token", encoding="utf-8")
+            subprocess.run(["git", "-C", str(root), "add", "-f", ".env"], check=True)
+            result = subprocess.run(
+                ["pwsh", "-NoProfile", "-File", str(validator)], capture_output=True, text=True
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("must not be tracked", result.stderr)
+            self.assertNotIn("fixture_token", result.stdout + result.stderr)
+
+    def test_force_tracked_environment_file_blocks_payload_before_reading_it(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            subprocess.run(["git", "init", "--quiet", str(root)], check=True)
+            (root / ".gitignore").write_text(".env\n", encoding="utf-8")
+            secret = root / "skills" / "manual" / ".env"
+            secret.parent.mkdir(parents=True)
+            secret.write_text("TODO_SYNC_GITHUB_TOKEN=fixture_token", encoding="utf-8")
+            subprocess.run(["git", "-C", str(root), "add", "-f", str(secret)], check=True)
+            with patch.object(payload, "digest") as digest, self.assertRaisesRegex(ValueError, "environment"):
+                payload.build(root)
+            self.assertNotIn(secret, [call.args[0] for call in digest.call_args_list])
+            self.assertFalse((root / "portable-files.json").exists())
+
+    def test_catalogue_cannot_smuggle_environment_file_or_nested_variant(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for name in (r"skills\manual\.env", r"skills\manual\.env.local", r"skills\.env\file"):
+                with self.subTest(name=name):
+                    (root / "portable-files.json").write_text(
+                        json.dumps({"schemaVersion": 1, "files": [{"path": name}]}), encoding="utf-8"
+                    )
+                    with patch.object(payload, "digest") as digest, self.assertRaisesRegex(ValueError, "environment"):
+                        payload.verify(root)
+                    digest.assert_not_called()
 
 
 class InstallationTests(unittest.TestCase):

@@ -255,3 +255,81 @@ Use output allowlists and exact deployed provenance for static sites.
 **Limit:** historical source consultations are not new web verification by this
 manual. No hiring guarantee, universal ATS score, automatic deployment or
 permission to publish personal source material is implied.
+
+## 18. BowserBoyAdvance: tracking requirements versus automation
+
+**Sources:** GH-01, GH-02.
+
+The owner requires local workstreams mirrored to repository issues and Projects,
+including description updates, completion state and backlinks across repositories.
+The setup distinguished account restrictions, token scopes, process environment
+inheritance and actual Project edit capability from implemented synchronization.
+
+**Transfer:** adopt stable workstream identity, preview historical mappings,
+verify issue state and Project status separately, and recover partial operations
+without duplicates. Keep local/remote ownership explicit.
+
+**Limit:** the shared synchronizer, two-way conflict handling and unattended
+runner remain proposed mechanisms. Successful read-only access does not prove a
+live sync, and updating this skill does not migrate any repository.
+
+**Follow-up (GH-03, GH-04):** default persistent credential discovery avoids
+repeated local assignment; authorized workflow maintenance can use the owner's
+selected `workflow` scope. Existing agent invocations may need automatic User
+environment lookup when their parent is stale. Plaintext User storage is not
+an encrypted vault, and local availability never provisions hosted secrets.
+Treat scope capability, authorized activation and exact hosted-run evidence as
+three separate facts.
+
+**Local-file refinement (GH-05):** the owner selects one ignored plaintext
+`.env` in the manual's canonical support folder. A small runner resolves it
+without exposing its text to the agent and provides credentials only to a
+trusted child command. Git/portable checks reject environment-file inclusion;
+the file is not shipped with the skill. This does not implement a synchronizer,
+prevent all local reads or guarantee secrecy if checks are deliberately bypassed.
+
+## 19. Concurrent use: a working user instance is not a test fixture
+
+**Source:** CU-01. **Authority:** user-directed manual addition, not a report of
+runtime isolation already deployed in a project.
+
+The owner wants to keep using desktop tools and websites while an agent edits
+them. The reusable contract separates an identified known-good user build from
+the development/test lane, with explicitly chosen live preview as a less stable
+option. Runtime ownership includes mutable data, backends, profiles and exclusive
+devices, not just source directories and ports.
+
+**Transfer:** inventory ownership before touching runtime files, protect unsaved
+work, use disposable test state, verify coexistence at the save/rebuild/restart/
+failure boundary and coordinate only necessary interruptions. Prepare complete
+candidates before an authorized switch, preserving compatible recovery.
+Use manual section 4.6 and template 15.
+
+**Counterexample:** two web servers on different ports can still share cookies
+or write the same database. Two desktop launches can forward into one running
+instance. Neither arrangement establishes test isolation by itself.
+
+**Limit:** this is a documented procedure, not a new preview manager, application
+migration or guarantee of zero disruption. No desktop/web coexistence scenario
+was executed by this enrichment; projects must verify their actual boundaries.
+
+## 20. Commit checkpoints: frequent does not mean fragmented
+
+**Source:** CM-01. **Authority:** explicit cross-project owner requirement.
+
+A feature with several independent working slices should not wait until every
+backlog item is complete before its first commit. A focused fix and its regression
+check can be one substantial checkpoint even if only a few lines change. The
+dependent documentation belongs with the same outcome, not in arbitrary per-file
+activity commits. A coherent requested documentation-only improvement also counts.
+
+**Transfer:** define safe checkpoints, verify each actual outcome, review only
+intended staged hunks, confirm Zanark author/committer and commit promptly within
+authority. For separately authorized GitHub operations, use the existing runner
+and check the authenticated account and transport, not just a Git display name.
+
+**Counterexample:** saving five files does not justify five commits; a PAT that
+authenticates as Zanark does not change a local commit's inherited author email.
+
+**Limit:** this is guidance, not an automatic committer, global identity change
+or permission to push. No new project commit or migration is implied.

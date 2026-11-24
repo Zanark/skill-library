@@ -13,6 +13,17 @@ CATALOGUE = "portable-files.json"
 PRIVATE = {".agent-context", "migration-private", ".skill-library-runtime"}
 
 
+def public_path(root: Path, name: str) -> Path:
+    relative = Path(name.replace("\\", "/"))
+    path = (root / relative).resolve()
+    for candidate in (relative, path):
+        if any(part.lower() == ".env" or part.lower().startswith(".env.") for part in candidate.parts):
+            raise ValueError("Local environment files cannot enter the public payload.")
+    if root.resolve() not in path.parents or path.relative_to(root.resolve()).parts[0] in PRIVATE:
+        raise ValueError("Unsafe path in public catalogue.")
+    return path
+
+
 def digest(path: Path) -> str:
     with path.open("rb") as stream:
         return hashlib.file_digest(stream, "sha256").hexdigest()
@@ -27,7 +38,7 @@ def build(root: Path) -> dict:
     for name in sorted(set(paths)):
         if not name or name == CATALOGUE or Path(name).parts[0] in PRIVATE:
             continue
-        path = root / name
+        path = public_path(root, name)
         if path.is_file():
             files.append({"path": name.replace("/", "\\"), "bytes": path.stat().st_size, "sha256": digest(path)})
     result = {"schemaVersion": 1, "scope": "Public payload only; no private state or authentication.", "files": files}
@@ -40,9 +51,7 @@ def verify(root: Path) -> dict:
     if catalogue["schemaVersion"] != 1:
         raise ValueError("Unsupported public catalogue schema.")
     for row in catalogue["files"]:
-        path = (root / row["path"]).resolve()
-        if root.resolve() not in path.parents or path.relative_to(root.resolve()).parts[0] in PRIVATE:
-            raise ValueError("Unsafe path in public catalogue.")
+        path = public_path(root, row["path"])
         if not path.is_file() or path.stat().st_size != row["bytes"] or digest(path) != row["sha256"]:
             raise ValueError(f"Public payload mismatch: {row['path']}")
     return {"verifiedPublicFiles": len(catalogue["files"])}

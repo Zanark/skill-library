@@ -2,8 +2,9 @@
 
 ## What this package does and does not run
 
-The package is Markdown and reusable templates. It has no application runtime,
-browser requirement, Python dependency or cloud connection of its own.
+The package is primarily Markdown and reusable templates. Its optional
+credential runner uses Python's standard library and local Git, with no pip
+dependencies. It has no browser requirement or synchronizer of its own.
 The library's existing validator checks registration, required files, exact
 skill hashes and relative file links. Those checks do not prove source accuracy,
 anchor validity, editorial completeness or privacy clearance.
@@ -35,6 +36,19 @@ python .\scripts\verify_portable_payload.py --build
 python .\scripts\verify_portable_payload.py
 ```
 
+For credential-runner or payload-boundary changes, also run:
+
+```powershell
+python -m unittest discover -s tests -p test_github_credentials.py
+python -m unittest discover -s tests -p test_portability.py
+```
+
+Use dummy fixture values only. Never open/hash the real `.env` to prove
+exclusion; inspect ignore/tracking metadata and catalogue paths instead.
+Both the validator and portable tooling must reject forced-tracked `.env`
+files, without needing their contents. An empty provisioned file is not proof
+of successful token access; the owner must supply its value locally.
+
 Before validation, update this skill's exact `SKILL.md` SHA-256 in
 `source-inventory.json` if its bytes changed. Use a standard hash utility; do not
 guess or copy an old value. The portable catalogue is generated tooling, not a
@@ -56,6 +70,46 @@ must not be staged or committed indiscriminately.
 8. Context/social ownership rules defer to the dedicated installed skills.
 9. Future enrichment has a repeatable source/novelty/supersession procedure.
 10. All linked support files exist; anchors and catalogue routes are reviewed.
+11. GitHub tracking guidance preserves eight-field workstreams, stable identity,
+    separate issue/Project states, privacy and credential boundaries. Adoption
+    records are not runnable configurations; documented sync is not executed sync.
+12. Persistent credential lookup handles absent/stale process inheritance without
+    printing secrets or claiming encrypted User environment storage. Workflow
+    scopes, task authority, hosted secrets and actual run evidence stay distinct.
+13. Local `.env` stays ignored/untracked and outside generated payloads. Runner
+    diagnostics do not echo secrets, malformed files fail instead of using
+    stale credentials, and parent authentication remains unchanged.
+14. Concurrent-use guidance preserves a stable user instance by default, makes
+    live preview opt-in and distinguishes source/process separation from actual
+    file/profile/backend/resource isolation. Coexistence evidence is not inferred
+    from two launches or a separate port, nor tested on the user's active session.
+15. Promotion needs authority and a coordinated save point. Recovery covers data
+    compatibility and later writes, not just old binaries. Process ownership is
+    rechecked before stopping specific agent helpers; unavoidable interruptions
+    and fixture-only qualification remain explicit.
+16. Commit guidance requires frequent coherent verified milestones, not arbitrary
+    counts or unfinished fragments. Author/committer attribution and Zanark PAT
+    login/transport authentication are separate checks; shared settings,
+    unrelated staging and implicit push authority are prohibited. This manual
+    update is not evidence that any project committed or adopted the policy.
+
+## Applying concurrent-use acceptance to an application
+
+These are checks to perform when adopting section 4.6 in a target application,
+not outcomes established by updating this Markdown package:
+
+- Record protected/candidate build identities, paths/URLs, verified process
+  ownership and all shared mutable state/resources using template 15.
+- In isolated representative sessions, save and reopen actual workflow state
+  while rebuilding, testing and restarting the candidate; induce a bounded
+  candidate failure and verify the protected session and served files survive.
+- Verify effective desktop profiles/single-instance behavior or website
+  storage/cookies/service workers/API/database routing, not flags/ports alone.
+- Confirm resource contention has a safe alternative or coordinated pause.
+  Keep the user's actual browser profile, documents and devices out of automation.
+- For an authorized switch, preserve work, verify selected build/state and
+  exercise compatible recovery only in an authorized disposable setup. Record
+  any migration/rollback path not exercised and distinguish user acceptance.
 
 ## Installation verification
 

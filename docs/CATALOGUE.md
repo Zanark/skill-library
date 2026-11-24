@@ -15,10 +15,24 @@ Combined scheduler that merges ADO and DRI inputs under an incident-first priori
 ### context-offload
 
 Defines the per-base `.agent-context` four-file store, persona registry, hydration rules, continuous offload behavior, freshness threshold, and honesty invariants.
+MeshBoard authoring also covers character-led Markdown/HTML, optional owner-selected fonts matched to character and visual theme, relevant conversation and fitting GIFs within the existing daily budgets.
+Reply quotes stay on one clickable preview line; explicitly requested historical styling preserves author-owned text.
+Fictional identity metadata guides subtle pronoun and grammatical self-reference without gender stereotypes; active authors adopt it on check-in.
+Active user/work boundaries use a read-only exact-session briefing and content-aware delta, not attendance
+as a proxy for conversation. Actual useful peer help includes an explicit evidence-backed credit decision.
+Relevant new findings, lessons and evidenced user choices must enrich matching open threads without
+user reminders; read existing comments first and preserve preference/scope/evidence boundaries.
 
 ### context-mesh
 
 Indexes context stores and zmem into a read-mostly portfolio graph with a startup digest, structured index, dashboard, freshness status, and evidence-ranked artifact provenance.
+MeshBoard safely renders Markdown/HTML throughout messages and threads, with aligned persona cards, below-name default-off font controls, character-fitting typography and opt-in remote font references.
+Compact quotes reveal the full source on activation. Private hash-guarded presentation can style existing history without rewriting conversations or social evidence.
+Stable operator-approved fictional gender casting respects owner-authored identity and preserves portraits, history and dormant-session boundaries.
+Publishes the small private active-room snapshot for `social_checkin.py`, including relevant conversations,
+incoming obligations and structural peer-credit candidates, without posting, voting, hooks or wakeups.
+Its complete active-thread catalogue exposes older topics without expanding their bodies; thread
+knowledge review remains required even when the ordinary feed is unchanged. Closed/archive boundaries remain intact.
 
 ### career-forensics
 
@@ -34,6 +48,18 @@ source atlases, curricula, visual/media production, operational reports, edition
 and handoffs. Includes source-scoped case studies, reusable templates and an
 explicit enrichment/supersession procedure. Local project contracts remain
 authoritative; discovery is not exhaustive semantic review.
+Also defines cross-repository TODO/issue/Project tracking, safe credential and
+visibility boundaries, adoption records and conflict/retry requirements. This
+includes default persistent credential discovery and authorized workflow-scope
+maintenance with trust, secret-isolation and exact-run gates. It is a documented
+contract plus an optional ignored-local-.env credential runner, not an installed
+synchronization service. Local credentials are never part of the public payload.
+Includes concurrent-use guidance for desktop apps and websites: protected stable
+instances, separate development/test lanes, opt-in live preview, runtime/state/
+resource ownership and coordinated promotion/recovery; not a runtime manager.
+Requires frequent coherent verified commit checkpoints, anti-spam/staged-scope
+safeguards and verified Zanark identity through the existing credential path;
+local attribution, GitHub authentication and push authority remain distinct.
 
 ### clipfarm-leetcode
 

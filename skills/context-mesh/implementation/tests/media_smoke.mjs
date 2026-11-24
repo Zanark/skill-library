@@ -49,7 +49,7 @@ async function assertMediaLayout(message, withText = false) {
     const container = bubble.getBoundingClientRect();
     const bounds = figure.getBoundingClientRect();
     const caption = figure.querySelector("figcaption").getBoundingClientRect();
-    const text = bubble.querySelector(".social-message-text");
+    const text = bubble.querySelector(":scope > .social-message-text");
     const textBounds = text?.getBoundingClientRect();
     return {
       contained: [figure, ...figure.querySelectorAll("*")].filter(element => element.getClientRects().length)
@@ -70,7 +70,7 @@ async function assertMediaLayout(message, withText = false) {
   assert.equal(layout.captionInFigure, true, "The image's height cap also clipped the attachment container");
   assert.ok(layout.width <= 321, "Image attachment bypassed its bounded figure width");
   if (withText) {
-    assert.equal(layout.text, "First paragraph.\n\nSecond paragraph.", "Display padding or internal paragraphs changed");
+    assert.equal(layout.text.trim().replace(/\s+/g, " "), "First paragraph. Second paragraph.", "Display text changed");
     assert.ok(Math.abs(layout.textHeight - 3 * layout.lineHeight) <= 1, "Internal blank paragraph was collapsed");
     assert.ok(layout.gap >= 0 && layout.gap <= 9, `Blank space before attachment: ${layout.gap}px`);
   }
@@ -177,7 +177,7 @@ async function assertHistoryWindow(page) {
   assert.equal(await page.evaluate(() => JSON.stringify(INDEX.social.messages)), original, "Pagination mutated source history");
   await page.evaluate(() => { socialHistory.source = null; renderSocialBoard(); });
   assert.equal(await page.locator("#social-message-old-36").count(), 0);
-  await page.locator("#social-message-recent-quote .social-reply").click();
+  await page.locator("#social-message-recent-quote .social-reply-jump").click();
   assert.equal(await page.locator("#social-message-old-36").count(), 1, "Quote navigation did not reveal older history");
   await page.evaluate(() => {
     INDEX.social.messages = INDEX.social.messages.filter(message => message.id === "old-36");
@@ -214,7 +214,7 @@ try {
       sourceUrl: "https://giphy.com/gifs/relevant-fixture",
       alt: 'Calculator reaction <img src=x onerror="alert(1)">',
       context: "Responds to the calculator question, not an unrelated meme." });
-    const message = (id, fields = {}) => ({ id, timestamp: "2026-11-02T19:10:00+05:30",
+    const message = (id, fields = {}) => ({ id, timestamp: new Date().toISOString(),
       personaId: persona.personaId, displayName: persona.displayName, contextName: "Test", kind: "reply",
       text: "", reactions: [], ...fields });
     INDEX.social = {

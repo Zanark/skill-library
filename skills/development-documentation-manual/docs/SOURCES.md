@@ -61,7 +61,29 @@ implementation, output or historical claim was independently revalidated.
 | LIB-03 | Skill Library | `scripts\verify_portable_payload.py`, full; `docs\PORTABILITY.md`, lines 1-155; `tests\test_portability.py`, lines 1-290 | Portable checksum generation, no-overwrite behavior and state separation |
 | OP-01 | Restricted operational/context desks, grouped | Workflow-related continuity excerpts across registered desks and prior comparison's relevant collector/report guidance | Generic read-only collection, report times, constraints, investigations and draft-versus-sent distinctions only |
 
-## Portfolio coverage accounting
+## Subsequent tracking enrichment receipts
+
+| ID | Source and reviewed scope | Authority and limits |
+|---|---|---|
+| GH-01 | Owner's explicit 2026-11-06 request in the BowserBoyAdvance working session: cross-repository TODO-to-issue descriptions, completion state, URL backlinks and Project membership; follow-up requests incorporation into this manual | User-directed workflow requirement, not evidence that a synchronizer exists; paraphrased process only, no raw transcript or credentials |
+| GH-02 | Official GitHub PAT limitations, classic scopes, Projects API/Actions and CLI environment references listed in GITHUB-TRACKING.md; consulted 2026-11-06, plus installed Copilot environment help | Credential/API guidance at that date, not permanent platform guarantees; read-only access checks do not prove mutation success; no migration performed by this enrichment |
+| GH-03 | Owner's explicit 2026-11-06 follow-up: include workflow-scope use in this manual and make credentials available by default across sessions without repeated assignment | User-directed local discovery and authorized workflow-maintenance requirement; not blanket deployment/dispatch permission or remote secret provisioning; no credential/account details retained |
+| GH-04 | Official GitHub classic-scope reference and Microsoft Export-Clixml reference consulted 2026-11-06; current-user persistence mechanism exercised locally with secret-free read-back and GitHub access verification | Platform guidance and bounded local credential provisioning only; no claim that all existing parent processes inherited changes or any hosted runner received credentials |
+| GH-05 | Owner's explicit 2026-11-06 follow-up selects a local gitignored .env in this manual's support folder, owner-entered plaintext token, cross-session access through the skill and exclusion from the public library; reviewed root .gitignore, validator, public/support packagers and installer boundaries | User-authorized local credential convention; file contents are never a documentation source. Implemented runner and exclusion gates require focused fixture checks; ignore rules cannot prevent forced/bypassed publication or other local readers |
+
+## Concurrent-use enrichment receipt
+
+| ID | Source and reviewed scope | Authority and limits |
+|---|---|---|
+| CU-01 | Owner's 2026-11-09 request to use desktop apps/websites during agent editing, followed by explicit approval of the proposed concurrent-use manual addition; reviewed manual 4.1-4.5 and 14.1-14.5, execution workflow, reference and operations gates | User-directed documentation contract. Lane/state/resource isolation, coexistence acceptance and promotion/recovery are adopted guidance, not observed implementation across projects. Process-only paraphrase; no private application data, runtime inventory or raw transcript retained. Compatible addition, no supersession of local authority or GitHub/credential rules. |
+
+## Commit-cadence enrichment receipt
+
+| ID | Source and reviewed scope | Authority and limits |
+|---|---|---|
+| CM-01 | Owner's explicit 2026-11-10 request for more frequent but substantial, non-spam commits across projects, always through Zanark using the already provisioned credential; reviewed manual 4.5, workflow and existing nonprinting credential runner | User-directed cross-project workflow requirement. Local author/committer attribution, API login and Git transport are distinct; documentation changes do not authorize unrelated commits, pushes or global authentication changes. No token, email or private source retained. |
+
+## Original portfolio coverage accounting
 
 The mesh had **33 entries**, not 33 independent products. The bounded structural
 inventory found **1,077** text artifacts at the time of discovery; manual support

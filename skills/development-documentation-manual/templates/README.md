@@ -18,6 +18,8 @@ placeholders, use local style and retain applicable repository contracts.
 | [11_VISUAL_COVERAGE.md](11_VISUAL_COVERAGE.md) | Themes/surfaces/scroll parts and image-review budget |
 | [12_PRODUCTION_RUN.md](12_PRODUCTION_RUN.md) | Separate execution receipt for a reusable procedure |
 | [13_RESEARCH_RATIONALE.md](13_RESEARCH_RATIONALE.md) | Source findings, applicability limits and actual design consequences |
+| [14_GITHUB_TRACKING.md](14_GITHUB_TRACKING.md) | Per-repository tracking adoption, mapping, conflicts and pilot evidence; not executable configuration |
+| [15_RUNTIME_OWNERSHIP.md](15_RUNTIME_OWNERSHIP.md) | Stable-use/development lanes, process/state/resource ownership, coexistence acceptance and coordinated promotion/recovery |
 
 For a new project, copy index/workstream/ledger to its authorized `TODO` folder
 using suitable stable numbers/names. Do not copy this README or Markdown forms

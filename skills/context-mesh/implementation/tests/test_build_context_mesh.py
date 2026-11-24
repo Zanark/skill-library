@@ -1,4 +1,5 @@
 import importlib.util
+import hashlib
 import json
 import sqlite3
 import subprocess
@@ -34,6 +35,53 @@ class ContextMeshTests(unittest.TestCase):
         sections = MODULE.split_sections(text)
         self.assertEqual(["State", "Current focus", "Open questions"], [s["title"] for s in sections])
         self.assertEqual(["Build the mesh"], MODULE.select_sections(text, ("current focus",)))
+
+    def test_reviewed_presentation_is_hash_guarded_and_preserves_canonical_messages(self):
+        messages = [{"id": "live", "text": "A useful answer.", "replyTo": "old"},
+                    {"id": "old", "text": "An earlier question?", "attachments": []}]
+        before = json.dumps(messages)
+        entries = {
+            message["id"]: {"sourceSha256": hashlib.sha256(message["text"].encode()).hexdigest(),
+                            "markdown": f'**{message["text"]}**'}
+            for message in messages
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            path = output / MODULE.SOCIAL_PRESENTATION_JSON
+            path.write_text(json.dumps({"schemaVersion": 1, "messages": entries}), encoding="utf-8")
+            formatted, report = MODULE.load_social_presentation(output, messages)
+            displayed = MODULE.present_social_messages(messages, formatted)
+            self.assertEqual(before, json.dumps(messages))
+            self.assertEqual(messages, [{k: v for k, v in m.items() if k != "formattedText"} for m in displayed])
+            self.assertEqual("**A useful answer.**", displayed[0]["formattedText"])
+            self.assertEqual(2, report["reviewedMessageCount"])
+            self.assertEqual(2, report["formattedMessageCount"])
+            messages[0]["text"] = "The owner corrected the answer."
+            formatted, report = MODULE.load_social_presentation(output, messages[:1])
+            self.assertEqual({}, formatted)
+            self.assertEqual(["live"], report["staleMessageIds"])
+            self.assertEqual(["old"], report["unavailableMessageIds"])
+            self.assertNotIn("formattedText", MODULE.present_social_messages(displayed, formatted)[0])
+            path.unlink()
+            formatted, report = MODULE.load_social_presentation(output, messages)
+            self.assertEqual({}, formatted)
+            self.assertFalse(report["enabled"])
+
+    def test_invalid_presentation_fails_instead_of_hiding_saved_messages(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            path = output / MODULE.SOCIAL_PRESENTATION_JSON
+            digest = hashlib.sha256(b"Keep this answer.").hexdigest()
+            for saved in (
+                [], {"schemaVersion": True, "messages": {}},
+                {"schemaVersion": 1, "messages": []},
+                {"schemaVersion": 1, "messages": {"one": {"sourceSha256": "bad", "markdown": "Answer"}}},
+                {"schemaVersion": 1, "messages": {"one": {"sourceSha256": digest, "markdown": None}}},
+                {"schemaVersion": 1, "messages": {"one": {"sourceSha256": digest, "markdown": " \n"}}},
+            ):
+                path.write_text(json.dumps(saved), encoding="utf-8")
+                with self.subTest(saved=saved), self.assertRaises(ValueError):
+                    MODULE.load_social_presentation(output, [{"id": "one", "text": "Keep this answer."}])
 
     def test_digest_exposes_participation_priority_with_or_without_archive(self):
         index = {
@@ -281,6 +329,83 @@ class ContextMeshTests(unittest.TestCase):
                             {"id": "ctx-b", "name": "B", "social": [replica]}]
                 with self.assertRaisesRegex(ValueError, "Conflicting copies of social persona p1"):
                     MODULE.build_social_board(contexts, {"edges": []}, self.color_registry)
+
+    def test_owner_font_is_normalized_without_modifying_sources_and_conflicts_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            store_path = root / ".agent-context"
+            social = store_path / "social"
+            social.mkdir(parents=True)
+            for name in MODULE.STORE_FILES:
+                (store_path / name).write_text(f"# {name}\n", encoding="utf-8")
+            source = social / "persona.json"
+            payload = {"personaId": "p1", "displayName": "One"}
+            store = MODULE.discover_stores([root])[0]
+            source.write_text(json.dumps(payload), encoding="utf-8")
+            self.assertNotIn("messageFont", MODULE.load_social_personas(store)[0])
+            for font in ({"family": "Georgia"}, {"family": "Space Grotesk", "url": "https://fonts.gstatic.com/font.woff2"}):
+                with self.subTest(font=font):
+                    source.write_text(json.dumps({**payload, "messageFont": font}), encoding="utf-8")
+                    original = source.read_bytes()
+                    loaded = MODULE.load_social_personas(store)
+                    board = MODULE.build_social_board(
+                        [{"id": store.context_id, "name": store.name, "social": loaded}],
+                        {"edges": []}, self.color_registry,
+                    )
+                    self.assertEqual(font, board["personas"][0]["messageFont"])
+                    self.assertEqual(original, source.read_bytes())
+                    replica = {**loaded[0], "messageFont": {"family": "Arial"}}
+                    with self.assertRaisesRegex(ValueError, "Conflicting copies"):
+                        MODULE.build_social_board(
+                            [{"social": loaded}, {"social": [replica]}], {"edges": []}, self.color_registry,
+                        )
+
+    def test_owner_gender_identity_survives_loading_and_projection_without_source_edits(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            social = root / ".agent-context" / "social"
+            social.mkdir(parents=True)
+            source = social / "persona.json"
+            for name in MODULE.STORE_FILES:
+                (social.parent / name).write_text(f"# {name}\n", encoding="utf-8")
+            identity = {"gender": "agender", "pronouns": "they/them", "grammaticalGender": "neutral"}
+            source.write_text(json.dumps({
+                "personaId": "fictional-trash-goblin-718bb26f-ec71-4d8a-9543-f67727e20064",
+                "displayName": "Example", "genderIdentity": identity, "profileImageData": "abc123",
+            }), encoding="utf-8")
+            original = source.read_bytes()
+            store = MODULE.discover_stores([root])[0]
+            loaded = MODULE.load_social_personas(store)
+            board = MODULE.build_social_board(
+                [{"id": store.context_id, "name": store.name, "social": loaded}],
+                {"edges": []}, self.color_registry,
+            )
+            self.assertEqual(identity, board["personas"][0]["genderIdentity"])
+            self.assertEqual("owner-authored", board["personas"][0]["genderIdentitySource"])
+            self.assertEqual("abc123", board["personas"][0]["profileImageData"])
+            self.assertEqual(original, source.read_bytes())
+            alternate = {"gender": "man", "pronouns": "he/him", "grammaticalGender": "masculine"}
+            for changes in ({"genderIdentity": alternate}, {"genderIdentitySource": "unassigned"}):
+                with self.subTest(changes=changes), self.assertRaisesRegex(ValueError, "Conflicting copies"):
+                    MODULE.build_social_board(
+                        [{"social": loaded}, {"social": [{**loaded[0], **changes}]}],
+                        {"edges": []}, self.color_registry,
+                    )
+
+    def test_message_font_rejects_stylesheet_injection_and_private_or_malformed_references(self):
+        invalid = [None, [], "", {}, {"family": 1}, {"family": " "}, {"family": "Arial; color:red"},
+                   {"family": 'Arial"url(x)'}, {"family": "Arial", "css": "body{}"}]
+        invalid.extend({"family": "Arial", "url": url} for url in (
+            "", None, 1, "http://fonts.gstatic.com/font.ttf", "https://localhost/font.ttf",
+            "https://127.0.0.1/font.ttf", "https://fonts.internal/font.ttf",
+            "https://name:password@fonts.gstatic.com/font.ttf", "https://fonts.gstatic.com:444/font.ttf",
+            "https://fonts.gstatic.com/font.ttf#fragment", "https://fonts.gstatic.com/font.ttf?token=secret",
+            "data:font/woff2;base64,AAA", 'https://fonts.gstatic.com/a\\b.ttf',
+        ))
+        for font in invalid:
+            with self.subTest(font=font):
+                with self.assertRaisesRegex(ValueError, "messageFont"):
+                    MODULE.normalize_social_font(font, "persona.json")
 
     def test_work_store_volume_cannot_flatten_a_social_character(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -701,6 +826,66 @@ class ContextMeshTests(unittest.TestCase):
             second, _ = ARTIFACT.build_artifact_index(root, cache, 3650, 100)
             self.assertEqual(1, first["scannedSessions"])
             self.assertEqual(1, second["reusedSessions"])
+            self.assertEqual("TestChat", second["sessions"][0]["sessionName"])
+            self.assertEqual(r"C:\work", second["sessions"][0]["cwd"])
+
+    def test_artifact_index_excludes_complete_and_truncated_external_inbox_context(self):
+        marker = "External local prompt inbox (not a native user-queue entry).\n"
+        private = marker + 'Receipt C:\\private\\secret.py; request C:\\private\\body.html\n'
+        complete = private + "END_REQUEST 00000000-0000-4000-8000-000000000001\n"
+        self.assertNotIn("secret", ARTIFACT.without_inbox_context(private))
+        with tempfile.TemporaryDirectory() as directory:
+            session = Path(directory)
+            events = [
+                {"type": "user.message", "data": {"content": complete}},
+                {"type": "tool.execution_complete", "data": {
+                    "result": {"text": "Saved C:\\work\\public.html\n" + complete}}},
+                {"type": "assistant.message", "data": {"content": private}},
+            ]
+            (session / "events.jsonl").write_text(
+                "\n".join(json.dumps(event, separators=(",", ":")) for event in events), encoding="utf-8")
+            records = ARTIFACT.scan_session(session)
+            rendered = json.dumps(records)
+            self.assertIn("public.html", rendered)
+            self.assertNotIn("secret.py", rendered)
+            self.assertNotIn("body.html", rendered)
+            self.assertNotIn("END_REQUEST", rendered)
+
+    def test_artifact_index_excludes_inbox_commands_and_correlated_payload_reads(self):
+        with tempfile.TemporaryDirectory() as directory:
+            session = Path(directory)
+            events = [
+                {"type": "tool.execution_start", "data": {"toolCallId": "private",
+                    "toolName": "view", "arguments": {
+                        "path": "C:\\work\\.agent-context\\inbox\\session\\messages\\deposit.json"}}},
+                {"type": "tool.execution_complete", "data": {"toolCallId": "private",
+                    "result": {"text": "Unwrapped body contains C:\\private\\not-public.html"}}},
+                {"type": "assistant.message", "data": {"content":
+                    "python 'C:\\tools\\prompt_inbox.py' ack --token private-nonce C:\\private\\receipt.json"}},
+            ]
+            (session / "events.jsonl").write_text(
+                "\n".join(json.dumps(event, separators=(",", ":")) for event in events), encoding="utf-8")
+            self.assertEqual([], ARTIFACT.scan_session(session))
+
+    def test_session_search_metadata_survives_empty_and_capped_artifact_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            session = root / "no-artifacts"
+            session.mkdir()
+            workspace = session / "workspace.yaml"
+            workspace.write_text("name: Quiet project\ncwd: C:\\projects\\Quiet\n", encoding="utf-8")
+            (session / "events.jsonl").write_text("", encoding="utf-8")
+            cache = root / "cache.json"
+            first, payload = ARTIFACT.build_artifact_index(root, cache, 3650, 0)
+            cache.write_text(json.dumps(payload), encoding="utf-8")
+            second, _ = ARTIFACT.build_artifact_index(root, cache, 3650, 0)
+            self.assertEqual([], second["records"])
+            self.assertEqual(first["sessions"], second["sessions"])
+            self.assertEqual("Quiet project", second["sessions"][0]["sessionName"])
+            workspace.write_text("name: Renamed project\ncwd: C:\\projects\\Moved\n", encoding="utf-8")
+            renamed, _ = ARTIFACT.build_artifact_index(root, cache, 3650, 0)
+            self.assertEqual("Renamed project", renamed["sessions"][0]["sessionName"])
+            self.assertEqual(r"C:\projects\Moved", renamed["sessions"][0]["cwd"])
 
     def test_artifact_limit_keeps_origin_before_later_history(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -832,8 +1017,12 @@ class ContextMeshTests(unittest.TestCase):
                                               author: [{"id": message_id, "text": message_id, "replyTo": "old"}]})
                 proposed = deepcopy(archive)
                 MODULE.project_active_social(board, [], proposed, output)
-                pending.append({"social": board, "contexts": [], "summary": {}, "_socialArchive": proposed})
+                pending.append({"social": board, "contexts": [], "summary": {}, "_socialArchive": proposed,
+                                "generatedAt": "2026-11-23T12:00:00+00:00"})
             config = {"_path": str(root / "config.json"), "outputDirectory": "output"}
+            (root / "assets").mkdir()
+            for name in ("dashboard.js", "dashboard.css"):
+                (root / "assets" / name).write_text("fixture asset", encoding="utf-8")
             with patch.object(MODULE, "PROJECT_ROOT", root), \
                     patch.object(MODULE, "render_html", side_effect=lambda index: json.dumps(index)), \
                     patch.object(MODULE, "render_digest", return_value="digest"):
@@ -848,12 +1037,57 @@ class ContextMeshTests(unittest.TestCase):
                 active_payload = (output / "context-index.json").read_text(encoding="utf-8")
                 self.assertNotIn("Original", active_payload)
                 self.assertNotIn("_socialArchive", active_payload)
+                active_social = json.loads((output / MODULE.SNAPSHOT).read_text(encoding="utf-8"))
+                self.assertEqual([], active_social["social"]["messages"])
+                self.assertNotIn("Original", json.dumps(active_social))
                 (output / MODULE.SOCIAL_ARCHIVE_HTML).write_text("stale viewer", encoding="utf-8")
                 MODULE.write_outputs(pending[-1], config)
                 self.assertEqual(payload, (output / MODULE.SOCIAL_ARCHIVE_JSON).read_bytes())
                 self.assertEqual(viewer, (output / MODULE.SOCIAL_ARCHIVE_HTML).read_bytes())
                 self.assertEqual([], pending[-1]["_archivedReplies"])
                 self.assertNotIn("_archivedReplies", (output / "context-index.json").read_text(encoding="utf-8"))
+
+    def test_presentation_updates_active_and_archive_html_without_rewriting_history(self):
+        from copy import deepcopy
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / "output"
+            original = self.broadcast_board({"a": [{"id": "old", "text": "Earlier question?"}]})
+            MODULE.freeze_social_archive({"social": original}, output)
+            archive_before = (output / MODULE.SOCIAL_ARCHIVE_JSON).read_bytes()
+            board = self.broadcast_board({"a": [{"id": "live", "text": "Current answer."}]})
+            baseline = deepcopy(board)
+            messages = original["messages"] + board["messages"]
+            entries = {m["id"]: {"sourceSha256": hashlib.sha256(m["text"].encode()).hexdigest(),
+                                 "markdown": f'**{m["text"]}**'} for m in messages}
+            sidecar = output / MODULE.SOCIAL_PRESENTATION_JSON
+            sidecar.write_text(json.dumps({"schemaVersion": 1, "messages": entries}), encoding="utf-8")
+            config = {"_path": str(root / "config.json"), "outputDirectory": "output"}
+            (root / "assets").mkdir()
+            for name in ("dashboard.js", "dashboard.css"):
+                (root / "assets" / name).write_text("fixture asset", encoding="utf-8")
+            with patch.object(MODULE, "PROJECT_ROOT", root), \
+                    patch.object(MODULE, "render_html", side_effect=lambda index: json.dumps(index)), \
+                    patch.object(MODULE, "render_digest", return_value="digest"):
+                index = {"social": board, "contexts": [], "summary": {},
+                         "generatedAt": "2026-11-23T12:00:00+00:00"}
+                MODULE.write_outputs(index, config)
+                self.assertEqual(baseline["messages"][0]["text"], index["social"]["messages"][0]["text"])
+                self.assertEqual("**Current answer.**", index["social"]["messages"][0]["formattedText"])
+                viewer = (output / MODULE.SOCIAL_ARCHIVE_HTML).read_text(encoding="utf-8").split("\n", 1)[1]
+                self.assertEqual("**Earlier question?**", json.loads(viewer)["social"]["messages"][0]["formattedText"])
+                entries["old"]["markdown"] = "*Earlier question?*"
+                sidecar.write_text(json.dumps({"schemaVersion": 1, "messages": entries}), encoding="utf-8")
+                MODULE.write_outputs(index, config)
+                viewer = (output / MODULE.SOCIAL_ARCHIVE_HTML).read_text(encoding="utf-8").split("\n", 1)[1]
+                self.assertEqual("*Earlier question?*", json.loads(viewer)["social"]["messages"][0]["formattedText"])
+                self.assertEqual(archive_before, (output / MODULE.SOCIAL_ARCHIVE_JSON).read_bytes())
+                sidecar.unlink()
+                MODULE.write_outputs(index, config)
+                self.assertNotIn("formattedText", index["social"]["messages"][0])
+                viewer = (output / MODULE.SOCIAL_ARCHIVE_HTML).read_text(encoding="utf-8").split("\n", 1)[1]
+                self.assertNotIn("formattedText", json.loads(viewer)["social"]["messages"][0])
 
     def test_archive_invalid_data_fails_and_atomic_creation_never_replaces(self):
         with tempfile.TemporaryDirectory() as directory:

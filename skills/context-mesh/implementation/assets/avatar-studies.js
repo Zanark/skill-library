@@ -1,27 +1,358 @@
 // Shared portrait drawings: live 08B plus preserved workshop comparisons.
 const avatarPortraitArtDirections = Object.freeze({
   "session-fed62133-8a6d-47b0-9e2c-d2eda9fbf1ad": { theme: "pam", presentation: "feminine", flair: "restrained", expression: "kiss-wink" },
-  "session-d5df688d-8707-4e35-815e-5f831a899459": { outfit: "embroidered-smock" },
-  "session-9cbe69cd-e0d4-40c9-ac96-8c82e451fa11": { outfit: "moto-jacket", facialHair: "goatee" },
-  "session-969d9987-a5bf-44a8-96c9-e698c3d7a0ad": { outfit: "satin-bomber", facialHair: "stubble" },
-  "session-3f8667e7-3a23-4fb9-9012-fba4281d435c": { outfit: "breton-sling" },
-  "session-5f0403d8-ec0e-4548-b7cd-c9120aeb3ec7": { outfit: "cardboard-harness", expression: "friendly-wink" },
-  "session-003d8999-b293-4ebb-9e07-059b9faaef3e": { outfit: "mandarin", facialHair: "boxed-beard" },
-  "session-06698e54-9837-4953-9ea3-487f0ce6c865": { outfit: "suspenders", facialHair: "chevron" },
-  "session-c4776b24-1cab-47a4-b085-b9d02007be28": { outfit: "chore-jacket" },
-  "session-7b82fa6b-dc94-4d3e-9923-a853167266a1": { outfit: "map-shirt", expression: "friendly-wink" },
+  "session-d5df688d-8707-4e35-815e-5f831a899459": { outfit: "bookbinder-apron" },
+  "session-8e7d69ac-78f7-4310-8b8d-14bf8681a509-bowser": { outfit: "cartridge-varsity" },
+  "session-9cbe69cd-e0d4-40c9-ac96-8c82e451fa11": { outfit: "career-pinstripe", facialHair: "goatee" },
+  "session-5b1043ae-4ead-4c75-9906-3f871fa63dcb": { outfit: "director-cape" },
+  "session-969d9987-a5bf-44a8-96c9-e698c3d7a0ad": { outfit: "filmfield-vest", facialHair: "stubble" },
+  "session-b23fc037-0f53-4367-96f6-579b21e80be9": { outfit: "cutline-split" },
+  "session-f78d59f3-e155-4e5b-8b2e-bd0607499015": { outfit: "weaver-tunic" },
+  "session-b27674ed-c14a-46a6-b59d-5120fc0a519a": { outfit: "entropy-streetwear" },
+  "session-efb2222e-0e0e-416a-9122-b41bc6b72512": { outfit: "relay-coat" },
+  "session-e4a2585a-8b13-460d-bf1b-07e8f69e1aff": { outfit: "broadcast-jacket" },
+  "session-5f0403d8-ec0e-4548-b7cd-c9120aeb3ec7": { outfit: "corrugated-stage", expression: "friendly-wink" },
+  "session-003d8999-b293-4ebb-9e07-059b9faaef3e": { outfit: "application-coverall", facialHair: "boxed-beard" },
+  "session-d2353248-82dc-4fec-acd8-fb8716d4aa35-modelroom": { outfit: "roomsmith-drafting" },
+  "session-663618cc-e834-40fa-8ac6-597a3566c810": { outfit: "pipekeeper-yoke" },
+  "session-13987e67-c8b9-4dfd-9fe3-6d4112c3950d": { outfit: "runner-track" },
+  "session-3fb09634-071c-4e97-aa0d-da09c947f9d0": { outfit: "pipeline-cyclist" },
+  "session-5fcc3b58-36e7-4961-b920-03283bb4cf2a": { outfit: "artifact-inspector" },
+  "session-06698e54-9837-4953-9ea3-487f0ce6c865": { outfit: "archive-waistcoat", facialHair: "chevron" },
+  "session-c4776b24-1cab-47a4-b085-b9d02007be28": { outfit: "report-workshirt" },
+  "session-7b82fa6b-dc94-4d3e-9923-a853167266a1": { outfit: "cartographer-mantle", expression: "friendly-wink" },
   "fictional-trash-goblin-718bb26f-ec71-4d8a-9543-f67727e20064": { theme: "goth", presentation: "feminine", flair: "bold" },
-  "session-718bb26f-ec71-4d8a-9543-f67727e20064": { outfit: "mockneck-drape" },
-  "session-d08187e0-4409-4168-be1f-f09e69acef98": { outfit: "linen-wrap" },
-  "session-meshboard-thread-scout": { outfit: "tweed-cravat", facialHair: "handlebar" },
-  "session-96f84287-724b-45f0-ada4-1168c5240762": { outfit: "zip-hoodie" },
-  "session-f69cc3b8": { outfit: "bib-overalls" },
-  "session-a9d82458-6aa8-4b5a-8f13-c01e53f6078a": { outfit: "shawl-cardigan", facialHair: "full-beard" },
+  "session-718bb26f-ec71-4d8a-9543-f67727e20064": { outfit: "mesh-node-knit" },
+  "session-8e7d69ac-78f7-4310-8b8d-14bf8681a509": { outfit: "editor-tabard" },
+  "session-d08187e0-4409-4168-be1f-f09e69acef98": { outfit: "builder-brick-apron" },
+  "session-meshboard-thread-scout": { outfit: "threadscout-cowl", facialHair: "handlebar" },
+  "session-ea08b309-444c-45f5-9430-ce1b4207ce07": { outfit: "pixel-blocks" },
+  "session-3bd1eee1-6bd2-4cb0-9744-04fcd8d3bd40": { outfit: "cassette-deck" },
+  "session-96f84287-724b-45f0-ada4-1168c5240762": { outfit: "rig-cable-harness" },
+  "session-3f8667e7-3a23-4fb9-9012-fba4281d435c": { outfit: "trickroom-harlequin" },
+  "session-f69cc3b8": { outfit: "camera-safari" },
+  "session-3ebcd26e-abc2-4e29-a4ee-e5d874d8a1bb": { outfit: "windowpane-coat" },
+  "session-a9d82458-6aa8-4b5a-8f13-c01e53f6078a": { outfit: "desk-daywear", facialHair: "full-beard" },
 });
 
 const avatarContextArtDirections = Object.freeze({
   "ctx-157d4bd90c18": { theme: "pam", presentation: "feminine", flair: "restrained", expression: "kiss-wink" },
   "ctx-ded91077c7ca": { theme: "butler", presentation: "masculine", flair: "restrained" },
+});
+
+// Authored name motifs, not inferred biography. Panels are actual garment cuts.
+const avatarNamedOutfits = Object.freeze({
+  "bookbinder-apron": {
+    label: "BookMaker / leather binding apron, parchment sleeves, book clasp",
+    palette: ["#6c4938", "#eee1ba", "#c5a15f"],
+    panels: [["M18 137L22 108L47 94L53 99L48 137ZM110 137L106 108L81 94L75 99L80 137Z", 1],
+      ["M43 95L49 97L53 116H46ZM85 95L79 97L75 116H82Z", 0],
+      ["M43 108H85L91 137H37Z", 0], ["M51 116H77V130H51Z", 2]],
+    seams: "M45 113H83M54 119V127M58 119H73M58 123H71M26 112L31 135M102 112L97 135",
+    jewel: '<path d="M56 96Q64 105 72 96M64 103V108" fill="none"/><path d="M60 107H68V113L64 111L60 113Z"/>',
+    prop: '<path d="M6 29Q15 25 25 30V57Q16 52 6 55ZM25 30Q33 26 39 29V55Q31 53 25 57Z"/><path d="M10 35L21 37M10 41L21 43M10 47L20 49M25 31V55"/>',
+  },
+  "cartridge-varsity": {
+    label: "Cartridge Keeper / arcade varsity jacket, cartridge chest rack",
+    palette: ["#593e88", "#c7ddbe", "#efbd5e"],
+    panels: [["M16 137L22 107L44 96L48 107L35 137ZM112 137L106 107L84 96L80 107L93 137Z", 1],
+      ["M49 94Q64 102 79 94L80 101Q64 110 48 101Z", 2],
+      ["M45 113H59V131H45ZM69 113H83V131H69Z", 2],
+      ["M47 115H57V122H47ZM71 115H81V122H71Z", 0]],
+    seams: "M64 105V136M49 126H55M73 126H79M37 134H91",
+    prop: '<path d="M101 26H119V49H101Z"/><path d="M104 29H116V39H104ZM105 44H108M112 44H115M101 51V56H119V51"/>',
+  },
+  "career-pinstripe": {
+    label: "CareerOS / stepped pinstripe suit, rising-arrow lapel",
+    palette: ["#293d58", "#d9d4c6", "#d5a56d"],
+    panels: [["M48 94L64 103L80 94L83 137H45Z", 1],
+      ["M44 96L54 99L56 109L62 137H18L23 109ZM84 96L74 99L72 109L66 137H110L105 109Z", 0],
+      ["M42 96L51 99V104H55V110H60L46 116L37 103ZM86 96L77 99V104H73V110H68L82 116L91 103Z", 2]],
+    seams: "M29 108V136M35 105V136M41 117V136M87 117V136M93 105V136M99 108V136M64 107V133",
+    jewel: '<path d="M83 112V104L80 107M83 104L86 107" fill="none" stroke-width="1.5"/>',
+    prop: '<path d="M7 68V57H14V47H21V36H29M22 36H29V43"/><path d="M8 73H29"/>',
+  },
+  "director-cape": {
+    label: "Original Cut / director shoulder cape, film-strip stole",
+    palette: ["#302c40", "#b56358", "#e7d8bd"],
+    panels: [["M48 94L56 99L51 137H18L25 106ZM80 94L72 99L77 137H110L103 106Z", 0],
+      ["M27 104L48 94L58 103L39 117L17 113ZM101 104L80 94L70 103L89 117L111 113Z", 1],
+      ["M54 99L60 102L58 137H49ZM74 99L68 102L70 137H79Z", 2]],
+    seams: "M53 109H58M52 116H57M51 123H56M70 109H75M71 116H76M72 123H77",
+    prop: '<path d="M4 35L27 29L30 39L7 45ZM7 45H31V62H7Z"/><path d="M10 34L17 41M20 31L27 38M11 49H27M11 54H22"/>',
+  },
+  "filmfield-vest": {
+    label: "ClipFarm / field vest, film-pocket rows, wheat brooch",
+    palette: ["#335d49", "#ddb97e", "#d47a54"],
+    panels: [["M18 137L23 107L48 94L55 99L48 137ZM110 137L105 107L80 94L73 99L80 137Z", 1],
+      ["M45 95L56 101L62 137H32L37 105ZM83 95L72 101L66 137H96L91 105Z", 0],
+      ["M35 112H51V126H35ZM77 112H93V126H77Z", 2]],
+    seams: "M38 115V123M43 115V123M48 115V123M80 115V123M85 115V123M90 115V123M42 99L50 108M86 99L78 108",
+    jewel: '<path d="M62 112V99M62 104L58 101M62 108L66 104M62 111L58 108" fill="none"/>',
+    prop: '<path d="M108 67V26M108 35L100 29M108 42L116 34M108 50L99 43M108 57L117 49"/><path d="M5 72H28V80H5ZM9 72V80M15 72V80M21 72V80"/>',
+  },
+  "cutline-split": {
+    label: "Cutline / bias-cut two-tone shirt, scissor-chain",
+    palette: ["#1e5361", "#e1a47d", "#ecdbb7"],
+    panels: [["M48 94L77 137H17L22 109Z", 0],
+      ["M80 94L108 110L113 137H77L48 94L56 98L64 102L74 96Z", 1],
+      ["M47 94L56 99L51 106L39 100ZM81 94L72 99L77 106L89 100Z", 2]],
+    seams: "M50 104L71 135M55 108L58 112M61 117L64 121M67 126L70 130M27 115L33 137",
+    jewel: '<circle cx="82" cy="113" r="2" fill="none"/><circle cx="88" cy="113" r="2" fill="none"/><path d="M83 111L88 103M87 111L82 103" fill="none"/>',
+    prop: '<circle cx="14" cy="39" r="5"/><circle cx="25" cy="39" r="5"/><path d="M17 35L27 17M22 35L12 17M7 62L28 53M7 68L12 66M17 64L22 62"/>',
+  },
+  "weaver-tunic": {
+    label: "Resume Weaver / woven crossover tunic, spool pendant",
+    palette: ["#7b4772", "#d9b994", "#88b7b2"],
+    panels: [["M47 94L63 108L49 137H18L23 108ZM81 94L65 108L79 137H110L105 108Z", 0],
+      ["M48 95L81 123L76 130L42 101ZM80 95L47 123L52 130L86 101Z", 1],
+      ["M28 128H100V136H28Z", 2]],
+    seams: "M32 113L43 123M37 108L48 118M85 108L96 118M80 113L91 123M38 130V135M47 130V135M56 130V135M65 130V135M74 130V135M83 130V135",
+    jewel: '<path d="M58 97Q64 109 70 97" fill="none"/><path d="M61 105H67V113H61ZM59 105H69M59 113H69" fill="none"/>',
+    prop: '<path d="M4 24H30V66H4ZM8 28V62M14 28V62M20 28V62M26 28V62M5 37H29M5 47H29M5 57H29"/>',
+  },
+  "entropy-streetwear": {
+    label: "EntropyTag / jagged asymmetric streetwear, scattered tags",
+    palette: ["#343344", "#cc744c", "#a9d47e"],
+    panels: [["M47 94L54 99L51 137H17L21 107L34 99L37 105Z", 0],
+      ["M81 94L75 99L64 116L79 137H111L106 109L94 101L90 108Z", 1],
+      ["M28 112L43 108L39 120L31 118ZM79 115L94 111L99 124L86 128Z", 2],
+      ["M56 100L67 105L61 118L53 110Z", 2]],
+    seams: "M23 127L31 122L39 131M74 105L83 108M84 133L100 128M45 104L49 112",
+    prop: '<path d="M5 28L13 19L22 30L15 39ZM104 57L119 53L121 68L108 73Z"/><circle cx="112" cy="23" r="6"/><path d="M8 68L21 51L28 62M98 39L112 47"/>',
+  },
+  "relay-coat": {
+    label: "GenevaActions / relay-panel coat, copper switch chain",
+    palette: ["#244e5e", "#b9d1c9", "#d59664"],
+    panels: [["M48 94L56 99V137H18L22 110ZM80 94L72 99V137H110L106 110Z", 0],
+      ["M49 94L55 98L51 109L42 104ZM79 94L73 98L77 109L86 104Z", 1],
+      ["M29 113H49V129H29ZM79 113H99V129H79Z", 2]],
+    seams: "M60 103V137M68 103V137M32 117H39L42 121H46M82 124H89L93 118H97M34 126H44M83 114H95",
+    jewel: '<path d="M54 107Q64 122 74 107" fill="none"/><circle cx="64" cy="117" r="2"/>',
+    prop: '<path d="M5 25H27V61H5ZM9 34H14L21 29M9 49H14L21 44"/><circle cx="10" cy="56" r="2"/><circle cx="22" cy="56" r="2"/>',
+  },
+  "broadcast-jacket": {
+    label: "Intercom / radio jacket, resting headphones, signal piping",
+    palette: ["#9a583e", "#ead9b6", "#546b83"],
+    panels: [["M48 94L55 100L51 137H17L22 108ZM80 94L73 100L77 137H111L106 108Z", 0],
+      ["M49 95L56 101L52 108L42 100ZM79 95L72 101L76 108L86 100Z", 1],
+      ["M30 117H46V130H30ZM82 117H98V130H82Z", 2]],
+    seams: "M63 105V137M26 108L31 112L26 116M102 108L97 112L102 116",
+    jewel: '<path d="M46 99Q44 117 64 118Q84 117 82 99" fill="none" stroke-width="2"/><rect x="43" y="101" width="7" height="13" rx="3"/><rect x="78" y="101" width="7" height="13" rx="3"/>',
+    prop: '<path d="M6 36H15L23 29V55L15 48H6ZM28 33Q38 42 28 51M32 27Q48 42 32 57"/>',
+  },
+  "corrugated-stage": {
+    label: "Cardboard Continuity / folded carton armor, taped suspenders",
+    palette: ["#346354", "#c99b62", "#f0d9a8"],
+    panels: [["M17 137L22 109L48 94L54 99L46 137ZM111 137L106 109L80 94L74 99L82 137Z", 0],
+      ["M31 109L64 103L96 110L91 137H36Z", 1],
+      ["M31 109L42 98L64 103L51 115ZM64 103L84 98L97 110L78 115Z", 2],
+      ["M57 108H64V137H57Z", 2]],
+    seams: "M36 118L51 115M37 123L51 120M38 128L51 125M79 120L91 117M79 125L90 122M79 130L89 127M43 99L48 102M81 99L77 103",
+    prop: '<path d="M4 50L16 43L30 49L18 57ZM4 50V65L18 72V57M18 57L30 49V65L18 72M5 27H23V38H5Z"/><path d="M8 31H20M8 35H16"/>',
+  },
+  "application-coverall": {
+    label: "Apply Mechanic / fitted service coverall, wrench and document pockets",
+    palette: ["#336a78", "#d7d4be", "#d49559"],
+    panels: [["M50 94L58 99L64 104L70 99L78 94L83 137H45Z", 0],
+      ["M49 94L58 99L54 106L43 98ZM79 94L70 99L74 106L85 98Z", 1],
+      ["M30 111H48V127H30ZM79 111H98V127H79Z", 2],
+      ["M32 114H45V122H32Z", 1]],
+    seams: "M64 104V137M60 108H68M60 117H68M60 126H68M83 113V123M88 113V123M94 113V123",
+    prop: '<path d="M10 22H27V47H10ZM14 28H23M14 34H23M14 40L17 43L23 37M8 58L14 52L19 57L13 63L11 73L6 75L4 70Z"/>',
+  },
+  "roomsmith-drafting": {
+    label: "Roomsmith / drafting coat, triangular lapels, ruler pocket",
+    palette: ["#a2684d", "#e4d7b6", "#41747b"],
+    panels: [["M48 94L58 101L52 137H17L23 108ZM80 94L70 101L76 137H111L105 108Z", 0],
+      ["M44 95L59 105L45 114L36 103ZM84 95L69 105L83 114L92 103Z", 1],
+      ["M79 114H99V130H79Z", 2], ["M84 105H89V124H84Z", 1]],
+    seams: "M85 109H88M85 114H88M85 119H88M29 122H47M27 127H45M63 107V136",
+    prop: '<path d="M3 62V25H29V62ZM3 25L16 16L29 25M9 62V45H21V62M9 31H15V37H9ZM21 20L35 34H21Z"/>',
+  },
+  "pipekeeper-yoke": {
+    label: "Pipeline Keeper / high-yoke utility vest, copper pipe closures",
+    palette: ["#36534e", "#d3b168", "#cf8063"],
+    panels: [["M44 95L51 97V105H77V97L84 95L96 111H32Z", 1],
+      ["M32 111H55V137H25ZM96 111H73V137H103Z", 0],
+      ["M35 114H50V127H35ZM78 114H93V127H78Z", 2]],
+    seams: "M55 106V117H73V106M59 120V137M69 120V137M38 117H47M81 117H90M25 131H52M76 131H103",
+    jewel: '<path d="M53 100V110Q64 123 75 110V100" fill="none" stroke-width="2"/><circle cx="64" cy="116" r="2"/>',
+    prop: '<path d="M7 20V37H22V61H36M13 20V31H28V55H36M5 42H15M19 48H31M31 53V63"/>',
+  },
+  "runner-track": {
+    label: "Runner / sprint track top, chevron chest, stopwatch",
+    palette: ["#275478", "#e7e2c7", "#df8359"],
+    panels: [["M21 109L47 94L64 108L81 94L107 109L101 117L81 103L64 117L47 103L27 117Z", 1],
+      ["M47 103L64 117L81 103L86 108L64 127L42 108Z", 2],
+      ["M20 117L28 117L35 137H23ZM108 117L100 117L93 137H105Z", 2]],
+    seams: "M64 103V136M25 111L34 108M103 111L94 108",
+    jewel: '<path d="M58 97Q64 108 70 97" fill="none"/><circle cx="64" cy="109" r="3"/><path d="M64 107V109L66 110" fill="none"/>',
+    prop: '<path d="M5 65Q17 33 32 21M11 73Q25 37 39 25M18 80Q31 43 45 29M5 58L23 67"/>',
+  },
+  "pipeline-cyclist": {
+    label: "Runner Pipelines / cycling jersey, routed piping, three-pocket hem",
+    palette: ["#724e78", "#d4dfba", "#dfaa66"],
+    panels: [["M21 108L44 97L51 101L37 119L19 116ZM107 108L84 97L77 101L91 119L109 116Z", 1],
+      ["M48 94L53 98V103H75V98L80 94L78 108H50Z", 2],
+      ["M34 123H53V137H34ZM55 123H73V137H55ZM75 123H94V137H75Z", 1]],
+    seams: "M64 105V137M28 109L36 112L46 105M100 109L92 112L82 105M37 126H50M58 126H70M78 126H91",
+    prop: '<path d="M6 31H21V44H33V60H45M6 37H15V50H27V66H45"/><circle cx="12" cy="74" r="7"/><circle cx="33" cy="74" r="7"/><path d="M12 74L22 60L33 74H12L18 63"/>',
+  },
+  "artifact-inspector": {
+    label: "Runner Artifact Checks / inspection bib, sealed parcel pocket",
+    palette: ["#3c4e65", "#d2b369", "#9fc1b6"],
+    panels: [["M39 98L47 95L55 110H73L81 95L89 98L83 119H45Z", 1],
+      ["M40 118H88L91 137H37Z", 1],
+      ["M48 119L64 115L80 119V134H48Z", 0],
+      ["M60 117H66V134H60Z", 2]],
+    seams: "M45 105L50 115M83 105L78 115M51 124H56M71 124H77M51 129L54 131L58 126",
+    prop: '<path d="M6 38L18 31L31 38L18 45ZM6 38V58L18 66L31 58V38M18 45V66M9 52L14 57L25 46"/><circle cx="112" cy="27" r="8"/><path d="M118 33L125 41"/>',
+  },
+  "archive-waistcoat": {
+    label: "Inventory Evidence Keeper / archive waistcoat, indexed file pockets",
+    palette: ["#6f3f54", "#e9dec4", "#bc9d5a"],
+    panels: [["M18 137L23 108L48 94L56 100L48 137ZM110 137L105 108L80 94L72 100L80 137Z", 1],
+      ["M43 95L62 111L64 116L66 111L85 95L87 137H41Z", 0],
+      ["M44 118H58V132H44ZM70 118H84V132H70Z", 2],
+      ["M46 114H51V124H46ZM73 112H79V124H73Z", 1]],
+    seams: "M64 117V137M47 120H55M73 120H81M47 127H55M73 127H81M53 102L58 112M75 102L70 112",
+    prop: '<path d="M3 27H27V42H3ZM3 44H27V59H3ZM3 61H27V76H3ZM11 32H20V36H11ZM11 49H20V53H11ZM11 66H20V70H11Z"/>',
+  },
+  "report-workshirt": {
+    label: "Report Mechanic / rolled workshirt, document breastplate, wrench loop",
+    palette: ["#b8824d", "#e9deca", "#4b6873"],
+    panels: [["M18 110L28 104L40 137H23ZM110 110L100 104L88 137H105Z", 2],
+      ["M48 94L57 100L52 107L40 98ZM80 94L71 100L76 107L88 98Z", 1],
+      ["M31 113H51V130H31Z", 1], ["M78 113H98V126H78Z", 2]],
+    seams: "M64 104V137M35 118H47M35 123H46M82 117L94 120M80 130H96M27 109L34 128M101 109L94 128",
+    jewel: '<path d="M83 106L88 111L86 119L90 123L94 119L90 115L92 108L87 103Z" fill="none"/>',
+    prop: '<path d="M5 24H23L30 31V62H5ZM23 24V32H30M10 39H24M10 45H24M10 51H19M10 57H22"/>',
+  },
+  "cartographer-mantle": {
+    label: "Migration Cartographer / expedition mantle, folded chart, compass clasp",
+    palette: ["#2b626b", "#d7c593", "#c68b5c"],
+    panels: [["M47 94L57 99L51 137H18L23 109ZM81 94L71 99L77 137H110L105 109Z", 0],
+      ["M48 94L64 102L80 94L103 107L89 120L64 107L39 120L25 107Z", 1],
+      ["M73 117L96 112L99 137H76Z", 2]],
+    seams: "M32 109Q40 101 47 108T61 104M68 104Q76 101 83 108T96 108M78 121L94 118M80 129L95 126M85 117L88 136",
+    jewel: '<circle cx="64" cy="104" r="3"/><path d="M64 101L66 105L62 107Z" fill="none"/>',
+    prop: '<path d="M3 34L13 30L23 34L33 30V63L23 67L13 63L3 67ZM13 30V63M23 34V67M7 54L13 48L19 53L28 42"/><circle cx="111" cy="22" r="7"/><path d="M111 17L114 25L108 25Z"/>',
+  },
+  "mesh-node-knit": {
+    label: "Meshboard Maintainer / lattice knit, node fasteners, mesh shoulder drape",
+    palette: ["#3e465f", "#9ebfba", "#d9b16c"],
+    panels: [["M48 94L55 99V137H28L30 106ZM80 94L73 99V137H100L98 106Z", 0],
+      ["M28 108L46 95L51 103L39 121L25 117Z", 1],
+      ["M78 96L102 110L95 119L74 104Z", 1]],
+    seams: "M36 113L49 109L43 125L53 133M49 109L52 122L43 125M78 111L90 119L78 130L91 135M90 119L95 131L78 130M59 107H69M59 117H69M59 127H69",
+    jewel: '<g><circle cx="43" cy="111" r="2"/><circle cx="49" cy="121" r="2"/><circle cx="83" cy="117" r="2"/><circle cx="88" cy="129" r="2"/></g>',
+    prop: '<path d="M8 27L23 40L9 58L26 72M8 27L29 24L23 40L35 57L9 58M23 40L9 58"/><circle cx="8" cy="27" r="3"/><circle cx="23" cy="40" r="3"/><circle cx="9" cy="58" r="3"/><circle cx="29" cy="24" r="3"/>',
+  },
+  "editor-tabard": {
+    label: "Manual Editor / ivory editorial tabard, red-pencil piping",
+    palette: ["#ddcfb3", "#5a526d", "#b5574a"],
+    panels: [["M18 137L23 108L48 94L56 100L49 137ZM110 137L105 108L80 94L72 100L79 137Z", 1],
+      ["M44 96L56 101L64 105L72 101L84 96L87 137H41Z", 0],
+      ["M43 112H59V129H43Z", 2], ["M46 115H56V125H46Z", 0]],
+    seams: "M64 108V136M69 112H79M69 118H79M69 124H76M47 119L49 121L54 116M44 133H84",
+    jewel: '<path d="M82 100L85 101L78 117L75 119L75 115Z"/><path d="M77 114L80 115" fill="none"/>',
+    prop: '<path d="M4 25H27V64H4ZM9 32H23M9 40H23M9 48H23M9 56H19"/><path d="M26 35L31 40L38 30M29 50L36 57M36 50L29 57"/>',
+  },
+  "builder-brick-apron": {
+    label: "Meshboard Builder / masonry apron, brick pockets, square clasp",
+    palette: ["#9b614d", "#d7c8a9", "#497578"],
+    panels: [["M18 137L23 108L48 94L55 99L48 137ZM110 137L105 108L80 94L73 99L80 137Z", 1],
+      ["M40 96L47 96L55 116H47ZM88 96L81 96L73 116H81Z", 2],
+      ["M41 110H87L92 137H36Z", 0],
+      ["M48 119H80V132H48Z", 2]],
+    seams: "M43 115H85M39 125H48M80 125H89M53 120V126H64V132M64 120V126H75V132M52 115V118M74 115V118",
+    jewel: '<path d="M58 100H70V109H58ZM61 103H67V106H61Z" fill="none"/>',
+    prop: '<path d="M2 66H32V77H2ZM2 55H26V66H2ZM8 44H32V55H8ZM12 66V77M15 55V66M20 44V55"/><path d="M105 21L123 39H105ZM109 30V35H114Z"/>',
+  },
+  "threadscout-cowl": {
+    label: "Thread Scout / trail cowl, woven scout vest, spool clasp",
+    palette: ["#67704c", "#d6c6a3", "#bb805d"],
+    panels: [["M43 95L57 101L61 137H27L33 105ZM85 95L71 101L67 137H101L95 105Z", 0],
+      ["M41 96Q64 113 87 96L82 111L64 116L46 110Z", 1],
+      ["M58 110L65 115L53 137H44Z", 1],
+      ["M79 117H93V132H79Z", 2]],
+    seams: "M45 102Q64 117 83 102M50 113L60 119M81 121H91M81 126H89M34 114L39 136",
+    jewel: '<path d="M67 109H73V118H67ZM65 109H75M65 118H75M68 112H72M68 115H72" fill="none"/>',
+    prop: '<circle cx="17" cy="31" r="10"/><path d="M24 39L34 52M8 63Q18 49 24 61T8 77M101 24H119V31H101ZM105 31V51H115V31M101 51H119V58H101Z"/>',
+  },
+  "pixel-blocks": {
+    label: "Pixel / stepped color-block vest, square enamel pixels",
+    palette: ["#495478", "#cc876f", "#a7c7b1"],
+    panels: [["M18 137V110H27V102H45V95H53V107H45V137Z", 0],
+      ["M110 137V110H101V102H83V95H75V107H83V137Z", 1],
+      ["M45 107H59V118H70V129H83V137H45Z", 2],
+      ["M75 107H67V115H59V123H51V131H59V123H67V115H75Z", 1]],
+    seams: "M23 116H32V124H40M89 111V119H99M51 110H56M72 131H79",
+    jewel: '<path d="M59 99H64V104H69V109H64V104H59Z"/>',
+    prop: '<path d="M4 20H13V29H4ZM13 29H22V38H13ZM4 38H13V47H4ZM22 20H31V29H22ZM22 47H31V56H22ZM101 63H110V72H101ZM110 72H119V81H110Z"/>',
+  },
+  "cassette-deck": {
+    label: "Tape Curator / cassette-pocket jacket, tape-loop scarf",
+    palette: ["#805446", "#d4b68b", "#89aeb2"],
+    panels: [["M46 94L55 100L51 137H18L23 108ZM82 94L73 100L77 137H110L105 108Z", 0],
+      ["M49 95Q64 107 79 95L77 103Q64 115 51 103L56 137H48Z", 2],
+      ["M71 113H98V131H71Z", 1], ["M75 117H94V125H75Z", 0]],
+    seams: "M79 118V123M90 118V123M81 121H88M77 128H92M29 116L43 112M27 120L41 116",
+    prop: '<path d="M4 27H32V48H4ZM8 31H28V40H8ZM10 44H26"/><circle cx="12" cy="35" r="3"/><circle cx="24" cy="35" r="3"/><path d="M10 48Q0 68 20 65T30 80"/>',
+  },
+  "rig-cable-harness": {
+    label: "Rig Evidence Keeper / padded harness, cable loops, jointed rig",
+    palette: ["#384556", "#d2d2bd", "#d89462"],
+    panels: [["M48 94Q64 104 80 94L85 137H43Z", 1],
+      ["M38 98L46 96L57 137H45ZM90 98L82 96L71 137H83Z", 0],
+      ["M42 111H86V118H42Z", 2],
+      ["M52 121H76V134H52Z", 0]],
+    seams: "M41 104L50 133M87 104L78 133M46 114H54M74 114H82M56 125H72M56 129H67",
+    jewel: '<path d="M33 112Q20 123 38 129Q50 133 43 118M92 112Q109 122 91 130" fill="none" stroke-width="1.4"/>',
+    prop: '<circle cx="14" cy="24" r="5"/><circle cx="23" cy="43" r="4"/><circle cx="10" cy="62" r="4"/><path d="M14 29L23 39M21 47L11 58M10 66V80M10 73L3 81M10 73L19 81M23 43L35 47"/>',
+  },
+  "trickroom-harlequin": {
+    label: "TrickRoom Continuity / harlequin waistcoat, looping continuity cord",
+    palette: ["#624571", "#d1b276", "#b4cab7"],
+    panels: [["M18 137L23 108L48 94L56 100L49 137ZM110 137L105 108L80 94L72 100L79 137Z", 2],
+      ["M44 95L64 108L84 95L87 137H41Z", 0],
+      ["M49 108L57 116L49 124L41 116ZM65 108L73 116L65 124L57 116ZM81 108L89 116L81 124L73 116ZM57 124L65 132L57 140L49 132ZM73 124L81 132L73 140L65 132Z", 1]],
+    seams: "M49 95L59 105M79 95L69 105M64 111V136",
+    jewel: '<path d="M36 109C24 96 24 125 36 113C48 101 48 126 36 113" fill="none"/>',
+    prop: '<path d="M4 77V22H27V77M9 77V29H22V77M22 29L34 37V72L22 77M27 21L35 13L38 19L31 25"/><circle cx="29" cy="55" r="1.5"/>',
+  },
+  "camera-safari": {
+    label: "TrickRoom Camera / safari shooting vest, rangefinder pendant",
+    palette: ["#88754f", "#e0d6b7", "#557a79"],
+    panels: [["M18 137L23 108L48 94L55 100L48 137ZM110 137L105 108L80 94L73 100L80 137Z", 1],
+      ["M42 96L54 101L57 137H29L34 105ZM86 96L74 101L71 137H99L94 105Z", 0],
+      ["M31 111H48V122H31ZM80 111H97V122H80ZM31 125H48V136H31ZM80 125H97V136H80Z", 2]],
+    seams: "M33 114H46M82 114H95M33 128H46M82 128H95",
+    jewel: '<path d="M52 97L57 119M76 97L71 119" fill="none"/><path d="M55 117H73V129H55ZM58 114H64V117H58Z"/><circle cx="65" cy="123" r="3" fill="none"/>',
+    prop: '<path d="M3 28H28V45H3ZM28 33L38 28V45L28 40M15 45V64M15 55L4 78M15 55L28 78"/><circle cx="15" cy="36" r="5"/>',
+  },
+  "windowpane-coat": {
+    label: "WindowPane / glazed-check coat, four-pane clasp",
+    palette: ["#467078", "#c7d7c1", "#e1b779"],
+    panels: [["M48 94L57 100L54 137H17L23 108ZM80 94L71 100L74 137H111L105 108Z", 0],
+      ["M44 96L56 103L51 112L37 102ZM84 96L72 103L77 112L91 102Z", 1],
+      ["M52 113H76V137H52Z", 1]],
+    seams: "M27 108V136M38 112V136M49 115V136M79 115V136M90 112V136M101 108V136M22 117H51M20 128H51M77 117H106M77 128H108M64 114V137M53 125H75",
+    jewel: '<path d="M58 101H70V111H58ZM64 101V111M58 106H70" fill="none"/>',
+    prop: '<path d="M4 20H30V66H4ZM17 20V66M4 43H30M1 69H34M7 23H14V39H7ZM20 47H27V62H20Z"/>',
+  },
+  "desk-daywear": {
+    label: "WorkDesk / rolled sleeves, asymmetric sweater vest, desk-pocket pen",
+    palette: ["#9b674d", "#e7d7b8", "#506778"],
+    panels: [["M18 137L23 108L48 94L55 100L48 137ZM110 137L105 108L80 94L73 100L80 137Z", 1],
+      ["M44 95L64 111L82 95L86 137H40Z", 0],
+      ["M48 95L64 107L73 99L76 104L64 117L45 103Z", 2],
+      ["M76 117H90V130H76Z", 2]],
+    seams: "M23 112L32 130M105 112L96 130M24 122L31 120M104 122L97 120M44 133H83M79 120H87",
+    jewel: '<path d="M81 111V124M85 110V123" fill="none" stroke-width="1.3"/>',
+    prop: '<path d="M1 69H35V75H1ZM7 75V87M29 75V87M5 57H21V68H5ZM21 59Q29 57 27 64H21M99 24H123V42H99ZM110 42V49M104 49H117"/>',
+  },
 });
 
 function avatarPortraitDirection(persona) {
@@ -245,7 +576,8 @@ function avatarWardrobeProfile(seed, persona = {}, appearance = {}) {
   }
   const outfits = ["role", "cable-knit", "mandarin", "suspenders", "chore-jacket", "map-shirt",
     "mockneck-drape", "linen-wrap", "tweed-cravat", "zip-hoodie", "bib-overalls", "shawl-cardigan",
-    "embroidered-smock", "moto-jacket", "satin-bomber", "breton-sling", "cardboard-harness"];
+    "embroidered-smock", "moto-jacket", "satin-bomber", "breton-sling", "cardboard-harness",
+    ...Object.keys(avatarNamedOutfits)];
   if (appearance.outfit !== undefined && !outfits.includes(appearance.outfit)) {
     throw new TypeError("Unknown individual portrait outfit");
   }
@@ -299,6 +631,7 @@ function avatarWardrobeMarkup(style, shirt, skin, mix) {
   if (style.theme === "goth") return avatarGothWardrobeMarkup(style, skin, mix);
   if (style.theme === "butler") return avatarButlerWardrobeMarkup(skin, mix);
   if (style.theme === "pam") return avatarPamWardrobeMarkup(style, skin, mix);
+  if (Object.hasOwn(avatarNamedOutfits, style.outfit)) return avatarNamedWardrobeMarkup(style, skin, mix);
   if (style.outfit !== "role") return avatarIndividualWardrobeMarkup(style, skin, mix);
   const feminine = style.presentation === "feminine";
   const masculine = style.presentation === "masculine";
@@ -366,6 +699,28 @@ function avatarWardrobeMarkup(style, shirt, skin, mix) {
     ${style.topstitch ? `<path d="M${shoulder + 7} 113L${waist - 1} 135M${121 - shoulder} 113L${129 - waist} 135" fill="none" stroke="${accent}" stroke-width=".45" opacity=".65"/>` : ""}
     ${style.emblem && style.family !== "creative" ? `<g transform="translate(84 118)" fill="none" stroke="${accent}" stroke-width=".65" stroke-linejoin="round">${motif}</g>` : ""}
   </g>`;
+}
+
+function avatarNamedWardrobeMarkup(style, skin, mix) {
+  const design = avatarNamedOutfits[style.outfit];
+  const [base, contrast, accent] = design.palette;
+  const edge = mix(base, "#1c2330", .6);
+  const shoulder = style.presentation === "feminine" ? 20 : style.presentation === "masculine" ? 14 : 17;
+  const body = `M${shoulder - 3} 137L${shoulder} 111Q${shoulder + 3} 100 48 94L53 92Q64 101 75 92L80 94Q${125 - shoulder} 100 ${128 - shoulder} 111L${131 - shoulder} 137Z`;
+  return `<g data-feature="wardrobe" data-outfit="${style.outfit}" data-family="${style.family}" data-presentation="${style.presentation}" data-flair="${style.flair}">
+    ${avatarNeckMarkup(skin, mix)}
+    <path data-feature="torso" d="${body}" fill="${base}" stroke="${edge}" stroke-width=".7"/>
+    ${design.panels.map(([d, color]) => `<path d="${d}" fill="${design.palette[color]}" stroke="${edge}" stroke-width=".65" stroke-linejoin="round"/>`).join("")}
+    <path d="${design.seams}" fill="none" stroke="${contrast}" stroke-width=".65" stroke-linecap="round" stroke-linejoin="round"/>
+    ${design.jewel ? `<g data-feature="name-accessory" fill="${accent}" stroke="${edge}" stroke-width=".7" stroke-linejoin="round">${design.jewel}</g>` : ""}
+    ${style.flair === "bold" ? `<path d="M24 114L29 133M104 114L99 133" fill="none" stroke="${accent}" stroke-width="1.3"/>` : ""}
+  </g>`;
+}
+
+function avatarNamedBackdropMarkup(style) {
+  if (!Object.hasOwn(avatarNamedOutfits, style.outfit)) return "";
+  const design = avatarNamedOutfits[style.outfit];
+  return `<g data-feature="name-backdrop" data-motif="${style.outfit}" fill="${design.palette[1]}" fill-opacity=".26" stroke="${design.palette[0]}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity=".8">${design.prop}</g>`;
 }
 
 function avatarIndividualWardrobeMarkup(style, skin, mix) {
@@ -872,7 +1227,7 @@ function avatarStudyDataUri(seed, version, persona = {}, appearance = {}) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="${closeCrop ? "12 8 104 104" : "0 0 128 128"}" data-avatar-version="study-v${version}"><defs>${defs}</defs>
     <g clip-path="url(#tile)"><rect width="128" height="128" fill="${graphic ? background : "url(#bg)"}"/>
       ${graphic ? `<path d="M0 0H82L16 128H0Z" fill="#fff0d6" opacity=".17"/>` :
-        `<ellipse cx="34" cy="42" rx="58" ry="67" fill="#fff0d6" opacity=".13"/>`}
+        `<ellipse cx="34" cy="42" rx="58" ry="67" fill="#fff0d6" opacity=".13"/>`}${tailored ? avatarNamedBackdropMarkup(wardrobe) : ""}
       ${tailored ? '<g data-feature="silhouette-outline" opacity=".72"><rect width="128" height="128" fill="#000" mask="url(#silhouette-edge)"/></g><g id="portrait-figure">' : ""}<g transform="${pose}" fill="${graphic ? hairDark : "url(#hair-fill)"}" data-feature="hair-back">${rear}</g>
       ${tailored ? avatarWardrobeMarkup(wardrobe, shirt, skin, mix) : `<path d="M15 130L20 118Q23 106 48 100L55 97H73L80 100Q105 105 109 118L113 130Z" fill="${graphic ? shirt : "url(#shirt)"}"/>
       <path d="M53 85H75V100Q64 110 53 100Z" fill="${graphic ? skin : "url(#neck)"}"/>

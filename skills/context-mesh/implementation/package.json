@@ -8,7 +8,9 @@
     "test:browser": "python scripts\\build_context_mesh.py --check && node tests\\browser_smoke.mjs"
   },
   "dependencies": {
-    "force-graph": "1.51.4"
+    "dompurify": "3.4.17",
+    "force-graph": "1.51.4",
+    "marked": "18.1.3"
   },
   "devDependencies": {
     "playwright-core": "1.62.1"

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import re
 from copy import deepcopy
 from typing import Any
 
@@ -98,6 +99,69 @@ STARTERS = {
         "Can over-explain or smooth over a disagreement that deserved to be heard.",
         ["everyday life", "shared gripes", "how people are doing"], (52, 82, 77, 54, 81, 49, 67)),
 }
+
+
+# Operator-approved fictional casting, frozen independently of future portrait changes.
+GENDER_CAST = {
+    "fictional-alfred-718bb26f-ec71-4d8a-9543-f67727e20064": "man",
+    "session-d5df688d-8707-4e35-815e-5f831a899459": "nonbinary",
+    "session-8e7d69ac-78f7-4310-8b8d-14bf8681a509-bowser": "man",
+    "session-9cbe69cd-e0d4-40c9-ac96-8c82e451fa11": "man",
+    "session-5b1043ae-4ead-4c75-9906-3f871fa63dcb": "man",
+    "session-969d9987-a5bf-44a8-96c9-e698c3d7a0ad": "man",
+    "session-b23fc037-0f53-4367-96f6-579b21e80be9": "man",
+    "session-f78d59f3-e155-4e5b-8b2e-bd0607499015": "woman",
+    "session-b27674ed-c14a-46a6-b59d-5120fc0a519a": "woman",
+    "session-efb2222e-0e0e-416a-9122-b41bc6b72512": "man",
+    "session-e4a2585a-8b13-460d-bf1b-07e8f69e1aff": "nonbinary",
+    "session-5f0403d8-ec0e-4548-b7cd-c9120aeb3ec7": "woman",
+    "session-003d8999-b293-4ebb-9e07-059b9faaef3e": "man",
+    "session-d2353248-82dc-4fec-acd8-fb8716d4aa35-modelroom": "nonbinary",
+    "session-663618cc-e834-40fa-8ac6-597a3566c810": "nonbinary",
+    "session-fed62133-8a6d-47b0-9e2c-d2eda9fbf1ad": "woman",
+    "session-13987e67-c8b9-4dfd-9fe3-6d4112c3950d": "man",
+    "session-3fb09634-071c-4e97-aa0d-da09c947f9d0": "woman",
+    "session-5fcc3b58-36e7-4961-b920-03283bb4cf2a": "nonbinary",
+    "session-06698e54-9837-4953-9ea3-487f0ce6c865": "man",
+    "session-c4776b24-1cab-47a4-b085-b9d02007be28": "nonbinary",
+    "session-7b82fa6b-dc94-4d3e-9923-a853167266a1": "man",
+    "fictional-trash-goblin-718bb26f-ec71-4d8a-9543-f67727e20064": "woman",
+    "session-718bb26f-ec71-4d8a-9543-f67727e20064": "man",
+    "session-8e7d69ac-78f7-4310-8b8d-14bf8681a509": "woman",
+    "session-d08187e0-4409-4168-be1f-f09e69acef98": "nonbinary",
+    "session-meshboard-thread-scout": "man",
+    "session-ea08b309-444c-45f5-9430-ce1b4207ce07": "woman",
+    "session-3bd1eee1-6bd2-4cb0-9744-04fcd8d3bd40": "man",
+    "session-96f84287-724b-45f0-ada4-1168c5240762": "nonbinary",
+    "session-3f8667e7-3a23-4fb9-9012-fba4281d435c": "woman",
+    "session-f69cc3b8": "nonbinary",
+    "session-3ebcd26e-abc2-4e29-a4ee-e5d874d8a1bb": "man",
+    "session-a9d82458-6aa8-4b5a-8f13-c01e53f6078a": "man",
+}
+
+
+def resolve_gender_identity(persona: dict[str, Any]) -> dict[str, Any]:
+    if "genderIdentity" in persona:
+        identity = persona["genderIdentity"]
+        if not isinstance(identity, dict) or set(identity) != {"gender", "pronouns", "grammaticalGender"}:
+            raise ValueError("genderIdentity must contain gender, pronouns and grammaticalGender")
+        for field in ("gender", "pronouns"):
+            value = identity[field]
+            if not isinstance(value, str) or not re.fullmatch(r"[\w][\w /.-]{0,79}", value.strip()):
+                raise ValueError(f"genderIdentity.{field} must be a plain label of 1-80 characters")
+        if identity["grammaticalGender"] not in ("feminine", "masculine", "neutral"):
+            raise ValueError("genderIdentity.grammaticalGender must be feminine, masculine or neutral")
+        resolved = {field: value.strip() for field, value in identity.items()}
+        source = "owner-authored"
+    else:
+        gender = GENDER_CAST.get(persona.get("personaId"), "unspecified")
+        pronouns, grammar = {
+            "woman": ("she/her", "feminine"), "man": ("he/him", "masculine"),
+            "nonbinary": ("they/them", "neutral"), "unspecified": ("they/them", "neutral"),
+        }[gender]
+        resolved = {"gender": gender, "pronouns": pronouns, "grammaticalGender": grammar}
+        source = "operator-approved-fictional-cast" if gender != "unspecified" else "unassigned"
+    return {"genderIdentity": resolved, "genderIdentitySource": source}
 
 
 def _text(value: Any, field: str) -> str:
