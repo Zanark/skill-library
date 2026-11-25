@@ -1,0 +1,30 @@
+{
+  "template_kind": "authoring-brief-not-an-application-schema",
+  "mode": "full-review",
+  "original_request_timestamp": "<ORIGINAL_TIMEZONE_AWARE_REQUEST>",
+  "source": {"song": "<NEW_LOCAL_SONG>", "lyrics": "<SUPPLIED_LYRICS>", "cover": null},
+  "duration_policy": "entire-original-song-unless-explicit-excerpt",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "story": {"logline": "<NEW_ORIGINAL_STORY>", "cast": [], "beats": [], "shots": [], "actions": []},
+  "lyric_occurrences": [],
+  "lyric_window": {
+    "clock": "source-seconds",
+    "occurrence_identity": "unique-id-not-text",
+    "progress": "elapsed-phrase-not-phonetic-karaoke",
+    "redraw_progress_every_frame": true
+  },
+  "review": {
+    "status": "pending",
+    "user_approved": false,
+    "source_lyrics_reconciled": false,
+    "fresh_output_asr_read": false,
+    "all_lyric_occurrences_and_progress_reviewed": false,
+    "all_scene_action_join_evidence": [],
+    "full_decode_audio_pts_verified": false,
+    "actual_image_evidence": [],
+    "unresolved": []
+  },
+  "gallery_ui_qa": "not-requested",
+  "ready_for_upload": false,
+  "notes": "Populate from new source evidence. No renderer consumes this brief automatically; no review is preapproved."
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "engine_version": "sdr-zimg-lut65-v1",
+  "preset": "cinematic",
+  "preset_version": 1,
+  "intensity": 0.65,
+  "input_profile": "auto",
+  "output_profile": "mp4-8bit",
+  "start": 0,
+  "end": null,
+  "adjustments": {
+    "exposure": 0,
+    "temperature": 0,
+    "tint": 0,
+    "contrast": 1,
+    "saturation": 1
+  },
+  "shots": [],
+  "protected_regions": []
+}

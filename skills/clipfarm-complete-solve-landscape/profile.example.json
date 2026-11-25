@@ -1,0 +1,9 @@
+{
+  "show_question_title": false,
+  "camera_mode": "required",
+  "face_region": null,
+  "code_region": null,
+  "results_region": null,
+  "subtitle_y": 0.82,
+  "caption_style": "clean"
+}

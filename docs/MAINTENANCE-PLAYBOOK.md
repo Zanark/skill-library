@@ -78,6 +78,14 @@ When an MCP tool, CLI command, or runtime changes:
 8. Add it to `..\README.md`, `CATALOGUE.md`, `catalogue.json`, `SKILL-RELATIONSHIPS.md`, and `GLOSSARY.md` as applicable.
 9. Run validation.
 
+For source-pinned ClipFarm copies, retain exact normative bytes and record
+documentation derivatives in `docs\clipfarm-source-manifest.json`. Their
+substantive-runbook profile keeps the same coverage requirements. Additional
+checkout-dependent entries must remain gated by `--clipfarm-root`; do not
+silently publish or upgrade application source to satisfy a copied instruction.
+Preserve earlier snapshot provenance and other authors' unstaged work when
+updating the portable payload catalogue.
+
 ## Removing a skill
 
 Removal should be explicit. Do not remove a folder merely because the canonical path is temporarily unavailable.

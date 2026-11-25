@@ -1,0 +1,11 @@
+{
+  "id": "membership-before-insertion",
+  "title": "Check membership before inserting",
+  "category": "explanation",
+  "problem": "217. Contains Duplicate",
+  "rationale": "ILLUSTRATIVE ONLY: replace this takeaway and all times with reviewed source evidence.",
+  "segments": [{"start": 10, "end": 32, "view": "code", "reason": "Illustrative source passage, not a real reviewed selection."}],
+  "trim_silence": false,
+  "coherence_review": "",
+  "evidence": []
+}

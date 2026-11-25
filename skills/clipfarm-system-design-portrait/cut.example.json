@@ -1,0 +1,11 @@
+{
+  "id": "window-boundary-tradeoff",
+  "title": "Why a fixed-window boundary permits a burst",
+  "question_title": "Design a Rate Limiter",
+  "category": "explanation",
+  "rationale": "ILLUSTRATIVE ONLY: replace with a verified coherent point from the actual source.",
+  "segments": [{"start": 10, "end": 42, "view": "code", "reason": "Illustrative diagram discussion; inspect the actual source."}],
+  "trim_silence": false,
+  "coherence_review": "",
+  "evidence": []
+}

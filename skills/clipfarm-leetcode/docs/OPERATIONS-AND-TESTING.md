@@ -1,3 +1,6 @@
+> Historical explanatory edition: these notes describe the [preserved original snapshot](../history/SKILL-971d1ed03749.md), not every current family mode.
+> Follow the current [operator runbook](../RUNBOOK.md) and [family runtime guide](../../../docs/CLIPFARM-SKILLS.md) for new work.
+
 ---
 title: "ClipFarm Operations and Testing"
 description: "Review gates, regression matrix, failure recovery, maintenance, and publication checks."
@@ -7,7 +10,7 @@ description: "Review gates, regression matrix, failure recovery, maintenance, an
 
 ## Operational principle
 
-ClipFarm quality is established by accumulated evidence, not by command success. A passing encoder, ASR process, frame-capture API call, clipboard write, or gallery render proves only that operation. It does not prove semantic correctness, visual review, direct listening, user approval, platform acceptance, or rights eligibility (`SKILL.md:L355-L370`, `SKILL.md:L431-L433`).
+ClipFarm quality is established by accumulated evidence, not by command success. A passing encoder, ASR process, frame-capture API call, clipboard write, or gallery render proves only that operation. It does not prove semantic correctness, visual review, direct listening, user approval, platform acceptance, or rights eligibility (`history/SKILL-971d1ed03749.md:L355-L370`, `history/SKILL-971d1ed03749.md:L431-L433`).
 
 ```mermaid
 flowchart TB
@@ -37,7 +40,7 @@ flowchart TB
 | Clipboard behavior | Full text copied in supported browser | Manual selection |
 | Platform acceptance | Actual platform result | Clipboard or local gallery success |
 
-Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`.
+Evidence basis: `history/SKILL-971d1ed03749.md:L285-L295`, `history/SKILL-971d1ed03749.md:L330-L370`, `history/SKILL-971d1ed03749.md:L400-L433`.
 
 ## Regression test suites
 
@@ -47,7 +50,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Explicit system design selects vertical system design.
 - Explicit horizontal solution request selects horizontal.
 - Horizontal system design remains rejected/unsupported.
-- Whole-source/privacy/review gates remain active for every route (`SKILL.md:L237-L251`, `SKILL.md:L516-L519`).
+- Whole-source/privacy/review gates remain active for every route (`history/SKILL-971d1ed03749.md:L237-L251`, `history/SKILL-971d1ed03749.md:L516-L519`).
 
 ### 2. Provenance regression
 
@@ -56,7 +59,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Original request timestamp is used for every source in the request.
 - A missing timestamp is not fabricated.
 - Interrupted preparation resumes by run ID.
-- Existing `plan.json` is never overwritten by preparation (`SKILL.md:L253-L274`).
+- Existing `plan.json` is never overwritten by preparation (`history/SKILL-971d1ed03749.md:L253-L274`).
 
 ### 3. Editorial coverage regression
 
@@ -65,7 +68,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Ceilings are not treated as quotas.
 - Related topics are combined where appropriate.
 - Rejected versions do not erase solved-problem coverage.
-- Missing narration causes rejection, not invention (`SKILL.md:L275-L284`, `SKILL.md:L320-L340`).
+- Missing narration causes rejection, not invention (`history/SKILL-971d1ed03749.md:L275-L284`, `history/SKILL-971d1ed03749.md:L320-L340`).
 
 ### 4. Camera and crop regression
 
@@ -75,7 +78,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Moving footage uses the same source-time map as the edit.
 - Start/middle/end and every join preserve sync.
 - Latest 364×312 target is not enlarged again.
-- Ordinary/horizontal assets are not migrated by the named animated refinements (`SKILL.md:L59-L98`, `SKILL.md:L285-L295`).
+- Ordinary/horizontal assets are not migrated by the named animated refinements (`history/SKILL-971d1ed03749.md:L59-L98`, `history/SKILL-971d1ed03749.md:L285-L295`).
 
 ### 5. Results and animation regression
 
@@ -84,7 +87,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Results zoom changes over time.
 - Surroundings dim while camera/subtitles remain bright.
 - Animated explainers contain meaningful intermediate action, not only fades/pulses/caption swaps.
-- Fresh output ASR is read (`SKILL.md:L100-L109`, `SKILL.md:L341-L347`).
+- Fresh output ASR is read (`history/SKILL-971d1ed03749.md:L100-L109`, `history/SKILL-971d1ed03749.md:L341-L347`).
 
 ### 6. Thumbnail regression
 
@@ -94,7 +97,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Camera-present hierarchy uses the genuine camera shot.
 - Camera-absent hierarchy omits camera and second separator.
 - Sharp text/camera is not grained.
-- Horizontal cover uses exact numbered title, demonstrated technique, correct O-ring geometry, and rights-cleared artwork (`SKILL.md:L152-L162`, `SKILL.md:L296-L319`, `SKILL.md:L474-L491`).
+- Horizontal cover uses exact numbered title, demonstrated technique, correct O-ring geometry, and rights-cleared artwork (`history/SKILL-971d1ed03749.md:L152-L162`, `history/SKILL-971d1ed03749.md:L296-L319`, `history/SKILL-971d1ed03749.md:L474-L491`).
 
 ### 7. Posting/gallery regression
 
@@ -105,7 +108,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Each copy button copies its full field in one click.
 - Hashtags are lowercase, unique, ≤5, ≤1,000 characters, and absent from Caption.
 - Music credits remain outside Caption.
-- Existing galleries preserve authorized overrides and CSP (`SKILL.md:L34-L57`, `SKILL.md:L111-L145`, `SKILL.md:L400-L436`).
+- Existing galleries preserve authorized overrides and CSP (`history/SKILL-971d1ed03749.md:L34-L57`, `history/SKILL-971d1ed03749.md:L111-L145`, `history/SKILL-971d1ed03749.md:L400-L436`).
 
 ### 8. Publication regression
 
@@ -116,7 +119,7 @@ Evidence basis: `SKILL.md:L285-L295`, `SKILL.md:L330-L370`, `SKILL.md:L400-L433`
 - Duplicate cut IDs are disambiguated.
 - Results remain Git-ignored.
 - Delivery uses result paths, not `.clipfarm` work paths.
-- No upload occurs (`SKILL.md:L371-L386`).
+- No upload occurs (`history/SKILL-971d1ed03749.md:L371-L386`).
 
 ```mermaid
 sequenceDiagram
@@ -136,27 +139,27 @@ sequenceDiagram
 
 ### Preparation failure
 
-Surface missing dependencies or downloads. Use setup-only support, preserve local inference, and avoid interfering with other running sessions (`SKILL.md:L258-L261`).
+Surface missing dependencies or downloads. Use setup-only support, preserve local inference, and avoid interfering with other running sessions (`history/SKILL-971d1ed03749.md:L258-L261`).
 
 ### Transcript failure
 
-Retry essential recognition with an explicit language and/or small model. Keep uncertainty recorded; never rewrite source meaning to match ASR (`SKILL.md:L268-L274`, `SKILL.md:L355-L359`).
+Retry essential recognition with an explicit language and/or small model. Keep uncertainty recorded; never rewrite source meaning to match ASR (`history/SKILL-971d1ed03749.md:L268-L274`, `history/SKILL-971d1ed03749.md:L355-L359`).
 
 ### Visual evidence unavailable
 
-Do not count images that were not returned. Reduce inspection scope or repeat a bounded capture; the review gate remains false until pixels are inspected (`SKILL.md:L360-L366`).
+Do not count images that were not returned. Reduce inspection scope or repeat a bounded capture; the review gate remains false until pixels are inspected (`history/SKILL-971d1ed03749.md:L360-L366`).
 
 ### Candidate fails review
 
-Revise the plan, render a new immutable draft, rerun output transcription, and rereview all affected regions. Do not mutate the rejected draft in place (`SKILL.md:L367-L370`).
+Revise the plan, render a new immutable draft, rerun output transcription, and rereview all affected regions. Do not mutate the rejected draft in place (`history/SKILL-971d1ed03749.md:L367-L370`).
 
 ### Rights evidence missing
 
-Do not embed the asset. For horizontal artwork, obtain a permitted/public-domain/licensed/original image; for music, keep recommendation or trend eligibility explicitly unverified as appropriate (`SKILL.md:L175-L235`, `SKILL.md:L463-L473`).
+Do not embed the asset. For horizontal artwork, obtain a permitted/public-domain/licensed/original image; for music, keep recommendation or trend eligibility explicitly unverified as appropriate (`history/SKILL-971d1ed03749.md:L175-L235`, `history/SKILL-971d1ed03749.md:L463-L473`).
 
 ### Browser copy fails
 
-Do not report “Copied.” Manual selection is only recovery. Fix the supported browser-copy behavior and retest the exact full field (`SKILL.md:L135-L145`, `SKILL.md:L400-L425`).
+Do not report “Copied.” Manual selection is only recovery. Fix the supported browser-copy behavior and retest the exact full field (`history/SKILL-971d1ed03749.md:L135-L145`, `history/SKILL-971d1ed03749.md:L400-L425`).
 
 ## Maintenance protocol
 
@@ -167,7 +170,7 @@ Do not report “Copied.” Manual selection is only recovery. Fix the supported
 5. Add regression cases for the changed scope.
 6. Never convert a one-batch exception into a shared default.
 7. Archive/hash before replacing published bundles or HTML.
-8. Update repository TODOs and the development ledger with actual outcomes only; explicit user approval remains open until recorded (`SKILL.md:L437-L441`).
+8. Update repository TODOs and the development ledger with actual outcomes only; explicit user approval remains open until recorded (`history/SKILL-971d1ed03749.md:L437-L441`).
 
 ## Release/readiness checklist
 
@@ -190,12 +193,12 @@ Do not report “Copied.” Manual selection is only recovery. Fix the supported
 
 ## Known limitations to report
 
-- Visual sampling is not frame-exhaustive (`SKILL.md:L348-L351`).
-- ASR and language detection remain fallible (`SKILL.md:L268-L274`, `SKILL.md:L355-L359`).
-- Native music previews cannot audition final in-app tracks (`SKILL.md:L231-L234`).
-- Public trend lists do not prove current India/account availability (`SKILL.md:L201-L218`).
-- Local copy success does not establish platform acceptance (`SKILL.md:L431-L433`).
-- The CLI cannot guarantee a perfectly seamless or viral edit (`SKILL.md:L516-L519`).
+- Visual sampling is not frame-exhaustive (`history/SKILL-971d1ed03749.md:L348-L351`).
+- ASR and language detection remain fallible (`history/SKILL-971d1ed03749.md:L268-L274`, `history/SKILL-971d1ed03749.md:L355-L359`).
+- Native music previews cannot audition final in-app tracks (`history/SKILL-971d1ed03749.md:L231-L234`).
+- Public trend lists do not prove current India/account availability (`history/SKILL-971d1ed03749.md:L201-L218`).
+- Local copy success does not establish platform acceptance (`history/SKILL-971d1ed03749.md:L431-L433`).
+- The CLI cannot guarantee a perfectly seamless or viral edit (`history/SKILL-971d1ed03749.md:L516-L519`).
 
 ## Source note
 

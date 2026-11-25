@@ -1,0 +1,10 @@
+{
+  "title": "Full frame portrait example",
+  "start": 0,
+  "end": 12,
+  "layout": "fit",
+  "captions": true,
+  "caption_style": "clean",
+  "subtitle_y": 0.6,
+  "reason": "ILLUSTRATIVE ONLY: select a meaningful new source range and review its real captions, framing and privacy."
+}

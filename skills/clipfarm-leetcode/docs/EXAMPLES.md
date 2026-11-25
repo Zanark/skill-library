@@ -1,3 +1,6 @@
+> Historical explanatory edition: these notes describe the [preserved original snapshot](../history/SKILL-971d1ed03749.md), not every current family mode.
+> Follow the current [operator runbook](../RUNBOOK.md) and [family runtime guide](../../../docs/CLIPFARM-SKILLS.md) for new work.
+
 ---
 title: "ClipFarm Workflow Examples"
 description: "Evidence-safe examples for routing, planning, correction, music, review, and publication."
@@ -25,7 +28,7 @@ flowchart LR
 
 **Request:** “Create clips from this LeetCode recording.”
 
-**Routing:** Default vertical. Do not choose horizontal without an explicit horizontal request (`SKILL.md:L237-L242`).
+**Routing:** Default vertical. Do not choose horizontal without an explicit horizontal request (`history/SKILL-971d1ed03749.md:L237-L242`).
 
 **Operator actions:**
 
@@ -34,7 +37,7 @@ flowchart LR
 3. Read every cue.
 4. Record a ledger entry for the solved problem and each substantive point.
 5. Inspect frames for avatar, code, problem statement, test panels, BRB, and result scene.
-6. Author a combined useful topic instead of automatic A/B/combined variants (`SKILL.md:L262-L295`, `SKILL.md:L320-L329`).
+6. Author a combined useful topic instead of automatic A/B/combined variants (`history/SKILL-971d1ed03749.md:L262-L295`, `history/SKILL-971d1ed03749.md:L320-L329`).
 
 Illustrative plan fragment:
 
@@ -52,7 +55,7 @@ Illustrative plan fragment:
 }
 ```
 
-The actual problem title is distinct from the promotional topic (`SKILL.md:L296-L305`).
+The actual problem title is distinct from the promotional topic (`history/SKILL-971d1ed03749.md:L296-L305`).
 
 ## Example 2: camera-absent source
 
@@ -72,7 +75,7 @@ The actual problem title is distinct from the promotional topic (`SKILL.md:L296-
 }
 ```
 
-Do not include `face_region`. The thumbnail is text-only and omits the second separator; code or diagrams are not substitutes for camera imagery (`SKILL.md:L285-L295`, `SKILL.md:L313-L319`, `SKILL.md:L387-L394`).
+Do not include `face_region`. The thumbnail is text-only and omits the second separator; code or diagrams are not substitutes for camera imagery (`history/SKILL-971d1ed03749.md:L285-L295`, `history/SKILL-971d1ed03749.md:L313-L319`, `history/SKILL-971d1ed03749.md:L387-L394`).
 
 ## Example 3: system-design recording
 
@@ -88,11 +91,11 @@ Do not include `face_region`. The thumbnail is text-only and omits the second se
 | Queue bottleneck | actual range | diagram crop | Explanation |
 | Genuine joke | actual range | source context | Humor |
 
-Do not add a LeetCode submission, runtime, results zoom, or complexity cover. Use a question title containing only the design question (`SKILL.md:L244-L251`, `SKILL.md:L296-L300`).
+Do not add a LeetCode submission, runtime, results zoom, or complexity cover. Use a question title containing only the design question (`history/SKILL-971d1ed03749.md:L244-L251`, `history/SKILL-971d1ed03749.md:L296-L300`).
 
 ## Example 4: actual submission moment
 
-Use a submission clip only when the source shows the action and the resulting Accepted/runtime panel. Verify the submission runtime, not a separate test-run runtime. Switch that segment to `view: "results"` and review slow zoom, dimming, and bright camera/subtitles at early, middle, and end frames (`SKILL.md:L341-L347`).
+Use a submission clip only when the source shows the action and the resulting Accepted/runtime panel. Verify the submission runtime, not a separate test-run runtime. Switch that segment to `view: "results"` and review slow zoom, dimming, and bright camera/subtitles at early, middle, and end frames (`history/SKILL-971d1ed03749.md:L341-L347`).
 
 ```mermaid
 sequenceDiagram
@@ -124,7 +127,7 @@ Use only when the user authorizes retaining the inaccurate source explanation:
 }
 ```
 
-Preserve original speech and spoken subtitles. Inspect timing, full text, source accuracy, and separation before setting the review flag (`SKILL.md:L330-L335`).
+Preserve original speech and spoken subtitles. Inspect timing, full text, source accuracy, and separation before setting the review flag (`history/SKILL-971d1ed03749.md:L330-L335`).
 
 ## Example 6: horizontal complete solve
 
@@ -141,7 +144,7 @@ Required evidence:
 - Verified subtitle space.
 - Demonstrated complexity or a researched optimum clearly distinguished from the demonstrated algorithm.
 
-The native full frame remains; there is no vertical crop, result dimming, or music (`SKILL.md:L443-L462`).
+The native full frame remains; there is no vertical crop, result dimming, or music (`history/SKILL-971d1ed03749.md:L443-L462`).
 
 Illustrative cover evidence record:
 
@@ -158,7 +161,7 @@ Illustrative cover evidence record:
 }
 ```
 
-The Python stage does not perform hidden web searches or downloads; rights research is an explicit operator task (`SKILL.md:L463-L473`).
+The Python stage does not perform hidden web searches or downloads; rights research is an explicit operator task (`history/SKILL-971d1ed03749.md:L463-L473`).
 
 ## Example 7: ordinary music recommendation
 
@@ -178,7 +181,7 @@ Ordinary delivery does **not** embed music:
 }
 ```
 
-Unknown trend status, account availability, offset, or excerpt must remain unknown (`SKILL.md:L175-L190`).
+Unknown trend status, account availability, offset, or excerpt must remain unknown (`history/SKILL-971d1ed03749.md:L175-L190`).
 
 ## Example 8: posting fields
 
@@ -196,7 +199,7 @@ Credits
 Artwork: ...; Music recommendation: ...; required licence placement: ...
 ```
 
-The first-person statement must be supported by the recording. Hashtags are separate, lowercase, unique, no more than five, and within 1,000 characters. Alt text describes actual imagery (`SKILL.md:L21-L32`, `SKILL.md:L401-L426`).
+The first-person statement must be supported by the recording. Hashtags are separate, lowercase, unique, no more than five, and within 1,000 characters. Alt text describes actual imagery (`history/SKILL-971d1ed03749.md:L21-L32`, `history/SKILL-971d1ed03749.md:L401-L426`).
 
 ## Example 9: rejection and revision
 
@@ -209,7 +212,7 @@ Correct response:
 3. Adjust plan timing/layout.
 4. Render a new immutable draft.
 5. Run `review-transcribe` again.
-6. Reinspect every affected boundary and title placement (`SKILL.md:L355-L370`).
+6. Reinspect every affected boundary and title placement (`history/SKILL-971d1ed03749.md:L355-L370`).
 
 Incorrect response: approving because encoding and transcription completed.
 
@@ -225,7 +228,7 @@ Blocked: <specific missing narration/completion/rights evidence>
 Review limitations: <ASR ambiguity, non-exhaustive sampling, unverified platform acceptance>
 ```
 
-This report keeps publication distinct from upload and reconciles unmet requests before claiming completeness (`SKILL.md:L371-L386`).
+This report keeps publication distinct from upload and reconciles unmet requests before claiming completeness (`history/SKILL-971d1ed03749.md:L371-L386`).
 
 ## Source note
 

@@ -1,0 +1,12 @@
+{
+  "template_kind": "authoring-brief-not-an-application-schema",
+  "format_id": "animated-camera-portrait",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "inputs": {"video": "D:\\NewProduction\\recording.mp4", "transcript": null},
+  "camera": {"mode": "source-video", "source_regions": [], "output_box": [620,300,364,312], "hold_policy": "explicit-per-hold"},
+  "source_spans": [],
+  "objects": [],
+  "actions": [],
+  "captions": [],
+  "review": {"status": "pending", "user_approved": false}
+}

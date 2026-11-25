@@ -1,0 +1,11 @@
+{
+  "template_kind": "authoring-brief-not-an-application-schema",
+  "format_id": "vinyl-film-landscape",
+  "canvas": {"width": 1920, "height": 1080, "fps": 30},
+  "inputs": {"master_wav": "D:\\NewProduction\\song.wav", "square_cover": "D:\\NewProduction\\cover.png", "circle_cover": "D:\\NewProduction\\cover-circle.png"},
+  "audio_policy": {"complete_master": true, "leading_silence_seconds": 2, "trailing_silence_seconds": 2, "gain_db": 0},
+  "background": {"method": "largest-four-color-median-cut-square-cover-cluster", "rgb": null},
+  "rotation_rpm": 5,
+  "subtitles": false,
+  "review": {"status": "pending", "user_approved": false}
+}

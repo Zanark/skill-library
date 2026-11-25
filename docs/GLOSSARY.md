@@ -8,6 +8,8 @@
 | Base | A registered working directory with its own context store and persona |
 | Canonical source | The original locally verified `SKILL.md` location recorded in `source-inventory.json` |
 | Clip | A reviewed media output produced from selected source-video segments |
+| ClipFarm checkout-dependent copy | A source-pinned instruction/runbook installed against an explicitly selected current checkout, not a claim that the older bundled app supports all routes |
+| Cinematic full review / draft | Full-song media/lyric-progress review versus a visibly labelled early concept with sampled checks; not two additional video formats |
 | Context Mesh | Cross-base index and dashboard generated from context stores and zmem |
 | Context offload | Persistence of live state, durable facts, and journal history into a base store |
 | Coverage ledger | A record proving which source topics/problems were delivered or blocked |
@@ -24,6 +26,7 @@
 | Mesh edge | A relationship supported by explicit persisted evidence between graph nodes |
 | Persona | The domain scope and continuity contract adopted when resuming a registered base |
 | Recall evidence | User-provided memory recovered through questioning and explicitly marked as self-reported |
+| Runbook documentation profile | README, normative SKILL and substantive RUNBOOK/shared contracts instead of five repeated explanatory pages; the coverage standard remains unchanged |
 | Source snapshot | The archived `SKILL.md` whose hash is recorded in the inventory |
 | SAPI | Windows Speech API used by the Copilot Speak MCP implementation |
 | Speak MCP | The local stdio MCP server that exposes `speak` and `list_voices` tools |

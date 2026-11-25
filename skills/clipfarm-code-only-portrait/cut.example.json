@@ -1,0 +1,11 @@
+{
+  "id": "retain-the-original-number",
+  "title": "Keep the original number before extracting digits",
+  "category": "explanation",
+  "problem": "Digit arithmetic",
+  "rationale": "ILLUSTRATIVE ONLY: replace with the actual numbered problem, source times and concrete takeaway.",
+  "segments": [{"start": 12, "end": 38, "view": "code", "reason": "Illustrative passage, not a reviewed source selection."}],
+  "trim_silence": false,
+  "coherence_review": "",
+  "evidence": []
+}

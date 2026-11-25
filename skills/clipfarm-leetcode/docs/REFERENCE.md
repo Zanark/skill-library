@@ -1,3 +1,6 @@
+> Historical explanatory edition: these notes describe the [preserved original snapshot](../history/SKILL-971d1ed03749.md), not every current family mode.
+> Follow the current [operator runbook](../RUNBOOK.md) and [family runtime guide](../../../docs/CLIPFARM-SKILLS.md) for new work.
+
 ---
 title: "ClipFarm Contract Reference"
 description: "Consolidated routing, commands, fields, visual values, gallery policy, music policy, and deliverables."
@@ -16,7 +19,7 @@ description: "Consolidated routing, commands, fields, visual values, gallery pol
 | Music | Recommendation by default; explicit modes only | Same vertical policy | No added music |
 | Thumbnail | Problem/topic/camera hierarchy | Design-question/topic hierarchy | Numbered black cover with technique, complexity, permitted artwork |
 
-Routing authority: `SKILL.md:L237-L251`, `SKILL.md:L443-L499`, `SKILL.md:L516-L519`.
+Routing authority: `history/SKILL-971d1ed03749.md:L237-L251`, `history/SKILL-971d1ed03749.md:L443-L499`, `history/SKILL-971d1ed03749.md:L516-L519`.
 
 ```mermaid
 flowchart LR
@@ -30,7 +33,7 @@ flowchart LR
 
 ## CLI reference
 
-All stages except `prepare` require `--plan ABSOLUTE_PLAN_PATH` (`SKILL.md:L501-L504`).
+All stages except `prepare` require `--plan ABSOLUTE_PLAN_PATH` (`history/SKILL-971d1ed03749.md:L501-L504`).
 
 ```powershell
 # Default vertical preparation
@@ -49,7 +52,7 @@ All stages except `prepare` require `--plan ABSOLUTE_PLAN_PATH` (`SKILL.md:L501-
 & 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow publish --plan PLAN --cut CUT_ID
 ```
 
-These commands are quoted from `SKILL.md:L505-L514`.
+These commands are quoted from `history/SKILL-971d1ed03749.md:L505-L514`.
 
 ## Source and provenance rules
 
@@ -64,7 +67,7 @@ These commands are quoted from `SKILL.md:L505-L514`.
 | Preparation resume | Printed run ID plus same root/model/language |
 | Existing plan | Never prepare over `plan.json` |
 
-Evidence: `SKILL.md:L253-L274`.
+Evidence: `history/SKILL-971d1ed03749.md:L253-L274`.
 
 ## Editorial fields and concepts
 
@@ -81,7 +84,7 @@ Evidence: `SKILL.md:L253-L274`.
 | `correction` | `{text, sources}` with explicit authorization |
 | `horizontal.preserve_ranges` | Meaningful silent horizontal work |
 
-Evidence: `SKILL.md:L285-L335`, `SKILL.md:L341-L347`, `SKILL.md:L450-L456`.
+Evidence: `history/SKILL-971d1ed03749.md:L285-L335`, `history/SKILL-971d1ed03749.md:L341-L347`, `history/SKILL-971d1ed03749.md:L450-L456`.
 
 ## Current vertical visual values
 
@@ -98,7 +101,7 @@ Evidence: `SKILL.md:L285-L335`, `SKILL.md:L341-L347`, `SKILL.md:L450-L456`.
 | Border color | `#78a9ff` |
 | Captions | 40 px retained |
 
-These values are the October 1 21:40 refinement and supersede the earlier 280×240 starting geometry for the affected moving-avatar policy; they are not permission to repeatedly enlarge by 30% (`SKILL.md:L59-L68`, `SKILL.md:L81-L98`).
+These values are the October 1 21:40 refinement and supersede the earlier 280×240 starting geometry for the affected moving-avatar policy; they are not permission to repeatedly enlarge by 30% (`history/SKILL-971d1ed03749.md:L59-L68`, `history/SKILL-971d1ed03749.md:L81-L98`).
 
 ### Question heading and thumbnail
 
@@ -109,11 +112,11 @@ These values are the October 1 21:40 refinement and supersede the earlier 280×2
 - Camera centers around `y=57.5%`.
 - Camera border is `#45616a`; separator color is distinct.
 - Backdrop grain is deterministic Gaussian, sigma 1.2, clipped to 4/255, and never applied to sharp camera/text.
-- Camera-absent covers omit the image and second separator (`SKILL.md:L296-L319`).
+- Camera-absent covers omit the image and second separator (`history/SKILL-971d1ed03749.md:L296-L319`).
 
 ### Thumbnail safe area
 
-The file remains 1080×1920, but every essential subject, text block, and artwork element must fit within `(0,240,1080,1680)`, the centered 1080×1440 3:4 crop. The top and bottom 240 px are expendable decoration (`SKILL.md:L152-L162`).
+The file remains 1080×1920, but every essential subject, text block, and artwork element must fit within `(0,240,1080,1680)`, the centered 1080×1440 3:4 crop. The top and bottom 240 px are expendable decoration (`history/SKILL-971d1ed03749.md:L152-L162`).
 
 ```mermaid
 flowchart TB
@@ -141,13 +144,13 @@ flowchart TB
 | Intro | 1 s static hold, then 4 s dissolve over first body footage |
 | Attribution | Metadata/credits, not on-image |
 
-Evidence: `SKILL.md:L458-L491`.
+Evidence: `history/SKILL-971d1ed03749.md:L458-L491`.
 
 ## Captions, hashtags, alt text, and credits
 
 ### Authored caption voice
 
-Write as the creator using grounded “I/my/me” only where the recording supports it. Do not invent emotion, unaided authorship, a team, or achievements. This does not apply to spoken subtitles, objective alt text, or mandatory attribution (`SKILL.md:L21-L32`).
+Write as the creator using grounded “I/my/me” only where the recording supports it. Do not invent emotion, unaided authorship, a team, or achievements. This does not apply to spoken subtitles, objective alt text, or mandatory attribution (`history/SKILL-971d1ed03749.md:L21-L32`).
 
 ### Gallery fields
 
@@ -158,7 +161,7 @@ Every future card requires independent:
 3. Thumbnail alt text.
 4. Credits.
 
-Each field needs its own one-click copy action. Manual text selection is recovery, not a passing copy test (`SKILL.md:L122-L145`, `SKILL.md:L400-L425`).
+Each field needs its own one-click copy action. Manual text selection is recovery, not a passing copy test (`history/SKILL-971d1ed03749.md:L122-L145`, `history/SKILL-971d1ed03749.md:L400-L425`).
 
 ### Hashtags
 
@@ -168,11 +171,11 @@ Each field needs its own one-click copy action. Manual text selection is recover
 - One space-separated block.
 - Never append to Caption.
 - Fewer than five is acceptable.
-- `caption_paste_length` is not a hashtag-count proxy (`SKILL.md:L401-L425`).
+- `caption_paste_length` is not a hashtag-count proxy (`history/SKILL-971d1ed03749.md:L401-L425`).
 
 ### Alt text and credits
 
-Describe the actual thumbnail; never invent imagery. Keep music and artwork credits outside Caption and preserve required posting-placement guidance (`SKILL.md:L426-L436`, `SKILL.md:L135-L145`).
+Describe the actual thumbnail; never invent imagery. Keep music and artwork credits outside Caption and preserve required posting-placement guidance (`history/SKILL-971d1ed03749.md:L426-L436`, `history/SKILL-971d1ed03749.md:L135-L145`).
 
 ## Gallery navigation
 
@@ -186,21 +189,21 @@ Describe the actual thumbnail; never invent imagery. Keep music and artwork cred
 | Forbidden behavior | Windows File Explorer/custom handler |
 | Existing HTML update | Archive first; preserve media, captions, controls, CSP |
 
-Evidence: `SKILL.md:L34-L44`, `SKILL.md:L111-L120`.
+Evidence: `history/SKILL-971d1ed03749.md:L34-L44`, `history/SKILL-971d1ed03749.md:L111-L120`.
 
 ## Music modes
 
 ### Ordinary current delivery
 
-Provide one clip-specific recommendation: warmer/less-somber Snowfall-like instrumental, exact recording identity, real reference link, reason, and quiet mix guidance. Bind `music-recommendation.json` to the approved video hash after publication and republish the gallery without re-encoding (`SKILL.md:L175-L190`).
+Provide one clip-specific recommendation: warmer/less-somber Snowfall-like instrumental, exact recording identity, real reference link, reason, and quiet mix guidance. Bind `music-recommendation.json` to the approved video hash after publication and republish the gallery without re-encoding (`history/SKILL-971d1ed03749.md:L175-L190`).
 
 ### Explicit licensed embedded exception
 
-The September 27 named batch required distinct quiet Creative Commons instrumentals embedded beneath narration, with reviewed license, source proof hash, attribution, speech-first mix, and fresh review. That exception does not change ordinary delivery (`SKILL.md:L164-L173`).
+The September 27 named batch required distinct quiet Creative Commons instrumentals embedded beneath narration, with reviewed license, source proof hash, attribution, speech-first mix, and fresh review. That exception does not change ordinary delivery (`history/SKILL-971d1ed03749.md:L164-L173`).
 
 ### Explicit stylized/trend modes
 
-Three explicit modes exist: current song with unchanged timing, track-first content-safe editing, or original audio plus an exact recommendation. Trend, account, region, excerpt, offset, and rights evidence must be genuine and dated; library access on one platform is not a license for another (`SKILL.md:L192-L235`).
+Three explicit modes exist: current song with unchanged timing, track-first content-safe editing, or original audio plus an exact recommendation. Trend, account, region, excerpt, offset, and rights evidence must be genuine and dated; library access on one platform is not a license for another (`history/SKILL-971d1ed03749.md:L192-L235`).
 
 ## Publication outputs
 
@@ -215,11 +218,11 @@ results\
       optional music-recommendation.json
 ```
 
-The precise local publication and one-gallery rules are at `SKILL.md:L371-L400`.
+The precise local publication and one-gallery rules are at `history/SKILL-971d1ed03749.md:L371-L400`.
 
 ## Review flags are evidence claims
 
-Flags such as correction review, question-title review, horizontal evidence checks, and final approval must be set only after actual inspection. They cannot be inferred from encoding success, a capture call that returned no pixels, source-map arithmetic, or ASR completion (`SKILL.md:L330-L370`, `SKILL.md:L492-L496`).
+Flags such as correction review, question-title review, horizontal evidence checks, and final approval must be set only after actual inspection. They cannot be inferred from encoding success, a capture call that returned no pixels, source-map arithmetic, or ASR completion (`history/SKILL-971d1ed03749.md:L330-L370`, `history/SKILL-971d1ed03749.md:L492-L496`).
 
 ## Source note
 

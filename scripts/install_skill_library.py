@@ -43,11 +43,11 @@ def copy_payload(source: Path, destination: Path) -> None:
             shutil.copy2(path, target)
 
 
-def rebase(text: str, runtime: Path, repository: Path = ROOT) -> str:
+def rebase(text: str, runtime: Path, repository: Path = ROOT, *, clipfarm_root: Path | None = None) -> str:
     mappings = {
         r"C:\devdesk\Copilot\CopilotSessions\context-network": runtime / "context-mesh",
-        r"C:\devdesk\homedesk\ClipFarm": runtime / "clipfarm",
-        "__CLIPFARM_ROOT__": runtime / "clipfarm",
+        r"C:\devdesk\homedesk\ClipFarm": clipfarm_root or runtime / "clipfarm",
+        "__CLIPFARM_ROOT__": clipfarm_root or runtime / "clipfarm",
         r"C:\devdesk\Copilot\CopilotSessions\documentation-mesh-plugin": runtime / "documentation-mesh",
         r"C:\devdesk\tools\copilot-speak": runtime / "speak",
         r"C:\devdesk\homedesk\skill-library": repository,
@@ -56,15 +56,25 @@ def rebase(text: str, runtime: Path, repository: Path = ROOT) -> str:
         r"C:\notedesk\zettelkasten\1 Project": runtime / "private-state" / "sprint-notes",
     }
     for old, new in mappings.items():
-        text = re.sub(re.escape(old.replace("\\", "\\\\")), lambda _: str(new).replace("\\", "\\\\"), text, flags=re.I)
+        if "\\" in old:
+            text = re.sub(re.escape(old.replace("\\", "\\\\")), lambda _: str(new).replace("\\", "\\\\"), text, flags=re.I)
         text = re.sub(re.escape(old), lambda _: str(new), text, flags=re.I)
     return text
 
 
-def install(runtime: Path, skills: Path, *, dependencies=False, replace_skills=False) -> dict:
+def install(runtime: Path, skills: Path, *, dependencies=False, replace_skills=False,
+            clipfarm_root: Path | None = None) -> dict:
     runtime = runtime.resolve()
     skills = skills.resolve()
+    if clipfarm_root is not None:
+        clipfarm_root = clipfarm_root.resolve()
+        required = ("pyproject.toml", "AGENTS.md", "clipfarm/__main__.py", "clipfarm/grading_cli.py")
+        for name in required:
+            if not (clipfarm_root / name).is_file():
+                raise FileNotFoundError(f"Current ClipFarm checkout is missing {name}: {clipfarm_root}")
     for skill, directory in RUNTIMES.items():
+        if skill == "clipfarm-leetcode" and clipfarm_root is not None:
+            continue
         source = ROOT / "skills" / skill / "implementation"
         if not source.is_dir():
             raise FileNotFoundError(f"Missing packaged implementation: {source}")
@@ -77,9 +87,27 @@ def install(runtime: Path, skills: Path, *, dependencies=False, replace_skills=F
             raise ValueError("The bundled Documentation Mesh runtime failed its checksum.")
     inventory = json.loads((ROOT / "source-inventory.json").read_text(encoding="utf-8"))
     pending = []
+    skipped = []
     for entry in inventory:
+        profile = entry.get("installation", "bundled")
+        if profile not in {"bundled", "clipfarm-checkout"}:
+            raise ValueError(f"Unknown installation profile for {entry['name']}: {profile}")
+        if profile == "clipfarm-checkout" and clipfarm_root is None:
+            skipped.append(entry["name"])
+            continue
         source = ROOT / "skills" / entry["name"] / "SKILL.md"
-        content = rebase(source.read_text(encoding="utf-8"), runtime)
+        source_text = source.read_text(encoding="utf-8")
+        if clipfarm_root is not None and entry["name"].startswith("clipfarm-"):
+            for name in re.findall(r"__CLIPFARM_ROOT__\\([^`\r\n]+)", source_text):
+                relative = name.replace("\\", "/")
+                # Private state, environments and future output placeholders are not source prerequisites.
+                if relative.split("/", 1)[0] not in {"skills", "docs", "TODO", "AGENTS.md"}:
+                    continue
+                if any(marker in relative for marker in ("<", ">", "*")):
+                    continue
+                if not (clipfarm_root / relative).exists():
+                    raise FileNotFoundError(f"ClipFarm support path is missing: {name}")
+        content = rebase(source_text, runtime, ROOT, clipfarm_root=clipfarm_root)
         if entry["name"] == "documentation-mesh":
             before, heading, after = content.partition("## Runtime resolution\n")
             _, next_heading, remaining = after.partition("\n## ")
@@ -124,17 +152,21 @@ def install(runtime: Path, skills: Path, *, dependencies=False, replace_skills=F
             raise FileNotFoundError("Install Node.js 18+ with npm before using --install-dependencies.")
         for directory in (runtime / "context-mesh", runtime / "speak" / "mcp-server"):
             subprocess.run([npm, "ci", "--ignore-scripts", "--no-audit", "--no-fund"], cwd=directory, check=True)
-        clipfarm = runtime / "clipfarm"
-        python = clipfarm / ".venv" / "Scripts" / "python.exe"
-        if not python.exists():
-            subprocess.run([sys.executable, "-m", "venv", str(clipfarm / ".venv")], check=True)
-        subprocess.run([
-            str(python), "-m", "pip", "install", "-r", str(clipfarm / "constraints-windows-py313.txt"),
-            "-e", str(clipfarm) + "[workflow,dev]",
-        ], check=True)
+        if clipfarm_root is None:
+            clipfarm = runtime / "clipfarm"
+            python = clipfarm / ".venv" / "Scripts" / "python.exe"
+            if not python.exists():
+                subprocess.run([sys.executable, "-m", "venv", str(clipfarm / ".venv")], check=True)
+            subprocess.run([
+                str(python), "-m", "pip", "install", "-r", str(clipfarm / "constraints-windows-py313.txt"),
+                "-e", str(clipfarm) + "[workflow,dev]",
+            ], check=True)
     result = {
         "runtimeRoot": str(runtime), "skillsDirectory": str(skills), "installedSkills": len(pending),
         "dependencyRestoreRequested": dependencies,
+        "externalClipFarmRoot": str(clipfarm_root) if clipfarm_root is not None else None,
+        "skippedSkillsRequiringClipFarmCheckout": skipped,
+        "externalClipFarmModified": False,
         "privateState": "Not activated; restore separately into a new isolated directory.",
         "externalServices": "Authenticate ADO/IcM/WorkIQ/Agency independently. Internal zmem is private-only.",
         "agentConfiguration": "No permissions, trust settings, auth or global MCP registration modified.",
@@ -149,12 +181,15 @@ def main() -> None:
     parser.add_argument("--skills-directory", type=Path, default=Path.home() / ".copilot" / "skills")
     parser.add_argument("--install-dependencies", action="store_true", help="Explicitly allow npm/pip dependency restoration.")
     parser.add_argument("--replace-skills", action="store_true", help="Back up and replace differing installed skill instructions.")
+    parser.add_argument("--clipfarm-root", type=Path,
+                        help="Use an existing current ClipFarm checkout for its full skill family; never modify its files or dependencies.")
     args = parser.parse_args()
     if os.name != "nt" or platform.machine().lower() not in {"amd64", "x86_64"} or sys.version_info < (3, 13):
         parser.error("This runtime snapshot requires Windows x64 and Python 3.13+.")
     print(json.dumps(install(
         args.runtime_root, args.skills_directory,
         dependencies=args.install_dependencies, replace_skills=args.replace_skills,
+        clipfarm_root=args.clipfarm_root,
     ), indent=2))
 
 

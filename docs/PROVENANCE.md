@@ -95,6 +95,29 @@ The second provenance pass used `artifactProvenance.records` from Context Mesh a
 - A future refresh must report hash changes before replacing a snapshot.
 - Source paths are historical provenance, not a guarantee that the original location will remain available.
 
+### Current ClipFarm family refresh
+
+The November26 request explicitly authorizes the complete 20-skill copy from
+`Zanark/ClipFarm` at `80abfbbd20cf50b86f02cba4e8069dda73fbb19a`. This is a
+private upstream; access is separate. All 20 normative snapshots retain exact
+committed source bytes and their inventory hashes.
+
+Nineteen definitions are new around the existing editorial core. They use the
+substantive-runbook documentation profile and require an explicitly selected
+current ClipFarm checkout, instead of silently publishing additional private
+application code or claiming compatibility with the older bundled runtime.
+The inventory now has 30 definitions; default bulk remains 11, and Verona
+remains an additional separate copy.
+
+The original earlier ClipFarm snapshot is retained in the core skill's history
+folder. Its old explanatory edition is labelled historical; current operator
+instructions are the new README/runbook and source snapshot. Introductory
+private production-history sections/receipt paths may be omitted from public
+explanatory runbooks; [the source manifest](clipfarm-source-manifest.json)
+records original/published hashes and those transformations explicitly.
+No context, private media, actual production ledger or new application engine
+source is included in this refresh.
+
 ## Repository-authored manual
 
 `development-documentation-manual` is authored canonically in this checkout.

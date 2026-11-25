@@ -61,9 +61,32 @@ Requires frequent coherent verified commit checkpoints, anti-spam/staged-scope
 safeguards and verified Zanark identity through the existing credential path;
 local attribution, GitHub authentication and push authority remain distinct.
 
-### clipfarm-leetcode
+### ClipFarm - current twenty-skill family
 
-The operational contract for ClipFarm coding/system-design editing: source preparation, complete transcript review, vertical/system-design/horizontal routing, editorial plans, immutable drafts, output ASR, visual review, publishing, galleries, thumbnails, captions, and rights/provenance.
+Two core entry points,16format/study/review skills and two cinematic review modes are documented below. Current source snapshots and public operator derivatives are pinned independently of the older bundled app. Use [explicit current-checkout setup](CLIPFARM-SKILLS.md) for all20; the default11-entry install reports19additional copies as skipped.
+
+| # | Skill | Purpose |
+|---|---|---|
+| 1 | [clipfarm-leetcode](../skills/clipfarm-leetcode/README.md) | Core coding/system-design editorial workflow and local transcripts |
+| 2 | [clipfarm-color-grading](../skills/clipfarm-color-grading/README.md) | Core SDR grading, editable looks and real A/B comparisons |
+| 3 | [clipfarm-code-camera-portrait](../skills/clipfarm-code-camera-portrait/README.md) | Vertical coding clips with camera/avatar above relevant code |
+| 4 | [clipfarm-code-only-portrait](../skills/clipfarm-code-only-portrait/README.md) | Camera-free vertical coding clips |
+| 5 | [clipfarm-system-design-portrait](../skills/clipfarm-system-design-portrait/README.md) | Vertical system-design diagram/slide explanations |
+| 6 | [clipfarm-complete-solve-landscape](../skills/clipfarm-complete-solve-landscape/README.md) | Complete chronological solves in native landscape |
+| 7 | [clipfarm-teaching-board-portrait](../skills/clipfarm-teaching-board-portrait/README.md) | Causal teaching animation without a camera panel |
+| 8 | [clipfarm-animated-camera-portrait](../skills/clipfarm-animated-camera-portrait/README.md) | Animated teaching with synchronized moving source-camera inset |
+| 9 | [clipfarm-podcast-room-portrait](../skills/clipfarm-podcast-room-portrait/README.md) | Teaching/captions with a full-room two-host strip |
+| 10 | [clipfarm-podcast-closeup-portrait](../skills/clipfarm-podcast-closeup-portrait/README.md) | Teaching with side-by-side host close-ups |
+| 11 | [clipfarm-gesture-study-portrait](../skills/clipfarm-gesture-study-portrait/README.md) | Single-host near-arm motion prototype |
+| 12 | [clipfarm-eye-study-portrait](../skills/clipfarm-eye-study-portrait/README.md) | Stacked-host blink/gaze/arm motion study |
+| 13 | [clipfarm-chaptered-podcast-landscape](../skills/clipfarm-chaptered-podcast-landscape/README.md) | Full narrated teaching film with chapter headings |
+| 14 | [clipfarm-vinyl-film-landscape](../skills/clipfarm-vinyl-film-landscape/README.md) | Full-song landscape picture-disc music film |
+| 15 | [clipfarm-vinyl-excerpt-portrait](../skills/clipfarm-vinyl-excerpt-portrait/README.md) | Subtitle-free portrait music excerpts with vinyl artwork |
+| 16 | [clipfarm-source-fit-portrait](../skills/clipfarm-source-fit-portrait/README.md) | Complete source picture fitted over a blurred portrait backdrop |
+| 17 | [clipfarm-native-grade-portrait](../skills/clipfarm-native-grade-portrait/README.md) | SDR grade retaining native portrait geometry |
+| 18 | [clipfarm-ab-review-landscape](../skills/clipfarm-ab-review-landscape/README.md) | Matched-time original/graded side-by-side review film |
+| 19 | [clipfarm-cinematic-music-video](../skills/clipfarm-cinematic-music-video/README.md) | Full-song cinematic story with full lyric/progress/media review |
+| 20 | [clipfarm-cinematic-music-draft](../skills/clipfarm-cinematic-music-draft/README.md) | Clearly labelled full-song early concept/proxy with sampled review |
 
 ### documentation-mesh
 

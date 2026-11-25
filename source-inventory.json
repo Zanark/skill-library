@@ -12,10 +12,202 @@
     "sha256": "2146f1ee3b8cc704d456fbd16a08f97817352cd5da444781e8a47bcb267eede7"
   },
   {
+    "name": "clipfarm-ab-review-landscape",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-ab-review-landscape/SKILL.md",
+    "destination": "skills\\clipfarm-ab-review-landscape\\SKILL.md",
+    "sha256": "c3a49dd81de2df3956696c15914b09e50b0ea2fd2c2283bd3a5421f319f9bec9",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-animated-camera-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-animated-camera-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-animated-camera-portrait\\SKILL.md",
+    "sha256": "a0c35d52bf47b49b465f7550ea328daa46aede766c9e9971d1b360574a9f3661",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-chaptered-podcast-landscape",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-chaptered-podcast-landscape/SKILL.md",
+    "destination": "skills\\clipfarm-chaptered-podcast-landscape\\SKILL.md",
+    "sha256": "93eebeb941f53ec8e80fd10e897cf8e5b8a05ddbd47d05516428b54a61cc9f72",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-cinematic-music-draft",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-cinematic-music-draft/SKILL.md",
+    "destination": "skills\\clipfarm-cinematic-music-draft\\SKILL.md",
+    "sha256": "15e795336fe2f97c8264811aca8d942eb332983b4cf638291f9b6cfa7f791e25",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-cinematic-music-video",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-cinematic-music-video/SKILL.md",
+    "destination": "skills\\clipfarm-cinematic-music-video\\SKILL.md",
+    "sha256": "d2b9baf2e5c340c92293ac1594f4829a16e8a1f034a82800fb8417856f0cec92",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-code-camera-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-code-camera-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-code-camera-portrait\\SKILL.md",
+    "sha256": "216898a854c6b1e19e2e1a74c7f7bc5384192f6728546577e0ee2ec7a2995a28",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-code-only-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-code-only-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-code-only-portrait\\SKILL.md",
+    "sha256": "6477f3db572428b45b607684d03c4ce109a98292f870c145d365502b053fca58",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-color-grading",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-color-grading/SKILL.md",
+    "destination": "skills\\clipfarm-color-grading\\SKILL.md",
+    "sha256": "cc73149abf088c22c5d3158b3b38e1b64f7714d861cafe99a55619be950e519d",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-complete-solve-landscape",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-complete-solve-landscape/SKILL.md",
+    "destination": "skills\\clipfarm-complete-solve-landscape\\SKILL.md",
+    "sha256": "40e221aa8cf0176de82091e3c4528f15335120b2776c6efce073036f8bf58fc0",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-eye-study-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-eye-study-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-eye-study-portrait\\SKILL.md",
+    "sha256": "08847397d2f5a8897351292debe4b2ae8e459855164400786c2d51efe39ddc05",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-gesture-study-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-gesture-study-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-gesture-study-portrait\\SKILL.md",
+    "sha256": "b99975bc57e20bbc9e808a9369c30bd7f1bde961421560e9e9403f7920dd716d",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
     "name": "clipfarm-leetcode",
-    "source": "C:\\Users\\mishrad\\.copilot\\skills\\clipfarm-leetcode\\SKILL.md",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-leetcode/SKILL.md",
     "destination": "skills\\clipfarm-leetcode\\SKILL.md",
-    "sha256": "971d1ed03749a6511aea9551fb3ea5aa08bc12bde3573fe020a78a782df14bda"
+    "sha256": "80a288e9884d9ef9a394548a0258a59460afd6a470f346987ee54a0d6e61eedc",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a"
+  },
+  {
+    "name": "clipfarm-native-grade-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-native-grade-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-native-grade-portrait\\SKILL.md",
+    "sha256": "401c8c7c19cdce0c3dd336b4ecf05d6e452edf8163c6694ea043de3b3ed5b057",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-podcast-closeup-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-podcast-closeup-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-podcast-closeup-portrait\\SKILL.md",
+    "sha256": "f431b3763efa80011a64b2bb436fe61720b3b41c981751d77181459eb2edde99",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-podcast-room-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-podcast-room-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-podcast-room-portrait\\SKILL.md",
+    "sha256": "0ad211047c09aac7dab6bf6a539d11791097fc71b22893f774cad038d9e2872a",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-source-fit-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-source-fit-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-source-fit-portrait\\SKILL.md",
+    "sha256": "aa030b2c03315867fe3de3f28c734a9dc70e0c5019af3ff298f8aa8c32cba32b",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-system-design-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-system-design-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-system-design-portrait\\SKILL.md",
+    "sha256": "cf524c6372012809f690fe2f9cbbbe1f7622ee184ec3a9d5467bdaf517966e29",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-teaching-board-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-teaching-board-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-teaching-board-portrait\\SKILL.md",
+    "sha256": "f3986463054c14a1005ff4a4c274b0c34250fa712e267767d87e792d43a3fc5a",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-vinyl-excerpt-portrait",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-vinyl-excerpt-portrait/SKILL.md",
+    "destination": "skills\\clipfarm-vinyl-excerpt-portrait\\SKILL.md",
+    "sha256": "9b2c1315e98445f078b1db46122ae2d28f7c2054e15463e1d3bd10dd0568bd8d",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
+  },
+  {
+    "name": "clipfarm-vinyl-film-landscape",
+    "source": "git:Zanark/ClipFarm@80abfbbd20cf50b86f02cba4e8069dda73fbb19a:skills/clipfarm-vinyl-film-landscape/SKILL.md",
+    "destination": "skills\\clipfarm-vinyl-film-landscape\\SKILL.md",
+    "sha256": "0d2546e0e81b4ef53aa9cc6bce3fad0d2f8f1cd2a10988ffecbbebe10dff142b",
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "documentationProfile": "runbook",
+    "installation": "clipfarm-checkout"
   },
   {
     "name": "context-mesh",

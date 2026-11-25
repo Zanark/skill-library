@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "Zanark/ClipFarm",
+  "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+  "sourceTree": "41c1c32137d152315a05bcad7192729129ebebb6",
+  "scope": "20 authored skill snapshots and safe documentation/helper support only",
+  "currentApplicationCodeCopied": false,
+  "privateStateOrMediaCopied": false,
+  "defaultBulkSkills": 11,
+  "additionalCheckoutBoundSkills": 19,
+  "retainedOriginalSnapshot": {
+    "path": "skills/clipfarm-leetcode/history/SKILL-971d1ed03749.md",
+    "sha256": "971d1ed03749a6511aea9551fb3ea5aa08bc12bde3573fe020a78a782df14bda"
+  },
+  "skills": [
+    "clipfarm-leetcode",
+    "clipfarm-color-grading",
+    "clipfarm-code-camera-portrait",
+    "clipfarm-code-only-portrait",
+    "clipfarm-system-design-portrait",
+    "clipfarm-complete-solve-landscape",
+    "clipfarm-teaching-board-portrait",
+    "clipfarm-animated-camera-portrait",
+    "clipfarm-podcast-room-portrait",
+    "clipfarm-podcast-closeup-portrait",
+    "clipfarm-gesture-study-portrait",
+    "clipfarm-eye-study-portrait",
+    "clipfarm-chaptered-podcast-landscape",
+    "clipfarm-vinyl-film-landscape",
+    "clipfarm-vinyl-excerpt-portrait",
+    "clipfarm-source-fit-portrait",
+    "clipfarm-native-grade-portrait",
+    "clipfarm-ab-review-landscape",
+    "clipfarm-cinematic-music-video",
+    "clipfarm-cinematic-music-draft"
+  ],
+  "files": [
+    {
+      "source": "skills/_shared/CINEMATIC-MUSIC.md",
+      "destination": "skills/_shared/CINEMATIC-MUSIC.md",
+      "sourceSha256": "94bcad6be7cdb6c6cc11c0abe31afc6d1cb6b201fdd0c3b91f4fbdd3e774b4dd",
+      "publishedSha256": "ee55cb84b78b0a43e241b6d134af96537397f2dbed3b4c3c659110c1231c506b",
+      "bytes": 9456,
+      "transform": "Public mode contract; private contributor/TODO/history references replaced by explicit external prerequisite"
+    },
+    {
+      "source": "skills/_shared/CUSTOM-PRODUCERS.md",
+      "destination": "skills/_shared/CUSTOM-PRODUCERS.md",
+      "sourceSha256": "6af624433685789eee117dde67e2f29cafb7a10a6d9d8f21b684415959c80a0e",
+      "publishedSha256": "6af624433685789eee117dde67e2f29cafb7a10a6d9d8f21b684415959c80a0e",
+      "bytes": 11895,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/_shared/GRADING-WORKFLOW.md",
+      "destination": "skills/_shared/GRADING-WORKFLOW.md",
+      "sourceSha256": "51e71a39f28347585c0263595e2ba79065a400a66697a3400c25f80dc14582f6",
+      "publishedSha256": "56b42c5fc1dd31cc29460a1f7a2148ff1cb91ec941441b35ef11ebf1df072549",
+      "bytes": 9431,
+      "transform": "External grading guide resolved in selected checkout, not a missing public application document"
+    },
+    {
+      "source": "skills/_shared/MUSIC-FINISHING.md",
+      "destination": "skills/_shared/MUSIC-FINISHING.md",
+      "sourceSha256": "958b9f49df3c84e24c6d297c72697acc996c232086ae33763ab6375d9b927334",
+      "publishedSha256": "958b9f49df3c84e24c6d297c72697acc996c232086ae33763ab6375d9b927334",
+      "bytes": 3790,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/_shared/PRODUCTION.md",
+      "destination": "skills/_shared/PRODUCTION.md",
+      "sourceSha256": "da655e794268e2119f65b9e83047252e1fe76a9cde4963d64547856c86fc30f4",
+      "publishedSha256": "da655e794268e2119f65b9e83047252e1fe76a9cde4963d64547856c86fc30f4",
+      "bytes": 11118,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/_shared/SOURCE-WORKFLOW.md",
+      "destination": "skills/_shared/SOURCE-WORKFLOW.md",
+      "sourceSha256": "bba1d8fb55039be965798e3a0df0bb3dfa8f1b668406a95979bdb479cfab35bf",
+      "publishedSha256": "bba1d8fb55039be965798e3a0df0bb3dfa8f1b668406a95979bdb479cfab35bf",
+      "bytes": 6281,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/_shared/cinematic-lyric-window.js",
+      "destination": "skills/_shared/cinematic-lyric-window.js",
+      "sourceSha256": "bb4394458c838c3f27f7a58bf6ff6374bbf57536c4e1ad736154e7f1e1cad005",
+      "publishedSha256": "bb4394458c838c3f27f7a58bf6ff6374bbf57536c4e1ad736154e7f1e1cad005",
+      "bytes": 2445,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-ab-review-landscape/README.md",
+      "destination": "skills/clipfarm-ab-review-landscape/README.md",
+      "sourceSha256": "793adfbe9237702b32623ca907b681bdfeb0f96020717d6c6cd0fd14b7dca477",
+      "publishedSha256": "b0159d8f1226ac731f3847b7992507eccce85a02abb0ac81a1b3dfd93ed72b5d",
+      "bytes": 900,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-ab-review-landscape/RUNBOOK.md",
+      "destination": "skills/clipfarm-ab-review-landscape/RUNBOOK.md",
+      "sourceSha256": "75d44128ff415b5e755a20ed1b477e97f6c6e59e6370fd3579b0b9c164a97e19",
+      "publishedSha256": "ddf010fb2839e49b57d2973e2280373f68328e8a4fe53d7793f5e0f397ea22f3",
+      "bytes": 5115,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-ab-review-landscape/SKILL.md",
+      "destination": "skills/clipfarm-ab-review-landscape/SKILL.md",
+      "sourceSha256": "c3a49dd81de2df3956696c15914b09e50b0ea2fd2c2283bd3a5421f319f9bec9",
+      "publishedSha256": "c3a49dd81de2df3956696c15914b09e50b0ea2fd2c2283bd3a5421f319f9bec9",
+      "bytes": 1611,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-ab-review-landscape/preview.example.json",
+      "destination": "skills/clipfarm-ab-review-landscape/preview.example.json",
+      "sourceSha256": "8afca70a00e1fdd29e2c3c0b96866bcd98a779184f61ee8957bf3ba08c706899",
+      "publishedSha256": "8afca70a00e1fdd29e2c3c0b96866bcd98a779184f61ee8957bf3ba08c706899",
+      "bytes": 146,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-animated-camera-portrait/README.md",
+      "destination": "skills/clipfarm-animated-camera-portrait/README.md",
+      "sourceSha256": "5093ce77e577c9826bfb7647257a0cceebc335e891eff2c5b59737dbbb248ce4",
+      "publishedSha256": "57edd9e1a6fd4a7c87d35ae1d69a7fec85852bfc85db0971b322b1a799a1335d",
+      "bytes": 913,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-animated-camera-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-animated-camera-portrait/RUNBOOK.md",
+      "sourceSha256": "222c31f972cfd65ca6dcff1814bd7a5042062907f58ee88052bf30f83450d1d8",
+      "publishedSha256": "59ce6f6fff017d575d7acd3da2d90e970e2230642f29691b52a5fd305726b6df",
+      "bytes": 4528,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-animated-camera-portrait/SKILL.md",
+      "destination": "skills/clipfarm-animated-camera-portrait/SKILL.md",
+      "sourceSha256": "a0c35d52bf47b49b465f7550ea328daa46aede766c9e9971d1b360574a9f3661",
+      "publishedSha256": "a0c35d52bf47b49b465f7550ea328daa46aede766c9e9971d1b360574a9f3661",
+      "bytes": 1620,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-animated-camera-portrait/production.example.json",
+      "destination": "skills/clipfarm-animated-camera-portrait/production.example.json",
+      "sourceSha256": "97e1d11d51d77ed6cf49b4c5e72336e21c7209ab5789d68633212f157c4f7633",
+      "publishedSha256": "97e1d11d51d77ed6cf49b4c5e72336e21c7209ab5789d68633212f157c4f7633",
+      "bytes": 507,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-chaptered-podcast-landscape/README.md",
+      "destination": "skills/clipfarm-chaptered-podcast-landscape/README.md",
+      "sourceSha256": "1e7b670c7e34fcba51d82d820983554debc21244ee14b8d620005eadf1ae4ddb",
+      "publishedSha256": "928d5492329d2e2a4029ab6deeda6a82312ab5581ad3676b3df48022faf1a71d",
+      "bytes": 932,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-chaptered-podcast-landscape/RUNBOOK.md",
+      "destination": "skills/clipfarm-chaptered-podcast-landscape/RUNBOOK.md",
+      "sourceSha256": "8208def9f237f389eca5e90d9929ab59e89fe2bc8d36b620770e2ec2adbdfd59",
+      "publishedSha256": "e9ccb869ccd2cfb102a1182999a46e8cf760485902d672826cd5b97c2f079c2f",
+      "bytes": 5263,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-chaptered-podcast-landscape/SKILL.md",
+      "destination": "skills/clipfarm-chaptered-podcast-landscape/SKILL.md",
+      "sourceSha256": "93eebeb941f53ec8e80fd10e897cf8e5b8a05ddbd47d05516428b54a61cc9f72",
+      "publishedSha256": "93eebeb941f53ec8e80fd10e897cf8e5b8a05ddbd47d05516428b54a61cc9f72",
+      "bytes": 1605,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-chaptered-podcast-landscape/production.example.json",
+      "destination": "skills/clipfarm-chaptered-podcast-landscape/production.example.json",
+      "sourceSha256": "be3d3a346c1d216785eb49bba75c9d20889f1f3ea1c9de19b59a956d8c5dc652",
+      "publishedSha256": "be3d3a346c1d216785eb49bba75c9d20889f1f3ea1c9de19b59a956d8c5dc652",
+      "bytes": 552,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-draft/README.md",
+      "destination": "skills/clipfarm-cinematic-music-draft/README.md",
+      "sourceSha256": "6d52bbe64c7d121f8552349673023a67f6f6bfc8145728d04cff151fec8f5966",
+      "publishedSha256": "f2bf0fb6cc46566b0404969511ce5dc8d371a878b736321715d947931a4e36b7",
+      "bytes": 987,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-draft/RUNBOOK.md",
+      "destination": "skills/clipfarm-cinematic-music-draft/RUNBOOK.md",
+      "sourceSha256": "e5d40b35486391ee79323a2cc87feb3b19e73aeace52d779d9942c5bbc47c0c4",
+      "publishedSha256": "e5d40b35486391ee79323a2cc87feb3b19e73aeace52d779d9942c5bbc47c0c4",
+      "bytes": 6929,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-draft/SKILL.md",
+      "destination": "skills/clipfarm-cinematic-music-draft/SKILL.md",
+      "sourceSha256": "15e795336fe2f97c8264811aca8d942eb332983b4cf638291f9b6cfa7f791e25",
+      "publishedSha256": "15e795336fe2f97c8264811aca8d942eb332983b4cf638291f9b6cfa7f791e25",
+      "bytes": 2165,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-draft/production.example.json",
+      "destination": "skills/clipfarm-cinematic-music-draft/production.example.json",
+      "sourceSha256": "699568e0ea26f742c032f6a1275368f6c5190e730355cc409fc18ddf391eb492",
+      "publishedSha256": "699568e0ea26f742c032f6a1275368f6c5190e730355cc409fc18ddf391eb492",
+      "bytes": 1331,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-video/README.md",
+      "destination": "skills/clipfarm-cinematic-music-video/README.md",
+      "sourceSha256": "53a9d6408da84fcff88950fae5a0f4d5fed5a93446b46d6ae299db4b95cdfb27",
+      "publishedSha256": "5e89aebf4725c2e637f5fbae8f9979e6b276a301a368cad076a2caee170bb06c",
+      "bytes": 1017,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-video/RUNBOOK.md",
+      "destination": "skills/clipfarm-cinematic-music-video/RUNBOOK.md",
+      "sourceSha256": "c5d7d371257f30b2e2aad4917e517f7c37f47a1c1596eea8e052dc022cf7130f",
+      "publishedSha256": "c5d7d371257f30b2e2aad4917e517f7c37f47a1c1596eea8e052dc022cf7130f",
+      "bytes": 10892,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-video/SKILL.md",
+      "destination": "skills/clipfarm-cinematic-music-video/SKILL.md",
+      "sourceSha256": "d2b9baf2e5c340c92293ac1594f4829a16e8a1f034a82800fb8417856f0cec92",
+      "publishedSha256": "d2b9baf2e5c340c92293ac1594f4829a16e8a1f034a82800fb8417856f0cec92",
+      "bytes": 2353,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-cinematic-music-video/production.example.json",
+      "destination": "skills/clipfarm-cinematic-music-video/production.example.json",
+      "sourceSha256": "c18782bc5c7160c68732c94e790943b05f4dfe276befa159ad9b1dcba322029e",
+      "publishedSha256": "c18782bc5c7160c68732c94e790943b05f4dfe276befa159ad9b1dcba322029e",
+      "bytes": 1235,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-code-camera-portrait/README.md",
+      "destination": "skills/clipfarm-code-camera-portrait/README.md",
+      "sourceSha256": "3e7a17d2f1b06bc6a1d5f57eaadc7f81942e496033149e5fec5c15676b56ca64",
+      "publishedSha256": "f1aaad555ec6c75b22f3990dc21123b58689ab9b5678f0123e662aeeb2fed757",
+      "bytes": 975,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-code-camera-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-code-camera-portrait/RUNBOOK.md",
+      "sourceSha256": "7022ec848fafdb58b39a94ec28da512aa52005272930f6dd704e932b4a21fa1f",
+      "publishedSha256": "18c9d569099c7dee9dcdd1da1f8874d1e0c909a1ec5b624af6a7d8b3ec36844b",
+      "bytes": 5061,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-code-camera-portrait/SKILL.md",
+      "destination": "skills/clipfarm-code-camera-portrait/SKILL.md",
+      "sourceSha256": "216898a854c6b1e19e2e1a74c7f7bc5384192f6728546577e0ee2ec7a2995a28",
+      "publishedSha256": "216898a854c6b1e19e2e1a74c7f7bc5384192f6728546577e0ee2ec7a2995a28",
+      "bytes": 1747,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-code-camera-portrait/cut.example.json",
+      "destination": "skills/clipfarm-code-camera-portrait/cut.example.json",
+      "sourceSha256": "2fba5e627e682f87d87d75e757e333cbd9cc3a17e3bf544a53ace4842babee72",
+      "publishedSha256": "2fba5e627e682f87d87d75e757e333cbd9cc3a17e3bf544a53ace4842babee72",
+      "bytes": 463,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-code-camera-portrait/profile.example.json",
+      "destination": "skills/clipfarm-code-camera-portrait/profile.example.json",
+      "sourceSha256": "19b8477835a4464245d1e5b7d98c6d7064269f48cb97fb0844c554db806b2484",
+      "publishedSha256": "19b8477835a4464245d1e5b7d98c6d7064269f48cb97fb0844c554db806b2484",
+      "bytes": 265,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-code-only-portrait/README.md",
+      "destination": "skills/clipfarm-code-only-portrait/README.md",
+      "sourceSha256": "16f937acb5d1a1f86316f1376ec678e2f275912a5f69403bbed5ceffb100983c",
+      "publishedSha256": "a24fcb84a858c1a641308230bf44bf465bd2f4feb4e7d93291868a81e36c2ea5",
+      "bytes": 903,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-code-only-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-code-only-portrait/RUNBOOK.md",
+      "sourceSha256": "c115a8e54857376962f3728e56f6a20be299eb1aad7744da666b46b85045ca56",
+      "publishedSha256": "5742bd7f48d2f749065e9c63e393310d10df33a50b4b498ad2d44cdc44f7b167",
+      "bytes": 4275,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-code-only-portrait/SKILL.md",
+      "destination": "skills/clipfarm-code-only-portrait/SKILL.md",
+      "sourceSha256": "6477f3db572428b45b607684d03c4ce109a98292f870c145d365502b053fca58",
+      "publishedSha256": "6477f3db572428b45b607684d03c4ce109a98292f870c145d365502b053fca58",
+      "bytes": 1555,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-code-only-portrait/cut.example.json",
+      "destination": "skills/clipfarm-code-only-portrait/cut.example.json",
+      "sourceSha256": "563813316624ec320c3bd8567130b7c658e8efea217f6dcc22462dd96c3cbb36",
+      "publishedSha256": "563813316624ec320c3bd8567130b7c658e8efea217f6dcc22462dd96c3cbb36",
+      "bytes": 477,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-code-only-portrait/profile.example.json",
+      "destination": "skills/clipfarm-code-only-portrait/profile.example.json",
+      "sourceSha256": "ba72ee6127bf811934c4f9d0ddb11bc4ec9ee7a1ab78e53d6e42e863b7db818d",
+      "publishedSha256": "ba72ee6127bf811934c4f9d0ddb11bc4ec9ee7a1ab78e53d6e42e863b7db818d",
+      "bytes": 223,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-color-grading/README.md",
+      "destination": "skills/clipfarm-color-grading/README.md",
+      "sourceSha256": "206d7ee307c91e5872b9fee20cf80ffc8b7bd304f196ec7778955734df79cc24",
+      "publishedSha256": "6429f229472263be90e59b98cc1d542b2a9e0c4c57b376a74d43e04c727b83a7",
+      "bytes": 972,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-color-grading/RUNBOOK.md",
+      "destination": "skills/clipfarm-color-grading/RUNBOOK.md",
+      "sourceSha256": "1ce6c435478c6a096cd99ab47db62458f0e47906373d6c754c760addfdacf394",
+      "publishedSha256": "1ce6c435478c6a096cd99ab47db62458f0e47906373d6c754c760addfdacf394",
+      "bytes": 3377,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-color-grading/SKILL.md",
+      "destination": "skills/clipfarm-color-grading/SKILL.md",
+      "sourceSha256": "cc73149abf088c22c5d3158b3b38e1b64f7714d861cafe99a55619be950e519d",
+      "publishedSha256": "cc73149abf088c22c5d3158b3b38e1b64f7714d861cafe99a55619be950e519d",
+      "bytes": 9236,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-complete-solve-landscape/README.md",
+      "destination": "skills/clipfarm-complete-solve-landscape/README.md",
+      "sourceSha256": "a0f6e0eef1840f706b5245d4aaa0a1a21976e58875bd181210aa6ba4964af9b4",
+      "publishedSha256": "ecd1fa97ac673bde96cd1c26c5f57abfa8f4b8c8572e9c5e8c936feda9e2505f",
+      "bytes": 952,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-complete-solve-landscape/RUNBOOK.md",
+      "destination": "skills/clipfarm-complete-solve-landscape/RUNBOOK.md",
+      "sourceSha256": "3f94391cfc65fb81d894143992272729bbb26a6481994a33b7575bcd865a21cf",
+      "publishedSha256": "6521445da7e2cc3d37dc23bb5ac23ef18f6656bd73d6c3068626972dd2be0070",
+      "bytes": 5399,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-complete-solve-landscape/SKILL.md",
+      "destination": "skills/clipfarm-complete-solve-landscape/SKILL.md",
+      "sourceSha256": "40e221aa8cf0176de82091e3c4528f15335120b2776c6efce073036f8bf58fc0",
+      "publishedSha256": "40e221aa8cf0176de82091e3c4528f15335120b2776c6efce073036f8bf58fc0",
+      "bytes": 1643,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-complete-solve-landscape/cut.example.json",
+      "destination": "skills/clipfarm-complete-solve-landscape/cut.example.json",
+      "sourceSha256": "90224a39c2e514cdd2949ded848ecb37c34f47a877d99bceb1e43d08079bf0a7",
+      "publishedSha256": "90224a39c2e514cdd2949ded848ecb37c34f47a877d99bceb1e43d08079bf0a7",
+      "bytes": 1417,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-complete-solve-landscape/profile.example.json",
+      "destination": "skills/clipfarm-complete-solve-landscape/profile.example.json",
+      "sourceSha256": "9cb2274468c274b885f79ab9882dcacd64c1381d48d82ecf1abebef316e32815",
+      "publishedSha256": "9cb2274468c274b885f79ab9882dcacd64c1381d48d82ecf1abebef316e32815",
+      "bytes": 186,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-eye-study-portrait/README.md",
+      "destination": "skills/clipfarm-eye-study-portrait/README.md",
+      "sourceSha256": "91ebb537c7fb17ca1cdb5d20b60d33eff7eb5f672152fd740396b3e25964811c",
+      "publishedSha256": "990ccd6290d7772f4d331c19218192e9387dc30cf9cfd00800a2bbe094ad7629",
+      "bytes": 902,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-eye-study-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-eye-study-portrait/RUNBOOK.md",
+      "sourceSha256": "43943556233f704b6ca0cd0793cb4e755ece1558cdea2ae6288e7015ef16b974",
+      "publishedSha256": "6b16eeaf513d8f3758d1cb5a6bbb6d43434c1d5023d96f7885582edb98fa93b8",
+      "bytes": 4485,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-eye-study-portrait/SKILL.md",
+      "destination": "skills/clipfarm-eye-study-portrait/SKILL.md",
+      "sourceSha256": "08847397d2f5a8897351292debe4b2ae8e459855164400786c2d51efe39ddc05",
+      "publishedSha256": "08847397d2f5a8897351292debe4b2ae8e459855164400786c2d51efe39ddc05",
+      "bytes": 1409,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-eye-study-portrait/production.example.json",
+      "destination": "skills/clipfarm-eye-study-portrait/production.example.json",
+      "sourceSha256": "350dc1a18298d87e80d2549f4062ce006ee8b8788f3cb6cdf73a98cc872118b3",
+      "publishedSha256": "350dc1a18298d87e80d2549f4062ce006ee8b8788f3cb6cdf73a98cc872118b3",
+      "bytes": 649,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-gesture-study-portrait/README.md",
+      "destination": "skills/clipfarm-gesture-study-portrait/README.md",
+      "sourceSha256": "f4e9961e5a274da2ab6ee892d6b640d425b3327b7ea5431ef164a33fbb38df80",
+      "publishedSha256": "927aa5b7a26dc68c19fb7fa73201f490476fcb291dc7f5f63f20f8c2d575f2b5",
+      "bytes": 903,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-gesture-study-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-gesture-study-portrait/RUNBOOK.md",
+      "sourceSha256": "f22e15152da037bb3f4190210b59171e32e3c02ec4377d35637d03dd72368a0f",
+      "publishedSha256": "6c9d84e1e4df51aaa8c31329a4c2e77730eae4933327fc3de23865ac138eea0c",
+      "bytes": 3749,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-gesture-study-portrait/SKILL.md",
+      "destination": "skills/clipfarm-gesture-study-portrait/SKILL.md",
+      "sourceSha256": "b99975bc57e20bbc9e808a9369c30bd7f1bde961421560e9e9403f7920dd716d",
+      "publishedSha256": "b99975bc57e20bbc9e808a9369c30bd7f1bde961421560e9e9403f7920dd716d",
+      "bytes": 1371,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-gesture-study-portrait/production.example.json",
+      "destination": "skills/clipfarm-gesture-study-portrait/production.example.json",
+      "sourceSha256": "7c5d6efa414cc346c577c12b49c807f813fed616b4f1b3f8e562c12c9fc2eec1",
+      "publishedSha256": "7c5d6efa414cc346c577c12b49c807f813fed616b4f1b3f8e562c12c9fc2eec1",
+      "bytes": 564,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-leetcode/README.md",
+      "destination": "skills/clipfarm-leetcode/README.md",
+      "sourceSha256": "921ce0e80d7ed958d50abe6aedcb070ef0f5703a0e857ebf2efa24884c5d25e8",
+      "publishedSha256": "08661a89c19c9d21fd2398183aad660dcd9af419d012bd497fb429a1f96b877c",
+      "bytes": 1119,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-leetcode/RUNBOOK.md",
+      "destination": "skills/clipfarm-leetcode/RUNBOOK.md",
+      "sourceSha256": "8eaf0661d26a2fd93675e9c24953a5f80528cf7f46e98337f76e87f8820c2506",
+      "publishedSha256": "8eaf0661d26a2fd93675e9c24953a5f80528cf7f46e98337f76e87f8820c2506",
+      "bytes": 3775,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-leetcode/SKILL.md",
+      "destination": "skills/clipfarm-leetcode/SKILL.md",
+      "sourceSha256": "80a288e9884d9ef9a394548a0258a59460afd6a470f346987ee54a0d6e61eedc",
+      "publishedSha256": "80a288e9884d9ef9a394548a0258a59460afd6a470f346987ee54a0d6e61eedc",
+      "bytes": 41803,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-native-grade-portrait/README.md",
+      "destination": "skills/clipfarm-native-grade-portrait/README.md",
+      "sourceSha256": "c7da78eab72b92ce3a926760b68982c3acf934469f450c68add2eef0c594bc2e",
+      "publishedSha256": "3f73b0c97fd3c3a4a77170090f655f97a2fd9f68a8aabec5a4f63673c19204f6",
+      "bytes": 916,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-native-grade-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-native-grade-portrait/RUNBOOK.md",
+      "sourceSha256": "8214178e67303b9619955cec1610054ff6ce5e22a2cee6496823fa6601e243f4",
+      "publishedSha256": "59186a84ce0d7274898308c05d48f7abc9e321a2c7e29e80522b2f326b6037df",
+      "bytes": 4520,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-native-grade-portrait/SKILL.md",
+      "destination": "skills/clipfarm-native-grade-portrait/SKILL.md",
+      "sourceSha256": "401c8c7c19cdce0c3dd336b4ecf05d6e452edf8163c6694ea043de3b3ed5b057",
+      "publishedSha256": "401c8c7c19cdce0c3dd336b4ecf05d6e452edf8163c6694ea043de3b3ed5b057",
+      "bytes": 1732,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-native-grade-portrait/recipe.example.json",
+      "destination": "skills/clipfarm-native-grade-portrait/recipe.example.json",
+      "sourceSha256": "71eb37e0c65d7991e663072a7c01b268736bf00a26ae2165064ba6378f996dab",
+      "publishedSha256": "71eb37e0c65d7991e663072a7c01b268736bf00a26ae2165064ba6378f996dab",
+      "bytes": 385,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-podcast-closeup-portrait/README.md",
+      "destination": "skills/clipfarm-podcast-closeup-portrait/README.md",
+      "sourceSha256": "106375c068a93498404c30a6bc1cfcf9b5ead7ac1d67ddadeca8514bc6855929",
+      "publishedSha256": "77c00ee984cee54576d791cc613061805008749d9ac9b0f12a18c55f00d1f3bc",
+      "bytes": 908,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-podcast-closeup-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-podcast-closeup-portrait/RUNBOOK.md",
+      "sourceSha256": "c4d94e6d8cfa22bfffe54ee804b1d8a0a93d261a80c9ad51b6c5ed990b72ec0b",
+      "publishedSha256": "00c02a03eff7c81c6fe770639e904846ba33380d3fc0c83b42fbc9f6fcd70175",
+      "bytes": 4921,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-podcast-closeup-portrait/SKILL.md",
+      "destination": "skills/clipfarm-podcast-closeup-portrait/SKILL.md",
+      "sourceSha256": "f431b3763efa80011a64b2bb436fe61720b3b41c981751d77181459eb2edde99",
+      "publishedSha256": "f431b3763efa80011a64b2bb436fe61720b3b41c981751d77181459eb2edde99",
+      "bytes": 1578,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-podcast-closeup-portrait/production.example.json",
+      "destination": "skills/clipfarm-podcast-closeup-portrait/production.example.json",
+      "sourceSha256": "4b528e5bc29bdfc1e733ff938a49011d6e75e77617b915f3e17e74050d009603",
+      "publishedSha256": "4b528e5bc29bdfc1e733ff938a49011d6e75e77617b915f3e17e74050d009603",
+      "bytes": 563,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-podcast-room-portrait/README.md",
+      "destination": "skills/clipfarm-podcast-room-portrait/README.md",
+      "sourceSha256": "026cf81212247da71b50f241118f5a37af7c450a4903a0957ebe33a09e59617c",
+      "publishedSha256": "b640b61b0ae611e6496f9de7deef2b8f14073631abb69321942f704edd5825f4",
+      "bytes": 922,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-podcast-room-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-podcast-room-portrait/RUNBOOK.md",
+      "sourceSha256": "f3a9d12a3826a833c1f87ae469063f23f1324976fafc90843b4dbc6471aac791",
+      "publishedSha256": "02080572382696536770a98f6266be7eb6edaedb658b2b83471c3116d6478d1c",
+      "bytes": 4235,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-podcast-room-portrait/SKILL.md",
+      "destination": "skills/clipfarm-podcast-room-portrait/SKILL.md",
+      "sourceSha256": "0ad211047c09aac7dab6bf6a539d11791097fc71b22893f774cad038d9e2872a",
+      "publishedSha256": "0ad211047c09aac7dab6bf6a539d11791097fc71b22893f774cad038d9e2872a",
+      "bytes": 1507,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-podcast-room-portrait/production.example.json",
+      "destination": "skills/clipfarm-podcast-room-portrait/production.example.json",
+      "sourceSha256": "4bb9e719b10f45d6b60ffe068c84b5fca32e07e9fdae632c670f952f345eaceb",
+      "publishedSha256": "4bb9e719b10f45d6b60ffe068c84b5fca32e07e9fdae632c670f952f345eaceb",
+      "bytes": 502,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-source-fit-portrait/README.md",
+      "destination": "skills/clipfarm-source-fit-portrait/README.md",
+      "sourceSha256": "05d7936cb686aa3c5a2261507faa62f5cf6558f2f72270236d047cbfc1d092ac",
+      "publishedSha256": "b48943c6b5e5e526f51751fc7af05fb970459b4999a3df970a6dbb4a8371f23c",
+      "bytes": 922,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-source-fit-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-source-fit-portrait/RUNBOOK.md",
+      "sourceSha256": "2974125229dd51be6e0cef988feb6ab64010951e3bd3b56afb5aa013db68d696",
+      "publishedSha256": "392f036875ce39e93ece6b18f32571b0e6fd55a263454a2bd0a29938a4a4ca57",
+      "bytes": 7706,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-source-fit-portrait/SKILL.md",
+      "destination": "skills/clipfarm-source-fit-portrait/SKILL.md",
+      "sourceSha256": "aa030b2c03315867fe3de3f28c734a9dc70e0c5019af3ff298f8aa8c32cba32b",
+      "publishedSha256": "aa030b2c03315867fe3de3f28c734a9dc70e0c5019af3ff298f8aa8c32cba32b",
+      "bytes": 1785,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-source-fit-portrait/clip.example.json",
+      "destination": "skills/clipfarm-source-fit-portrait/clip.example.json",
+      "sourceSha256": "f58e26facb9d8e9f501758fc147c37c0bfcde1a52bab84548a4645299b6697ea",
+      "publishedSha256": "f58e26facb9d8e9f501758fc147c37c0bfcde1a52bab84548a4645299b6697ea",
+      "bytes": 282,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-system-design-portrait/README.md",
+      "destination": "skills/clipfarm-system-design-portrait/README.md",
+      "sourceSha256": "2ede1975188347f90fafd5f8ff6751ef0c084826ece07a6bca58ceb4b56897c9",
+      "publishedSha256": "0d18b879e0496e00a504b45c79b54308f4a38322105dd85ebdff54ce03046604",
+      "bytes": 894,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-system-design-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-system-design-portrait/RUNBOOK.md",
+      "sourceSha256": "d23fa3ce869eb4c0165f2e9d149af608bad9a89a9b009df7755abc594c0dc412",
+      "publishedSha256": "552a671d178d9b994bea7c17e088a2fde014c4ef65242a113bc3344aac5cb06e",
+      "bytes": 4655,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-system-design-portrait/SKILL.md",
+      "destination": "skills/clipfarm-system-design-portrait/SKILL.md",
+      "sourceSha256": "cf524c6372012809f690fe2f9cbbbe1f7622ee184ec3a9d5467bdaf517966e29",
+      "publishedSha256": "cf524c6372012809f690fe2f9cbbbe1f7622ee184ec3a9d5467bdaf517966e29",
+      "bytes": 1552,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-system-design-portrait/cut.example.json",
+      "destination": "skills/clipfarm-system-design-portrait/cut.example.json",
+      "sourceSha256": "61a1155ee77d50b81a5eadd1d579dffa686c45474190479c67bc7ba7112d4456",
+      "publishedSha256": "61a1155ee77d50b81a5eadd1d579dffa686c45474190479c67bc7ba7112d4456",
+      "bytes": 471,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-system-design-portrait/profile.example.json",
+      "destination": "skills/clipfarm-system-design-portrait/profile.example.json",
+      "sourceSha256": "ec9d44fb87fc25b654a17826f2a16789589a96c2c93b4339e895b36d4e9591ce",
+      "publishedSha256": "ec9d44fb87fc25b654a17826f2a16789589a96c2c93b4339e895b36d4e9591ce",
+      "bytes": 225,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-teaching-board-portrait/README.md",
+      "destination": "skills/clipfarm-teaching-board-portrait/README.md",
+      "sourceSha256": "40eb970cae49fd33ed635d47466b8b01817d84cec85a17757d51299ce19ce9c1",
+      "publishedSha256": "f637e839c1c069002085cc4c20afefc73c44299556be9df5b79e752cb0964681",
+      "bytes": 923,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-teaching-board-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-teaching-board-portrait/RUNBOOK.md",
+      "sourceSha256": "7d532bc9bc85a00046e48e533526ec073048d5328f8cc3069b2b2de81b0fed43",
+      "publishedSha256": "287e1863a7a0ed43c8e31490ccee2f694f517b3faf43a02f5c93564f7c4a3320",
+      "bytes": 4307,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-teaching-board-portrait/SKILL.md",
+      "destination": "skills/clipfarm-teaching-board-portrait/SKILL.md",
+      "sourceSha256": "f3986463054c14a1005ff4a4c274b0c34250fa712e267767d87e792d43a3fc5a",
+      "publishedSha256": "f3986463054c14a1005ff4a4c274b0c34250fa712e267767d87e792d43a3fc5a",
+      "bytes": 1606,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-teaching-board-portrait/production.example.json",
+      "destination": "skills/clipfarm-teaching-board-portrait/production.example.json",
+      "sourceSha256": "969c19d1b0471ee0702d76f87f42d848899abe9bed26330a9a6c03af4f88e161",
+      "publishedSha256": "969c19d1b0471ee0702d76f87f42d848899abe9bed26330a9a6c03af4f88e161",
+      "bytes": 556,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-excerpt-portrait/README.md",
+      "destination": "skills/clipfarm-vinyl-excerpt-portrait/README.md",
+      "sourceSha256": "e107dcb691c4b0660268345859cc24e4e6fe09ec06929591275d12490b52286e",
+      "publishedSha256": "34c84dced79a96ae8b800e92915e98b32e6ce269831dd2ad36958488ea866672",
+      "bytes": 955,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-excerpt-portrait/RUNBOOK.md",
+      "destination": "skills/clipfarm-vinyl-excerpt-portrait/RUNBOOK.md",
+      "sourceSha256": "06bf12d4fdb9b4437dfa9007708c01dd670ca86073cba59e40d761b145529b17",
+      "publishedSha256": "f2e10d94c3e9256499b97ace7112b19a44ba8df88ca4107d0544c49563e86edc",
+      "bytes": 5156,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-excerpt-portrait/SKILL.md",
+      "destination": "skills/clipfarm-vinyl-excerpt-portrait/SKILL.md",
+      "sourceSha256": "9b2c1315e98445f078b1db46122ae2d28f7c2054e15463e1d3bd10dd0568bd8d",
+      "publishedSha256": "9b2c1315e98445f078b1db46122ae2d28f7c2054e15463e1d3bd10dd0568bd8d",
+      "bytes": 1428,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-excerpt-portrait/production.example.json",
+      "destination": "skills/clipfarm-vinyl-excerpt-portrait/production.example.json",
+      "sourceSha256": "29f0ef9c32022e80c19dd22739ccc7d9c0d8703820d9d01268e7a60e741c74be",
+      "publishedSha256": "29f0ef9c32022e80c19dd22739ccc7d9c0d8703820d9d01268e7a60e741c74be",
+      "bytes": 721,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-film-landscape/README.md",
+      "destination": "skills/clipfarm-vinyl-film-landscape/README.md",
+      "sourceSha256": "d5c32ba73fe7a9cbb8ef0425e8e0f288ef2cbac812eaec3b0d364cdb6d1b272d",
+      "publishedSha256": "b40127154b1fe1628152cd78d7caa9a656243b10e667fb65399cb6fce9a7a64e",
+      "bytes": 938,
+      "transform": "Canonical operator overview plus explicit public-library runtime notice"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-film-landscape/RUNBOOK.md",
+      "destination": "skills/clipfarm-vinyl-film-landscape/RUNBOOK.md",
+      "sourceSha256": "5d8b25a7c0947cbc10402a924b4fe1c09fb1d1ad837df02c2b4a2c15be570794",
+      "publishedSha256": "8d0d6db6b12a3df677192b7c8f521ba696860b5d7d52f341b3fa57511a6a71b3",
+      "bytes": 5929,
+      "transform": "Public operator derivative; introductory private production-history section/receipt paths omitted"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-film-landscape/SKILL.md",
+      "destination": "skills/clipfarm-vinyl-film-landscape/SKILL.md",
+      "sourceSha256": "0d2546e0e81b4ef53aa9cc6bce3fad0d2f8f1cd2a10988ffecbbebe10dff142b",
+      "publishedSha256": "0d2546e0e81b4ef53aa9cc6bce3fad0d2f8f1cd2a10988ffecbbebe10dff142b",
+      "bytes": 1565,
+      "transform": "byte-identical"
+    },
+    {
+      "source": "skills/clipfarm-vinyl-film-landscape/production.example.json",
+      "destination": "skills/clipfarm-vinyl-film-landscape/production.example.json",
+      "sourceSha256": "0b91515a2a70884c43ca3c28003b39a4b0327f971b99677bfd24445a768b1043",
+      "publishedSha256": "0b91515a2a70884c43ca3c28003b39a4b0327f971b99677bfd24445a768b1043",
+      "bytes": 641,
+      "transform": "byte-identical"
+    }
+  ]
+}

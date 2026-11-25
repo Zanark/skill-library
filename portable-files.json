@@ -14,13 +14,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 2789,
-      "sha256": "a766f9782fed13cbc108747b565c65def083b5941838e8d0fc01ec6a11dd5378"
+      "bytes": 5509,
+      "sha256": "956c8db2fe899656779e891518d6c31195b8102498ec87556588baeade7a393c"
     },
     {
       "path": "docs\\CATALOGUE.md",
-      "bytes": 6296,
-      "sha256": "112c3f640af5c671a8ca4b11ad3aa097ebade8116a122dc0e53298bf89e318d4"
+      "bytes": 9348,
+      "sha256": "bb25b3889e741acdcbb0884bb20d48fc3ab94e804770ef2975ef9f4e4a927bbc"
+    },
+    {
+      "path": "docs\\CLIPFARM-SKILLS.md",
+      "bytes": 5045,
+      "sha256": "3a632b6c8bc14f9bdd1616317a50f14926bf34651eb41348edd14b4b07a2b9e3"
     },
     {
       "path": "docs\\CONTEXT-MESH-DISCOVERY.md",
@@ -29,38 +34,38 @@
     },
     {
       "path": "docs\\DOCUMENTATION-STANDARD.md",
-      "bytes": 2924,
-      "sha256": "3ee6678dea42ad18b51e81f5ac59116cd88d39f101f142ddd4dfcf6c788fd48a"
+      "bytes": 3386,
+      "sha256": "f7e51fa20a473126f858e94d7a3fe30dca7a3a4b19519002d801ddb072ff795f"
     },
     {
       "path": "docs\\GLOSSARY.md",
-      "bytes": 2822,
-      "sha256": "e7b557e358a5635d94332a39f492385173860ca3d6bd2d87216a3d674b732c8a"
+      "bytes": 3371,
+      "sha256": "1c04346e65e68ec1aa90fb13531edc6c470d53d5ac3eb46adcd8ae39079880d4"
     },
     {
       "path": "docs\\MAINTENANCE-PLAYBOOK.md",
-      "bytes": 4117,
-      "sha256": "1b4a5299ba12b51047f0aaad270f4820d41363c9f77dce8073fd81a95fbf114c"
+      "bytes": 4621,
+      "sha256": "0f84f43f8da4c1f40379e75c7f94717b13ee4700911186603f39b982865d4788"
     },
     {
       "path": "docs\\PORTABILITY.md",
-      "bytes": 13879,
-      "sha256": "d4de2628b04274d809a2f1813f00c6329331c96976551903332445fd737f26af"
+      "bytes": 15223,
+      "sha256": "1263aca60ffbdcb0019c828a0a865934f2371a32295b400189968f2254cb28bc"
     },
     {
       "path": "docs\\PROVENANCE.md",
-      "bytes": 6493,
-      "sha256": "76cdf15c6a58c28101136a350426a14a7b8af3adb074cc5462c656f6b8c7b6a0"
+      "bytes": 7823,
+      "sha256": "d6c31727c4b988516993ace2cb577ca0d7adaddad31d1de2a4222641a01606af"
     },
     {
       "path": "docs\\README.md",
-      "bytes": 1411,
-      "sha256": "0750a378dd82d81147366f5e5e7c13c754a62a175316100e3d9d458779dca63e"
+      "bytes": 1714,
+      "sha256": "beef0501d7087b52246e91a002913a42f724750e282c42d2ed204ecb82c87469"
     },
     {
       "path": "docs\\SKILL-RELATIONSHIPS.md",
-      "bytes": 6599,
-      "sha256": "ebbd4d32c2ea8d38cdb1dc7b75848d92036cd25a07ee986ceb1d99a9ffc14735"
+      "bytes": 7347,
+      "sha256": "b6aa24146c3b70961102e263defa5ac09abf6f3644fe8d4ff4edc14a6262a849"
     },
     {
       "path": "docs\\assets\\skill-library-hero.svg",
@@ -69,8 +74,13 @@
     },
     {
       "path": "docs\\catalogue.json",
-      "bytes": 7839,
-      "sha256": "8bc456b89c94ad9c7656f31e783dfdd3b3589eec56b7ea7131f73b0023e4af08"
+      "bytes": 15936,
+      "sha256": "6f94dd4d06399b507d48a0f36b51df36be964f99f7826548075d46f04be682cf"
+    },
+    {
+      "path": "docs\\clipfarm-source-manifest.json",
+      "bytes": 39146,
+      "sha256": "8e2416fbf560b61b1b0ec7343af2e7eb6cd32a7b7e2664109601e9c61728a067"
     },
     {
       "path": "examples\\context-mesh\\CONTEXT-MESH.md",
@@ -104,8 +114,8 @@
     },
     {
       "path": "scripts\\Validate-SkillLibrary.ps1",
-      "bytes": 4239,
-      "sha256": "d810a3327594acff434c04508e72b6961304377b2074c6b3b1f287d3e5d78381"
+      "bytes": 4761,
+      "sha256": "d1553b0bd4ff964661c38d718cde51c02b15c39c5bd616df0e8fd2bb2991d099"
     },
     {
       "path": "scripts\\build_portable_demo.py",
@@ -119,8 +129,8 @@
     },
     {
       "path": "scripts\\install_skill_library.py",
-      "bytes": 8509,
-      "sha256": "ae9d8e616f12b3fdcc2c97a854dc00973aafa7b9a1e4226264744905c62d3cca"
+      "bytes": 10773,
+      "sha256": "01f007b566f123dfbe3acafc5908a73df4e92bd754e96c9b80a965a3a5cc89ff"
     },
     {
       "path": "scripts\\merge_skill_state.py",
@@ -141,6 +151,46 @@
       "path": "scripts\\verify_portable_payload.py",
       "bytes": 2874,
       "sha256": "a67aa2eb6d1fa41f2530bf88801b6c0efc62bf37fc0689340749a34886f3036d"
+    },
+    {
+      "path": "skills\\CLIPFARM.md",
+      "bytes": 3549,
+      "sha256": "64ed454ec5cadbf6621731879d3679618639ba502214cfd32b7860add6fd10c7"
+    },
+    {
+      "path": "skills\\_shared\\CINEMATIC-MUSIC.md",
+      "bytes": 9456,
+      "sha256": "ee55cb84b78b0a43e241b6d134af96537397f2dbed3b4c3c659110c1231c506b"
+    },
+    {
+      "path": "skills\\_shared\\CUSTOM-PRODUCERS.md",
+      "bytes": 11895,
+      "sha256": "6af624433685789eee117dde67e2f29cafb7a10a6d9d8f21b684415959c80a0e"
+    },
+    {
+      "path": "skills\\_shared\\GRADING-WORKFLOW.md",
+      "bytes": 9431,
+      "sha256": "56b42c5fc1dd31cc29460a1f7a2148ff1cb91ec941441b35ef11ebf1df072549"
+    },
+    {
+      "path": "skills\\_shared\\MUSIC-FINISHING.md",
+      "bytes": 3790,
+      "sha256": "958b9f49df3c84e24c6d297c72697acc996c232086ae33763ab6375d9b927334"
+    },
+    {
+      "path": "skills\\_shared\\PRODUCTION.md",
+      "bytes": 11118,
+      "sha256": "da655e794268e2119f65b9e83047252e1fe76a9cde4963d64547856c86fc30f4"
+    },
+    {
+      "path": "skills\\_shared\\SOURCE-WORKFLOW.md",
+      "bytes": 6281,
+      "sha256": "bba1d8fb55039be965798e3a0df0bb3dfa8f1b668406a95979bdb479cfab35bf"
+    },
+    {
+      "path": "skills\\_shared\\cinematic-lyric-window.js",
+      "bytes": 2445,
+      "sha256": "bb4394458c838c3f27f7a58bf6ff6374bbf57536c4e1ad736154e7f1e1cad005"
     },
     {
       "path": "skills\\ado-workplan\\README.md",
@@ -213,39 +263,279 @@
       "sha256": "64295c7638930dfe612942b7de9dae66f7f024b789ee07966e6ed6cdaf3a00d9"
     },
     {
+      "path": "skills\\clipfarm-ab-review-landscape\\README.md",
+      "bytes": 900,
+      "sha256": "b0159d8f1226ac731f3847b7992507eccce85a02abb0ac81a1b3dfd93ed72b5d"
+    },
+    {
+      "path": "skills\\clipfarm-ab-review-landscape\\RUNBOOK.md",
+      "bytes": 5115,
+      "sha256": "ddf010fb2839e49b57d2973e2280373f68328e8a4fe53d7793f5e0f397ea22f3"
+    },
+    {
+      "path": "skills\\clipfarm-ab-review-landscape\\SKILL.md",
+      "bytes": 1611,
+      "sha256": "c3a49dd81de2df3956696c15914b09e50b0ea2fd2c2283bd3a5421f319f9bec9"
+    },
+    {
+      "path": "skills\\clipfarm-ab-review-landscape\\preview.example.json",
+      "bytes": 146,
+      "sha256": "8afca70a00e1fdd29e2c3c0b96866bcd98a779184f61ee8957bf3ba08c706899"
+    },
+    {
+      "path": "skills\\clipfarm-animated-camera-portrait\\README.md",
+      "bytes": 913,
+      "sha256": "57edd9e1a6fd4a7c87d35ae1d69a7fec85852bfc85db0971b322b1a799a1335d"
+    },
+    {
+      "path": "skills\\clipfarm-animated-camera-portrait\\RUNBOOK.md",
+      "bytes": 4528,
+      "sha256": "59ce6f6fff017d575d7acd3da2d90e970e2230642f29691b52a5fd305726b6df"
+    },
+    {
+      "path": "skills\\clipfarm-animated-camera-portrait\\SKILL.md",
+      "bytes": 1620,
+      "sha256": "a0c35d52bf47b49b465f7550ea328daa46aede766c9e9971d1b360574a9f3661"
+    },
+    {
+      "path": "skills\\clipfarm-animated-camera-portrait\\production.example.json",
+      "bytes": 507,
+      "sha256": "97e1d11d51d77ed6cf49b4c5e72336e21c7209ab5789d68633212f157c4f7633"
+    },
+    {
+      "path": "skills\\clipfarm-chaptered-podcast-landscape\\README.md",
+      "bytes": 932,
+      "sha256": "928d5492329d2e2a4029ab6deeda6a82312ab5581ad3676b3df48022faf1a71d"
+    },
+    {
+      "path": "skills\\clipfarm-chaptered-podcast-landscape\\RUNBOOK.md",
+      "bytes": 5263,
+      "sha256": "e9ccb869ccd2cfb102a1182999a46e8cf760485902d672826cd5b97c2f079c2f"
+    },
+    {
+      "path": "skills\\clipfarm-chaptered-podcast-landscape\\SKILL.md",
+      "bytes": 1605,
+      "sha256": "93eebeb941f53ec8e80fd10e897cf8e5b8a05ddbd47d05516428b54a61cc9f72"
+    },
+    {
+      "path": "skills\\clipfarm-chaptered-podcast-landscape\\production.example.json",
+      "bytes": 552,
+      "sha256": "be3d3a346c1d216785eb49bba75c9d20889f1f3ea1c9de19b59a956d8c5dc652"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-draft\\README.md",
+      "bytes": 987,
+      "sha256": "f2bf0fb6cc46566b0404969511ce5dc8d371a878b736321715d947931a4e36b7"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-draft\\RUNBOOK.md",
+      "bytes": 6929,
+      "sha256": "e5d40b35486391ee79323a2cc87feb3b19e73aeace52d779d9942c5bbc47c0c4"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-draft\\SKILL.md",
+      "bytes": 2165,
+      "sha256": "15e795336fe2f97c8264811aca8d942eb332983b4cf638291f9b6cfa7f791e25"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-draft\\production.example.json",
+      "bytes": 1331,
+      "sha256": "699568e0ea26f742c032f6a1275368f6c5190e730355cc409fc18ddf391eb492"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-video\\README.md",
+      "bytes": 1017,
+      "sha256": "5e89aebf4725c2e637f5fbae8f9979e6b276a301a368cad076a2caee170bb06c"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-video\\RUNBOOK.md",
+      "bytes": 10892,
+      "sha256": "c5d7d371257f30b2e2aad4917e517f7c37f47a1c1596eea8e052dc022cf7130f"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-video\\SKILL.md",
+      "bytes": 2353,
+      "sha256": "d2b9baf2e5c340c92293ac1594f4829a16e8a1f034a82800fb8417856f0cec92"
+    },
+    {
+      "path": "skills\\clipfarm-cinematic-music-video\\production.example.json",
+      "bytes": 1235,
+      "sha256": "c18782bc5c7160c68732c94e790943b05f4dfe276befa159ad9b1dcba322029e"
+    },
+    {
+      "path": "skills\\clipfarm-code-camera-portrait\\README.md",
+      "bytes": 975,
+      "sha256": "f1aaad555ec6c75b22f3990dc21123b58689ab9b5678f0123e662aeeb2fed757"
+    },
+    {
+      "path": "skills\\clipfarm-code-camera-portrait\\RUNBOOK.md",
+      "bytes": 5061,
+      "sha256": "18c9d569099c7dee9dcdd1da1f8874d1e0c909a1ec5b624af6a7d8b3ec36844b"
+    },
+    {
+      "path": "skills\\clipfarm-code-camera-portrait\\SKILL.md",
+      "bytes": 1747,
+      "sha256": "216898a854c6b1e19e2e1a74c7f7bc5384192f6728546577e0ee2ec7a2995a28"
+    },
+    {
+      "path": "skills\\clipfarm-code-camera-portrait\\cut.example.json",
+      "bytes": 463,
+      "sha256": "2fba5e627e682f87d87d75e757e333cbd9cc3a17e3bf544a53ace4842babee72"
+    },
+    {
+      "path": "skills\\clipfarm-code-camera-portrait\\profile.example.json",
+      "bytes": 265,
+      "sha256": "19b8477835a4464245d1e5b7d98c6d7064269f48cb97fb0844c554db806b2484"
+    },
+    {
+      "path": "skills\\clipfarm-code-only-portrait\\README.md",
+      "bytes": 903,
+      "sha256": "a24fcb84a858c1a641308230bf44bf465bd2f4feb4e7d93291868a81e36c2ea5"
+    },
+    {
+      "path": "skills\\clipfarm-code-only-portrait\\RUNBOOK.md",
+      "bytes": 4275,
+      "sha256": "5742bd7f48d2f749065e9c63e393310d10df33a50b4b498ad2d44cdc44f7b167"
+    },
+    {
+      "path": "skills\\clipfarm-code-only-portrait\\SKILL.md",
+      "bytes": 1555,
+      "sha256": "6477f3db572428b45b607684d03c4ce109a98292f870c145d365502b053fca58"
+    },
+    {
+      "path": "skills\\clipfarm-code-only-portrait\\cut.example.json",
+      "bytes": 477,
+      "sha256": "563813316624ec320c3bd8567130b7c658e8efea217f6dcc22462dd96c3cbb36"
+    },
+    {
+      "path": "skills\\clipfarm-code-only-portrait\\profile.example.json",
+      "bytes": 223,
+      "sha256": "ba72ee6127bf811934c4f9d0ddb11bc4ec9ee7a1ab78e53d6e42e863b7db818d"
+    },
+    {
+      "path": "skills\\clipfarm-color-grading\\README.md",
+      "bytes": 972,
+      "sha256": "6429f229472263be90e59b98cc1d542b2a9e0c4c57b376a74d43e04c727b83a7"
+    },
+    {
+      "path": "skills\\clipfarm-color-grading\\RUNBOOK.md",
+      "bytes": 3377,
+      "sha256": "1ce6c435478c6a096cd99ab47db62458f0e47906373d6c754c760addfdacf394"
+    },
+    {
+      "path": "skills\\clipfarm-color-grading\\SKILL.md",
+      "bytes": 9236,
+      "sha256": "cc73149abf088c22c5d3158b3b38e1b64f7714d861cafe99a55619be950e519d"
+    },
+    {
+      "path": "skills\\clipfarm-complete-solve-landscape\\README.md",
+      "bytes": 952,
+      "sha256": "ecd1fa97ac673bde96cd1c26c5f57abfa8f4b8c8572e9c5e8c936feda9e2505f"
+    },
+    {
+      "path": "skills\\clipfarm-complete-solve-landscape\\RUNBOOK.md",
+      "bytes": 5399,
+      "sha256": "6521445da7e2cc3d37dc23bb5ac23ef18f6656bd73d6c3068626972dd2be0070"
+    },
+    {
+      "path": "skills\\clipfarm-complete-solve-landscape\\SKILL.md",
+      "bytes": 1643,
+      "sha256": "40e221aa8cf0176de82091e3c4528f15335120b2776c6efce073036f8bf58fc0"
+    },
+    {
+      "path": "skills\\clipfarm-complete-solve-landscape\\cut.example.json",
+      "bytes": 1417,
+      "sha256": "90224a39c2e514cdd2949ded848ecb37c34f47a877d99bceb1e43d08079bf0a7"
+    },
+    {
+      "path": "skills\\clipfarm-complete-solve-landscape\\profile.example.json",
+      "bytes": 186,
+      "sha256": "9cb2274468c274b885f79ab9882dcacd64c1381d48d82ecf1abebef316e32815"
+    },
+    {
+      "path": "skills\\clipfarm-eye-study-portrait\\README.md",
+      "bytes": 902,
+      "sha256": "990ccd6290d7772f4d331c19218192e9387dc30cf9cfd00800a2bbe094ad7629"
+    },
+    {
+      "path": "skills\\clipfarm-eye-study-portrait\\RUNBOOK.md",
+      "bytes": 4485,
+      "sha256": "6b16eeaf513d8f3758d1cb5a6bbb6d43434c1d5023d96f7885582edb98fa93b8"
+    },
+    {
+      "path": "skills\\clipfarm-eye-study-portrait\\SKILL.md",
+      "bytes": 1409,
+      "sha256": "08847397d2f5a8897351292debe4b2ae8e459855164400786c2d51efe39ddc05"
+    },
+    {
+      "path": "skills\\clipfarm-eye-study-portrait\\production.example.json",
+      "bytes": 649,
+      "sha256": "350dc1a18298d87e80d2549f4062ce006ee8b8788f3cb6cdf73a98cc872118b3"
+    },
+    {
+      "path": "skills\\clipfarm-gesture-study-portrait\\README.md",
+      "bytes": 903,
+      "sha256": "927aa5b7a26dc68c19fb7fa73201f490476fcb291dc7f5f63f20f8c2d575f2b5"
+    },
+    {
+      "path": "skills\\clipfarm-gesture-study-portrait\\RUNBOOK.md",
+      "bytes": 3749,
+      "sha256": "6c9d84e1e4df51aaa8c31329a4c2e77730eae4933327fc3de23865ac138eea0c"
+    },
+    {
+      "path": "skills\\clipfarm-gesture-study-portrait\\SKILL.md",
+      "bytes": 1371,
+      "sha256": "b99975bc57e20bbc9e808a9369c30bd7f1bde961421560e9e9403f7920dd716d"
+    },
+    {
+      "path": "skills\\clipfarm-gesture-study-portrait\\production.example.json",
+      "bytes": 564,
+      "sha256": "7c5d6efa414cc346c577c12b49c807f813fed616b4f1b3f8e562c12c9fc2eec1"
+    },
+    {
       "path": "skills\\clipfarm-leetcode\\README.md",
-      "bytes": 6452,
-      "sha256": "c3774bc32be20cb693ecfc320091be71f9727962f663f82f6357e73864a72899"
+      "bytes": 1119,
+      "sha256": "08661a89c19c9d21fd2398183aad660dcd9af419d012bd497fb429a1f96b877c"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\RUNBOOK.md",
+      "bytes": 3775,
+      "sha256": "8eaf0661d26a2fd93675e9c24953a5f80528cf7f46e98337f76e87f8820c2506"
     },
     {
       "path": "skills\\clipfarm-leetcode\\SKILL.md",
-      "bytes": 38788,
-      "sha256": "971d1ed03749a6511aea9551fb3ea5aa08bc12bde3573fe020a78a782df14bda"
+      "bytes": 41803,
+      "sha256": "80a288e9884d9ef9a394548a0258a59460afd6a470f346987ee54a0d6e61eedc"
     },
     {
       "path": "skills\\clipfarm-leetcode\\docs\\ARCHITECTURE.md",
-      "bytes": 9581,
-      "sha256": "9cff2e2395a7a836da6986cbb26a95e35e0b785196ee6e1350fa44b70f88456d"
+      "bytes": 10728,
+      "sha256": "24dcd1575a83d76d9cf91983a1fcb65798c8a2d0c6d4fa71f3d9eb7e337b1211"
     },
     {
       "path": "skills\\clipfarm-leetcode\\docs\\EXAMPLES.md",
-      "bytes": 7814,
-      "sha256": "df0d3e92d71d4454d67837167cb6ccf084216a8afbf72f7a1653cebff81dce59"
+      "bytes": 8478,
+      "sha256": "8d815fc7ab68c49a049955bcfb5619c2c2bcd52519545955476cf50414894bad"
     },
     {
       "path": "skills\\clipfarm-leetcode\\docs\\OPERATIONS-AND-TESTING.md",
-      "bytes": 9642,
-      "sha256": "47f123593a99903ba268478ac1c4d13bd115ce74d1f2ec5d4bb2603430bcf009"
+      "bytes": 10726,
+      "sha256": "1e8d2f8a01f77c1041585ff0645a18248ad88edbb090bced7868d21aa7d43b94"
     },
     {
       "path": "skills\\clipfarm-leetcode\\docs\\REFERENCE.md",
-      "bytes": 10151,
-      "sha256": "894d413f4d7744e5e0b526a105f4b310bb5cb405673a0409e54c24322598fe2f"
+      "bytes": 11025,
+      "sha256": "a7e4aeb767933f2656692a96e03abd1351580e4e34c48fef040bc85e0baef755"
     },
     {
       "path": "skills\\clipfarm-leetcode\\docs\\WORKFLOW.md",
-      "bytes": 11644,
-      "sha256": "89804cf444058d028c39c27a746e0802898fe8d51b60be2d3e22db5b37c976be"
+      "bytes": 12728,
+      "sha256": "d7702c6d19964467cd9b7e7061ce5473adabff0e5b08384db6c565add17ba3b5"
+    },
+    {
+      "path": "skills\\clipfarm-leetcode\\history\\SKILL-971d1ed03749.md",
+      "bytes": 38788,
+      "sha256": "971d1ed03749a6511aea9551fb3ea5aa08bc12bde3573fe020a78a782df14bda"
     },
     {
       "path": "skills\\clipfarm-leetcode\\implementation\\AGENTS.md",
@@ -626,6 +916,171 @@
       "path": "skills\\clipfarm-leetcode\\implementation\\tests\\test_workflow_vision.py",
       "bytes": 16829,
       "sha256": "5e9244939126490e15115506898f51ab47e6a040d23366277f0a3fc9d21a661d"
+    },
+    {
+      "path": "skills\\clipfarm-native-grade-portrait\\README.md",
+      "bytes": 916,
+      "sha256": "3f73b0c97fd3c3a4a77170090f655f97a2fd9f68a8aabec5a4f63673c19204f6"
+    },
+    {
+      "path": "skills\\clipfarm-native-grade-portrait\\RUNBOOK.md",
+      "bytes": 4520,
+      "sha256": "59186a84ce0d7274898308c05d48f7abc9e321a2c7e29e80522b2f326b6037df"
+    },
+    {
+      "path": "skills\\clipfarm-native-grade-portrait\\SKILL.md",
+      "bytes": 1732,
+      "sha256": "401c8c7c19cdce0c3dd336b4ecf05d6e452edf8163c6694ea043de3b3ed5b057"
+    },
+    {
+      "path": "skills\\clipfarm-native-grade-portrait\\recipe.example.json",
+      "bytes": 385,
+      "sha256": "71eb37e0c65d7991e663072a7c01b268736bf00a26ae2165064ba6378f996dab"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-closeup-portrait\\README.md",
+      "bytes": 908,
+      "sha256": "77c00ee984cee54576d791cc613061805008749d9ac9b0f12a18c55f00d1f3bc"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-closeup-portrait\\RUNBOOK.md",
+      "bytes": 4921,
+      "sha256": "00c02a03eff7c81c6fe770639e904846ba33380d3fc0c83b42fbc9f6fcd70175"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-closeup-portrait\\SKILL.md",
+      "bytes": 1578,
+      "sha256": "f431b3763efa80011a64b2bb436fe61720b3b41c981751d77181459eb2edde99"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-closeup-portrait\\production.example.json",
+      "bytes": 563,
+      "sha256": "4b528e5bc29bdfc1e733ff938a49011d6e75e77617b915f3e17e74050d009603"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-room-portrait\\README.md",
+      "bytes": 922,
+      "sha256": "b640b61b0ae611e6496f9de7deef2b8f14073631abb69321942f704edd5825f4"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-room-portrait\\RUNBOOK.md",
+      "bytes": 4235,
+      "sha256": "02080572382696536770a98f6266be7eb6edaedb658b2b83471c3116d6478d1c"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-room-portrait\\SKILL.md",
+      "bytes": 1507,
+      "sha256": "0ad211047c09aac7dab6bf6a539d11791097fc71b22893f774cad038d9e2872a"
+    },
+    {
+      "path": "skills\\clipfarm-podcast-room-portrait\\production.example.json",
+      "bytes": 502,
+      "sha256": "4bb9e719b10f45d6b60ffe068c84b5fca32e07e9fdae632c670f952f345eaceb"
+    },
+    {
+      "path": "skills\\clipfarm-source-fit-portrait\\README.md",
+      "bytes": 922,
+      "sha256": "b48943c6b5e5e526f51751fc7af05fb970459b4999a3df970a6dbb4a8371f23c"
+    },
+    {
+      "path": "skills\\clipfarm-source-fit-portrait\\RUNBOOK.md",
+      "bytes": 7706,
+      "sha256": "392f036875ce39e93ece6b18f32571b0e6fd55a263454a2bd0a29938a4a4ca57"
+    },
+    {
+      "path": "skills\\clipfarm-source-fit-portrait\\SKILL.md",
+      "bytes": 1785,
+      "sha256": "aa030b2c03315867fe3de3f28c734a9dc70e0c5019af3ff298f8aa8c32cba32b"
+    },
+    {
+      "path": "skills\\clipfarm-source-fit-portrait\\clip.example.json",
+      "bytes": 282,
+      "sha256": "f58e26facb9d8e9f501758fc147c37c0bfcde1a52bab84548a4645299b6697ea"
+    },
+    {
+      "path": "skills\\clipfarm-system-design-portrait\\README.md",
+      "bytes": 894,
+      "sha256": "0d18b879e0496e00a504b45c79b54308f4a38322105dd85ebdff54ce03046604"
+    },
+    {
+      "path": "skills\\clipfarm-system-design-portrait\\RUNBOOK.md",
+      "bytes": 4655,
+      "sha256": "552a671d178d9b994bea7c17e088a2fde014c4ef65242a113bc3344aac5cb06e"
+    },
+    {
+      "path": "skills\\clipfarm-system-design-portrait\\SKILL.md",
+      "bytes": 1552,
+      "sha256": "cf524c6372012809f690fe2f9cbbbe1f7622ee184ec3a9d5467bdaf517966e29"
+    },
+    {
+      "path": "skills\\clipfarm-system-design-portrait\\cut.example.json",
+      "bytes": 471,
+      "sha256": "61a1155ee77d50b81a5eadd1d579dffa686c45474190479c67bc7ba7112d4456"
+    },
+    {
+      "path": "skills\\clipfarm-system-design-portrait\\profile.example.json",
+      "bytes": 225,
+      "sha256": "ec9d44fb87fc25b654a17826f2a16789589a96c2c93b4339e895b36d4e9591ce"
+    },
+    {
+      "path": "skills\\clipfarm-teaching-board-portrait\\README.md",
+      "bytes": 923,
+      "sha256": "f637e839c1c069002085cc4c20afefc73c44299556be9df5b79e752cb0964681"
+    },
+    {
+      "path": "skills\\clipfarm-teaching-board-portrait\\RUNBOOK.md",
+      "bytes": 4307,
+      "sha256": "287e1863a7a0ed43c8e31490ccee2f694f517b3faf43a02f5c93564f7c4a3320"
+    },
+    {
+      "path": "skills\\clipfarm-teaching-board-portrait\\SKILL.md",
+      "bytes": 1606,
+      "sha256": "f3986463054c14a1005ff4a4c274b0c34250fa712e267767d87e792d43a3fc5a"
+    },
+    {
+      "path": "skills\\clipfarm-teaching-board-portrait\\production.example.json",
+      "bytes": 556,
+      "sha256": "969c19d1b0471ee0702d76f87f42d848899abe9bed26330a9a6c03af4f88e161"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-excerpt-portrait\\README.md",
+      "bytes": 955,
+      "sha256": "34c84dced79a96ae8b800e92915e98b32e6ce269831dd2ad36958488ea866672"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-excerpt-portrait\\RUNBOOK.md",
+      "bytes": 5156,
+      "sha256": "f2e10d94c3e9256499b97ace7112b19a44ba8df88ca4107d0544c49563e86edc"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-excerpt-portrait\\SKILL.md",
+      "bytes": 1428,
+      "sha256": "9b2c1315e98445f078b1db46122ae2d28f7c2054e15463e1d3bd10dd0568bd8d"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-excerpt-portrait\\production.example.json",
+      "bytes": 721,
+      "sha256": "29f0ef9c32022e80c19dd22739ccc7d9c0d8703820d9d01268e7a60e741c74be"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-film-landscape\\README.md",
+      "bytes": 938,
+      "sha256": "b40127154b1fe1628152cd78d7caa9a656243b10e667fb65399cb6fce9a7a64e"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-film-landscape\\RUNBOOK.md",
+      "bytes": 5929,
+      "sha256": "8d0d6db6b12a3df677192b7c8f521ba696860b5d7d52f341b3fa57511a6a71b3"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-film-landscape\\SKILL.md",
+      "bytes": 1565,
+      "sha256": "0d2546e0e81b4ef53aa9cc6bce3fad0d2f8f1cd2a10988ffecbbebe10dff142b"
+    },
+    {
+      "path": "skills\\clipfarm-vinyl-film-landscape\\production.example.json",
+      "bytes": 641,
+      "sha256": "0b91515a2a70884c43ca3c28003b39a4b0327f971b99677bfd24445a768b1043"
     },
     {
       "path": "skills\\context-mesh\\README.md",
@@ -1454,13 +1909,13 @@
     },
     {
       "path": "source-inventory.json",
-      "bytes": 2878,
-      "sha256": "66c475dc81091f2d3f06a5d93329c231d729fb1e2cc21086a937fc5ea8914974"
+      "bytes": 12875,
+      "sha256": "f70ccc5302dadaaed1be1e7a9613af6e1cf56ffbd3f5eaabc6a0d76a9edf80ca"
     },
     {
       "path": "support-provenance.json",
-      "bytes": 1939,
-      "sha256": "c71a2e2a7796ec9eaef6d0007b9613bc31acd5d3d3220e6a8ac466c0be1ba037"
+      "bytes": 2379,
+      "sha256": "bb86719aaab4ff12b87d1756b64414821386e13d3a99497c6c1ad271568e60a5"
     },
     {
       "path": "tests\\portable_documentation_smoke.py",
@@ -1471,6 +1926,11 @@
       "path": "tests\\portable_speak_smoke.mjs",
       "bytes": 1321,
       "sha256": "37c40d8b0cfa4ae0d29f6a87de713374b2361c041bbcdf023da4f11887f388bc"
+    },
+    {
+      "path": "tests\\test_clipfarm_skills.py",
+      "bytes": 9510,
+      "sha256": "336eac4cf290fc98b4924e13145fc04b98e9f3a6efe3db08e33a6dc1f26b1fdf"
     },
     {
       "path": "tests\\test_folder_heatmap.py",

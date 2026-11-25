@@ -1,0 +1,37 @@
+{
+  "id": "217-contains-duplicate",
+  "title": "217. Contains Duplicate",
+  "category": "solution",
+  "problem": "Contains Duplicate",
+  "rationale": "ILLUSTRATIVE ONLY: replace with a genuinely complete chronological solve and actual source evidence.",
+  "segments": [{"start": 10, "end": 50, "reason": "Illustrative problem-to-completion span, not reviewed."}],
+  "trim_silence": false,
+  "coherence_review": "",
+  "horizontal": {
+    "chapter": {"start": 10, "end": 50},
+    "subtitle_region": {"x": 0.1, "y": 0.86, "w": 0.8, "h": 0.12},
+    "preserve_ranges": [],
+    "coverage_review": "",
+    "subtitle_review": "",
+    "intro_hold_seconds": 1,
+    "artwork": {
+      "problem_number": 217,
+      "problem_title": "Contains Duplicate",
+      "technique": "Hash Set",
+      "complexity": {
+        "notation": "O(n)",
+        "source_kind": "stream",
+        "source_time": 20,
+        "evidence": "ILLUSTRATIVE ONLY: replace with the actual source statement and its qualifications."
+      },
+      "meme": {
+        "image": "D:\\NewProduction\\permitted-cat.png",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "rights": "user_provided",
+        "rights_note": "ILLUSTRATIVE ONLY: replace with actual permission and the actual file hash.",
+        "topic": "Replace with a genuine connection to duplicate membership checks."
+      }
+    }
+  },
+  "evidence": []
+}

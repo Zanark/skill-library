@@ -1,0 +1,13 @@
+{
+  "template_kind": "authoring-brief-not-an-application-schema",
+  "format_id": "podcast-closeup-portrait",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "inputs": {"speech": "D:\\NewProduction\\narration.m4a", "video_art": "D:\\NewProduction\\permitted-bold-room.png", "thumbnail_art": "D:\\NewProduction\\permitted-full-room-logo.png"},
+  "character_layout": "side-by-side-bottom-closeups",
+  "speaker_spans": [],
+  "mouth_events": [],
+  "objects": [],
+  "actions": [],
+  "captions": [],
+  "review": {"status": "pending", "user_approved": false}
+}

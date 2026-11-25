@@ -11,6 +11,14 @@ target-project instructions still outrank that manual's proposed defaults.
 
 ## Required coverage
 
+The default `classic` inventory profile retains README, SKILL and the five
+explanatory pages. Source-pinned ClipFarm imports may use
+`documentationProfile: "runbook"`: README, normative SKILL and a substantive
+RUNBOOK with shared detailed contracts and adjacent examples. This is a
+documentation-structure choice, not a lower coverage or approval standard.
+The validator rejects unknown profiles and still checks exact source hashes
+and relative links.
+
 Each skill documentation set must explain:
 
 1. Purpose and non-goals.

@@ -5,18 +5,70 @@ description: "Create reviewed coding and system-design clips with automatic loca
 
 # ClipFarm LeetCode editorial workflow
 
-Installed repository: `C:\devdesk\homedesk\ClipFarm`
-Python: `C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe`
+Installed repository: `__CLIPFARM_ROOT__`
+Python: `__CLIPFARM_ROOT__\.venv\Scripts\python.exe`
 
 ClipFarm is a registered context base. Read its `.agent-context\STATE.md` and
 `.agent-context\MEMORY.md` for continuity. If invoked from a different registered
 base, treat ClipFarm's context store as read-only reference.
 
-Read `C:\devdesk\homedesk\ClipFarm\AGENTS.md`, `docs\LEETCODE-WORKFLOW.md`, and
+Read `__CLIPFARM_ROOT__\AGENTS.md`, `docs\LEETCODE-WORKFLOW.md`, and
 `TODO\WORKFLOWS\01_LEETCODE.todo` before acting. All relative paths in this skill
 refer to that repository, **not the current session directory**.
 
 ## Required workflow
+
+**October7 21:13 LEGO portrait direction:** the user accepts the01:45session's
+V6layout/thumbnail styling as perfect. Preserve the upper-space header,
+dark-teal fading grid, open teaching, rounded lower captions, zoomed bottom
+character panels, cream/gold Consolas and centered3:4 frosted full-room cover.
+Mouth-speed reference FOR NOW is00:37V2, at most barely slower, not the slower
+V3-V6holds. Preserve source/speaker/silence time;30fps cannot express literal
+microsecond changes. For LEGO portrait THUMBNAILS ONLY, use the complete
+`LEGO Podcast Studio with Glowing AI Logo(1).png`, including its center logo;
+canonical asset/hash in `.clipfarm\assets\lego-podcast\artwork-policy.json`.
+Video artwork stays Boldly Outlined; horizontal artwork stays Cozy. This is
+saved authoring direction, not shared-engine implementation, permission to
+revise other deliveries or an upload/rights approval.
+
+**October5 17:33:26.037 scope update:** the user explicitly starts the full-length
+Cozy horizontal HashMap film, superseding the earlier hold below. Retain all
+source audio, complete padded studio, internal white/warm teaching board,
+external lower captions and persistent chapter heading from one chapter timeline.
+No default cover hold, audio cuts/speed changes/music/upload. The thirteen novel
+shorts are delivered and immutable. This is request-local production, not the
+native complete-solve mode or a new shared renderer.
+
+**October5 16:08:52.124 scope update:** the user explicitly resumes the thirteen
+nonduplicate vertical HashMap clips with the Boldly Outlined artwork in a new
+session. The full-length Cozy horizontal/chapter film is PARKED for later tonight,
+not scheduled or authorized to start automatically. This supersedes the earlier
+short-clip hold below, not the artwork/layout rules or preservation of old media.
+
+**October5 13:50 future LEGO podcast artwork:** clip videos use the user's
+`Boldly Outlined LEGO Podcast Studio.png`; horizontal videos use
+`Cozy LEGO Podcast Studio at Night.png`, superseding the13:37Conversation choice.
+Canonical private copies/hashes:
+`.clipfarm\assets\lego-podcast\artwork-policy.json`. The thicker CHARACTER outlines
+are intentional for the smaller clip inset; keep the outer panel frame thin.
+Preserve green active/white inactive speaker contours and sharp padded artwork.
+Clip insets keep matching rounded image/frame corners and their thin frame;
+the horizontal studio follows its separate reference. Rebuild/review masks for each image hash:
+these are different compositions, not interchangeable masks. Future-only; do not
+revise delivered media or frozen producers, overlay unrelated source-video
+workflows, or claim shared animation implementation. Artwork selection is not
+authorization to render the explicitly PARKED thirteen-clip proposal.
+The separate full-length HashMap concept preserves the complete53m11audio and
+Cozy image with all-side padding, extra bottom subtitle space and an internal
+white/yellow-bordered animated teaching board. The later chapter-layout addition
+reserves a top padded band ABOVE the image for the current discussion topic,
+held throughout its chapter. One full-source chapter timeline supplies the heading
+and matching YouTube description timestamps; verify final-output timing. Maroon
+and purple boxes mark zones, not mandatory fill colors. No added chapter holds,
+audio retiming or automatic production of parked shorts. See
+`docs\HASHMAP-AUDIO-VIDEO-PLAN.md`. This is feasibility only, not a production
+instruction or the native horizontal complete-solve mode; do not add its default
+cover hold or cut the full audio merely to avoid the parked clips' repeated topics.
 
 **October2 02:56 permanent first-person perspective:** write every authored
 posting caption AS the user: grounded "I", "my" and "me", not an outside narrator
@@ -369,8 +421,8 @@ declaration, meaningful-topic-family and per-output review/publication gates bel
    the user. Never mass-set approval flags merely because the encoder succeeded.
    If rejected, revise the plan and render a new immutable draft; read it again.
 10. Run `publish` only for approved drafts. It automatically copies approved bundles
-    to `C:\devdesk\homedesk\ClipFarm\results\session_<timestamp>\<clip-folder>\`. Deliver its MP4
-    and the ONE `C:\devdesk\homedesk\ClipFarm\results\session_<timestamp>\index.html`, not hidden
+    to `__CLIPFARM_ROOT__\results\session_<timestamp>\<clip-folder>\`. Deliver its MP4
+    and the ONE `__CLIPFARM_ROOT__\results\session_<timestamp>\index.html`, not hidden
     working paths under `.clipfarm`. Keep `results` Git-ignored. Put unmet requests
     in the session notice. The timestamp format is YYYYMMDD_HHMMSS_ffffff
     in Asia/Kolkata. All source clips are direct children of the same session;
@@ -503,14 +555,14 @@ declaration, meaningful-topic-family and per-output review/publication gates bel
 All stages except prepare take `--plan ABSOLUTE_PLAN_PATH`.
 
 ```powershell
-& 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow prepare --video VIDEO --session-timestamp REQUEST_TIMESTAMP
+& '__CLIPFARM_ROOT__\.venv\Scripts\python.exe' -m clipfarm workflow prepare --video VIDEO --session-timestamp REQUEST_TIMESTAMP
 # Explicit horizontal request only:
-& 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow prepare --video VIDEO --format horizontal --session-timestamp REQUEST_TIMESTAMP
-& 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow inspect --plan PLAN --start 0 --end END_SECONDS --step 60
-& 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow validate --plan PLAN
-& 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow draft --plan PLAN --cut CUT_ID
-& 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow review-transcribe --plan PLAN --cut CUT_ID
-& 'C:\devdesk\homedesk\ClipFarm\.venv\Scripts\python.exe' -m clipfarm workflow publish --plan PLAN --cut CUT_ID
+& '__CLIPFARM_ROOT__\.venv\Scripts\python.exe' -m clipfarm workflow prepare --video VIDEO --format horizontal --session-timestamp REQUEST_TIMESTAMP
+& '__CLIPFARM_ROOT__\.venv\Scripts\python.exe' -m clipfarm workflow inspect --plan PLAN --start 0 --end END_SECONDS --step 60
+& '__CLIPFARM_ROOT__\.venv\Scripts\python.exe' -m clipfarm workflow validate --plan PLAN
+& '__CLIPFARM_ROOT__\.venv\Scripts\python.exe' -m clipfarm workflow draft --plan PLAN --cut CUT_ID
+& '__CLIPFARM_ROOT__\.venv\Scripts\python.exe' -m clipfarm workflow review-transcribe --plan PLAN --cut CUT_ID
+& '__CLIPFARM_ROOT__\.venv\Scripts\python.exe' -m clipfarm workflow publish --plan PLAN --cut CUT_ID
 ```
 
 The standalone CLI performs deterministic stages; **you** perform the semantic

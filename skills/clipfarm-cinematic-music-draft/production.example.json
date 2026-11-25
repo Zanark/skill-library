@@ -1,0 +1,23 @@
+{
+  "template_kind": "authoring-brief-not-an-application-schema",
+  "mode": "early-draft",
+  "original_request_timestamp": "<ORIGINAL_TIMEZONE_AWARE_REQUEST>",
+  "source": {"song": "<NEW_LOCAL_SONG>", "lyrics": "<SUPPLIED_LYRICS>", "cover": null},
+  "duration_policy": "entire-original-song-unless-explicit-excerpt",
+  "canvas": {"width": 720, "height": 1280, "fps": 24, "role": "declared-proxy-not-final"},
+  "thumbnail": {"width": 1080, "height": 1920, "essential_crop": [0, 240, 1080, 1680]},
+  "visible_movie_mark": "DRAFT",
+  "story": {"logline": "<NEW_ORIGINAL_STORY>", "cast": [], "beats": [], "shots": [], "actions": []},
+  "lyric_window": {"enabled": false, "timing_basis": "absent-or-estimated-unreviewed", "word_karaoke": false},
+  "review": {
+    "status": "pending-draft-sample-review",
+    "user_approved": false,
+    "full_review_complete": false,
+    "source_hash_and_full_audio_verified": false,
+    "actual_sample_evidence": [],
+    "full_and_center_cover_viewed": false,
+    "intentionally_not_run": ["singing-asr", "lyric-alignment-audit", "every-lyric-progress-audit", "exhaustive-scene-join-review", "all-frame-pts", "gallery-ui-qa"]
+  },
+  "ready_for_upload": false,
+  "notes": "An unapproved new authoring brief, not an app schema. Later full production requires a new edition and the full-review skill."
+}

@@ -1,0 +1,9 @@
+{
+  "show_question_title": true,
+  "camera_mode": "absent",
+  "face_region": null,
+  "code_region": {"x": 0.36, "y": 0.10, "w": 0.63, "h": 0.59},
+  "results_region": null,
+  "subtitle_y": 0.82,
+  "caption_style": "clean"
+}

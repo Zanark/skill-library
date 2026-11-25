@@ -83,6 +83,18 @@ The separately installed DRI-only skill is intentionally not archived in this li
 
 `clipfarm-leetcode` explicitly depends on registered-base continuity. It reads ClipFarm context at the beginning of work and only updates ClipFarm's own store when ClipFarm is the current base. This makes the context skills operational dependencies rather than optional documentation.
 
+The [current ClipFarm family](CLIPFARM-SKILLS.md) has 20 copied entries:
+two core routers, 16 layout/study/review procedures and two cinematic review
+modes. These share a selected compatible ClipFarm checkout; the 19 additional
+entries are not backed by a silently upgraded bundled application.
+
+The installer keeps the legacy 11-entry default and accepts an explicit
+`--clipfarm-root` for the complete 30-definition inventory. It validates/rebases
+references but does not modify that checkout or grant context-store ownership.
+Full cinematic review and early draft have different evidence gates; their
+common full-song rule does not turn them into two additional video formats.
+See [the complete family index](../skills/CLIPFARM.md).
+
 ### Documentation Mesh distinction
 
 `documentation-mesh` and `context-mesh` are separate systems:

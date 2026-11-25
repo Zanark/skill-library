@@ -42,7 +42,21 @@ foreach ($entry in $inventory) {
     $destination = Join-Path $repoRoot "skills\$($entry.name)\SKILL.md"
     $skillRoot = Split-Path -Parent $destination
 
-    foreach ($relativePath in $expectedDocs) {
+    $documentationProfile = if ($entry.PSObject.Properties.Name -contains 'documentationProfile') {
+        $entry.documentationProfile
+    } else {
+        'classic'
+    }
+    if ($documentationProfile -eq 'classic') {
+        $requiredDocs = $expectedDocs
+    } elseif ($documentationProfile -eq 'runbook') {
+        $requiredDocs = @('README.md', 'SKILL.md', 'RUNBOOK.md')
+    } else {
+        $errors.Add("Unknown documentation profile for $($entry.name): $documentationProfile")
+        continue
+    }
+
+    foreach ($relativePath in $requiredDocs) {
         $path = Join-Path $skillRoot $relativePath
         if (-not (Test-Path -LiteralPath $path)) {
             $errors.Add("Missing required file: $path")

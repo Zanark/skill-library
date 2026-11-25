@@ -57,9 +57,124 @@
         },
         {
           "title": "clipfarm-leetcode",
-          "name": "ClipFarm Coding Editorial Workflow",
-          "prompt": "Explain mode routing, source review, plans, drafts, review gates, publishing, and superseding policies from skills/clipfarm-leetcode/SKILL.md:237.",
-          "children": []
+          "name": "ClipFarm Editorial Core and Twenty-Skill Family",
+          "prompt": "Explain the current20source-pinned ClipFarm skills using skills/CLIPFARM.md, docs/CLIPFARM-SKILLS.md and docs/clipfarm-source-manifest.json. Preserve the explicit compatible external-checkout prerequisite, default11 versus 19additional installation boundary, full/draft evidence differences and normative-snapshot versus public-operator-derivative provenance. Do not claim the older bundled engine implements every current route.",
+          "children": [
+            {
+              "title": "clipfarm-color-grading",
+              "name": "clipfarm-color-grading",
+              "prompt": "Use skills/clipfarm-color-grading/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-code-camera-portrait",
+              "name": "clipfarm-code-camera-portrait",
+              "prompt": "Use skills/clipfarm-code-camera-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-code-only-portrait",
+              "name": "clipfarm-code-only-portrait",
+              "prompt": "Use skills/clipfarm-code-only-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-system-design-portrait",
+              "name": "clipfarm-system-design-portrait",
+              "prompt": "Use skills/clipfarm-system-design-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-complete-solve-landscape",
+              "name": "clipfarm-complete-solve-landscape",
+              "prompt": "Use skills/clipfarm-complete-solve-landscape/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-teaching-board-portrait",
+              "name": "clipfarm-teaching-board-portrait",
+              "prompt": "Use skills/clipfarm-teaching-board-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-animated-camera-portrait",
+              "name": "clipfarm-animated-camera-portrait",
+              "prompt": "Use skills/clipfarm-animated-camera-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-podcast-room-portrait",
+              "name": "clipfarm-podcast-room-portrait",
+              "prompt": "Use skills/clipfarm-podcast-room-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-podcast-closeup-portrait",
+              "name": "clipfarm-podcast-closeup-portrait",
+              "prompt": "Use skills/clipfarm-podcast-closeup-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-gesture-study-portrait",
+              "name": "clipfarm-gesture-study-portrait",
+              "prompt": "Use skills/clipfarm-gesture-study-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-eye-study-portrait",
+              "name": "clipfarm-eye-study-portrait",
+              "prompt": "Use skills/clipfarm-eye-study-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-chaptered-podcast-landscape",
+              "name": "clipfarm-chaptered-podcast-landscape",
+              "prompt": "Use skills/clipfarm-chaptered-podcast-landscape/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-vinyl-film-landscape",
+              "name": "clipfarm-vinyl-film-landscape",
+              "prompt": "Use skills/clipfarm-vinyl-film-landscape/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-vinyl-excerpt-portrait",
+              "name": "clipfarm-vinyl-excerpt-portrait",
+              "prompt": "Use skills/clipfarm-vinyl-excerpt-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-source-fit-portrait",
+              "name": "clipfarm-source-fit-portrait",
+              "prompt": "Use skills/clipfarm-source-fit-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-native-grade-portrait",
+              "name": "clipfarm-native-grade-portrait",
+              "prompt": "Use skills/clipfarm-native-grade-portrait/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-ab-review-landscape",
+              "name": "clipfarm-ab-review-landscape",
+              "prompt": "Use skills/clipfarm-ab-review-landscape/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-cinematic-music-video",
+              "name": "clipfarm-cinematic-music-video",
+              "prompt": "Use skills/clipfarm-cinematic-music-video/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            },
+            {
+              "title": "clipfarm-cinematic-music-draft",
+              "name": "clipfarm-cinematic-music-draft",
+              "prompt": "Use skills/clipfarm-cinematic-music-draft/SKILL.md, README.md and RUNBOOK.md with docs/CLIPFARM-SKILLS.md. Apply the actual source-defined scope, current-checkout dependency and real review/approval gates.",
+              "children": []
+            }
+          ]
         },
         {
           "title": "documentation-mesh",

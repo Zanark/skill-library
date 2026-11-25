@@ -1,0 +1,13 @@
+{
+  "template_kind": "authoring-brief-not-an-application-schema",
+  "format_id": "chaptered-podcast-landscape",
+  "canvas": {"width": 1920, "height": 1080, "fps": 30},
+  "inputs": {"speech": "D:\\NewProduction\\complete-narration.m4a", "room_art": "D:\\NewProduction\\permitted-cozy-room.png"},
+  "audio_policy": "complete-source-no-intro-no-cuts-no-speed-change",
+  "chapter_heading_and_description_share_timeline": true,
+  "chapters": [],
+  "scenes": [],
+  "actions": [],
+  "captions": [],
+  "review": {"status": "pending", "user_approved": false}
+}

@@ -1,6 +1,7 @@
 # Portable skills and private migration
 
-The public repository contains eleven inventory-listed skill definitions, their operating docs,
+The public repository contains 30 inventory-listed definitions: 11 default bulk
+entries and 19 additional current-checkout ClipFarm skills, with operating docs,
 and the implementation projects behind Context Mesh, ClipFarm, Documentation
 Mesh and Speak. It does **not** contain private conversations, recordings, career
 evidence, credentials or Microsoft's internal zmem implementation.
@@ -24,6 +25,19 @@ python .\scripts\verify_portable_payload.py
 python .\scripts\install_skill_library.py --install-dependencies
 .\scripts\Validate-SkillLibrary.ps1
 ```
+
+The complete current ClipFarm family needs an explicitly selected compatible
+checkout, not the older bundled editorial implementation:
+
+```powershell
+python .\scripts\install_skill_library.py --clipfarm-root "D:\Work\ClipFarm"
+```
+
+See [the twenty-skill setup and source boundary](CLIPFARM-SKILLS.md).
+Without that flag the existing 11-entry default remains unchanged and the
+19 additional definitions are reported as skipped. With it, 30 inventory
+definitions are installed. The external checkout and its dependencies are
+never copied, installed or modified by this option.
 
 By default, runtime projects go under `%LOCALAPPDATA%\SkillLibrary`, and skills
 under `%USERPROFILE%\.copilot\skills`. The installer prints their full resolved
@@ -49,6 +63,7 @@ This copy-only template does not enable tools by itself.
 | ado-workplan | Skill, examples and operating docs | Authenticated ADO/WorkIQ services and private reports |
 | career-forensics | Complete recovery/report instructions | Private CareerKB, source documents and protocols |
 | clipfarm-leetcode | Python engine, static UI, tests, workflow docs, launch/install scripts, exact observed dependency versions | Original media, artwork rights, models, production ledgers and frozen producers |
+| Additional ClipFarm family | Nineteen exact source skill snapshots, per-skill README/runbooks/examples, shared contracts and generic lyric-clock helper | Explicit current ClipFarm checkout for grading/current composition capabilities; no additional private application code is published |
 | context-mesh | Generator, graph/chat/avatar renderers, tests, npm lockfile, config example, fictional offline snapshot | Context stores, stable color registry, archives, session-history inputs and optional private zmem |
 | context-offload | Complete continuity/persona/social protocols and docs | Each base's own private context store; external zmem if used |
 | dayplan | Skill and operating docs | Authenticated ADO/IcM/WorkIQ providers |
@@ -213,6 +228,12 @@ same filesystem.
 
 `.gitattributes` disables Git newline conversion because the checksums cover
 exact file bytes, including on Windows.
+
+The current ClipFarm skill snapshots are pinned independently of the older
+bundled application. Their source/published hashes and explanatory-document
+derivatives are recorded in [the source manifest](clipfarm-source-manifest.json).
+Do not treat a public instruction copy as access to a private upstream checkout
+or as evidence that the bundled older engine implements every current route.
 
 `portable-files.json` inventories the intended public payload. Regenerate it
 after source/doc changes with `verify_portable_payload.py --build`; a fresh

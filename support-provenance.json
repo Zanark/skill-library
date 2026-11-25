@@ -59,5 +59,14 @@
     "skills\\clipfarm-leetcode\\implementation\\docs",
     "skills\\clipfarm-leetcode\\implementation\\TODO",
     "examples\\context-mesh"
-  ]
+  ],
+  "clipfarmSkillSnapshots": {
+    "sourceRepository": "Zanark/ClipFarm",
+    "sourceCommit": "80abfbbd20cf50b86f02cba4e8069dda73fbb19a",
+    "entries": 20,
+    "manifest": "docs\\clipfarm-source-manifest.json",
+    "currentApplicationCodeCopied": false,
+    "privateStateOrMediaCopied": false,
+    "installation": "Nineteen additional entries require an explicitly selected current checkout; default legacy runtime unchanged"
+  }
 }

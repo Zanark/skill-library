@@ -1,0 +1,11 @@
+{
+  "template_kind": "authoring-brief-not-an-application-schema",
+  "format_id": "vinyl-excerpt-portrait",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "inputs": {"master_wav": "D:\\NewProduction\\song.wav", "matching_landscape_film": "D:\\NewProduction\\new-picture-disc-film.mp4", "square_cover": "D:\\NewProduction\\cover.png", "circle_cover": "D:\\NewProduction\\cover-circle.png"},
+  "selection": {"start_frame": null, "end_frame_exclusive": null, "rationale": ""},
+  "audio_fades": {"in_seconds": 0.04, "out_seconds": 0.35},
+  "background": {"method": "largest-four-color-median-cut-square-cover-cluster", "rgb": null},
+  "subtitles": false,
+  "review": {"status": "pending", "user_approved": false}
+}
